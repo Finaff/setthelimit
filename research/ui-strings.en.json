@@ -260,7 +260,7 @@
  "If you share a link",
  "A share link carries your answers inside the link itself. Whoever has the link can see those answers; nothing else about you is in it.",
  "If you sign in with X",
- "Signing in is optional and only proves which X account is yours. X sends us your account’s numeric id, your handle and your display name. We never see your password, we cannot post, like or follow for you, and we do not read your posts, followers or messages. The access token X gives us is used once to read those three fields and is then discarded. We set one cookie to keep you signed in for 30 days; it is not readable by scripts and is not used for tracking.",
+ "Signing in is optional and only proves which X account is yours. X sends us your account’s numeric id, your handle and your display name, and we keep those three fields. We never see your password, we cannot post, like or follow for you, and we do not read your posts, followers or messages. The access token X gives us is used once to read those three fields and is then discarded. We set one cookie to keep you signed in for 30 days; it is not readable by scripts and is not used for tracking.",
  "What becomes public, and only if you choose it",
  "If you make your result public, your handle and your answers are shown to anyone with your link. If you comment, your handle, your comment, its date and, if you tick the box, your answer to that proposition are public. A listed public figure who claims their dot makes their answers public under their name. You can remove your public result in one click and delete your own comments at any time.",
  "What we do not do",
@@ -268,5 +268,7 @@
  "Who processes the data",
  "The site and its database run on Cloudflare, which processes network addresses to deliver pages and keep the service secure. Fonts are loaded from Google Fonts, which sees your network address when your browser fetches them. The code that handles all of this is public.",
  "Your rights",
- "You can ask for a copy of what we hold about your X account, or for its deletion, by opening an issue on the public repository or writing to the address listed there. Anonymous runs cannot be traced back to you, so they cannot be looked up or deleted individually."
+ "You can ask for a copy of what we hold about your X account, or for its deletion, by opening an issue on the public repository or writing to the address listed there. Anonymous runs cannot be traced back to you, so they cannot be looked up or deleted individually.",
+ "Removed by a moderator.",
+ "Not spam ({n} flags)"
 ]

@@ -9,7 +9,7 @@ const worker = (await import(path.join(root, 'worker/src/index.js'))).default;
 const db = new DatabaseSync(':memory:');
 db.exec(fs.readFileSync(path.join(root, 'worker/schema.sql'), 'utf8'));
 const D1 = { prepare: (sql) => { const st = db.prepare(sql); let args = []; const o = { bind: (...a) => { args = a; return o; }, first: async () => st.get(...args) ?? null, all: async () => ({ results: st.all(...args) }), run: async () => { st.run(...args); return { success: true }; } }; return o; } };
-const env = { DB: D1, SITE_ORIGIN: 'https://setthelimit.com', API_ORIGIN: 'https://api.setthelimit.com', X_CLIENT_ID: 'x', X_CLIENT_SECRET: 'y', SESSION_SECRET: 'test-secret', FIGURE_ACCOUNTS: JSON.stringify({ '1001': 'gary-marcus' }), DEV: '0' };
+const env = { DB: D1, SITE_ORIGIN: 'https://setthelimit.com', API_ORIGIN: 'https://api.setthelimit.com', X_CLIENT_ID: 'x', X_CLIENT_SECRET: 'y', SESSION_SECRET: 'test-secret', FIGURE_ACCOUNTS: JSON.stringify({ '1001': 'gary-marcus' }), MODERATORS: JSON.stringify(['7']), DEV: '0' };
 const call = (method, p, body, cookie) => worker.fetch(new Request('https://api.setthelimit.com' + p, { method, headers: { 'content-type': 'application/json', origin: 'https://setthelimit.com', 'cf-connecting-ip': '203.0.113.7', ...(cookie ? { cookie } : {}) }, body: body ? JSON.stringify(body) : undefined }), env);
 const enc = new TextEncoder();
 const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -61,6 +61,16 @@ res = await call('DELETE', `/comments/${c1}`, null, gary); t('cannot delete some
 res = await call('DELETE', `/comments/${c1}`, null, alice); t('delete own comment', (await res.json()).ok);
 res = await call('GET', '/comments?item=d1'); j = await res.json(); t('deleted parent kept as a stub while replies live', j.comments.find((c) => c.id === c1).deleted === true && j.comments.find((c) => c.id === c1).handle === null);
 res = await call('GET', '/comments/counts'); j = await res.json(); t('GET /comments/counts', j.counts.d1 === 2);
+// moderation
+const modS = await forgeSession('7', 'mod');
+res = await call('GET', '/me', null, modS); j = await res.json(); t('GET /me marks the moderator', j.mod === true);
+res = await call('GET', '/comments?item=d1', null, modS); j = await res.json(); t('moderator sees the body of a flag-hidden comment', j.mod === true && j.comments.find((c) => c.id === c2).body.length > 0);
+res = await call('POST', `/comments/${c2}/unflag`, null, alice); t('unflag by a non-moderator → 403', res.status === 403);
+res = await call('POST', `/comments/${c2}/unflag`, null, modS); t('moderator clears flags', (await res.json()).ok);
+res = await call('GET', '/comments?item=d1'); j = await res.json(); t('comment visible again', j.comments.find((c) => c.id === c2).hidden === false);
+res = await call('DELETE', `/comments/${c3}`, null, modS); t('moderator removes any comment', (await res.json()).ok);
+res = await call('GET', '/comments?item=d1'); j = await res.json(); t('removed comment is gone from the list', !j.comments.find((c) => c.id === c3));
+{ const row = db.prepare('SELECT handle FROM accounts WHERE x_user_id = ?').get('7'); t('sign-ins are remembered by numeric id', row && row.handle === 'mod'); }
 res = await call('GET', '/auth/x/start?intent=signin&next=%23/p/d1'); t('sign-in start accepts a safe next', res.status === 302);
 res = await call('GET', '/auth/x/start?intent=signin&next=https://evil.example'); t('sign-in start ignores an unsafe next', res.status === 302);
 for (let i = 0; i < 30; i++) await call('POST', '/run', { x: 1, y: 1, r: R });

@@ -34,6 +34,9 @@ const SESSION_DAYS = 30;
 const R_OK = /^[0-9a-z_-]{20,80}$/; // the share-link encoding of the answers
 const num = (v) => typeof v === 'number' && v >= 0 && v <= 100;
 const session = async (req, env) => verify(env, cookies(req).stl_s);
+const isMod = (env, uid) => { try { return JSON.parse(env.MODERATORS || '[]').map(String).includes(String(uid)); } catch (e) { return false; } };
+// Who has signed in: lets the owner find a numeric id (moderators, figures) without ever trusting a handle.
+const remember = (env, s) => env.DB.prepare('INSERT INTO accounts (x_user_id,handle,name,first_at,last_at) VALUES (?,?,?,?,?) ON CONFLICT(x_user_id) DO UPDATE SET handle=excluded.handle, name=excluded.name, last_at=excluded.last_at').bind(String(s.uid), s.handle, s.name || null, now(), now()).run().catch(() => {});
 const figureOf = (env, uid) => { try { return JSON.parse(env.FIGURE_ACCOUNTS || '{}')[uid] || null; } catch (e) { return null; } };
 
 function cors(env, req, res) {
@@ -86,16 +89,18 @@ async function xCallback(req, url, env) {
   const me = await fetch('https://api.x.com/2/users/me?user.fields=name,username', { headers: { authorization: 'Bearer ' + tok.access_token } }).then((r) => r.json()).catch(() => null);
   const u = me && me.data; if (!u || !u.id) return new Response('Could not read the X account.', { status: 502 });
   const s = await sign(env, { uid: String(u.id), handle: u.username, name: u.name, exp: Date.now() + SESSION_DAYS * 86400e3 });
+  await remember(env, { uid: u.id, handle: u.username, name: u.name });
   const headers = new Headers({ location: `${env.SITE_ORIGIN}/?${o.intent}=1${o.next || '#/result'}` });
   headers.append('set-cookie', cookie('stl_s', s, SESSION_DAYS * 86400)); headers.append('set-cookie', cookie('stl_o', '', 0));
   return new Response(null, { status: 302, headers });
 }
 async function getMe(req, env) {
   const s = await session(req, env); if (!s) return json({ handle: null });
+  await remember(env, s);
   const pub = await env.DB.prepare('SELECT handle, at FROM public_results WHERE x_user_id = ?').bind(s.uid).first();
   const figure = figureOf(env, s.uid);
   const claim = figure ? await env.DB.prepare('SELECT at FROM claims WHERE figure_id = ? AND revoked = 0').bind(figure).first() : null;
-  return json({ handle: s.handle, name: s.name, figure, public: pub ? { handle: pub.handle, at: pub.at } : null, claimed: claim ? claim.at : null }, 200, { 'cache-control': 'no-store' });
+  return json({ handle: s.handle, name: s.name, mod: isMod(env, s.uid), figure, public: pub ? { handle: pub.handle, at: pub.at } : null, claimed: claim ? claim.at : null }, 200, { 'cache-control': 'no-store' });
 }
 async function postPublic(req, env) {
   const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
@@ -131,7 +136,7 @@ async function delClaim(req, env) {
 const ITEM_OK = /^[a-z]\d{1,2}$/;
 async function getComments(req, url, env) {
   const item = url.searchParams.get('item') || ''; if (!ITEM_OK.test(item)) return json({ error: 'bad item' }, 400);
-  const s = await session(req, env);
+  const s = await session(req, env); const mod = !!s && isMod(env, s.uid);
   const rows = (await env.DB.prepare(`SELECT c.id, c.parent_id, c.x_user_id, c.handle, c.name, c.body, c.value, c.at, c.deleted,
       (SELECT COUNT(*) FROM comment_votes v WHERE v.comment_id = c.id) AS up,
       (SELECT COUNT(*) FROM comment_flags f WHERE f.comment_id = c.id) AS flags
@@ -145,10 +150,10 @@ async function getComments(req, url, env) {
   const comments = rows.filter((r) => !r.deleted || hasLiveReply.has(r.id)).map((r) => {
     const hidden = !r.deleted && r.flags >= 3 && r.flags > r.up;
     return { id: r.id, parent: r.parent_id || null, handle: r.deleted ? null : r.handle, name: r.deleted ? null : r.name, figure: r.deleted ? null : figureOf(env, r.x_user_id),
-      body: r.deleted || hidden ? '' : r.body, value: r.deleted || hidden ? null : r.value, at: r.at, up: r.up, deleted: !!r.deleted, hidden,
+      body: r.deleted || (hidden && !mod) ? '' : r.body, value: r.deleted || (hidden && !mod) ? null : r.value, at: r.at, up: r.up, flags: mod ? r.flags : undefined, deleted: !!r.deleted, removed: r.deleted === 2, hidden,
       voted: myVotes.has(r.id), flagged: myFlags.has(r.id), own: !!s && s.uid === r.x_user_id };
   });
-  return json({ item, comments }, 200, { 'cache-control': 'no-store' });
+  return json({ item, comments, mod }, 200, { 'cache-control': 'no-store' });
 }
 async function getCommentCounts(env) {
   const rows = (await env.DB.prepare('SELECT item_id, COUNT(*) AS n FROM comments WHERE deleted = 0 GROUP BY item_id').all()).results || [];
@@ -181,11 +186,15 @@ async function toggle(table, req, env, id) {
   const { n } = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE comment_id = ?`).bind(id).first();
   return json({ ok: true, on: !had, count: n });
 }
+async function clearFlags(req, env, id) {
+  const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401); if (!isMod(env, s.uid)) return json({ error: 'moderators only' }, 403);
+  await env.DB.prepare('DELETE FROM comment_flags WHERE comment_id = ?').bind(id).run(); return json({ ok: true });
+}
 async function delComment(req, env, id) {
   const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
   const c = await env.DB.prepare('SELECT x_user_id FROM comments WHERE id = ?').bind(id).first(); if (!c) return json({ error: 'unknown comment' }, 404);
-  if (c.x_user_id !== s.uid) return json({ error: 'not yours' }, 403);
-  await env.DB.prepare('UPDATE comments SET deleted = 1 WHERE id = ?').bind(id).run(); return json({ ok: true });
+  const mine = c.x_user_id === s.uid; if (!mine && !isMod(env, s.uid)) return json({ error: 'not yours' }, 403);
+  await env.DB.prepare('UPDATE comments SET deleted = ? WHERE id = ?').bind(mine ? 1 : 2, id).run(); return json({ ok: true });
 }
 
 export default {
@@ -211,6 +220,7 @@ export default {
       else if (p === '/comments' && m === 'POST') res = await postComment(req, env);
       else if (/^\/comments\/[\w-]+\/vote$/.test(p) && m === 'POST') res = await toggle('comment_votes', req, env, p.split('/')[2]);
       else if (/^\/comments\/[\w-]+\/flag$/.test(p) && m === 'POST') res = await toggle('comment_flags', req, env, p.split('/')[2]);
+      else if (/^\/comments\/[\w-]+\/unflag$/.test(p) && m === 'POST') res = await clearFlags(req, env, p.split('/')[2]);
       else if (/^\/comments\/[\w-]+$/.test(p) && m === 'DELETE') res = await delComment(req, env, p.split('/')[2]);
       else res = json({ error: 'not found' }, 404);
       return cors(env, req, res);

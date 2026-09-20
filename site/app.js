@@ -274,7 +274,7 @@
       pos.forEach((q) => { q.x += (q.ox - q.x) * 0.06; q.y += (q.oy - q.y) * 0.06; q.x = clamp(q.x, L + 8, W - R - 8); q.y = clamp(q.y, TP + 8, H - B - 8); });
     }
     const sel = pos.find((q) => q.c.f.id === S.sel);
-    pos.forEach((q) => { const c = q.c, sc2 = c.sc; g += `<g class="fig ${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}" tabindex="0"><title>${esc(c.f.name)} — ${Math.round(sc2.y)} / ${Math.round(sc2.x)}</title><circle cx="${q.x}" cy="${q.y}" r="8"/><text class="init${figLabel(c.f).length > 2 ? ' l3' : ''}" x="${q.x}" y="${q.y + 2.6}">${esc(figLabel(c.f))}</text></g>`; });
+    pos.forEach((q) => { const c = q.c, sc2 = c.sc; g += `<g class="fig ${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}" tabindex="0" data-tip="${esc(c.f.name)} · ${Math.round(sc2.y)} / ${Math.round(sc2.x)}" aria-label="${esc(c.f.name)}"><circle cx="${q.x}" cy="${q.y}" r="8"/><text class="init${figLabel(c.f).length > 2 ? ' l3' : ''}" x="${q.x}" y="${q.y + 2.6}">${esc(figLabel(c.f))}</text></g>`; });
     if (sel) { const right = sel.x < W * 0.6; g += `<text class="figname" x="${sel.x + (right ? 12 : -12)}" y="${sel.y + 3.5}" text-anchor="${right ? 'start' : 'end'}">${esc(sel.c.f.name)}</text>`; }
     if (vs && vs.ok) g += `<g class="vs"><circle cx="${X(vs.x)}" cy="${Y(vs.y)}" r="9"/><text x="${X(vs.x) + 12}" y="${Y(vs.y) + 4}">${esc(lab.vs)}</text></g>`;
     g += `<g class="you"><circle cx="${X(sc.x)}" cy="${Y(sc.y)}" r="10"/><text x="${X(sc.x) + 13}" y="${Y(sc.y) + 4}">${esc(lab.main)}</text></g>`;
@@ -374,7 +374,7 @@
     let g = `<line class="ax" x1="${L}" y1="${base}" x2="${W - L}" y2="${base}"/>`;
     [0, 25, 50, 75, 100].forEach((t) => { g += `<line class="tk" x1="${X(t)}" y1="${base - 4}" x2="${X(t)}" y2="${base + 4}"/><text class="tl" x="${X(t)}" y="${base + 17}" text-anchor="middle">${t}</text>`; });
     g += `<text class="tl" x="${L}" y="${H - 1}">${T(fait ? 'Very unlikely' : 'Strongly disagree')}</text><text class="tl" x="${W - L}" y="${H - 1}" text-anchor="end">${T(fait ? 'Very likely' : 'Strongly agree')}</text>`;
-    pts.forEach((pt) => { const y = base - 14 - pt.row * 24; const lb = figLabel(pt.f); g += `<a href="#/figure/${esc(pt.f.id)}"><title>${esc(pt.f.name)} · ${pt.v}${pt.f.claimed ? '' : ' (' + T('predicted') + ')'}</title><circle class="${pt.f.claimed ? 'self' : ''}" cx="${X(pt.v)}" cy="${y}" r="10.5"/><text class="${lb.length > 2 ? 'l3' : ''}" x="${X(pt.v)}" y="${y + 3.2}" text-anchor="middle">${esc(lb)}</text></a>`; });
+    pts.forEach((pt) => { const y = base - 14 - pt.row * 24; const lb = figLabel(pt.f); g += `<a href="#/figure/${esc(pt.f.id)}" data-tip="${esc(pt.f.name)} · ${pt.v}${pt.f.claimed ? '' : ' (' + T('predicted') + ')'}" aria-label="${esc(pt.f.name)} ${pt.v}"><circle class="${pt.f.claimed ? 'self' : ''}" cx="${X(pt.v)}" cy="${y}" r="10.5"/><text class="${lb.length > 2 ? 'l3' : ''}" x="${X(pt.v)}" y="${y + 3.2}" text-anchor="middle">${esc(lb)}</text></a>`; });
     if (typeof mine === 'number') g += `<line class="me" x1="${X(mine)}" y1="16" x2="${X(mine)}" y2="${base}"/><text class="met" x="${Math.min(W - 30, Math.max(30, X(mine)))}" y="11" text-anchor="middle">${T('You')} · ${mine}</text>`;
     return `<div class="stripwrap"><svg class="strip" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Where the figures stand')}">${g}</svg></div>`;
   }
@@ -389,13 +389,14 @@
   }
   function commentHtml(c, it, isReply) {
     const when = String(c.at).slice(0, 10); const fig = c.figure ? FIGS.find((f) => f.id === c.figure) : null;
-    if (c.deleted) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Deleted by its author.')}</div></div>`;
-    if (c.hidden) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Hidden: several people flagged this as spam.')}</div></div>`;
+    if (c.deleted) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T(c.removed ? 'Removed by a moderator.' : 'Deleted by its author.')}</div></div>`;
+    if (c.hidden && !isModView()) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Hidden: several people flagged this as spam.')}</div></div>`;
     return `<div class="cm${isReply ? ' reply' : ''}"><div class="cmh"><a href="https://x.com/${esc(c.handle)}" target="_blank" rel="noopener nofollow">@${esc(c.handle)}</a>${fig ? `<span class="badge">${esc(fig.name)} · ${T('verified')}</span>` : ''}${typeof c.value === 'number' ? `<span class="ans">${fmt(T('answered {v}'), { v: c.value })}</span>` : ''}<span class="when">${esc(when)}</span></div>
       <div class="cmb">${esc(c.body).replace(/\n/g, '<br>')}</div>
-      <div class="cma"><button class="${c.voted ? 'on' : ''}" data-vote="${esc(c.id)}" aria-pressed="${c.voted ? 'true' : 'false'}" title="${T('Upvote')}">▲ ${c.up || 0}</button><button data-reply="${esc(c.id)}">${T('Reply')}</button>${c.own ? `<button data-delc="${esc(c.id)}">${T('Delete')}</button>` : `<button class="${c.flagged ? 'on' : ''}" data-flag="${esc(c.id)}">${c.flagged ? T('Flagged as spam') : T('Spam?')}</button>`}</div>
+      <div class="cma"><button class="${c.voted ? 'on' : ''}" data-vote="${esc(c.id)}" aria-pressed="${c.voted ? 'true' : 'false'}" title="${T('Upvote')}">▲ ${c.up || 0}</button><button data-reply="${esc(c.id)}">${T('Reply')}</button>${isModView() && !c.own ? `<button data-delc="${esc(c.id)}">${T('Remove')}</button>${c.flags ? `<button data-unflag="${esc(c.id)}">${fmt(T('Not spam ({n} flags)'), { n: c.flags })}</button>` : ''}` : ''}${c.own ? `<button data-delc="${esc(c.id)}">${T('Delete')}</button>` : `<button class="${c.flagged ? 'on' : ''}" data-flag="${esc(c.id)}">${c.flagged ? T('Flagged as spam') : T('Spam?')}</button>`}</div>
       ${S.replyTo === c.id && S.me ? `<div class="compose"><textarea data-draft="r:${esc(c.id)}" maxlength="1000" rows="3" placeholder="${T('Reply to the claim, not the person.')}"></textarea><div class="row"><button class="btn sm primary" data-postreply="${esc(c.id)}">${T('Post reply')}</button></div></div>` : ''}</div>`;
   }
+  const isModView = () => !!(S.me && S.me.mod);
   function commentsHtml(it, mine) {
     if (!API) return `<h2 class="sec">${T('Discussion')}</h2><p class="note">${T('The discussion lives on the main site:')} <a href="https://setthelimit.com/#/p/${esc(it.id)}" target="_blank" rel="noopener">setthelimit.com</a></p>`;
     const st = S.comments[it.id] || {}; const list = st.list || []; const live = list.filter((c) => !c.deleted && !c.hidden).length;
@@ -442,7 +443,7 @@
     return shell(`<section><h2 class="sec">${T('Privacy')}<small>${T('Last updated 20 September 2026. Short, and meant to be read.')}</small></h2><div class="prose">
       ${P('If you just take the test', 'Your answers are kept in your browser’s storage on your device. When you reach your result, we store an anonymous copy: your two scores, your answers, the language, and the time. No name, no email, no account, no cookie. To limit abuse we keep a one-way hash of your network address that changes every day and cannot be turned back into the address. These anonymous runs feed the crowd on the map.')}
       ${P('If you share a link', 'A share link carries your answers inside the link itself. Whoever has the link can see those answers; nothing else about you is in it.')}
-      ${P('If you sign in with X', 'Signing in is optional and only proves which X account is yours. X sends us your account’s numeric id, your handle and your display name. We never see your password, we cannot post, like or follow for you, and we do not read your posts, followers or messages. The access token X gives us is used once to read those three fields and is then discarded. We set one cookie to keep you signed in for 30 days; it is not readable by scripts and is not used for tracking.')}
+      ${P('If you sign in with X', 'Signing in is optional and only proves which X account is yours. X sends us your account’s numeric id, your handle and your display name, and we keep those three fields. We never see your password, we cannot post, like or follow for you, and we do not read your posts, followers or messages. The access token X gives us is used once to read those three fields and is then discarded. We set one cookie to keep you signed in for 30 days; it is not readable by scripts and is not used for tracking.')}
       ${P('What becomes public, and only if you choose it', 'If you make your result public, your handle and your answers are shown to anyone with your link. If you comment, your handle, your comment, its date and, if you tick the box, your answer to that proposition are public. A listed public figure who claims their dot makes their answers public under their name. You can remove your public result in one click and delete your own comments at any time.')}
       ${P('What we do not do', 'No advertising, no analytics trackers, no sale or sharing of data, no profiling, no training of AI models on your data.')}
       ${P('Who processes the data', 'The site and its database run on Cloudflare, which processes network addresses to deliver pages and keep the service secure. Fonts are loaded from Google Fonts, which sees your network address when your browser fetches them. The code that handles all of this is public.')}
@@ -493,6 +494,14 @@
     if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: 'Set the Limit' }); return; } catch (e) { /* cancelled: fall through to download */ } }
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'set-the-limit.png'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
   }
+  // ---------- instant tooltips (a native <title> waits about a second) ----------
+  const tipEl = document.createElement('div'); tipEl.className = 'tip'; tipEl.hidden = true; tipEl.setAttribute('role', 'tooltip'); document.body.appendChild(tipEl);
+  function showTip(el) { tipEl.textContent = el.getAttribute('data-tip'); tipEl.hidden = false; const r = el.getBoundingClientRect(), w = tipEl.offsetWidth; tipEl.style.left = Math.max(6, Math.min(window.innerWidth - w - 6, r.left + r.width / 2 - w / 2)) + window.scrollX + 'px'; tipEl.style.top = Math.max(4, r.top - tipEl.offsetHeight - 8) + window.scrollY + 'px'; }
+  const tipFrom = (e) => { const el = e.target && e.target.closest ? e.target.closest('[data-tip]') : null; if (el) showTip(el); else tipEl.hidden = true; };
+  document.addEventListener('pointerover', tipFrom); document.addEventListener('focusin', tipFrom);
+  document.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') tipFrom(e); });
+  window.addEventListener('scroll', () => { tipEl.hidden = true; }, { passive: true }); window.addEventListener('hashchange', () => { tipEl.hidden = true; });
+
   // ---------- events ----------
   document.addEventListener('input', (e) => {
     const t = e.target; if (t.id !== 'slider') return;
@@ -504,7 +513,7 @@
     const d = document.getElementById('discuss'); if (d) d.hidden = false;
   });
   document.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-post],[data-postreply],[data-vote],[data-flag],[data-reply],[data-delc],[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
+    const t = e.target.closest('[data-unflag],[data-post],[data-postreply],[data-vote],[data-flag],[data-reply],[data-delc],[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
     if (!t) return; const ds = t.dataset; const r = parseRoute();
     if (ds.skip) { const it = ITEMS[r.n - 1]; S.answers[it.id] = null; saveAnswers(); go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
     if (ds.next) { const it = ITEMS[r.n - 1]; if (S.answers[it.id] === undefined) return; go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
@@ -514,6 +523,7 @@
     if (ds.vote) { commentAction('vote', ds.vote); return; }
     if (ds.flag) { commentAction('flag', ds.flag); return; }
     if (ds.delc) { commentAction('del', ds.delc); return; }
+    if (ds.unflag) { commentAction('unflag', ds.unflag); return; }
     if (ds.reply) { if (!S.me) { toast(T('Sign in with X first.')); return; } S.replyTo = S.replyTo === ds.reply ? null : ds.reply; renderKeep(); return; }
     if (ds.png) { const sc = scores(S.answers); const ar = archetype(sc.x, sc.y); const nearest = FIGS.map((f) => compare(S.answers, f)).filter((c) => c.dist !== null).sort(byAgreement)[0]; saveCard(sc, ar, nearest); return; }
     if (ds.claim) { claimDot(); return; }

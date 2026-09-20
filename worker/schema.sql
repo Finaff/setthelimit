@@ -19,3 +19,5 @@ CREATE INDEX IF NOT EXISTS comments_item ON comments(item_id, at);
 CREATE INDEX IF NOT EXISTS comments_user ON comments(x_user_id, at);
 CREATE TABLE IF NOT EXISTS comment_votes (comment_id TEXT NOT NULL, x_user_id TEXT NOT NULL, at TEXT NOT NULL, PRIMARY KEY (comment_id, x_user_id));
 CREATE TABLE IF NOT EXISTS comment_flags (comment_id TEXT NOT NULL, x_user_id TEXT NOT NULL, at TEXT NOT NULL, PRIMARY KEY (comment_id, x_user_id));
+-- X accounts that have signed in (numeric id, current handle, display name): needed to name moderators and verified figures by id.
+CREATE TABLE IF NOT EXISTS accounts (x_user_id TEXT PRIMARY KEY, handle TEXT NOT NULL, name TEXT, first_at TEXT NOT NULL, last_at TEXT NOT NULL);

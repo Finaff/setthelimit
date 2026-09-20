@@ -14,6 +14,8 @@ API_ORIGIN = "https://api.setthelimit.com"
 X_CLIENT_ID = "TTZId3dlRzFpeWVXWUtuNkZBX286MTpjaQ"
 # {"<numeric X user id>": "<figure id>"} — fill from research/x-accounts.json once the ids are verified
 FIGURE_ACCOUNTS = "{}"
+# ["<numeric X user id>", …] — may remove any comment and clear spam flags
+MODERATORS = "[]"
 DEV = "0"
 # Secrets (never in this file): `npx wrangler secret put X_CLIENT_SECRET` and `npx wrangler secret put SESSION_SECRET`
 

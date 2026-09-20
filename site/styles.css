@@ -340,3 +340,8 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 .cmh .badge { background: var(--yellow); color: #1B1E21; font-weight: 800; font-size: 11px; padding: 1px 6px; border-radius: 3px; letter-spacing: .03em; } .cmh .ans { border: 1px solid var(--green); color: var(--green); font-weight: 800; font-size: 11px; padding: 0 6px; border-radius: 3px; }
 .cmb { font-family: var(--font-read); font-size: 15px; line-height: 1.5; margin: 6px 0 8px; overflow-wrap: anywhere; }
 .cma { display: flex; gap: 6px; flex-wrap: wrap; } .cma button { background: none; border: 1px solid var(--line); border-radius: 5px; color: var(--ink-2); font: 700 12px var(--font-sign); letter-spacing: .04em; padding: 5px 9px; cursor: pointer; min-height: 30px; } .cma button:hover { border-color: var(--ink-2); } .cma button.on { border-color: var(--green); color: var(--green); }
+
+/* ---- v1.4: instant tooltips; avatar chips that fit three letters ---- */
+.tip { position: absolute; z-index: 90; pointer-events: none; background: #1B1E21; color: #FFFFFF; border: 1px solid #F5C518; border-radius: 5px; padding: 4px 8px; font: 700 12.5px var(--font-sign); letter-spacing: .02em; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+.av { width: auto; min-width: 24px; padding: 0 5px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--line-2, var(--line)); flex: none; }
+.figchips button .av { width: auto; min-width: 20px; padding: 0 4px; }
