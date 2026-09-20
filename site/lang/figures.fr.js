@@ -119,5 +119,17 @@ window.STL_FIGURES_FR = {
   "camp": "accélérationniste de la course à gagner ; anti-« doomers »",
   "bio": "Fondateur de Craft Ventures et coanimateur d’All-In. Conseiller spécial de Trump pour l’IA et la crypto (janv. 2025 à mars 2026), il a cosigné l’America’s AI Action Plan, défendu la vente de puces Nvidia H20 à la Chine et piloté le décret de décembre 2025 contre les lois des États sur l’IA. Il copréside maintenant le conseil consultatif PCAST. Il affirme que les « récits catastrophistes avaient tort », accuse Anthropic de « capture réglementaire » par la peur et défend les modèles à poids ouverts. En septembre 2026, il a dit aux grands labos : « allez-y », ralentissez de vous-mêmes, sans régime de permis ni exemption antitrust.",
   "oneLiner": "Les risques se gèrent ; une pause livrerait la frontière à la Chine. Que les labos ralentissent d’eux-mêmes : c’est la responsabilité civile, pas un permis, qui les tient."
+ },
+ "elon-musk": {
+  "role": "PDG de SpaceX, qui a absorbé son labo d’IA xAI en février 2026 (sa division IA, qui fait Grok, a été rebaptisée SpaceXAI en juillet 2026)\u00a0; PDG de Tesla\u00a0; cofondateur d’OpenAI (en date de sept. 2026)",
+  "camp": "lanceur d’alerte qui construit à pleine vitesse",
+  "bio": "Cofondateur d’OpenAI en 2015, il l’a quittée en 2018 et a perdu son procès contre elle en mai 2026. Il a signé la lettre de 2023 réclamant une pause «\u00a0pour que ce soit dit\u00a0», sans croire que quiconque s’arrêterait, a appuyé le projet de loi californien SB 1047, puis a fondé xAI, construit Colossus et intégré le tout à SpaceX. Il évalue le risque d’une mauvaise issue à 10-20\u00a0%, prévoit une IA plus intelligente que toute l’humanité réunie vers 2031 et doute que les humains restent aux commandes\u00a0; pourtant, il dit qu’il n’appuierait pas sur un bouton d’arrêt. En septembre 2026, il a répondu à l’appel d’Amodei à régler la cadence par «\u00a0Dario a raison\u00a0». Sa recette de sécurité\u00a0: une IA «\u00a0cherchant la vérité au maximum\u00a0» et des labos rivaux qui vérifient les modèles les uns des autres.",
+  "oneLiner": "L’IA est plus risquée que le nucléaire et rien ne l’arrêtera\u00a0: bâtissons-en une qui cherche la vérité, et que les labos rivaux se surveillent."
+ },
+ "mark-zuckerberg": {
+  "role": "Fondateur, président du conseil et PDG de Meta\u00a0; a créé Meta Superintelligence Labs en juin 2025 (en date de sept. 2026)",
+  "camp": "bâtisseur d’une superintelligence distribuée\u00a0; anti-catastrophisme",
+  "bio": "Il dirige Meta et ses Superintelligence Labs (modèles Muse). Il a publié Llama à poids ouverts et écrit que «\u00a0l’IA à code source ouvert est la voie à suivre\u00a0» (2024), puis que Meta devra être «\u00a0prudente quant à ce qu’elle choisit de publier en code ouvert\u00a0» (2025). En 2017, il jugeait les scénarios apocalyptiques «\u00a0plutôt irresponsables\u00a0». Son essai d’août 2026 soutient que la sécurité vient d’un équilibre des pouvoirs, pas de quelques labos\u00a0; il admet qu’une IA qui s’améliore elle-même poursuit «\u00a0ses propres buts\u00a0» et promet de consacrer l’essentiel du calcul à servir les gens. Quand son propre scientifique en chef a signé la lettre «\u00a0Pacing the Frontier\u00a0», il a répondu que chaque labo peut régler sa cadence sans coordination.",
+  "oneLiner": "La sécurité vient d’un équilibre des pouvoirs\u00a0: la superintelligence entre toutes les mains, chaque labo à sa cadence, sans ralentissement coordonné."
  }
 };

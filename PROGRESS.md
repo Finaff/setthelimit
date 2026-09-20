@@ -161,3 +161,10 @@
 - David Sacks added (research/figures-e.json + figures-e.md; road 12 / limit 89, conf 7/7/2, 13 sources). No longer AI czar since 26 March 2026
   (co-chair of PCAST); d1 downgraded to 'med' by the lead because its quote comes from a secondary write-up. 20 figures.
 - DEPLOYED v1.3 to setthelimit.com (site + API). Artifacts on claude.ai updated too.
+- v1.4 (20 Sept): instant tooltips (data-tip, no native <title> delay); avatar chips fit 3-letter labels; moderator role (MODERATORS var = numeric
+  X ids; remove any comment → "Removed by a moderator", see flag-hidden bodies, clear flags); `accounts` table records every signed-in X account
+  (id, handle, name) at sign-in and on /me, so moderators and figures can be named by numeric id. 52 worker checks pass. Privacy page updated.
+  The owner's account is @PainPockets: once it shows in `accounts`, put its id in MODERATORS (worker/wrangler.toml) and deploy the API.
+- Elon Musk (road 77 / limit 62, conf 4/8/4) and Mark Zuckerberg (road 25 / limit 83, conf 5/8/3) added: research/figures-f.json + figures-f.md.
+  Rule: heads of the big frontier labs are on the map. Caveat from the agent: quotes were read through a summarising fetcher or mirrors, not compared
+  with raw pages; a second audit should start with these two and with David Sacks. 22 figures. Deployed; artifacts updated.

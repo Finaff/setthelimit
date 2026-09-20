@@ -97,6 +97,22 @@
       "handle": "sapinker",
       "id": null,
       "active": true
+    },
+    "david-sacks": {
+      "handle": "DavidSacks",
+      "id": null,
+      "active": true
+    },
+    "elon-musk": {
+      "handle": "elonmusk",
+      "id": null,
+      "active": true
+    },
+    "mark-zuckerberg": {
+      "handle": null,
+      "id": null,
+      "active": false,
+      "note": "not active on X (uses Threads); manual path"
     }
   }
 }
