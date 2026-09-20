@@ -209,5 +209,6 @@ window.STL_STRINGS_FR = {
  "answered themselves": "a répondu en personne",
  "@{handle}’s result, made public by them": "Le résultat de @{handle}, rendu public par cette personne",
  "Save image": "Enregistrer l’image",
- "Limit {y} · road {x}": "Limite {y} · route {x}"
+ "Limit {y} · road {x}": "Limite {y} · route {x}",
+ "Everything is here: {link}.": "Tout est ici : {link}."
 };
