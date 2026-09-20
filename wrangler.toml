@@ -1,0 +1,20 @@
+# Set the Limit — the static site, served by Cloudflare Workers static assets (no code, just site/).
+# Deploy from this folder: `npx wrangler deploy`. The API is a separate worker in worker/.
+name = "setthelimit-site"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./site"
+not_found_handling = "single-page-application"
+
+# Zone routes rather than custom domains: the zone already holds proxied records for the root and www
+# (imported from the registrar), and a route on a proxied record serves every request from this worker.
+# To switch to custom domains later: delete those two DNS records in the dashboard, then use
+# `pattern = "setthelimit.com"` + `custom_domain = true`.
+[[routes]]
+pattern = "setthelimit.com/*"
+zone_name = "setthelimit.com"
+
+[[routes]]
+pattern = "www.setthelimit.com/*"
+zone_name = "setthelimit.com"

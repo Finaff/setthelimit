@@ -1,0 +1,259 @@
+{
+  "generatedAt": "2026-09-19",
+  "contentVersion": "v4-2026-09-19",
+  "propositionsVersion": "v4",
+  "itemCount": 16,
+  "method": "Predictions derived from each figure's own public statements (sources listed per figure; 'src' holds indices into that list). conf: high = said almost verbatim; med = clearly implied by stated views; low = inferred from general stance. value 0-100: for 'prob' items the probability the statement is true; for 'agree' items the degree of agreement.",
+  "figures": [
+    {
+      "id": "sam-harris",
+      "name": "Sam Harris",
+      "role": "Neuroscientist, philosopher and author; host of the Making Sense podcast (as of Sept 2026)",
+      "camp": "alarmed public intellectual who sees no brake to pull",
+      "bio": "Neuroscientist, philosopher and host of the Making Sense podcast. His 2016 TED talk on losing control of AI argued that superhuman AI is inevitable and that we fail to muster 'an appropriate emotional response'. Since then he has hosted Yudkowsky, Russell, Bostrom, Kokotajlo, Bengio and Tristan Harris, debated Marc Andreessen (2023) and signed the 2023 CAIS statement on extinction risk. He did not sign the 2023 pause letter or the 2025 superintelligence statement.",
+      "oneLiner": "Superhuman AI is coming and 'the slightest divergence' in goals could end us; wants rules and global coordination but sees no brake to pull.",
+      "sources": [
+        {
+          "title": "TED: Can we build AI without losing control over it? (transcript)",
+          "url": "https://www.ted.com/talks/sam_harris_can_we_build_ai_without_losing_control_over_it/transcript",
+          "date": "2016-06",
+          "note": "Superhuman AI inevitable ('no brake to pull'); ants analogy; '20,000 years of human-level intellectual work' a week; winner-take-all race; 'Manhattan Project' to avoid an arms race and align it."
+        },
+        {
+          "title": "Making Sense #469 — Escaping an Anti-Human Future (with Tristan Harris)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/469-escaping-an-anti-human-future",
+          "date": "2026-04-10",
+          "note": "Shares 'the very worried/doomer case… to some degree'; 'we just cannot lose to China'; 'What exactly did we win?'; 'a Chernobyl-scale event might be the best-case scenario'; no regulation forcing anyone."
+        },
+        {
+          "title": "Singju Post: speaker-labelled transcript of Making Sense #469",
+          "url": "https://singjupost.com/making-sense-469-w-tristan-harris-on-escaping-an-anti-human-future-transcript/",
+          "date": "2026-04",
+          "note": "Full transcript used to attribute lines to Sam rather than Tristan Harris ('more ways to build superintelligent AI that are unaligned than aligned'; alignment 'is where we ruin everything')."
+        },
+        {
+          "title": "Making Sense #324 — Debating the Future of AI (with Marc Andreessen)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/324-debating-the-future-of-ai",
+          "date": "2023-06-28",
+          "note": "'I want some form of regulation, and I'm not quite sure what that could look like'; 'even if we decided to stop, not everyone's going to stop'; insects analogy; cures 'give you much more time with the people you love'."
+        },
+        {
+          "title": "Big Think interview: Is AI aligned with our human interests?",
+          "url": "https://bigthink.com/series/the-big-think-interview/sam-harris-godlike-ai/",
+          "date": "2025-04-10",
+          "note": "'I've changed my thinking to some degree on how much we should lean into the arms race insofar as it's impossible to opt out of it'; real solution is a world 'politically sane enough' to 'get out of this arms race condition'."
+        },
+        {
+          "title": "MIRI transcript: Making Sense #116 — AI: Racing Toward the Brink (with Eliezer Yudkowsky)",
+          "url": "https://intelligence.org/2018/02/28/sam-harris-and-eliezer-yudkowsky/",
+          "date": "2018-02-28",
+          "note": "'We have a global society that has to have some agreement here, because who knows what China will be doing in 10 years'; self-improving systems whose behaviour 'isn't totally predictable by us'."
+        },
+        {
+          "title": "Making Sense #434 — Can We Survive AI? (with Eliezer Yudkowsky and Nate Soares)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/434-can-we-survive-ai",
+          "date": "2025-09-16",
+          "note": "Hosts the authors of 'If Anyone Builds It, Everyone Dies'; 'Eliezer, you were among the first people to make me concerned about AI'; asks how worried 'we all should be'. Does not endorse the book's halt himself."
+        },
+        {
+          "title": "Making Sense #379 — Regulating Artificial Intelligence (with Yoshua Bengio and Scott Wiener)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/379-regulating-artificial-intelligence",
+          "date": "2024-08-12",
+          "note": "Intro: SB 1047 'will be an important piece of legislation' if it passes; opponents hold 'strange assumptions' that there is 'no serious risk' and 'any concept of regulation' is premature. Asks whether it covers open source."
+        },
+        {
+          "title": "Making Sense #420 — Countdown to Superintelligence (with Daniel Kokotajlo)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/420-countdown-to-superintelligence",
+          "date": "2025-06-12",
+          "note": "Calls 'AI 2027' 'a very compelling read'; 'an arms race is precisely the situation wherein all the players are not holding safety as their top priority'."
+        },
+        {
+          "title": "CAIS: Statement on AI Risk (signatory list)",
+          "url": "https://safe.ai/work/statement-on-ai-risk",
+          "date": "2023-05-30",
+          "note": "Signed as 'Author, Neuroscientist, Making Sense / Waking Up' under Other Notable Figures (page 4 of the list): extinction from AI 'a global priority alongside… pandemics and nuclear war'."
+        },
+        {
+          "title": "FLI: Pause Giant AI Experiments (signatory list)",
+          "url": "https://futureoflife.org/open-letter/pause-giant-ai-experiments/",
+          "date": "2023-03-22",
+          "note": "Not a signatory: the only 'Sam Harris' on the full list is a glazing contractor and realtor, not the neuroscientist."
+        },
+        {
+          "title": "FLI: Statement on Superintelligence (signatory list)",
+          "url": "https://superintelligence-statement.org/",
+          "date": "2025-10-22",
+          "note": "Not among the 40,000 highest-ranked signatures by notability (checked via the site's allSignatures API, Sept 2026); Tristan Harris is listed, Sam Harris is not."
+        },
+        {
+          "title": "Making Sense #332 — Can We Contain Artificial Intelligence? (with Mustafa Suleyman)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/332-can-we-contain-artificial-intelligence",
+          "date": "2023-08-28",
+          "note": "Asks whether containment is 'even a dream at this point' given models already deployed and open-sourced; 'the digital genie is more or less out of the bottle'; had expected safety testing before release."
+        }
+      ],
+      "predictions": {
+        "d1": {
+          "value": 78,
+          "conf": "med",
+          "basis": "Gives no number, but shares 'the very worried/doomer case… to some degree' and notes that when principals say extinction is '10 or 20%', 'nobody's even pretending that it's way safer' (Apr 2026).",
+          "src": [
+            1,
+            2,
+            9
+          ]
+        },
+        "d3": {
+          "value": 65,
+          "conf": "med",
+          "basis": "TED: a machine 'a million times faster' does '20,000 years of human-level intellectual work' a week; 2026: 'if there really is just a binary step function into superintelligence… we could be in some situation like that'.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "d5": {
+          "value": 80,
+          "conf": "high",
+          "basis": "'There are more ways to build superintelligent AI that are unaligned than aligned… the idea that we're going to do it by chance seems far-fetched' (2026); 'the slightest divergence between their goals and our own' (TED).",
+          "src": [
+            2,
+            0,
+            3
+          ]
+        },
+        "d6": {
+          "value": 35,
+          "conf": "low",
+          "basis": "Names unemployment, wealth concentration and misinformation as near-term harms but calls alignment 'the scariest problem… where we ruin everything'. No stated view on whether catastrophe lands within ten years.",
+          "src": [
+            2,
+            1
+          ]
+        },
+        "d7": {
+          "value": 15,
+          "conf": "high",
+          "basis": "TED: 'How could we even understand, much less constrain, a mind making this sort of progress?'; 2026: something with 'more power than we have and we can't take the power back'; 2023: the genie is 'out of the bottle'.",
+          "src": [
+            0,
+            2,
+            12
+          ]
+        },
+        "d9": {
+          "value": 15,
+          "conf": "high",
+          "basis": "'We have no idea how long it will take us to create the conditions to do that safely' (TED); 'an arms race is precisely the situation wherein all the players are not holding safety as their top priority' (2025).",
+          "src": [
+            0,
+            8,
+            2
+          ]
+        },
+        "s1": {
+          "value": 25,
+          "conf": "med",
+          "basis": "Never called for a halt: 'The train is already out of the station, and there's no brake to pull' (TED); 'even if we decided to stop, not everyone's going to stop' (2023). Signed neither pause letter nor 2025 statement.",
+          "src": [
+            0,
+            3,
+            10,
+            11,
+            6
+          ]
+        },
+        "s4": {
+          "value": 70,
+          "conf": "med",
+          "basis": "Wants 'a global society that has to have some agreement here' (2018) and a world 'politically sane enough… to get out of this arms race condition' (2025); China and America 'at the table'. Never mentions inspections.",
+          "src": [
+            5,
+            4,
+            1
+          ]
+        },
+        "s5": {
+          "value": 60,
+          "conf": "med",
+          "basis": "'We just cannot lose to China above all here… We can't be behind' and 'I've changed my thinking… on how much we should lean into the arms race' (2025-26), yet on social media, the race we won: 'What exactly did we win?'",
+          "src": [
+            2,
+            4,
+            1
+          ]
+        },
+        "s6": {
+          "value": 72,
+          "conf": "med",
+          "basis": "'I want some form of regulation, and I'm not quite sure what that could look like' (2023); hosted SB 1047's authors, calling it 'an important piece of legislation'; expected safety testing before release.",
+          "src": [
+            3,
+            7,
+            12,
+            1
+          ]
+        },
+        "s8": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Wants the race to become 'slow and careful'; 'a Chernobyl-scale event might be the best-case scenario' if it forces coordination (2026); 'no idea how long it will take… to do that safely' (TED). No years trade-off given.",
+          "src": [
+            2,
+            1,
+            0
+          ]
+        },
+        "s10": {
+          "value": 22,
+          "conf": "med",
+          "basis": "Values cures ('much more time with the people you love', 2023) but says alignment 'is where we ruin everything' and shares the doomer case (2026). Upside does not settle the question for him.",
+          "src": [
+            3,
+            2,
+            1
+          ]
+        },
+        "s11": {
+          "value": 15,
+          "conf": "low",
+          "basis": "No stated position on open weights. Regrets models are 'already deployed and open-sourced' ('is containment even a dream at this point?', 2023) and that anything useful 'is out in the wild' (2025).",
+          "src": [
+            12,
+            6,
+            7
+          ]
+        },
+        "s13": {
+          "value": 10,
+          "conf": "med",
+          "basis": "'How do we become slow and careful under those conditions?' (2026) is his complaint, not his wish; wants regulation and calls the race dynamic 'insanity'. Never said 'slow down' in so many words.",
+          "src": [
+            2,
+            3,
+            1
+          ]
+        },
+        "p2": {
+          "value": 80,
+          "conf": "med",
+          "basis": "Treats 'mass unemployment' and human labour becoming 'vanishingly irrelevant' as foreseeable effects of aligned AI (2026); finds 'AI 2027' 'a very compelling read' (2025). No date of his own.",
+          "src": [
+            2,
+            8,
+            1
+          ]
+        },
+        "p4": {
+          "value": 30,
+          "conf": "high",
+          "basis": "'The alignment problem is arguably the scariest problem. It's the worst. This is where we ruin everything' (2026); wealth concentration and 'authoritarian/totalitarian' capture are real but second-order worries.",
+          "src": [
+            2,
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

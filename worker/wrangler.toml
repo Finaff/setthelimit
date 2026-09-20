@@ -1,0 +1,22 @@
+# Set the Limit — API worker. Deploy: `npx wrangler deploy` from this folder (see README.md).
+name = "setthelimit-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "setthelimit"
+database_id = "a265b293-e15c-4c65-b5d5-3b324504ea3d"
+
+[vars]
+SITE_ORIGIN = "https://setthelimit.com"
+API_ORIGIN = "https://api.setthelimit.com"
+X_CLIENT_ID = "TTZId3dlRzFpeWVXWUtuNkZBX286MTpjaQ"
+# {"<numeric X user id>": "<figure id>"} — fill from research/x-accounts.json once the ids are verified
+FIGURE_ACCOUNTS = "{}"
+DEV = "0"
+# Secrets (never in this file): `npx wrangler secret put X_CLIENT_SECRET` and `npx wrangler secret put SESSION_SECRET`
+
+[[routes]]
+pattern = "api.setthelimit.com"
+custom_domain = true

@@ -1,0 +1,315 @@
+{
+  "audit": "audit-v1",
+  "date": "2026-09-17",
+  "notes": "Entries with kind 'value' change the number (and possibly conf); kind 'conf' changes only the confidence; kind 'basis' keeps value and conf but replaces a basis that misquotes, misattributes or cites the wrong source (from == to). Every url was opened on 2026-09-17 except x.com links, which return HTTP 402 to automated fetches and were read through the search index (noted in audit-v1.md).",
+  "changes": [
+    {
+      "figure": "altman",
+      "item": "s8",
+      "from": 55,
+      "to": 65,
+      "conf": "med",
+      "kind": "value",
+      "basis": "X post, 14 Sep 2026: progress 'should be slower than it otherwise could be… Pacing will be well worth this cost'. Pacing, not a multi-year delay.",
+      "url": "https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14"
+    },
+    {
+      "figure": "altman",
+      "item": "s13",
+      "from": 15,
+      "to": 10,
+      "conf": "high",
+      "kind": "value",
+      "basis": "X, 14 Sep 2026: 'When we talk about pacing, we do not mean stopping', but progress 'should be slower than it otherwise could be'. Also: 'we need to pace the frontier'.",
+      "url": "https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14"
+    },
+    {
+      "figure": "altman",
+      "item": "s5",
+      "from": 75,
+      "to": 70,
+      "conf": "med",
+      "kind": "value",
+      "basis": "2025 Senate: the US lead over China is 'not a huge amount of time'. But Sept 2026: 'no amount of American competitive pressure should justify recklessness'. No verbatim 'keep pushing'.",
+      "url": "https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14"
+    },
+    {
+      "figure": "demis-hassabis",
+      "item": "s8",
+      "from": 50,
+      "to": 72,
+      "conf": "med",
+      "kind": "value",
+      "basis": "Davos, Jan 2026: 'good to have a slightly slower pace… so that we can get this right societally'. On Amodei's slow-down essay (X, 12 Sep 2026): 'the direction is correct'.",
+      "url": "https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei"
+    },
+    {
+      "figure": "demis-hassabis",
+      "item": "s13",
+      "from": 20,
+      "to": 10,
+      "conf": "high",
+      "kind": "value",
+      "basis": "On 'We must slow the pace' (X, 12 Sep 2026): 'points towards the right path forward… the direction is correct'. July 2026: safe only 'if we give ourselves the time and space'.",
+      "url": "https://www.latestly.com/technology/demis-hassabis-backs-dario-amodeis-call-to-slow-down-frontier-ai-race-warns-of-escalating-risks-7603427.html"
+    },
+    {
+      "figure": "demis-hassabis",
+      "item": "s1",
+      "from": 5,
+      "to": 15,
+      "conf": "med",
+      "kind": "value",
+      "basis": "Asked at Davos 2026 whether he would back a pause if every company and country joined: 'I think so', given 'international collaboration'. Still building AGI; no decades-long halt.",
+      "url": "https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei"
+    },
+    {
+      "figure": "dario-amodei",
+      "item": "s1",
+      "from": 8,
+      "to": 15,
+      "conf": "med",
+      "kind": "value",
+      "basis": "Jan 2026: stopping is 'fundamentally untenable'. Sept 2026: 'Pacing does not mean halting' — yet on an intergovernmental 'pause': 'I support floating this', though 'unlikely'.",
+      "url": "https://darioamodei.com/post/we-must-pace-the-frontier"
+    },
+    {
+      "figure": "leopold-aschenbrenner",
+      "item": "s13",
+      "from": 65,
+      "to": 55,
+      "conf": "med",
+      "kind": "value",
+      "basis": "Against any pause, but superalignment 'very well may require us to slow down at some critical moments'; a healthy lead lets the US 'cash in' part of it 'to get safety right'.",
+      "url": "https://situational-awareness.ai/the-free-world-must-prevail/"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s5",
+      "from": 25,
+      "to": 30,
+      "conf": "low",
+      "kind": "value",
+      "basis": "Plan A (co-author) is a bilateral US–China 'brake pedal'. The go-it-alone pacing argument comes from an AI Futures post he did not write (thanked for feedback only).",
+      "url": "https://blog.aifutures.org/p/how-to-pace-the-us-frontier"
+    },
+    {
+      "figure": "lecun",
+      "item": "d1",
+      "from": 2,
+      "to": 5,
+      "conf": "high",
+      "kind": "value",
+      "basis": "Takeover is 'preposterous' (TIME 2024); p(doom) numbers are 'pulled out of thin air' — but 'I didn't say p(doom) was zero' (X, 21 Apr 2026). Do not quote him as saying 'zero'.",
+      "url": "https://x.com/ylecun/status/2046577402264870958"
+    },
+    {
+      "figure": "lecun",
+      "item": "s8",
+      "from": 5,
+      "to": 8,
+      "conf": "med",
+      "kind": "value",
+      "basis": "No statement on the trade-off itself. Stance implied: takeover 'preposterous', and on Amodei's call to slow down: 'Everyone should make fun of them now' (Sept 2026).",
+      "url": "https://techstartups.com/2026/09/14/china-michael-burry-and-yann-lecun-reject-openai-and-anthropic-calls-to-slow-ai-development-lecun-calls-warnings-fake/"
+    },
+    {
+      "figure": "verdon",
+      "item": "d8",
+      "from": 95,
+      "to": 90,
+      "conf": "med",
+      "kind": "value",
+      "basis": "'The options are to grow or die'; 'I'm not trying to actually replace humans', yet e/acc is 'not just centred on humanity'. Optimism is about growth; 'maximal growth' is not in the source.",
+      "url": "https://www.abc.net.au/news/2024-02-18/ai-insiders-eacc-movement-speeding-up-tech/103464258"
+    },
+    {
+      "figure": "emily-bender",
+      "item": "s5",
+      "from": 5,
+      "to": 8,
+      "conf": "med",
+      "kind": "value",
+      "basis": "The cited quote is about hype selling products, not about states. Closest: the race is 'not a preordained path where our only choice is how fast to run' (DAIR statement, 2023).",
+      "url": "https://www.dair-institute.org/blog/letter-statement-March2023/"
+    },
+    {
+      "figure": "emily-bender",
+      "item": "s10",
+      "from": 3,
+      "to": 3,
+      "conf": "med",
+      "kind": "conf",
+      "basis": "No statement of hers on the lives-saved trade-off in the sources opened; inferred from 'distracts from the real harms that are happening now' and the book's anti-hype thesis.",
+      "url": "https://www.sfexaminer.com/news/technology/ai-skeptics-warn-existential-risk-talk-a-distraction/article_44fe8eca-bdb9-4d19-bfa2-c01cd93287c1.html"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s9",
+      "from": 95,
+      "to": 95,
+      "conf": "med",
+      "kind": "conf",
+      "basis": "Inferred from a ~70% default-path catastrophe estimate known here only via a third-party summary; no statement of his on a 1% threshold 'whatever the benefits'.",
+      "url": "https://www.shortform.com/podcast/episode/the-diary-of-a-ceo-with-steven-bartlett-2026-07-13-episode-summary-openai-whistleblower-finally-speaks-ai-has-a-70-chance-of-going-horribly-wrong"
+    },
+    {
+      "figure": "hinton",
+      "item": "d9",
+      "from": 8,
+      "to": 8,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "On keeping humans 'dominant' over 'submissive' AI: 'That's not going to work. They're going to be much smarter than us' (Ai4 conference, Aug 2025).",
+      "url": "https://www.cnn.com/2025/08/13/tech/ai-geoffrey-hinton"
+    },
+    {
+      "figure": "hinton",
+      "item": "s8",
+      "from": 90,
+      "to": 90,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "Amodei's call to slow down is 'very sensible'; until control is solved 'it would be foolish to develop' superintelligent AI (ABC, 14 Sep 2026).",
+      "url": "https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010"
+    },
+    {
+      "figure": "bengio",
+      "item": "s3",
+      "from": 82,
+      "to": 82,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "Co-author, 'Managing extreme AI risks' (Science, 2024): 'Governments must be prepared to license their development'. The cited Senate blog post never says 'licence'.",
+      "url": "https://arxiv.org/abs/2310.17688"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s2",
+      "from": 2,
+      "to": 2,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "'Shut it all down… no exceptions'; even a careful lab's restraint only means a careless one 'destroy[s] the world two years later' (AGI Ruin). Semafor's 'should shut down' is a paraphrase.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "verdon",
+      "item": "s8",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "'I don't think stagnation or slowing down is actually an option' (Lex Fridman #407); e/acc: 'You cannot stop the acceleration.'",
+      "url": "https://lexfridman.com/guillaume-verdon-transcript"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s8",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "Plan A (co-author): the US and China 'delay the creation of superintelligence to 2040'; without the deal it arrives in 2030. A decade's delay, as a recommendation.",
+      "url": "https://blog.aifutures.org/p/ai-2040-plan-a"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s6",
+      "from": 90,
+      "to": 90,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "Plan A Phase 1: 'temporarily pause training', then 'resume R&D under safety-case regulation' — builders must make the safety case. (The 'risk threshold' quote is his colleagues'.)",
+      "url": "https://ai-2040.com/about"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s3",
+      "from": 70,
+      "to": 70,
+      "conf": "med",
+      "kind": "basis",
+      "basis": "Plan A: 'Track where all the compute is'; R&D resumes only 'under safety-case regulation'. The detailed pacing menu is an AI Futures post he did not author.",
+      "url": "https://ai-2040.com/about"
+    },
+    {
+      "figure": "leopold-aschenbrenner",
+      "item": "p5",
+      "from": 15,
+      "to": 15,
+      "conf": "high",
+      "kind": "basis",
+      "basis": "'Any arms control equilibrium… seems extremely unstable. In short, \"breakout\" is too easy'; an international treaty on safety 'seems fanciful to me'.",
+      "url": "https://situational-awareness.ai/the-free-world-must-prevail/"
+    }
+  ],
+  "deadSources": [
+    {
+      "figure": "dario-amodei",
+      "index": 1,
+      "url": "https://darioamodei.com/post/policy-on-the-ai-exponential",
+      "problem": "Resolves, but the note 'Rejects pausing' is wrong: the essay never mentions pause, halt, moratorium or slowing AI development (full-text search). The rejection ('the idea of stopping or even substantially slowing the technology is fundamentally untenable') is in source 2, The Adolescence of Technology (Jan 2026). s1's basis 'Explicitly rejects pausing (June 2026)' inherits the error."
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "index": 4,
+      "url": "https://blog.aifutures.org/p/how-to-pace-the-us-frontier",
+      "problem": "Resolves, but Kokotajlo is not an author (byline: Lifland, Halstead, Dean, Larsen + 1; 'We thank … Daniel Kokotajlo … for helpful feedback'). It is quoted as his own position in s3, s5, s6, s8 and s13. Rebase those on AI 2040 Plan A (sources 1–2), which he co-authored."
+    },
+    {
+      "figure": "hinton",
+      "index": 6,
+      "url": "https://techxplore.com/news/2026-04-ai-alarm.html",
+      "problem": "Resolves (403 to bots, opens via fetch). 'They want a very fast car with no steering wheel' is about people who oppose regulation, not about alignment methods. Fine for s7; wrong as basis for d9 (and a stretch for d2)."
+    },
+    {
+      "figure": "yudkowsky",
+      "index": 3,
+      "url": "https://www.semafor.com/article/09/12/2025/researchers-give-doomsday-warning-about-building-ai-too-fast",
+      "problem": "Resolves, but 'should shut down' (Safe Superintelligence) and 'closer to alchemy than science' are the reporter's paraphrases ('according to Yudkowsky and Soares', 'the authors argue'), not direct quotes. d2 and s2 print them inside quotation marks as his words."
+    },
+    {
+      "figure": "lecun",
+      "index": 8,
+      "url": "https://x.com/ylecun/status/2043673634363851250",
+      "problem": "x.com returns HTTP 402 to automated fetches; text confirmed via search index only. The post says most 'leading AI figures' think the risk is 'essentially zero'; eight days later he posted 'I didn't say p(doom) was zero' (https://x.com/ylecun/status/2046577402264870958). d1's basis presents 'essentially zero' as his own number."
+    },
+    {
+      "figure": "bengio",
+      "index": 0,
+      "url": "https://yoshuabengio.org/2023/07/25/my-testimony-in-front-of-the-us-senate/",
+      "problem": "Resolves, but the note 'Recommends licences' is not on the page (no occurrence of 'licen-'); it says 'restricting or prohibiting the development and deployment of AI systems with unacceptable levels of risk'. For licensing cite arXiv 2310.17688 ('Governments must be prepared to license their development')."
+    },
+    {
+      "figure": "demis-hassabis",
+      "index": 2,
+      "url": "https://www.malaymail.com/news/money/2026/02/22/googles-ai-boss-calls-for-urgent-research-into-threats-posed-by-artificial-intelligence/210011",
+      "problem": "Resolves, but 'one participant among many' and 'regulators are struggling to match the speed of AI progress' are AFP's paraphrases, not quotes; and AFP says he answered that his company 'could contribute' to slowing — the opposite of how s1 uses it. The phrase 'before the first major incident' (d7 basis) is in none of sources 0, 1 or 2."
+    },
+    {
+      "figure": "verdon",
+      "index": 0,
+      "url": "https://beff.substack.com/p/notes-on-eacc-principles-and-tenets",
+      "problem": "Resolves; the phrase 'maximal growth' quoted in d8's basis does not appear in it."
+    },
+    {
+      "figure": "hinton",
+      "index": 4,
+      "url": "https://time.com/7327409/ai-agi-superintelligent-open-letter/",
+      "problem": "Resolves (406 to bots, opens via fetch). The article does not name Hinton or Bengio, only 'two Godfathers of AI'; the names in the note are an inference. Same URL is bengio source 4. The signatory list on superintelligence-statement.org is loaded by script and could not be read statically; cite FLI's press release, which names them."
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "index": 5,
+      "url": "https://www.shortform.com/podcast/episode/the-diary-of-a-ceo-with-steven-bartlett-2026-07-13-episode-summary-openai-whistleblower-finally-speaks-ai-has-a-70-chance-of-going-horribly-wrong",
+      "problem": "Resolves, but it is a third-party machine-style summary, and it is the only support for the 70% figure behind three 'high' predictions (d1, s9, s10). Replace with the episode itself or a transcript before publishing the number."
+    },
+    {
+      "figure": "yudkowsky",
+      "index": 7,
+      "url": "https://x.com/ESYudkowsky/status/2037017908640178304",
+      "problem": "x.com returns HTTP 402 to automated fetches; could not be opened. The first team's own note says the context of the post is unclear. Do not use as sole support (s4, s5 also rest on TIME, which is sufficient)."
+    }
+  ]
+}

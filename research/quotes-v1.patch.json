@@ -1,0 +1,348 @@
+{
+  "audit": "quotes-v1",
+  "changes": [
+    {
+      "figure": "yudkowsky",
+      "item": "s6",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "basis": "TIME, 2023: held to the 'standards of engineering rigor that apply to a bridge', 'the entire field would be shut down tomorrow'. 'We are not prepared.' He wants a halt, which goes beyond a safety case.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s7",
+      "from": 2,
+      "to": 2,
+      "conf": "high",
+      "basis": "TIME, 2023: the moratorium 'needs to be indefinite and worldwide'; 'Make immediate multinational agreements to prevent the prohibited activities from moving elsewhere.' Far beyond existing law.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s8",
+      "from": 99,
+      "to": 99,
+      "conf": "high",
+      "basis": "TIME, 2023: solving safety 'could very reasonably take at least half that long' (half of 60 years), and still: 'Shut it all down.' He accepts any delay.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s9",
+      "from": 99,
+      "to": 99,
+      "conf": "high",
+      "basis": "TIME, 2023: 'preventing AI extinction scenarios is considered a priority above preventing a full nuclear exchange'. No lab-scale gamble is acceptable to him.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s13",
+      "from": 1,
+      "to": 1,
+      "conf": "high",
+      "basis": "TIME, 2023: 'Shut down all the large training runs.' And: 'Shut it all down. We are not ready.'",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s2",
+      "from": 2,
+      "to": 2,
+      "conf": "high",
+      "basis": "TIME, 2023: 'anyone talking of arms races is a fool'. AGI Ruin, 2022: a careful lab that holds back only lets another 'destroy the world two years later'.",
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "d2",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "basis": "AGI Ruin, 2022: 'We've got no idea what's actually going on inside the giant inscrutable matrices and tensors of floating-point numbers' (§25). Interpretability cannot yet tell whether a system is planning to kill us.",
+      "url": "https://intelligence.org/2022/06/10/agi-ruin/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "d3",
+      "from": 90,
+      "to": 90,
+      "conf": "high",
+      "basis": "AGI Ruin, 2022: 'Fast capability gains seem likely, and may break lots of previous alignment-required invariants simultaneously.' A premise he has held since the 2008 AI-Foom debate.",
+      "url": "https://intelligence.org/2022/06/10/agi-ruin/"
+    },
+    {
+      "figure": "yudkowsky",
+      "item": "s11",
+      "from": 3,
+      "to": 3,
+      "conf": "med",
+      "basis": "AGI Ruin, 2022: stopping one lab still leaves 'some eager open-source collaborative from destroying the world a year later'. No direct statement on open weights was opened, hence medium.",
+      "url": "https://intelligence.org/2022/06/10/agi-ruin/"
+    },
+    {
+      "figure": "andreessen",
+      "item": "s8",
+      "from": 3,
+      "to": 3,
+      "conf": "high",
+      "basis": "Techno-Optimist Manifesto, 2023: 'any deceleration of AI will cost lives. Deaths that were preventable by the AI that was prevented from existing is a form of murder.'",
+      "url": "https://a16z.com/the-techno-optimist-manifesto/"
+    },
+    {
+      "figure": "andreessen",
+      "item": "s11",
+      "from": 95,
+      "to": 95,
+      "conf": "high",
+      "basis": "Why AI Will Save the World, 2023: 'Open source AI should be allowed to freely proliferate'; 'There should be no regulatory barriers to open source whatsoever.'",
+      "url": "https://a16z.com/ai-will-save-the-world/"
+    },
+    {
+      "figure": "verdon",
+      "item": "s6",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Lex Fridman #407, 2023: 'the market is much more efficient at achieving this sort of reliability optimum than sort of heavy-handed regulations that are written by the incumbents'.",
+      "url": "https://lexfridman.com/guillaume-verdon-transcript"
+    },
+    {
+      "figure": "verdon",
+      "item": "s8",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Lex Fridman #407, 2023: 'I don't think stagnation or slowing down is actually an option.' e/acc notes, 2022: 'You cannot stop the acceleration'.",
+      "url": "https://lexfridman.com/guillaume-verdon-transcript"
+    },
+    {
+      "figure": "lecun",
+      "item": "s11",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "basis": "TIME, 2024: 'the future has to be open source, if nothing else, for reasons of cultural diversity, democracy, diversity'.",
+      "url": "https://time.com/6694432/yann-lecun-meta-ai-interview/"
+    },
+    {
+      "figure": "lecun",
+      "item": "d1",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "TIME, 2024: that an intelligent system 'wants to take control' is 'just completely false'. X, 21 Apr 2026: 'I didn't say p(doom) was zero'; 'All estimates are pulled out of thin air'.",
+      "url": "https://time.com/6694432/yann-lecun-meta-ai-interview/"
+    },
+    {
+      "figure": "hinton",
+      "item": "s13",
+      "from": 3,
+      "to": 3,
+      "conf": "high",
+      "basis": "ABC, 14 Sep 2026: Amodei's call to slow AI development is 'very sensible'. Not a full stop, though: 'I don't think we should stop developing it altogether.'",
+      "url": "https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010"
+    },
+    {
+      "figure": "hinton",
+      "item": "s11",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Ai4, Aug 2026: open weights make it 'so easy for people to take these big foundation models' and 'train them to do bad things like cyber attacks'. He adds: 'that battle's been lost'.",
+      "url": "https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/"
+    },
+    {
+      "figure": "hinton",
+      "item": "s6",
+      "from": 90,
+      "to": 90,
+      "conf": "high",
+      "basis": "Co-authored paper, 2024: 'developers of frontier AI should carry the burden of proof to demonstrate that their plans keep risks within acceptable limits'. ABC, 2026, reports he wants pre-release testing.",
+      "url": "https://arxiv.org/html/2310.17688v3"
+    },
+    {
+      "figure": "bengio",
+      "item": "s9",
+      "from": 95,
+      "to": 95,
+      "conf": "high",
+      "basis": "80,000 Hours, Apr 2026: 'even a 1% chance of something going really, really bad is not acceptable to me'.",
+      "url": "https://80000hours.org/podcast/episodes/yoshua-bengio-scientist-ai/"
+    },
+    {
+      "figure": "bengio",
+      "item": "s13",
+      "from": 2,
+      "to": 2,
+      "conf": "high",
+      "basis": "Blog, 11 Sep 2026: 'This suggests pacing the advances: not training or deploying AIs without a strong safety case' that convinces independent experts.",
+      "url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating"
+    },
+    {
+      "figure": "dario-amodei",
+      "item": "s7",
+      "from": 8,
+      "to": 8,
+      "conf": "high",
+      "basis": "June 2026: 'It is time to go beyond transparency to more serious and binding regulation of AI'; government 'should have the power to block or deter deployment' of risky models.",
+      "url": "https://darioamodei.com/post/policy-on-the-ai-exponential"
+    },
+    {
+      "figure": "stuart-russell",
+      "item": "s7",
+      "from": 3,
+      "to": 3,
+      "conf": "high",
+      "basis": "Senate, 2023: 'third-party testing, a new national agency, and an international coordinating body, all of which I support'; 'systems that break the rules must be removed from the market'.",
+      "url": "https://humancompatible.ai/blog/2023/09/11/ai-regulation-stuart-russells-opening-statement-at-u-s-senate-hearing/"
+    },
+    {
+      "figure": "stuart-russell",
+      "item": "s9",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "basis": "Diary of a CEO, Dec 2025: 'prove to us that the risk is less than one in 100 million per year of extinction or loss of control'. A 1% risk is a million times over that bar.",
+      "url": "https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/"
+    },
+    {
+      "figure": "gary-marcus",
+      "item": "s5",
+      "from": 15,
+      "to": 15,
+      "conf": "high",
+      "basis": "Substack, 13 Sep 2026, on Trump's claim that whoever wins AI wins: 'I continue to oppose this zero-sum thinking'.",
+      "url": "https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario"
+    },
+    {
+      "figure": "gary-marcus",
+      "item": "s10",
+      "from": 8,
+      "to": 8,
+      "conf": "high",
+      "basis": "Substack, 13 Sep 2026: AI is 'not going to cure cancer either, at least not anytime soon or on its own'. He files 'hyperbolic cheer' under hype, so delay costs little.",
+      "url": "https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario"
+    },
+    {
+      "figure": "max-tegmark",
+      "item": "d6",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Doom Debates, Nov 2025: with 'nothing like the FDA for AI', 'it's definitely over 90% that we lose control'. Loss of control, not fraud or job loss, is the harm he expects.",
+      "url": "https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence"
+    },
+    {
+      "figure": "max-tegmark",
+      "item": "s9",
+      "from": 98,
+      "to": 98,
+      "conf": "high",
+      "basis": "Guardian, May 2025: firms 'need to also calculate the Compton constant, the probability that we will lose control over it'. Compton's bar for the Trinity test was about one in three million.",
+      "url": "https://www.inkl.com/news/ai-firms-warned-to-calculate-threat-of-super-intelligence-or-risk-it-escaping-human-control"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "d3",
+      "from": 92,
+      "to": 92,
+      "conf": "high",
+      "basis": "Aug 2026 update, his own section: 'things are roughly on track for AI 2027, just going a bit slower'; 'I increase the speed of post-AC takeoff'. His ASI median there: March 2029.",
+      "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s10",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Plan A (co-author), July 2026: 'they delay the creation of superintelligence to 2040'; 'It's what we think should happen, not what will happen'. The benefits are deferred on purpose.",
+      "url": "https://blog.aifutures.org/p/ai-2040-plan-a"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "d6",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "AI 2027 (lead author), 2025: 'the impact of superhuman AI over the next decade will be enormous, exceeding that of the Industrial Revolution'. His worry is takeover, not scams.",
+      "url": "https://ai-2027.com/"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s7",
+      "from": 2,
+      "to": 2,
+      "conf": "high",
+      "basis": "Right to Warn letter (signatory), 2024: 'many of the risks we are concerned about are not yet regulated'. Also signed the 2025 Global Call for AI Red Lines; Plan A needs new treaties.",
+      "url": "https://righttowarn.ai/"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s3",
+      "from": 70,
+      "to": 70,
+      "conf": "med",
+      "basis": "Plan A summary (co-author), 2026: 'Track down the world's AI-relevant compute'; 'Resume R&D under safety-case-based regulation'. A regime rather than a licence in name, hence medium.",
+      "url": "https://ai-2040.com/summary"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s5",
+      "from": 30,
+      "to": 30,
+      "conf": "low",
+      "basis": "Plan A (co-author), 2026, is a joint deal: 'an international coalition to delay the development of superintelligence'. The go-it-alone pacing case is his colleagues' post, not his.",
+      "url": "https://ai-2040.com/summary"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s6",
+      "from": 90,
+      "to": 90,
+      "conf": "high",
+      "basis": "Plan A summary (co-author), 2026: 'Companies must argue that capability improvements involve very low risk before proceeding.'",
+      "url": "https://ai-2040.com/summary"
+    },
+    {
+      "figure": "daniel-kokotajlo",
+      "item": "s8",
+      "from": 97,
+      "to": 97,
+      "conf": "high",
+      "basis": "Plan A (co-author), July 2026: 'they delay the creation of superintelligence to 2040. It would have happened much sooner (in 2030, to be precise)'. A decade's delay, as a recommendation.",
+      "url": "https://blog.aifutures.org/p/ai-2040-plan-a"
+    },
+    {
+      "figure": "leopold-aschenbrenner",
+      "item": "d6",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "Situational Awareness, 2024: 'I'm most worried about things just being totally crazy around superintelligence, including things like novel WMDs, destructive wars, and unknown unknowns.'",
+      "url": "https://situational-awareness.ai/superalignment/"
+    },
+    {
+      "figure": "demis-hassabis",
+      "item": "d7",
+      "from": 30,
+      "to": 30,
+      "conf": "med",
+      "basis": "Essay, July 2026: 'advances on the frontier are outpacing our understanding of the technology'; we need 'time and space' and 'we aren't doing that'. Proposes a new standards body.",
+      "url": "https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age"
+    },
+    {
+      "figure": "emily-bender",
+      "item": "p2",
+      "from": 5,
+      "to": 5,
+      "conf": "high",
+      "basis": "TechPolicy.Press, 2025: the work 'hidden behind the facade of artificial intelligence' is sold as automated 'when it's always people'. Co-author Hanna: AI 'will make your job shittier'.",
+      "url": "https://www.techpolicy.press/taking-on-the-ai-con/"
+    }
+  ],
+  "deadSources": []
+}

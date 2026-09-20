@@ -1,0 +1,102 @@
+{
+  "note": "X handles believed to belong to each figure, as of 19 Sept 2026. The Worker matches on the NUMERIC user id, never the handle: verify each id with the X API (GET /2/users/by/username/:handle) before putting it in FIGURE_ACCOUNTS. 'active' is a guess; figures who are not on X (or rarely) go through the manual email path.",
+  "accounts": {
+    "yudkowsky": {
+      "handle": "ESYudkowsky",
+      "id": null,
+      "active": true
+    },
+    "andreessen": {
+      "handle": "pmarca",
+      "id": null,
+      "active": true
+    },
+    "verdon": {
+      "handle": "BasedBeffJezos",
+      "id": null,
+      "active": true
+    },
+    "lecun": {
+      "handle": "ylecun",
+      "id": null,
+      "active": true
+    },
+    "hinton": {
+      "handle": "geoffreyhinton",
+      "id": null,
+      "active": false
+    },
+    "bengio": {
+      "handle": "Yoshua_Bengio",
+      "id": null,
+      "active": true
+    },
+    "altman": {
+      "handle": "sama",
+      "id": null,
+      "active": true
+    },
+    "dario-amodei": {
+      "handle": "DarioAmodei",
+      "id": null,
+      "active": false,
+      "note": "rarely posts; manual path likely"
+    },
+    "demis-hassabis": {
+      "handle": "demishassabis",
+      "id": null,
+      "active": true
+    },
+    "stuart-russell": {
+      "handle": null,
+      "id": null,
+      "active": false,
+      "note": "no known X account; manual path"
+    },
+    "emily-bender": {
+      "handle": "emilymbender",
+      "id": null,
+      "active": true
+    },
+    "gary-marcus": {
+      "handle": "GaryMarcus",
+      "id": null,
+      "active": true
+    },
+    "vitalik-buterin": {
+      "handle": "VitalikButerin",
+      "id": null,
+      "active": true
+    },
+    "max-tegmark": {
+      "handle": "tegmark",
+      "id": null,
+      "active": true
+    },
+    "daniel-kokotajlo": {
+      "handle": "DKokotajlo",
+      "id": null,
+      "active": true
+    },
+    "leopold-aschenbrenner": {
+      "handle": "leopoldasch",
+      "id": null,
+      "active": true
+    },
+    "sam-harris": {
+      "handle": "SamHarrisOrg",
+      "id": null,
+      "active": true
+    },
+    "scott-alexander": {
+      "handle": "slatestarcodex",
+      "id": null,
+      "active": true
+    },
+    "steven-pinker": {
+      "handle": "sapinker",
+      "id": null,
+      "active": true
+    }
+  }
+}

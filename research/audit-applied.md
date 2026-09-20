@@ -1,0 +1,191 @@
+# Audit applied 2026-09-17
+
+- APPLY altman/s8: 55 → 65 (med → med) https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14
+- APPLY altman/s13: 15 → 10 (med → high) https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14
+- APPLY altman/s5: 75 → 70 (high → med) https://www.businesstoday.in/technology/story/no-amount-of-us-pressure-should-justify-recklessness-sam-altman-backs-slow-frontier-ai-pace-555358-2026-09-14
+- APPLY demis-hassabis/s8: 50 → 72 (med → med) https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei
+- APPLY demis-hassabis/s13: 20 → 10 (med → high) https://www.latestly.com/technology/demis-hassabis-backs-dario-amodeis-call-to-slow-down-frontier-ai-race-warns-of-escalating-risks-7603427.html
+- APPLY demis-hassabis/s1: 5 → 15 (high → med) https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei
+- APPLY dario-amodei/s1: 8 → 15 (high → med) https://darioamodei.com/post/we-must-pace-the-frontier
+- APPLY leopold-aschenbrenner/s13: 65 → 55 (med → med) https://situational-awareness.ai/the-free-world-must-prevail/
+- APPLY daniel-kokotajlo/s5: 25 → 30 (med → low) https://blog.aifutures.org/p/how-to-pace-the-us-frontier
+- APPLY lecun/d1: 2 → 5 (high → high) https://x.com/ylecun/status/2046577402264870958
+- APPLY lecun/s8: 5 → 8 (high → med) https://techstartups.com/2026/09/14/china-michael-burry-and-yann-lecun-reject-openai-and-anthropic-calls-to-slow-ai-development-lecun-calls-warnings-fake/
+- APPLY verdon/d8: 95 → 90 (high → med) https://www.abc.net.au/news/2024-02-18/ai-insiders-eacc-movement-speeding-up-tech/103464258
+- APPLY emily-bender/s5: 5 → 8 (high → med) https://www.dair-institute.org/blog/letter-statement-March2023/
+- APPLY emily-bender/s10: 3 → 3 (high → med) https://www.sfexaminer.com/news/technology/ai-skeptics-warn-existential-risk-talk-a-distraction/article_44fe8eca-bdb9-4d19-bfa2-c01cd93287c1.html
+- APPLY daniel-kokotajlo/s9: 95 → 95 (high → med) https://www.shortform.com/podcast/episode/the-diary-of-a-ceo-with-steven-bartlett-2026-07-13-episode-summary-openai-whistleblower-finally-speaks-ai-has-a-70-chance-of-going-horribly-wrong
+- APPLY hinton/d9: 8 → 8 (high → high) https://www.cnn.com/2025/08/13/tech/ai-geoffrey-hinton
+- APPLY hinton/s8: 90 → 90 (high → high) https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010
+- APPLY bengio/s3: 82 → 82 (high → high) https://arxiv.org/abs/2310.17688
+- APPLY yudkowsky/s2: 2 → 2 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY verdon/s8: 5 → 5 (high → high) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY daniel-kokotajlo/s8: 97 → 97 (high → high) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY daniel-kokotajlo/s6: 90 → 90 (high → high) https://ai-2040.com/about
+- APPLY daniel-kokotajlo/s3: 70 → 70 (med → med) https://ai-2040.com/about
+- APPLY leopold-aschenbrenner/p5: 15 → 15 (high → high) https://situational-awareness.ai/the-free-world-must-prevail/
+- DEAD SOURCE dario-amodei[1] https://darioamodei.com/post/policy-on-the-ai-exponential: Resolves, but the note 'Rejects pausing' is wrong: the essay never mentions pause, halt, moratorium or slowing AI development (full-text search). The rejection ('the idea of stopping or even substantially slowing the technology is fundamentally untenable') is in source 2, The Adolescence of Technology (Jan 2026). s1's basis 'Explicitly rejects pausing (June 2026)' inherits the error.
+- DEAD SOURCE daniel-kokotajlo[4] https://blog.aifutures.org/p/how-to-pace-the-us-frontier: Resolves, but Kokotajlo is not an author (byline: Lifland, Halstead, Dean, Larsen + 1; 'We thank … Daniel Kokotajlo … for helpful feedback'). It is quoted as his own position in s3, s5, s6, s8 and s13. Rebase those on AI 2040 Plan A (sources 1–2), which he co-authored.
+- DEAD SOURCE hinton[6] https://techxplore.com/news/2026-04-ai-alarm.html: Resolves (403 to bots, opens via fetch). 'They want a very fast car with no steering wheel' is about people who oppose regulation, not about alignment methods. Fine for s7; wrong as basis for d9 (and a stretch for d2).
+- DEAD SOURCE yudkowsky[3] https://www.semafor.com/article/09/12/2025/researchers-give-doomsday-warning-about-building-ai-too-fast: Resolves, but 'should shut down' (Safe Superintelligence) and 'closer to alchemy than science' are the reporter's paraphrases ('according to Yudkowsky and Soares', 'the authors argue'), not direct quotes. d2 and s2 print them inside quotation marks as his words.
+- DEAD SOURCE lecun[8] https://x.com/ylecun/status/2043673634363851250: x.com returns HTTP 402 to automated fetches; text confirmed via search index only. The post says most 'leading AI figures' think the risk is 'essentially zero'; eight days later he posted 'I didn't say p(doom) was zero' (https://x.com/ylecun/status/2046577402264870958). d1's basis presents 'essentially zero' as his own number.
+- DEAD SOURCE bengio[0] https://yoshuabengio.org/2023/07/25/my-testimony-in-front-of-the-us-senate/: Resolves, but the note 'Recommends licences' is not on the page (no occurrence of 'licen-'); it says 'restricting or prohibiting the development and deployment of AI systems with unacceptable levels of risk'. For licensing cite arXiv 2310.17688 ('Governments must be prepared to license their development').
+- DEAD SOURCE demis-hassabis[2] https://www.malaymail.com/news/money/2026/02/22/googles-ai-boss-calls-for-urgent-research-into-threats-posed-by-artificial-intelligence/210011: Resolves, but 'one participant among many' and 'regulators are struggling to match the speed of AI progress' are AFP's paraphrases, not quotes; and AFP says he answered that his company 'could contribute' to slowing — the opposite of how s1 uses it. The phrase 'before the first major incident' (d7 basis) is in none of sources 0, 1 or 2.
+- DEAD SOURCE verdon[0] https://beff.substack.com/p/notes-on-eacc-principles-and-tenets: Resolves; the phrase 'maximal growth' quoted in d8's basis does not appear in it.
+- DEAD SOURCE hinton[4] https://time.com/7327409/ai-agi-superintelligent-open-letter/: Resolves (406 to bots, opens via fetch). The article does not name Hinton or Bengio, only 'two Godfathers of AI'; the names in the note are an inference. Same URL is bengio source 4. The signatory list on superintelligence-statement.org is loaded by script and could not be read statically; cite FLI's press release, which names them.
+- DEAD SOURCE daniel-kokotajlo[5] https://www.shortform.com/podcast/episode/the-diary-of-a-ceo-with-steven-bartlett-2026-07-13-episode-summary-openai-whistleblower-finally-speaks-ai-has-a-70-chance-of-going-horribly-wrong: Resolves, but it is a third-party machine-style summary, and it is the only support for the 70% figure behind three 'high' predictions (d1, s9, s10). Replace with the episode itself or a transcript before publishing the number.
+- DEAD SOURCE yudkowsky[7] https://x.com/ESYudkowsky/status/2037017908640178304: x.com returns HTTP 402 to automated fetches; could not be opened. The first team's own note says the context of the post is unclear. Do not use as sole support (s4, s5 also rest on TIME, which is sufficient).
+
+# quotes-v1 — applied 2026-09-17
+
+- APPLY yudkowsky/s6: 97 → 97 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s7: 2 → 2 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s8: 99 → 99 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s9: 99 → 99 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s13: 1 → 1 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s2: 2 → 2 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/d2: 97 → 97 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/d3: 90 → 90 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/s11: 3 → 3 (med → med) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY andreessen/s8: 3 → 3 (high → high) https://a16z.com/the-techno-optimist-manifesto/
+- APPLY andreessen/s11: 95 → 95 (high → high) https://a16z.com/ai-will-save-the-world/
+- APPLY verdon/s6: 5 → 5 (high → high) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY verdon/s8: 5 → 5 (high → high) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY lecun/s11: 97 → 97 (high → high) https://time.com/6694432/yann-lecun-meta-ai-interview/
+- APPLY lecun/d1: 5 → 5 (high → high) https://time.com/6694432/yann-lecun-meta-ai-interview/
+- APPLY hinton/s13: 3 → 3 (high → high) https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010
+- APPLY hinton/s11: 5 → 5 (high → high) https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/
+- APPLY hinton/s6: 90 → 90 (high → high) https://arxiv.org/html/2310.17688v3
+- APPLY bengio/s9: 95 → 95 (high → high) https://80000hours.org/podcast/episodes/yoshua-bengio-scientist-ai/
+- APPLY bengio/s13: 2 → 2 (high → high) https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating
+- APPLY dario-amodei/s7: 8 → 8 (high → high) https://darioamodei.com/post/policy-on-the-ai-exponential
+- APPLY stuart-russell/s7: 3 → 3 (high → high) https://humancompatible.ai/blog/2023/09/11/ai-regulation-stuart-russells-opening-statement-at-u-s-senate-hearing/
+- APPLY stuart-russell/s9: 97 → 97 (high → high) https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/
+- APPLY gary-marcus/s5: 15 → 15 (high → high) https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario
+- APPLY gary-marcus/s10: 8 → 8 (high → high) https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario
+- APPLY max-tegmark/d6: 5 → 5 (high → high) https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence
+- APPLY max-tegmark/s9: 98 → 98 (high → high) https://www.inkl.com/news/ai-firms-warned-to-calculate-threat-of-super-intelligence-or-risk-it-escaping-human-control
+- APPLY daniel-kokotajlo/d3: 92 → 92 (high → high) https://blog.aifutures.org/p/q25-2026-timelines-update-uplift
+- APPLY daniel-kokotajlo/s10: 5 → 5 (high → high) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY daniel-kokotajlo/d6: 5 → 5 (high → high) https://ai-2027.com/
+- APPLY daniel-kokotajlo/s7: 2 → 2 (high → high) https://righttowarn.ai/
+- APPLY daniel-kokotajlo/s3: 70 → 70 (med → med) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s5: 30 → 30 (low → low) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s6: 90 → 90 (high → high) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s8: 97 → 97 (high → high) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY leopold-aschenbrenner/d6: 5 → 5 (high → high) https://situational-awareness.ai/superalignment/
+- APPLY demis-hassabis/d7: 30 → 30 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY emily-bender/p2: 5 → 5 (high → high) https://www.techpolicy.press/taking-on-the-ai-con/
+
+# quotes-v1 — applied 2026-09-17
+
+- APPLY yudkowsky/s6: 97 → 97 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s7: 2 → 2 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s8: 99 → 99 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s9: 99 → 99 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s13: 1 → 1 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/s2: 2 → 2 (high → high) https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/
+- APPLY yudkowsky/d2: 97 → 97 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/d3: 90 → 90 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/s11: 3 → 3 (med → med) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY andreessen/s8: 3 → 3 (high → high) https://a16z.com/the-techno-optimist-manifesto/
+- APPLY andreessen/s11: 95 → 95 (high → high) https://a16z.com/ai-will-save-the-world/
+- APPLY verdon/s6: 5 → 5 (high → high) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY verdon/s8: 5 → 5 (high → high) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY lecun/s11: 97 → 97 (high → high) https://time.com/6694432/yann-lecun-meta-ai-interview/
+- APPLY lecun/d1: 5 → 5 (high → high) https://time.com/6694432/yann-lecun-meta-ai-interview/
+- APPLY hinton/s13: 3 → 3 (high → high) https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010
+- APPLY hinton/s11: 5 → 5 (high → high) https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/
+- APPLY hinton/s6: 90 → 90 (high → high) https://arxiv.org/html/2310.17688v3
+- APPLY bengio/s9: 95 → 95 (high → high) https://80000hours.org/podcast/episodes/yoshua-bengio-scientist-ai/
+- APPLY bengio/s13: 2 → 2 (high → high) https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating
+- APPLY dario-amodei/s7: 8 → 8 (high → high) https://darioamodei.com/post/policy-on-the-ai-exponential
+- APPLY stuart-russell/s7: 3 → 3 (high → high) https://humancompatible.ai/blog/2023/09/11/ai-regulation-stuart-russells-opening-statement-at-u-s-senate-hearing/
+- APPLY stuart-russell/s9: 97 → 97 (high → high) https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/
+- APPLY gary-marcus/s5: 15 → 15 (high → high) https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario
+- APPLY gary-marcus/s10: 8 → 8 (high → high) https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario
+- APPLY max-tegmark/d6: 5 → 5 (high → high) https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence
+- APPLY max-tegmark/s9: 98 → 98 (high → high) https://www.inkl.com/news/ai-firms-warned-to-calculate-threat-of-super-intelligence-or-risk-it-escaping-human-control
+- APPLY daniel-kokotajlo/d3: 92 → 92 (high → high) https://blog.aifutures.org/p/q25-2026-timelines-update-uplift
+- APPLY daniel-kokotajlo/s10: 5 → 5 (high → high) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY daniel-kokotajlo/d6: 5 → 5 (high → high) https://ai-2027.com/
+- APPLY daniel-kokotajlo/s7: 2 → 2 (high → high) https://righttowarn.ai/
+- APPLY daniel-kokotajlo/s3: 70 → 70 (med → med) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s5: 30 → 30 (low → low) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s6: 90 → 90 (high → high) https://ai-2040.com/summary
+- APPLY daniel-kokotajlo/s8: 97 → 97 (high → high) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY leopold-aschenbrenner/d6: 5 → 5 (high → high) https://situational-awareness.ai/superalignment/
+- APPLY demis-hassabis/d7: 30 → 30 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY emily-bender/p2: 5 → 5 (high → high) https://www.techpolicy.press/taking-on-the-ai-con/
+
+# v3-repredict — applied 2026-09-17
+
+- APPLY yudkowsky/d2: 97 → 97 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/d7: 3 → 2 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/d9: 2 → 2 (high → high) https://intelligence.org/2022/06/10/agi-ruin/
+- APPLY yudkowsky/s11: 3 → 2 (med → high) https://podscript.ai/podcasts/lex-fridman-podcast/368-eliezer-yudkowsky-dangers-of-ai-and-the-end-of-human-civilization/
+- APPLY andreessen/d3: 10 → 10 (med → med) https://a16z.com/ai-will-save-the-world/
+- APPLY andreessen/d7: 90 → 95 (med → high) https://a16z.com/ai-will-save-the-world/
+- APPLY andreessen/d9: 70 → 88 (low → med) https://a16z.com/ai-will-save-the-world/
+- APPLY andreessen/s11: 95 → 97 (high → high) https://a16z.com/ai-will-save-the-world/
+- APPLY verdon/d7: 60 → 70 (low → med) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY verdon/d8: 90 → 90 (med → med) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY verdon/d9: 50 → 75 (low → med) https://lexfridman.com/guillaume-verdon-transcript
+- APPLY lecun/d7: 85 → 93 (med → high) https://lexfridman.com/yann-lecun-3-transcript
+- APPLY lecun/d8: 93 → 93 (high → high) https://lexfridman.com/yann-lecun-3-transcript
+- APPLY lecun/d9: 40 → 90 (low → high) https://lexfridman.com/yann-lecun-3-transcript
+- APPLY lecun/s11: 97 → 97 (high → high) https://time.com/6694432/yann-lecun-meta-ai-interview/
+- APPLY hinton/d3: 80 → 65 (med → med) https://www.cbsnews.com/news/geoffrey-hinton-ai-dangers-60-minutes-transcript/
+- APPLY hinton/d7: 15 → 15 (med → high) https://www.cnn.com/2025/08/13/tech/ai-geoffrey-hinton
+- APPLY hinton/d8: 45 → 45 (low → med) https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010
+- APPLY hinton/d9: 8 → 10 (high → high) https://www.cnn.com/2025/08/13/tech/ai-geoffrey-hinton
+- APPLY hinton/s6: 90 → 90 (high → high) https://www.abc.net.au/news/2026-09-14/godfather-of-ai-geoffrey-hinton-backs-ai-slow-down/107150010
+- APPLY hinton/s11: 5 → 10 (high → high) https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/
+- APPLY bengio/d7: 15 → 25 (med → med) https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating
+- APPLY bengio/d9: 5 → 20 (high → med) https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating
+- APPLY bengio/s11: 20 → 10 (med → high) https://yoshuabengio.org/en/blog/reasoning-through-arguments-against-taking-ai-safety-seriously
+- APPLY altman/d3: 50 → 40 (med → med) https://blog.samaltman.com/the-gentle-singularity
+- APPLY altman/d7: 60 → 72 (med → med) https://sfstandard.com/2026/09/16/sam-altman-trust-us/
+- APPLY altman/d8: 90 → 90 (high → high) https://ia.samaltman.com/
+- APPLY altman/d9: 35 → 60 (med → med) https://sfstandard.com/2026/09/16/sam-altman-trust-us/
+- APPLY altman/s6: 45 → 50 (med → med) https://www.techpolicy.press/transcript-sam-altman-testifies-at-us-senate-hearing-on-ai-competitiveness/
+- APPLY altman/s11: 45 → 55 (med → med) https://restofworld.org/2026/silicon-valley-debate-chinese-open-weight-ai-models/
+- APPLY dario-amodei/d3: 78 → 70 (high → med) https://darioamodei.com/post/we-must-pace-the-frontier
+- APPLY dario-amodei/d7: 20 → 50 (med → med) https://www.darioamodei.com/essay/the-adolescence-of-technology
+- APPLY dario-amodei/d8: 85 → 70 (high → med) https://www.darioamodei.com/essay/the-adolescence-of-technology
+- APPLY dario-amodei/d9: 25 → 35 (med → med) https://darioamodei.com/post/we-must-pace-the-frontier
+- APPLY dario-amodei/s11: 20 → 35 (med → med) https://www.anthropic.com/news/position-open-weights-models
+- APPLY demis-hassabis/d3: 55 → 45 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY demis-hassabis/d7: 30 → 55 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY demis-hassabis/d8: 88 → 80 (high → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY demis-hassabis/d9: 35 → 40 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY demis-hassabis/s6: 70 → 65 (high → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY demis-hassabis/s11: 25 → 30 (med → med) https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
+- APPLY stuart-russell/d7: 5 → 10 (high → high) https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/
+- APPLY stuart-russell/d8: 40 → 25 (med → med) https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/
+- APPLY stuart-russell/d9: 5 → 8 (high → high) https://singjupost.com/stuart-russell-on-the-diary-of-a-ceo-podcast-transcript/
+- APPLY stuart-russell/s11: 12 → 10 (low → med) https://www.techpolicy.press/transcript-senate-hearing-on-principles-for-ai-regulation/
+- APPLY emily-bender/d7: 45 → 70 (low → low) https://www.carnegiecouncil.org/media/series/aiei/linguistics-automated-systems-power-ai-emily-bender
+- APPLY emily-bender/d8: 10 → 45 (med → low) https://www.sfexaminer.com/news/technology/ai-skeptics-warn-existential-risk-talk-a-distraction/article_44fe8eca-bdb9-4d19-bfa2-c01cd93287c1.html
+- APPLY emily-bender/d9: 30 → 35 (low → low) https://www.dair-institute.org/blog/letter-statement-March2023/
+- APPLY emily-bender/s6: 85 → 72 (high → med) https://www.dair-institute.org/blog/letter-statement-March2023/
+- APPLY gary-marcus/d7: 10 → 45 (high → med) https://garymarcus.substack.com/p/why-my-pdoom-has-risen-dramatically
+- APPLY gary-marcus/d8: 40 → 40 (low → med) https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario
+- APPLY gary-marcus/d9: 15 → 20 (med → med) https://garymarcus.substack.com/p/why-my-pdoom-has-risen-dramatically
+- APPLY gary-marcus/s11: 25 → 15 (med → high) https://garymarcus.substack.com/p/where-we-are-right-now-on-open-source
+- APPLY vitalik-buterin/d7: 35 → 50 (med → med) https://lironshapira.substack.com/p/debate-with-vitalik-buterin-will
+- APPLY vitalik-buterin/d8: 70 → 70 (med → med) https://lironshapira.substack.com/p/debate-with-vitalik-buterin-will
+- APPLY vitalik-buterin/d9: 25 → 30 (med → med) https://lironshapira.substack.com/p/debate-with-vitalik-buterin-will
+- APPLY vitalik-buterin/s6: 40 → 35 (low → low) https://80000hours.org/podcast/episodes/vitalik-buterin-techno-optimism/
+- APPLY vitalik-buterin/s11: 85 → 85 (high → high) https://lironshapira.substack.com/p/debate-with-vitalik-buterin-will
+- APPLY max-tegmark/d3: 85 → 80 (high → med) https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence
+- APPLY max-tegmark/d7: 5 → 20 (high → med) https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence
+- APPLY max-tegmark/d8: 40 → 30 (med → med) https://lironshapira.substack.com/p/max-tegmark-vs-dean-ball-debate-ban-superintelligence
+- APPLY max-tegmark/s11: 8 → 12 (med → med) https://www.theguardian.com/technology/2023/sep/21/ai-focused-tech-firms-locked-race-bottom-warns-mit-professor-max-tegmark
+- APPLY daniel-kokotajlo/d7: 8 → 15 (high → med) https://ai-2027.com/
+- APPLY daniel-kokotajlo/d8: 30 → 15 (med → med) https://blog.aifutures.org/p/ai-2040-plan-a
+- APPLY daniel-kokotajlo/d9: 5 → 8 (high → high) https://ai-2027.com/
+- APPLY leopold-aschenbrenner/d7: 30 → 50 (low → med) https://situational-awareness.ai/superalignment/
+- APPLY leopold-aschenbrenner/d8: 65 → 65 (med → med) https://situational-awareness.ai/superalignment/
+- APPLY leopold-aschenbrenner/d9: 10 → 40 (high → med) https://situational-awareness.ai/superalignment/
+- APPLY leopold-aschenbrenner/s6: 40 → 30 (low → med) https://situational-awareness.ai/the-project/

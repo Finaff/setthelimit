@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#15171A"/>
+  <rect x="0" y="470" width="1200" height="160" fill="#2B2E31"/>
+  <rect x="20" y="546" width="70" height="8" fill="#F2C94C"/><rect x="140" y="546" width="70" height="8" fill="#F2C94C"/><rect x="260" y="546" width="70" height="8" fill="#F2C94C"/><rect x="380" y="546" width="70" height="8" fill="#F2C94C"/><rect x="500" y="546" width="70" height="8" fill="#F2C94C"/><rect x="620" y="546" width="70" height="8" fill="#F2C94C"/><rect x="740" y="546" width="70" height="8" fill="#F2C94C"/><rect x="860" y="546" width="70" height="8" fill="#F2C94C"/><rect x="980" y="546" width="70" height="8" fill="#F2C94C"/><rect x="1100" y="546" width="70" height="8" fill="#F2C94C"/>
+  <g transform="translate(90,100)">
+    <rect x="-8" y="-8" width="316" height="396" rx="30" fill="#FFFFFF"/>
+    <rect x="0" y="0" width="300" height="380" rx="24" fill="#FFFFFF" stroke="#1B1E21" stroke-width="10"/>
+    <text x="150" y="86" text-anchor="middle" font-family="Arial Black, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="42" fill="#1B1E21">SPEED</text>
+    <text x="150" y="134" text-anchor="middle" font-family="Arial Black, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="42" fill="#1B1E21">LIMIT</text>
+    <text x="150" y="335" text-anchor="middle" font-family="Arial Black, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="220" fill="#1B1E21">?</text>
+  </g>
+  <g transform="translate(470,90)">
+    <rect x="0" y="0" width="640" height="156" rx="12" fill="#0E6B3E" stroke="#FFFFFF" stroke-width="6"/>
+    <text x="30" y="66" font-family="Arial Black, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="46" fill="#FFFFFF">How fast should</text>
+    <text x="30" y="124" font-family="Arial Black, Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="46" fill="#FFFFFF">we build AI?</text>
+  </g>
+  <text x="470" y="310" font-family="Georgia, serif" font-size="32" fill="#EEF0EC">Everyone has a speed limit.</text>
+  <text x="470" y="354" font-family="Georgia, serif" font-size="32" fill="#EEF0EC">Set yours in three minutes.</text>
+  <text x="470" y="420" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="bold" font-size="24" fill="#B4BAB2" letter-spacing="3">SETTHELIMIT.COM</text>
+</svg>

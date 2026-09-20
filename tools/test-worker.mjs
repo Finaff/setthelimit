@@ -1,0 +1,48 @@
+/* Exercises worker/src/index.js without Cloudflare: D1 is emulated with node:sqlite, X sign-in is
+   skipped by forging a session cookie with the same HMAC the worker uses. Run: node tools/test-worker.mjs */
+import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const worker = (await import(path.join(root, 'worker/src/index.js'))).default;
+const db = new DatabaseSync(':memory:');
+db.exec(fs.readFileSync(path.join(root, 'worker/schema.sql'), 'utf8'));
+const D1 = { prepare: (sql) => { const st = db.prepare(sql); let args = []; const o = { bind: (...a) => { args = a; return o; }, first: async () => st.get(...args) ?? null, all: async () => ({ results: st.all(...args) }), run: async () => { st.run(...args); return { success: true }; } }; return o; } };
+const env = { DB: D1, SITE_ORIGIN: 'https://setthelimit.com', API_ORIGIN: 'https://api.setthelimit.com', X_CLIENT_ID: 'x', X_CLIENT_SECRET: 'y', SESSION_SECRET: 'test-secret', FIGURE_ACCOUNTS: JSON.stringify({ '1001': 'gary-marcus' }), DEV: '0' };
+const call = (method, p, body, cookie) => worker.fetch(new Request('https://api.setthelimit.com' + p, { method, headers: { 'content-type': 'application/json', origin: 'https://setthelimit.com', 'cf-connecting-ip': '203.0.113.7', ...(cookie ? { cookie } : {}) }, body: body ? JSON.stringify(body) : undefined }), env);
+const enc = new TextEncoder();
+const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+async function forgeSession(uid, handle) { const body = b64u(enc.encode(JSON.stringify({ uid, handle, name: 'Test ' + handle, exp: Date.now() + 3600e3 }))); const k = await crypto.subtle.importKey('raw', enc.encode(env.SESSION_SECRET), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']); return 'stl_s=' + encodeURIComponent(body + '.' + b64u(await crypto.subtle.sign('HMAC', k, enc.encode(body)))); }
+let fails = 0; const t = (name, ok, extra) => { console.log((ok ? 'ok   ' : 'FAIL ') + name + (extra ? '  ' + extra : '')); if (!ok) fails++; };
+const R = '1j141o0z0z0u0p1y19281y0z0u0f231e';
+let res = await call('POST', '/run', { x: 60.04, y: 36.2, r: R, v: 'v4-2026-09-19', lang: 'en' }); let j = await res.json();
+t('POST /run', res.status === 200 && j.id && j.token, JSON.stringify(j));
+t('CORS header on allowed origin', res.headers.get('access-control-allow-origin') === 'https://setthelimit.com');
+const run = j;
+res = await call('POST', '/run', { x: 500, y: 1, r: R }); t('POST /run rejects bad coords', res.status === 400);
+res = await call('POST', '/run', { x: 1, y: 1, r: 'not valid!' }); t('POST /run rejects bad r', res.status === 400);
+res = await call('GET', '/crowd'); j = await res.json(); t('GET /crowd', j.count === 1 && j.points[0][0] === 60 && j.points[0][1] === 36.2, JSON.stringify(j.points));
+res = await call('GET', '/me'); j = await res.json(); t('GET /me anonymous', j.handle === null);
+res = await call('POST', '/public', { id: run.id, token: run.token }); t('POST /public without session → 401', res.status === 401);
+const alice = await forgeSession('42', 'alice');
+res = await call('GET', '/me', null, alice); j = await res.json(); t('GET /me signed in', j.handle === 'alice' && j.figure === null && j.public === null);
+res = await call('POST', '/public', { id: run.id, token: 'wrong' }, alice); t('POST /public wrong token → 404', res.status === 404);
+res = await call('POST', '/public', { id: run.id, token: run.token }, alice); j = await res.json(); t('POST /public', j.ok && j.handle === 'alice');
+res = await call('GET', '/public/Alice'); j = await res.json(); t('GET /public/:handle (case-insensitive)', j.r === R && j.x === 60);
+res = await call('GET', '/me', null, alice); j = await res.json(); t('GET /me shows public', j.public && j.public.handle === 'alice');
+res = await call('DELETE', '/public', null, alice); t('DELETE /public', (await res.json()).ok);
+res = await call('GET', '/public/alice'); t('GET /public after delete → 404', res.status === 404);
+res = await call('POST', '/claim', { r: R }, alice); t('POST /claim by a non-figure → 403', res.status === 403);
+const gary = await forgeSession('1001', 'GaryMarcus');
+res = await call('GET', '/me', null, gary); j = await res.json(); t('GET /me figure detected', j.figure === 'gary-marcus' && j.claimed === null);
+res = await call('POST', '/claim', { r: R }, gary); j = await res.json(); t('POST /claim', j.ok && j.figure === 'gary-marcus');
+res = await call('GET', '/claims'); j = await res.json(); t('GET /claims', j.figures['gary-marcus'] && j.figures['gary-marcus'].r === R && j.figures['gary-marcus'].handle === 'GaryMarcus');
+res = await call('DELETE', '/claim', null, gary); t('DELETE /claim', (await res.json()).ok);
+res = await call('GET', '/claims'); j = await res.json(); t('GET /claims after revoke is empty', Object.keys(j.figures).length === 0);
+res = await call('GET', '/auth/x/start?intent=claim'); t('GET /auth/x/start redirects to X with PKCE', res.status === 302 && /x\.com\/i\/oauth2\/authorize.*code_challenge_method=S256/.test(res.headers.get('location')) && /stl_o=/.test(res.headers.get('set-cookie')));
+res = await call('GET', '/auth/x/callback?code=abc&state=nope'); t('callback without a valid state → 400', res.status === 400);
+for (let i = 0; i < 30; i++) await call('POST', '/run', { x: 1, y: 1, r: R });
+res = await call('POST', '/run', { x: 1, y: 1, r: R }); t('rate limit after 30 runs/hour per address → 429', res.status === 429);
+res = await call('GET', '/nope'); t('unknown route → 404', res.status === 404);
+console.log(fails ? `\n${fails} FAILURE(S)` : '\nALL WORKER TESTS PASSED'); process.exit(fails ? 1 : 0);
