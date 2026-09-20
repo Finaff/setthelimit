@@ -158,3 +158,6 @@
   endpoints, 30-day session, safe `next` on sign-in; 44 worker checks pass. Tested locally end to end (post, vote, reply) against tools/dev-api.mjs.
   API deployed; the site deploy waits for the David Sacks dossier review. ?debug=1&a=<r> preloads answers for screenshots.
   Screenshots for UI review: headless Chrome, `--window-size=500,H --screenshot` (the Browser pane is too small to judge layout).
+- David Sacks added (research/figures-e.json + figures-e.md; road 12 / limit 89, conf 7/7/2, 13 sources). No longer AI czar since 26 March 2026
+  (co-chair of PCAST); d1 downgraded to 'med' by the lead because its quote comes from a secondary write-up. 20 figures.
+- DEPLOYED v1.3 to setthelimit.com (site + API). Artifacts on claude.ai updated too.

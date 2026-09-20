@@ -1,0 +1,257 @@
+{
+  "generatedAt": "2026-09-20",
+  "contentVersion": "v4-2026-09-19",
+  "propositionsVersion": "v4",
+  "itemCount": 16,
+  "method": "Predictions derived from each figure's own public statements (sources listed per figure; 'src' holds indices into that list). conf: high = said almost verbatim; med = clearly implied by stated views; low = inferred from general stance. value 0-100: for 'prob' items the probability the statement is true; for 'agree' items the degree of agreement.",
+  "figures": [
+    {
+      "id": "david-sacks",
+      "name": "David Sacks",
+      "role": "Venture capitalist (Craft Ventures), All-In podcast co-host; co-chair of the President's Council of Advisors on Science and Technology; White House AI & Crypto Czar until March 2026 (as of Sept 2026)",
+      "camp": "race-to-win accelerationist; anti-'doomer'",
+      "bio": "Craft Ventures founder and All-In co-host. As Trump's Special Advisor for AI and Crypto (Jan 2025 to March 2026) he co-signed America's AI Action Plan, defended Nvidia H20 sales to China and drove the December 2025 order against state AI laws. Now co-chairs the advisory council PCAST. He says the 'doomer narratives were wrong', accuses Anthropic of 'regulatory capture' through fear, and backs open weights. In Sept 2026 he told the top labs to 'go ahead' and pace themselves, without a licence regime or antitrust waiver.",
+      "oneLiner": "The risks can be managed; a pause hands the frontier to China. Labs may slow themselves; liability law, not licences, keeps them honest.",
+      "sources": [
+        {
+          "title": "X: 'Dario has written that we need to \"pace the frontier\"… go ahead' (reply to Amodei's Sept 2026 essay and Altman)",
+          "url": "https://x.com/DavidSacks/status/2098973625252708460",
+          "date": "2026-09-13",
+          "note": "Full text read via a public mirror API. Backs voluntary pacing by the two leading labs, rejects an antitrust waiver and 'a regulatory approval process that supersedes product liability'; 'China is very unlikely to join a global agreement'."
+        },
+        {
+          "title": "CBS News: It's up to AI developers to ensure their tech is safe, says top Trump adviser on AI",
+          "url": "https://www.cbsnews.com/news/david-sacks-ai-developers-safety-regulation/",
+          "date": "2026-09-16",
+          "note": "'I think this is becoming a panic'; 'I think these risks can be managed, and I do not want to stop'; 'if we just pause all development, they will race ahead'; 'If you can't control it, then don't do it.'"
+        },
+        {
+          "title": "All-In Podcast: AI Kills Everybody or Doomer Psyop? (speaker-labelled transcript)",
+          "url": "https://podcasts.happyscribe.com/all-in-with-chamath-jason-sacks-friedberg/ai-kills-everybody-or-doomer-psyop-openai-s-math-breakthrough-nike-s-200b-collapse",
+          "date": "2026-09-11",
+          "note": "Asked if he shares the fear that everyone dies by 2030: 'No, I don't… the same doomer histrionics'; 'this is a doomer psyop, and the ultimate target is open source'; an 'FDAI' would end up banning open weights."
+        },
+        {
+          "title": "Reuters (via 93.3 The Drive): Trump adviser Sacks says AI fears driven by 'fear-mongering playbook'",
+          "url": "https://www.933thedrive.com/2026/09/16/trump-adviser-sacks-says-ai-fears-driven-by-fear-mongering-playbook/",
+          "date": "2026-09-16",
+          "note": "By video at a Politico event: 'We've seen this playbook, this fear-mongering playbook, over and over again'; no new regulatory framework needed; developers would be held 'liable' if problems arise."
+        },
+        {
+          "title": "Fox News live blog: David Sacks says China's AI optimism gives it an edge over US",
+          "url": "https://www.foxnews.com/live-news/ai-news-china-trump-artificial-intelligence-big-tech-congress-september-15",
+          "date": "2026-09-16",
+          "note": "'The U.S. is ahead of China in every category except one, which is optimism'; the biggest risk to winning the race is 'doing something that will shoot ourselves in the foot because we're so pessimistic'."
+        },
+        {
+          "title": "Implicator: Trump Announces AI Force and Czar, Gives Few Details (quotes Sacks's X post)",
+          "url": "https://www.implicator.ai/trump-ai-force-czar-public-disapproval/",
+          "date": "2026-09-19",
+          "note": "Press report of his X post backing Trump's 'AI Force': 'A pause would not make America safer. It would hand the frontier to China.' The post itself was not located; quote is second-hand."
+        },
+        {
+          "title": "X: 'A BEST CASE SCENARIO FOR AI?' (the 'Goldilocks' post)",
+          "url": "https://x.com/DavidSacks/status/1954244614304739360",
+          "date": "2025-08-09",
+          "note": "Full text read via a public mirror API. 'The Doomer narratives were wrong'; no rapid take-off; five US labs competing is 'Goldilocks'; worst case is 'a marriage of corporate and state power'; job-loss fears 'as overhyped as AGI itself'."
+        },
+        {
+          "title": "X: 'Anthropic is running a sophisticated regulatory capture strategy based on fear-mongering' (reply to Jack Clark)",
+          "url": "https://x.com/DavidSacks/status/1978145266269077891",
+          "date": "2025-10-14",
+          "note": "Verified via X's embed endpoint. Adds that Anthropic 'is principally responsible for the state regulatory frenzy that is damaging the startup ecosystem'."
+        },
+        {
+          "title": "X: 'ONE RULEBOOK FOR AI' (on federal preemption of state AI laws)",
+          "url": "https://x.com/DavidSacks/status/1998125180753944985",
+          "date": "2025-12-08",
+          "note": "Full text read via a public mirror API. Preemption is 'not an AI amnesty or AI moratorium'; 50 state regimes would 'stymie innovation… Meanwhile, China will race ahead'; child-safety laws stay. Written as AI czar, ahead of EO 14365."
+        },
+        {
+          "title": "The White House: Winning the Race: America's AI Action Plan (co-signed by Kratsios, Sacks and Rubio)",
+          "url": "https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf",
+          "date": "2025-07-23",
+          "note": "Official policy, not personal opinion. 'The United States is in a race to achieve global dominance in AI'; open-weight release 'is fundamentally up to the developer'; also says frontier systems' inner workings are 'poorly understood'."
+        },
+        {
+          "title": "Taipei Times (Bloomberg): US AI czar David Sacks defends reversal of China chip curbs",
+          "url": "https://www.taipeitimes.com/News/biz/archives/2025/07/17/2003840403",
+          "date": "2025-07-17",
+          "note": "On resuming Nvidia H20 sales: 'we can deprive Huawei of having this giant market share in China'; 'It's a zero-sum game… If we hobble our own companies, we're handing an advantage to China.'"
+        },
+        {
+          "title": "Gizmodo: The Great Freakout Over Open-Source AI Has Begun",
+          "url": "https://gizmodo.com/the-great-freakout-over-open-source-ai-has-begun-2000787836",
+          "date": "2026-07-20",
+          "note": "Reports his X reply to OpenAI's Dean Ball after the Kimi K3 open release: the leading closed labs, 'already a duopoly', 'want the government to eliminate their open-source competition'. The post itself was not retrieved."
+        },
+        {
+          "title": "TechCrunch: David Sacks is done as AI czar; here's what he's doing instead",
+          "url": "https://techcrunch.com/2026/03/26/david-sacks-is-done-as-ai-czar-heres-what-hes-doing-instead/",
+          "date": "2026-03-26",
+          "note": "His 130 days as a special government employee ran out; he became co-chair of the President's Council of Advisors on Science and Technology (PCAST) with Michael Kratsios, an advisory rather than policy-making post."
+        }
+      ],
+      "predictions": {
+        "d1": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Reported from his Sept 2026 CBS interview (secondary write-up, wording unverified): extinction talk is 'overly dramatic'; on dying by 2030: 'No, I don't.' Calls doom a 'panic' elsewhere. Never gave a number.",
+          "src": [
+            1,
+            2,
+            6
+          ]
+        },
+        "d3": {
+          "value": 8,
+          "conf": "high",
+          "basis": "'The Doomer narratives were wrong. Predicated on a \"rapid take-off\" to AGI…' Instead models cluster and leapfrog. He adds 'this could change', and in 2026 grants that 'prosaic recursion is happening'.",
+          "src": [
+            6,
+            2
+          ]
+        },
+        "d5": {
+          "value": 12,
+          "conf": "med",
+          "basis": "'AI models are still at zero in terms of setting their own objective function'; misbehaving models are a product defect the market punishes. Yet he co-signed a plan calling frontier systems 'poorly understood'.",
+          "src": [
+            6,
+            0,
+            9
+          ]
+        },
+        "d6": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Calls extinction talk a 'panic' and even job-loss fears 'overhyped'. The harms he names are familiar: cyberattacks that bring liability, and censorship through 'a marriage of corporate and state power'.",
+          "src": [
+            1,
+            0,
+            6
+          ]
+        },
+        "d7": {
+          "value": 90,
+          "conf": "high",
+          "basis": "'I think these risks can be managed, and I do not want to stop.' To the lab chiefs: 'Why are you acting like this is something that you can't control? If you can't control it, then don't do it.'",
+          "src": [
+            1,
+            2
+          ]
+        },
+        "d9": {
+          "value": 80,
+          "conf": "med",
+          "basis": "'The market already punishes models that behave in unpredictable or unauthorized ways… Call it alignment if you want. It is also just giving customers what they want.' Safety as ordinary product work.",
+          "src": [
+            0,
+            1,
+            9
+          ]
+        },
+        "s1": {
+          "value": 2,
+          "conf": "high",
+          "basis": "'I think these risks can be managed, and I do not want to stop'; 'A pause would not make America safer. It would hand the frontier to China' (the latter via press report of his X post).",
+          "src": [
+            1,
+            5,
+            0
+          ]
+        },
+        "s4": {
+          "value": 8,
+          "conf": "med",
+          "basis": "'China is very unlikely to join a global agreement, as you know, and that has to be taken into account.' Rejects outside evaluators policing labs. No direct statement on an inspected treaty found.",
+          "src": [
+            0,
+            9
+          ]
+        },
+        "s5": {
+          "value": 97,
+          "conf": "high",
+          "basis": "'If we just pause all development, they will race ahead'; 'It's a zero-sum game… If we hobble our own companies, we're handing an advantage to China.' Also official policy in the plan he co-signed.",
+          "src": [
+            1,
+            10,
+            9,
+            4
+          ]
+        },
+        "s6": {
+          "value": 4,
+          "conf": "high",
+          "basis": "'Stop pretending you need a regulatory approval process that supersedes product liability.' Calls a licensing body an 'FDAI' that 'will ultimately ban' open weights; liability law is his alternative.",
+          "src": [
+            0,
+            2,
+            3
+          ]
+        },
+        "s8": {
+          "value": 12,
+          "conf": "med",
+          "basis": "Supports labs slowing themselves ('I support your decision to be responsible') but sees no catastrophe to insure against and says a national pause 'would hand the frontier to China'.",
+          "src": [
+            0,
+            5,
+            1
+          ]
+        },
+        "s10": {
+          "value": 75,
+          "conf": "low",
+          "basis": "His case against slowing rests on China and the economy, not on cures: the biggest risk is 'doing something that will shoot ourselves in the foot because we're so pessimistic'. No lives-saved claim found.",
+          "src": [
+            4,
+            1,
+            6
+          ]
+        },
+        "s11": {
+          "value": 92,
+          "conf": "high",
+          "basis": "'This is a doomer psyop, and the ultimate target is open source.' The plan he co-signed: whether to release an open or closed model 'is fundamentally up to the developer'. No stated ceiling on capability.",
+          "src": [
+            2,
+            9,
+            11,
+            6
+          ]
+        },
+        "s13": {
+          "value": 82,
+          "conf": "med",
+          "basis": "Opposes any government-imposed slowing ('I do not want to stop'), yet told the two leading labs 'go ahead and pace the frontier' on their own. Against mandated brakes, not against voluntary restraint.",
+          "src": [
+            1,
+            0,
+            5
+          ]
+        },
+        "p2": {
+          "value": 30,
+          "conf": "low",
+          "basis": "'Apocalyptic predictions of job loss are as overhyped as AGI itself'; AI is 'middle-to-middle', not end-to-end. That is a near-term claim; he has given no 20-year forecast, so this is an inference.",
+          "src": [
+            6,
+            2
+          ]
+        },
+        "p4": {
+          "value": 92,
+          "conf": "high",
+          "basis": "'The most likely dystopian outcome with AI is a marriage of corporate and state power… winner-take-all dynamics are more likely to produce Orwellian outcomes.' He dismisses the rogue-AI scenario.",
+          "src": [
+            6,
+            0,
+            11
+          ]
+        }
+      }
+    }
+  ]
+}

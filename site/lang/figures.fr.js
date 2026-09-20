@@ -113,5 +113,11 @@ window.STL_FIGURES_FR = {
   "camp": "sceptique du catastrophisme : la sécurité de l’IA relève du génie ordinaire",
   "bio": "Psychologue cognitiviste à Harvard, auteur de The Better Angels of Our Nature, de Enlightenment Now (2018) et de Rationality (2021). Depuis 2018, il soutient que les scénarios catastrophes sur l’IA confondent intelligence et motivation et traitent l’intelligence comme un « élixir miraculeux » ; les vrais dangers de l’IA, comme les pertes d’emplois, le tri biaisé et la tromperie, sont des problèmes d’ingénierie et de politiques publiques. Il a débattu avec Stuart Russell (2020) et Scott Aaronson (2022). En septembre 2026, il a qualifié de « absurdes » les scénarios où l’IA nous tue tous. Il n’a signé aucune des déclarations de 2023 ou de 2025 sur les risques de l’IA.",
   "oneLiner": "Les scénarios catastrophes sont « absurdes » ; être intelligent, ce n’est pas vouloir le pouvoir. L’IA est une technologie normale : on la teste, on corrige les vrais torts et on continue."
+ },
+ "david-sacks": {
+  "role": "Investisseur en capital de risque (Craft Ventures), coanimateur du balado All-In ; coprésident du Conseil des conseillers du président en science et technologie (PCAST) ; « tsar » de l’IA et de la crypto à la Maison-Blanche jusqu’en mars 2026 (en date de sept. 2026)",
+  "camp": "accélérationniste de la course à gagner ; anti-« doomers »",
+  "bio": "Fondateur de Craft Ventures et coanimateur d’All-In. Conseiller spécial de Trump pour l’IA et la crypto (janv. 2025 à mars 2026), il a cosigné l’America’s AI Action Plan, défendu la vente de puces Nvidia H20 à la Chine et piloté le décret de décembre 2025 contre les lois des États sur l’IA. Il copréside maintenant le conseil consultatif PCAST. Il affirme que les « récits catastrophistes avaient tort », accuse Anthropic de « capture réglementaire » par la peur et défend les modèles à poids ouverts. En septembre 2026, il a dit aux grands labos : « allez-y », ralentissez de vous-mêmes, sans régime de permis ni exemption antitrust.",
+  "oneLiner": "Les risques se gèrent ; une pause livrerait la frontière à la Chine. Que les labos ralentissent d’eux-mêmes : c’est la responsabilité civile, pas un permis, qui les tient."
  }
 };
