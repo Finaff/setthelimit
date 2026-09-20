@@ -9,6 +9,9 @@
      GET    /me                {handle,name,figure,public}
      POST   /public {id,token} attach my run to my handle · DELETE /public · GET /public/:handle
      POST   /claim {r}         a listed figure replaces the prediction with their answers · DELETE /claim
+     GET    /comments?item=d1  comments on a proposition · GET /comments/counts
+     POST   /comments {item,parent,body,value}   (signed in) · DELETE /comments/:id (own)
+     POST   /comments/:id/vote · POST /comments/:id/flag   (signed in; toggles)
    The static site calls this only when window.STL_API is set. */
 
 const enc = new TextEncoder(), dec = new TextDecoder();
@@ -27,6 +30,7 @@ const cookies = (req) => Object.fromEntries((req.headers.get('cookie') || '').sp
 const cookie = (name, val, maxAge) => `${name}=${encodeURIComponent(val)}; Max-Age=${maxAge}; Path=/; Secure; HttpOnly; SameSite=Lax`;
 const json = (data, status = 200, headers = {}) => new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json; charset=utf-8', ...headers } });
 const now = () => new Date().toISOString();
+const SESSION_DAYS = 30;
 const R_OK = /^[0-9a-z_-]{20,80}$/; // the share-link encoding of the answers
 const num = (v) => typeof v === 'number' && v >= 0 && v <= 100;
 const session = async (req, env) => verify(env, cookies(req).stl_s);
@@ -65,9 +69,10 @@ async function getClaims(env) {
 
 // ---- X sign-in (OAuth 2.0 authorization code + PKCE; the token exchange happens here, never in the browser) ----
 async function xStart(url, env) {
-  const intent = url.searchParams.get('intent') === 'claim' ? 'claim' : 'public';
+  const intent = ['claim', 'public', 'signin'].includes(url.searchParams.get('intent')) ? url.searchParams.get('intent') : 'public';
+  const nx = url.searchParams.get('next') || ''; const next = /^#\/[A-Za-z0-9\/_-]{0,40}$/.test(nx) ? nx : '';
   const state = rid(16), verifier = rid(48), challenge = b64u(await crypto.subtle.digest('SHA-256', enc.encode(verifier)));
-  const o = await sign(env, { state, verifier, intent, exp: Date.now() + 10 * 60e3 });
+  const o = await sign(env, { state, verifier, intent, next, exp: Date.now() + 10 * 60e3 });
   const auth = new URL('https://x.com/i/oauth2/authorize');
   Object.entries({ response_type: 'code', client_id: env.X_CLIENT_ID, redirect_uri: env.API_ORIGIN + '/auth/x/callback', scope: 'users.read tweet.read', state, code_challenge: challenge, code_challenge_method: 'S256' }).forEach(([k, v]) => auth.searchParams.set(k, v));
   return new Response(null, { status: 302, headers: { location: auth.toString(), 'set-cookie': cookie('stl_o', o, 600) } });
@@ -80,9 +85,9 @@ async function xCallback(req, url, env) {
   if (!tok || !tok.access_token) return new Response('X did not accept the sign-in.', { status: 502 });
   const me = await fetch('https://api.x.com/2/users/me?user.fields=name,username', { headers: { authorization: 'Bearer ' + tok.access_token } }).then((r) => r.json()).catch(() => null);
   const u = me && me.data; if (!u || !u.id) return new Response('Could not read the X account.', { status: 502 });
-  const s = await sign(env, { uid: String(u.id), handle: u.username, name: u.name, exp: Date.now() + 2 * 3600e3 });
-  const headers = new Headers({ location: `${env.SITE_ORIGIN}/?${o.intent}=1#/result` });
-  headers.append('set-cookie', cookie('stl_s', s, 2 * 3600)); headers.append('set-cookie', cookie('stl_o', '', 0));
+  const s = await sign(env, { uid: String(u.id), handle: u.username, name: u.name, exp: Date.now() + SESSION_DAYS * 86400e3 });
+  const headers = new Headers({ location: `${env.SITE_ORIGIN}/?${o.intent}=1${o.next || '#/result'}` });
+  headers.append('set-cookie', cookie('stl_s', s, SESSION_DAYS * 86400)); headers.append('set-cookie', cookie('stl_o', '', 0));
   return new Response(null, { status: 302, headers });
 }
 async function getMe(req, env) {
@@ -122,6 +127,67 @@ async function delClaim(req, env) {
   await env.DB.prepare('UPDATE claims SET revoked = 1 WHERE x_user_id = ?').bind(s.uid).run(); return json({ ok: true });
 }
 
+// ---- comments: signed-in X accounts only; one level of replies; upvotes; spam flags hide a comment once 3 people flag it and flags outnumber upvotes ----
+const ITEM_OK = /^[a-z]\d{1,2}$/;
+async function getComments(req, url, env) {
+  const item = url.searchParams.get('item') || ''; if (!ITEM_OK.test(item)) return json({ error: 'bad item' }, 400);
+  const s = await session(req, env);
+  const rows = (await env.DB.prepare(`SELECT c.id, c.parent_id, c.x_user_id, c.handle, c.name, c.body, c.value, c.at, c.deleted,
+      (SELECT COUNT(*) FROM comment_votes v WHERE v.comment_id = c.id) AS up,
+      (SELECT COUNT(*) FROM comment_flags f WHERE f.comment_id = c.id) AS flags
+    FROM comments c WHERE c.item_id = ? ORDER BY c.at ASC LIMIT 500`).bind(item).all()).results || [];
+  let myVotes = new Set(), myFlags = new Set();
+  if (s) {
+    myVotes = new Set(((await env.DB.prepare('SELECT v.comment_id FROM comment_votes v JOIN comments c ON c.id = v.comment_id WHERE v.x_user_id = ? AND c.item_id = ?').bind(s.uid, item).all()).results || []).map((r) => r.comment_id));
+    myFlags = new Set(((await env.DB.prepare('SELECT f.comment_id FROM comment_flags f JOIN comments c ON c.id = f.comment_id WHERE f.x_user_id = ? AND c.item_id = ?').bind(s.uid, item).all()).results || []).map((r) => r.comment_id));
+  }
+  const hasLiveReply = new Set(rows.filter((r) => r.parent_id && !r.deleted).map((r) => r.parent_id));
+  const comments = rows.filter((r) => !r.deleted || hasLiveReply.has(r.id)).map((r) => {
+    const hidden = !r.deleted && r.flags >= 3 && r.flags > r.up;
+    return { id: r.id, parent: r.parent_id || null, handle: r.deleted ? null : r.handle, name: r.deleted ? null : r.name, figure: r.deleted ? null : figureOf(env, r.x_user_id),
+      body: r.deleted || hidden ? '' : r.body, value: r.deleted || hidden ? null : r.value, at: r.at, up: r.up, deleted: !!r.deleted, hidden,
+      voted: myVotes.has(r.id), flagged: myFlags.has(r.id), own: !!s && s.uid === r.x_user_id };
+  });
+  return json({ item, comments }, 200, { 'cache-control': 'no-store' });
+}
+async function getCommentCounts(env) {
+  const rows = (await env.DB.prepare('SELECT item_id, COUNT(*) AS n FROM comments WHERE deleted = 0 GROUP BY item_id').all()).results || [];
+  const counts = {}; rows.forEach((r) => { counts[r.item_id] = r.n; });
+  return json({ counts }, 200, { 'cache-control': 'public, max-age=60' });
+}
+async function postComment(req, env) {
+  const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
+  const b = await req.json().catch(() => null); const body = b && typeof b.body === 'string' ? b.body.replace(/\r/g, '').replace(/\n{3,}/g, '\n\n').trim() : '';
+  if (!b || !ITEM_OK.test(String(b.item || '')) || body.length < 2 || body.length > 1000) return json({ error: 'a comment needs 2 to 1000 characters' }, 400);
+  const hour = new Date(Date.now() - 3600e3).toISOString();
+  const { c } = await env.DB.prepare('SELECT COUNT(*) AS c FROM comments WHERE x_user_id = ? AND at > ?').bind(s.uid, hour).first();
+  if (c >= 10) return json({ error: 'ten comments an hour is the limit; try later' }, 429);
+  const dup = await env.DB.prepare('SELECT id FROM comments WHERE x_user_id = ? AND body = ? AND deleted = 0').bind(s.uid, body).first();
+  if (dup) return json({ error: 'you already posted this' }, 409);
+  let parent = null;
+  if (b.parent) { const p = await env.DB.prepare('SELECT id, parent_id, item_id FROM comments WHERE id = ? AND deleted = 0').bind(String(b.parent)).first(); if (!p || p.item_id !== b.item) return json({ error: 'unknown comment to reply to' }, 404); parent = p.parent_id || p.id; }
+  const value = Number.isInteger(b.value) && b.value >= 0 && b.value <= 100 ? b.value : null;
+  const id = rid();
+  await env.DB.prepare('INSERT INTO comments (id,item_id,parent_id,x_user_id,handle,name,body,value,lang,at,deleted) VALUES (?,?,?,?,?,?,?,?,?,?,0)')
+    .bind(id, b.item, parent, s.uid, s.handle, s.name, body, value, String(b.lang || '').slice(0, 5), now()).run();
+  return json({ ok: true, id });
+}
+async function toggle(table, req, env, id) {
+  const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
+  const c = await env.DB.prepare('SELECT id FROM comments WHERE id = ? AND deleted = 0').bind(id).first(); if (!c) return json({ error: 'unknown comment' }, 404);
+  const had = await env.DB.prepare(`SELECT comment_id FROM ${table} WHERE comment_id = ? AND x_user_id = ?`).bind(id, s.uid).first();
+  if (had) await env.DB.prepare(`DELETE FROM ${table} WHERE comment_id = ? AND x_user_id = ?`).bind(id, s.uid).run();
+  else await env.DB.prepare(`INSERT INTO ${table} (comment_id, x_user_id, at) VALUES (?,?,?)`).bind(id, s.uid, now()).run();
+  const { n } = await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE comment_id = ?`).bind(id).first();
+  return json({ ok: true, on: !had, count: n });
+}
+async function delComment(req, env, id) {
+  const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
+  const c = await env.DB.prepare('SELECT x_user_id FROM comments WHERE id = ?').bind(id).first(); if (!c) return json({ error: 'unknown comment' }, 404);
+  if (c.x_user_id !== s.uid) return json({ error: 'not yours' }, 403);
+  await env.DB.prepare('UPDATE comments SET deleted = 1 WHERE id = ?').bind(id).run(); return json({ ok: true });
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url), p = url.pathname, m = req.method;
@@ -140,6 +206,12 @@ export default {
       else if (p.startsWith('/public/') && m === 'GET') res = await getPublic(decodeURIComponent(p.slice(8)), env);
       else if (p === '/claim' && m === 'POST') res = await postClaim(req, env);
       else if (p === '/claim' && m === 'DELETE') res = await delClaim(req, env);
+      else if (p === '/comments' && m === 'GET') res = await getComments(req, url, env);
+      else if (p === '/comments/counts' && m === 'GET') res = await getCommentCounts(env);
+      else if (p === '/comments' && m === 'POST') res = await postComment(req, env);
+      else if (/^\/comments\/[\w-]+\/vote$/.test(p) && m === 'POST') res = await toggle('comment_votes', req, env, p.split('/')[2]);
+      else if (/^\/comments\/[\w-]+\/flag$/.test(p) && m === 'POST') res = await toggle('comment_flags', req, env, p.split('/')[2]);
+      else if (/^\/comments\/[\w-]+$/.test(p) && m === 'DELETE') res = await delComment(req, env, p.split('/')[2]);
       else res = json({ error: 'not found' }, 404);
       return cors(env, req, res);
     } catch (e) { return cors(env, req, json({ error: String(e && e.message || e) }, 500)); }

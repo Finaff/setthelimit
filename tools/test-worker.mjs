@@ -42,6 +42,27 @@ res = await call('DELETE', '/claim', null, gary); t('DELETE /claim', (await res.
 res = await call('GET', '/claims'); j = await res.json(); t('GET /claims after revoke is empty', Object.keys(j.figures).length === 0);
 res = await call('GET', '/auth/x/start?intent=claim'); t('GET /auth/x/start redirects to X with PKCE', res.status === 302 && /x\.com\/i\/oauth2\/authorize.*code_challenge_method=S256/.test(res.headers.get('location')) && /stl_o=/.test(res.headers.get('set-cookie')));
 res = await call('GET', '/auth/x/callback?code=abc&state=nope'); t('callback without a valid state → 400', res.status === 400);
+// comments
+res = await call('POST', '/comments', { item: 'd1', body: 'hello' }); t('POST /comments anonymous → 401', res.status === 401);
+res = await call('POST', '/comments', { item: 'd1', body: 'x' }, alice); t('POST /comments too short → 400', res.status === 400);
+res = await call('POST', '/comments', { item: 'd1', body: 'One in ten is too low a bar.', value: 80 }, alice); j = await res.json(); t('POST /comments', j.ok && j.id); const c1 = j.id;
+res = await call('POST', '/comments', { item: 'd1', body: 'One in ten is too low a bar.' }, alice); t('duplicate comment → 409', res.status === 409);
+res = await call('POST', '/comments', { item: 'd1', parent: c1, body: 'I answered 15, here is why.', value: 15 }, gary); j = await res.json(); t('reply', j.ok); const c2 = j.id;
+res = await call('POST', '/comments', { item: 'd1', parent: c2, body: 'Reply to a reply stays one level deep.' }, alice); j = await res.json(); const c3 = j.id;
+res = await call('GET', '/comments?item=d1', null, alice); j = await res.json();
+t('GET /comments lists 3, reply-to-reply attached to the root', j.comments.length === 3 && j.comments.find((c) => c.id === c3).parent === c1);
+t('figure badge and value on the reply', j.comments.find((c) => c.id === c2).figure === 'gary-marcus' && j.comments.find((c) => c.id === c2).value === 15);
+t('own flag set for the author only', j.comments.find((c) => c.id === c1).own === true && j.comments.find((c) => c.id === c2).own === false);
+res = await call('POST', `/comments/${c1}/vote`, null, gary); j = await res.json(); t('upvote', j.on === true && j.count === 1);
+res = await call('POST', `/comments/${c1}/vote`, null, gary); j = await res.json(); t('upvote toggles off', j.on === false && j.count === 0);
+for (const u of ['901', '902', '903']) await call('POST', `/comments/${c2}/flag`, null, await forgeSession(u, 'u' + u));
+res = await call('GET', '/comments?item=d1'); j = await res.json(); t('3 flags with no upvotes hide the body', j.comments.find((c) => c.id === c2).hidden === true && j.comments.find((c) => c.id === c2).body === '');
+res = await call('DELETE', `/comments/${c1}`, null, gary); t('cannot delete someone else\'s comment → 403', res.status === 403);
+res = await call('DELETE', `/comments/${c1}`, null, alice); t('delete own comment', (await res.json()).ok);
+res = await call('GET', '/comments?item=d1'); j = await res.json(); t('deleted parent kept as a stub while replies live', j.comments.find((c) => c.id === c1).deleted === true && j.comments.find((c) => c.id === c1).handle === null);
+res = await call('GET', '/comments/counts'); j = await res.json(); t('GET /comments/counts', j.counts.d1 === 2);
+res = await call('GET', '/auth/x/start?intent=signin&next=%23/p/d1'); t('sign-in start accepts a safe next', res.status === 302);
+res = await call('GET', '/auth/x/start?intent=signin&next=https://evil.example'); t('sign-in start ignores an unsafe next', res.status === 302);
 for (let i = 0; i < 30; i++) await call('POST', '/run', { x: 1, y: 1, r: R });
 res = await call('POST', '/run', { x: 1, y: 1, r: R }); t('rate limit after 30 runs/hour per address → 429', res.status === 429);
 res = await call('GET', '/nope'); t('unknown route → 404', res.status === 404);

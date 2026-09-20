@@ -35,7 +35,7 @@
       f.predictions = {}; ITEMS.forEach((it) => { const p = predicted[it.id] || {}; f.predictions[it.id] = typeof ans[it.id] === 'number' ? { value: ans[it.id], conf: 'self', basis: '', src: [], predicted: p.value } : { conf: 'self', basis: '', src: [], predicted: p.value }; });
     });
   }
-  function rerender() { const pg = parseRoute().page; if (pg === 'result' || pg === 'shared' || pg === 'figures' || pg === 'figure') render(); }
+  function rerender() { const pg = parseRoute().page; if (pg === 'result' || pg === 'shared' || pg === 'figures' || pg === 'figure' || pg === 'prop' || pg === 'debate') renderKeep(); }
   async function publishRun() { if (!API || !S.me || !S.run) return; const j = await apiPost('/public', { id: S.run.id, token: S.run.token }); if (j && j.ok) { S.me.public = { handle: j.handle, at: new Date().toISOString() }; S.pendingPublic = false; rerender(); } }
   async function unpublishRun() { const j = await apiPost('/public', {}, 'DELETE'); if (j && j.ok) { S.me.public = null; rerender(); } }
   async function claimDot() { const j = await apiPost('/claim', { r: enc(S.answers) }); if (j && j.ok) { S.me.claimed = new Date().toISOString(); const mine = {}; mine[j.figure] = { handle: S.me.handle, name: S.me.name, r: enc(S.answers), at: S.me.claimed }; applyClaims(mine); /* the cached /claims may lag by a minute */ rerender(); } }
@@ -59,7 +59,7 @@
   const AGREE_BAND = 20; // within 20 points = "you agree"
 
   // ---------- state ----------
-  const S = { answers: {}, route: { page: 'home' }, vs: null, shared: null, db: null, liveCrowd: [], sel: null, saved: false };
+  const S = { drafts: {}, comments: {}, counts: null, replyTo: null, keepScroll: null, answers: {}, route: { page: 'home' }, vs: null, shared: null, db: null, liveCrowd: [], sel: null, saved: false };
   function loadAnswers() { try { return JSON.parse(localStorage.getItem('stl.v1.answers')) || {}; } catch (e) { return {}; } }
   function saveAnswers() { try { localStorage.setItem('stl.v1.answers', JSON.stringify(S.answers)); } catch (e) { /* private mode */ } }
 
@@ -125,6 +125,8 @@
     const dist = sc.ok && me.ok ? Math.hypot(sc.x - me.x, sc.y - me.y) : null;
     return { f, both, agree, pct: both ? Math.round((agree / both) * 100) : null, dist, rows: rows.sort((p, q) => q.d - p.d), sc };
   }
+  let LABELS = null;
+  function figLabel(f) { if (!LABELS) { const seen = {}; FIGS.forEach((x) => { const k = initials(x.name); seen[k] = (seen[k] || 0) + 1; }); LABELS = {}; FIGS.forEach((x) => { const k = initials(x.name); LABELS[x.id] = seen[k] > 1 ? surname(x.name).slice(0, 3).toUpperCase() : k; }); } return LABELS[f.id] || initials(f.name); }
   const surname = (name) => String(name).replace(/\s*\(.*\)\s*/, '').trim().split(/\s+/).slice(-1)[0];
   const byAgreement = (p, q) => (q.pct - p.pct) || (p.dist - q.dist);
   const initials = (name) => name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
@@ -141,6 +143,9 @@
     if (parts[0] === 'method') return { page: 'method' };
     if (parts[0] === 'context') return { page: 'context' };
     if (parts[0] === 'shared') return { page: 'shared' };
+    if (parts[0] === 'debate') return { page: 'debate' };
+    if (parts[0] === 'p') return { page: 'prop', id: parts[1] };
+    if (parts[0] === 'privacy') return { page: 'privacy' };
     return { page: 'home' };
   }
   const go = (h) => { location.hash = h; };
@@ -150,14 +155,16 @@
   const root = document.getElementById('stl');
   function shell(inner, opts) {
     const o = opts || {};
-    return `<div class="wrap"><header class="top"><a class="mark" href="#/"><i></i>${SITE}</a><span class="spacer"></span><span class="stamp">${fmt(T('As of {stamp}'), { stamp: STAMP })}</span><nav><a href="#/context">${T('Why now')}</a><a href="#/figures">${T('Figures')}</a><a href="#/method">${T('Method')}</a>${window.STL_STRINGS_FR ? `<a class="lang" href="?lang=${LANG === 'fr' ? 'en' : 'fr'}#/" title="${LANG === 'fr' ? 'English' : 'Français'}">${LANG === 'fr' ? 'EN' : 'FR'}</a>` : ''}</nav></header>${inner}${o.foot === false ? '' : `<p class="foot">${fmt(T('{site} is an independent project. The {n} propositions were written to be fair to both sides and reviewed adversarially; the figures\u2019 positions are predictions from their public statements, with sources, and they can correct them.'), { site: SITE, n: ITEMS.length })} <a href="#/method">${T('How it works')}</a>.</p>`}</div><div id="toastbox"></div>`;
+    return `<div class="wrap"><header class="top"><a class="mark" href="#/"><i></i>${SITE}</a><span class="spacer"></span><span class="stamp">${fmt(T('As of {stamp}'), { stamp: STAMP })}</span><nav><a href="#/context">${T('Why now')}</a><a href="#/debate">${T('Debate')}</a><a href="#/figures">${T('Figures')}</a><a href="#/method">${T('Method')}</a>${window.STL_STRINGS_FR ? `<a class="lang" href="?lang=${LANG === 'fr' ? 'en' : 'fr'}#/" title="${LANG === 'fr' ? 'English' : 'Français'}">${LANG === 'fr' ? 'EN' : 'FR'}</a>` : ''}</nav></header>${inner}${o.foot === false ? '' : `<p class="foot">${fmt(T('{site} is an independent project. The {n} propositions were written to be fair to both sides and reviewed adversarially; the figures\u2019 positions are predictions from their public statements, with sources, and they can correct them.'), { site: SITE, n: ITEMS.length })} <a href="#/method">${T('How it works')}</a> · <a href="#/privacy">${T('Privacy')}</a> · <a href="https://github.com/Finaff/setthelimit" target="_blank" rel="noopener">GitHub</a></p>`}</div><div id="toastbox"></div>`;
   }
   function render() {
     S.route = parseRoute();
     const r = S.route;
-    const fn = { home: viewHome, q: viewQ, result: viewResult, figures: viewFigures, figure: viewFigure, method: viewMethod, shared: viewShared, context: viewContext }[r.page] || viewHome;
+    const fn = { home: viewHome, q: viewQ, result: viewResult, figures: viewFigures, figure: viewFigure, method: viewMethod, shared: viewShared, context: viewContext, debate: viewDebate, prop: viewProp, privacy: viewPrivacy }[r.page] || viewHome;
+    document.querySelectorAll('textarea[data-draft]').forEach((t) => { S.drafts[t.dataset.draft] = t.value; });
     root.innerHTML = fn(r);
-    window.scrollTo(0, 0);
+    document.querySelectorAll('textarea[data-draft]').forEach((t) => { if (S.drafts[t.dataset.draft]) t.value = S.drafts[t.dataset.draft]; });
+    if (S.keepScroll !== null && S.keepScroll !== undefined) { window.scrollTo(0, S.keepScroll); S.keepScroll = null; } else window.scrollTo(0, 0);
     if (r.page === 'result') afterResult();
   }
   function viewHome() {
@@ -166,17 +173,19 @@
     const resume = firstUnanswered();
     const done = ITEMS.filter((it) => S.answers[it.id] !== undefined).length;
     return shell(`<section class="hero">
-      <h1>${T('How fast should we build AI?')}</h1>
+      <div class="herogrid"><div><h1>${T('How fast should we build AI?')}</h1>
       <p class="lead">${fmt(T('Everyone has a speed limit. Set yours in three minutes, then see where you stand next to {list}, and next to everyone else who took the test.'), { list: esc(list) })}</p>
       <div class="cta"><a class="btn primary big" href="#/q/${resume || 1}">${done ? (resume ? fmt(T('Continue ({done}/{n})'), { done, n: ITEMS.length }) : T('See my result')) : T('Set my limit')}</a><span class="fine">${fmt(T('{n} propositions · no account, no email'), { n: ITEMS.length })}</span></div>
+      </div><div class="herosigns" aria-hidden="true"><div class="sign-limit"><div class="cap">${T('Speed<br>limit')}</div><div class="num">?</div></div><div class="sign-diamond"><div class="d"><div class="t">${T('Road<br>conditions<br>?')}</div></div></div></div></div>
       <div class="road"><div class="car" style="left:38%"></div></div>
+      <div class="why"><h2>${T('We argue about AI without knowing where we disagree')}</h2><p>${T('One side is told it wants to stop progress; the other, that it is reckless or bought. Most of that is guessing at motives. Underneath, the real disagreement sits in a handful of specific claims: how likely a catastrophe is, whether control will hold, what a delay would cost.')}</p><p>${T('Set the Limit puts those claims on the table one at a time, in words both sides accept. You answer each with a number, and you see exactly where you, your friends and the people shaping this debate part ways, so the argument can happen there.')}</p></div>
       <div class="facts">
         <div><b>${T('Fair to both sides')}</b>${T('Every proposition shows the strongest case for agreeing and for disagreeing, written to satisfy the side it represents.')}</div>
         <div><b>${FIGS.length ? fmt(T('{n} public figures'), { n: FIGS.length }) : T('Public figures')}</b>${T('Their answers are predicted from what they\u2019ve said in public, with sources. If they disagree, they can claim their dot.')}</div>
         <div><b>${T('Your answers stay yours')}</b>${T('They live on this device. Share a link only if you want to; the link carries your answers, not your name.')}</div>
       </div>
       ${CTX.facts.length ? `<div class="whynow"><h2>${T('Why this question, now')}</h2><ul>${CTX.facts.slice(0, 3).map((f) => `<li><span class="d mono">${esc(f.date.slice(0, 7))}</span><span>${esc(f.text)} <a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.src)}</a></span></li>`).join('')}</ul><a class="btn quiet sm" href="#/context">${fmt(T('All {n} facts, with sources'), { n: CTX.facts.length })}</a></div>` : ''}
-      ${FIGS.length ? `<div class="preview"><h2>${T('On the map')}</h2><div class="figrow">${FIGS.map((f) => `<span><span class="av">${esc(initials(f.name))}</span>${esc(f.name)}</span>`).join('')}</div></div>` : ''}
+      ${FIGS.length ? `<div class="preview"><h2>${T('On the map')}</h2><div class="figrow">${FIGS.map((f) => `<span><span class="av">${esc(figLabel(f))}</span>${esc(f.name)}</span>`).join('')}</div></div>` : ''}
     </section>`);
   }
   function viewQ(r) {
@@ -197,6 +206,7 @@
         <div class="row"><button class="btn quiet sm" data-skip="1">${T('Not sure, skip')}</button><span class="spacer"></span>${r.n > 1 ? `<a class="btn sm" href="#/q/${r.n - 1}">${T('Back')}</a>` : ''}<button class="btn primary" data-next="1" id="nextbtn" ${cur === undefined ? 'disabled' : ''}>${T(r.n === ITEMS.length ? 'See my result' : 'Next')}</button></div>
       </div>
       <p class="hint" style="margin-top:10px">${T('Skipping never counts against you. A skipped question just isn\u2019t used in your score.')}</p>
+      <p class="hint" id="discuss" ${cur === undefined ? 'hidden' : ''}><a href="#/p/${esc(it.id)}">${T('See where the figures stand on this one, and the discussion')}${S.counts && S.counts[it.id] ? ` (${S.counts[it.id]})` : ''}</a></p>
     </section>`, { foot: false });
   }
   function viewResult() {
@@ -224,6 +234,7 @@
     html += `<h2 class="sec">${T('Your profile')}<small>${T('Beyond the two axes.')}</small></h2><div class="subs">${[['horizon', 'AI does most paid thinking work within 20 years', 'how likely you find it'], ['concentration', 'Who owns it beats what it does', 'concentration as the bigger danger']].map(([k, t, s]) => sc.subs[k] === null ? '' : `<div><div class="v">${Math.round(sc.subs[k])}<small> / 100</small></div><div class="k"><b>${T(t)}</b><br>${T(s)}</div><div class="bar"><i style="width:${Math.round(sc.subs[k])}%"></i></div></div>`).join('')}</div>`;
     html += `<h2 class="sec">${T('Share your sign')}</h2><div class="share"><textarea id="sharetext" readonly>${esc(shareText(sc, ar, nearest))}</textarea><div class="row"><button class="btn primary" data-copylink="1">${T('Copy link')}</button><button class="btn" data-copytext="1">${T('Copy text')}</button>${navigator.share ? `<button class="btn" data-native="1">${T('Share…')}</button>` : ''}<button class="btn" data-card="1">${T('Image card')}</button></div><p class="link">${esc(link)}</p><p class="note">${fmt(T('The link carries your {n} answers and nothing else. Whoever opens it sees your dot and can take the test to compare.'), { n: ITEMS.length })}</p></div>
       <div class="share" style="border-color:var(--line);margin-top:10px"><div class="row" style="margin:0"><a class="btn" href="#/q/1" data-retake="1">${T('Retake')}</a><a class="btn quiet" href="#/figures">${T('All figures and sources')}</a><a class="btn quiet" href="#/method">${T('How the score works')}</a></div></div></section>`;
+    html += `<h2 class="sec">${T('Where the debate actually splits')}</h2><p class="prose">${T('Each proposition has its own page: where every public figure stands on it, and a discussion among people who answered it.')}</p><p><a class="btn" href="#/debate">${T('Open the debate')}</a></p>`;
     html += publicBlock();
     return shell(html);
   }
@@ -245,7 +256,8 @@
     const faster = pts.filter((p) => p[1] < sc.y).length, safer = pts.filter((p) => p[0] < sc.x).length;
     return { n: pts.length, line: fmt(T('You\u2019d drive faster than {f}% of the {n} people who took this{asof}, and you see more danger than {s}% of them.'), { f: Math.round((faster / pts.length) * 100), n: pts.length, asof: CROWD.asOf && !S.liveCrowd.length ? fmt(T(' (as of {d})'), { d: CROWD.asOf }) : '', s: Math.round((safer / pts.length) * 100) }) };
   }
-  function mapSvg(sc, vs, comps) {
+  function mapSvg(sc, vs, comps, lab) {
+    lab = lab || { main: T('You'), vs: T('Them') };
     const W = 360, H = 360, L = 30, B = 30, TP = 14, R = 14;
     const X = (v) => L + (v / 100) * (W - L - R), Y = (v) => H - B - (v / 100) * (H - TP - B);
     const pts = (S.liveCrowd.length ? S.liveCrowd : CROWD.points) || [];
@@ -253,7 +265,7 @@
     let g = '';
     [25, 50, 75].forEach((t) => { g += `<line class="grid" x1="${X(t)}" y1="${TP}" x2="${X(t)}" y2="${H - B}"/><line class="grid" x1="${L}" y1="${Y(t)}" x2="${W - R}" y2="${Y(t)}"/>`; });
     g += `<line class="axis" x1="${L}" y1="${Y(50)}" x2="${W - R}" y2="${Y(50)}"/><line class="axis" x1="${X(50)}" y1="${TP}" x2="${X(50)}" y2="${H - B}"/>`;
-    g += `<text class="qlab" x="${X(2)}" y="${TP + 11}">${T(ARCHE.open.name)}</text><text class="qlab" x="${X(98)}" y="${TP + 11}" text-anchor="end">${T(ARCHE.weather.name)}</text><text class="qlab" x="${X(2)}" y="${Y(2)}">${T(ARCHE.slow.name)}</text><text class="qlab" x="${X(98)}" y="${Y(2)}" text-anchor="end">${T(ARCHE.brake.name)}</text>`;
+    g += `<text class="qlab" x="${X(25)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.open.name)}</text><text class="qlab" x="${X(75)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.weather.name)}</text><text class="qlab" x="${X(25)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.slow.name)}</text><text class="qlab" x="${X(75)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.brake.name)}</text>`;
     g += `<text class="alab" x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">${T('← clear road · how dangerous is the road? · black ice →')}</text><text class="alab" transform="translate(9,${(TP + H - B) / 2}) rotate(-90)" text-anchor="middle">${T('← full stop · speed · no limit →')}</text>`;
     for (let i = 0; i < pts.length; i += step) g += `<circle class="crowd" cx="${X(pts[i][0])}" cy="${Y(pts[i][1])}" r="3"/>`;
     const pos = comps.map((c) => ({ c, x: X(c.sc.x), y: Y(c.sc.y), ox: X(c.sc.x), oy: Y(c.sc.y) }));
@@ -262,10 +274,10 @@
       pos.forEach((q) => { q.x += (q.ox - q.x) * 0.06; q.y += (q.oy - q.y) * 0.06; q.x = clamp(q.x, L + 8, W - R - 8); q.y = clamp(q.y, TP + 8, H - B - 8); });
     }
     const sel = pos.find((q) => q.c.f.id === S.sel);
-    pos.forEach((q) => { const c = q.c, sc2 = c.sc; g += `<g class="fig ${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}" tabindex="0"><title>${esc(c.f.name)} — ${Math.round(sc2.y)} / ${Math.round(sc2.x)}</title><circle cx="${q.x}" cy="${q.y}" r="8"/><text class="init" x="${q.x}" y="${q.y + 2.6}">${esc(initials(c.f.name))}</text></g>`; });
+    pos.forEach((q) => { const c = q.c, sc2 = c.sc; g += `<g class="fig ${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}" tabindex="0"><title>${esc(c.f.name)} — ${Math.round(sc2.y)} / ${Math.round(sc2.x)}</title><circle cx="${q.x}" cy="${q.y}" r="8"/><text class="init${figLabel(c.f).length > 2 ? ' l3' : ''}" x="${q.x}" y="${q.y + 2.6}">${esc(figLabel(c.f))}</text></g>`; });
     if (sel) { const right = sel.x < W * 0.6; g += `<text class="figname" x="${sel.x + (right ? 12 : -12)}" y="${sel.y + 3.5}" text-anchor="${right ? 'start' : 'end'}">${esc(sel.c.f.name)}</text>`; }
-    if (vs && vs.ok) g += `<g class="vs"><circle cx="${X(vs.x)}" cy="${Y(vs.y)}" r="9"/><text x="${X(vs.x) + 12}" y="${Y(vs.y) + 4}">${T('Them')}</text></g>`;
-    g += `<g class="you"><circle cx="${X(sc.x)}" cy="${Y(sc.y)}" r="10"/><text x="${X(sc.x) + 13}" y="${Y(sc.y) + 4}">${T('You')}</text></g>`;
+    if (vs && vs.ok) g += `<g class="vs"><circle cx="${X(vs.x)}" cy="${Y(vs.y)}" r="9"/><text x="${X(vs.x) + 12}" y="${Y(vs.y) + 4}">${esc(lab.vs)}</text></g>`;
+    g += `<g class="you"><circle cx="${X(sc.x)}" cy="${Y(sc.y)}" r="10"/><text x="${X(sc.x) + 13}" y="${Y(sc.y) + 4}">${esc(lab.main)}</text></g>`;
     return `<svg class="map" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Map of the debate: road danger against speed')}">${g}</svg>`;
   }
   function shareLink(answers) { const u = new URL(location.href); u.hash = '#/shared'; u.search = '?r=' + enc(answers) + (LANG === 'fr' ? '&lang=fr' : ''); return u.toString(); }
@@ -281,14 +293,14 @@
     return shell(`<section>
       <div class="signs">${signHtml(speedSign(sc.y))}<div class="sign-diamond"><div class="d"><div class="t">${esc(condSign(sc.x))}</div></div></div></div>
       <div class="verdict"><div class="arche">${S.sharedBy ? fmt(T('@{handle}\u2019s result, made public by them'), { handle: esc(S.sharedBy) }) : T('Someone sent you their result')}</div><h1>${ar ? esc(ar.name) : T('A result')}</h1><p>${fmt(T('They set the limit at {y} and rate the road at {x}.'), { y: Math.round(sc.y), x: Math.round(sc.x) })}${comps[0] ? ' ' + fmt(T('Their closest public figure: {who}.'), { who: esc(comps[0].f.name) }) : ''}</p></div>
-      <div class="mapwrap">${mapSvg(sc, mine.ok ? mine : null, comps)}<div class="legend"><span><i style="background:var(--green)"></i>${T('Them')}</span>${mine.ok ? `<span><i style="background:var(--yellow);outline:1px solid var(--ink)"></i>${T('You')}</span>` : ''}</div></div>
+      <div class="mapwrap">${mapSvg(sc, mine.ok ? mine : null, comps, { main: S.sharedBy ? '@' + S.sharedBy : T('Them'), vs: T('You') })}<div class="legend"><span><i style="background:var(--green)"></i>${T('Them')}</span>${mine.ok ? `<span><i style="background:var(--yellow);outline:1px solid var(--ink)"></i>${T('You')}</span>` : ''}</div></div>
       <div class="cta" style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary big" href="${mine.ok ? '#/result' : '#/q/' + (firstUnanswered() || 1)}" data-vs="1">${T(mine.ok ? 'See the full comparison' : 'Take the test to compare')}</a></div>
-      <p class="note" style="margin-top:10px">${T(mine.ok ? 'You already have a result; the comparison is on your result page.' : 'Four minutes. Your dot will appear next to theirs, with the propositions you agree and disagree on.')}</p></section>`);
+      <p class="note" style="margin-top:10px">${T(mine.ok ? 'You already have a result; the comparison is on your result page.' : 'Three minutes. Your dot will appear next to theirs, with the propositions you agree and disagree on.')}</p></section>`);
   }
   function viewFigures() {
     if (!FIGS.length) return shell(`<section><h2 class="sec">${T('Public figures')}</h2><div class="empty">${T('The predictions are being compiled with their sources. Check back soon.')}</div></section>`);
     return shell(`<section><h2 class="sec">${T('The people on the map')}<small>${fmt(T('{n} public figures. Their answers are predictions from their public statements, each with a confidence and sources. They are not endorsements, and anyone listed can correct their dot.'), { n: FIGS.length })}</small></h2>
-      <ul class="figlist">${FIGS.map((f) => { const sc = figScore(f); const ar = sc.ok ? archetype(sc.x, sc.y) : null; const confs = ITEMS.map((it) => (f.predictions[it.id] || {}).conf); const hi = confs.filter((c) => c === 'high').length, md = confs.filter((c) => c === 'med').length; return `<li><div class="head"><span class="av">${esc(initials(f.name))}</span><span class="nm">${esc(f.name)}</span><span class="role">${f.claimed ? T('answered themselves') + ' · ' : ''}${esc(f.role || '')}</span></div><p>${esc(f.oneLiner || '')}</p><div class="coords">${fmt(T('Predicted limit {y} · road {x}'), { y: sc.ok ? Math.round(sc.y) : '—', x: sc.ok ? Math.round(sc.x) : '—' })}${ar ? ` · ${esc(ar.name)}` : ''} · ${fmt(T('confidence: {h} high, {m} medium, {l} low'), { h: hi, m: md, l: ITEMS.length - hi - md })}</div><p><a href="#/figure/${esc(f.id)}">${fmt(T('All {n} predictions and sources'), { n: ITEMS.length })}</a></p></li>`; }).join('')}</ul>
+      <ul class="figlist">${FIGS.map((f) => { const sc = figScore(f); const ar = sc.ok ? archetype(sc.x, sc.y) : null; const confs = ITEMS.map((it) => (f.predictions[it.id] || {}).conf); const hi = confs.filter((c) => c === 'high').length, md = confs.filter((c) => c === 'med').length; return `<li><div class="head"><span class="av">${esc(figLabel(f))}</span><span class="nm">${esc(f.name)}</span><span class="role">${f.claimed ? T('answered themselves') + ' · ' : ''}${esc(f.role || '')}</span></div><p>${esc(f.oneLiner || '')}</p><div class="coords">${fmt(T('Predicted limit {y} · road {x}'), { y: sc.ok ? Math.round(sc.y) : '—', x: sc.ok ? Math.round(sc.x) : '—' })}${ar ? ` · ${esc(ar.name)}` : ''} · ${fmt(T('confidence: {h} high, {m} medium, {l} low'), { h: hi, m: md, l: ITEMS.length - hi - md })}</div><p><a href="#/figure/${esc(f.id)}">${fmt(T('All {n} predictions and sources'), { n: ITEMS.length })}</a></p></li>`; }).join('')}</ul>
       <p class="note" style="margin-top:14px">${T('If you are one of these people and a prediction is wrong, the fix is one message away: send your own numbers and we replace the prediction with your answer, labelled as yours.')}</p></section>`);
   }
   function viewFigure(r) {
@@ -317,6 +329,7 @@
     const nD = ITEMS.filter((it) => it.axis === 'danger').length, nS = ITEMS.filter((it) => it.axis === 'speed').length, nP = ITEMS.filter((it) => it.axis === 'profile').length;
     return shell(`<section class="prose"><h2>${T('How it works')}</h2>
       <p>${fmt(T('<b>Two axes, both sides accept.</b> The road-conditions axis asks how dangerous you believe the road is: {nD} propositions about risk and controllability, with beliefs about the world, not policy. The speed axis asks what pace you\u2019d set: {nS} propositions about what should be done. {nP} more feed a profile without moving your position. The rule in one sentence: road-conditions items are beliefs about the risk of catastrophe or loss of control; speed items are what you\u2019d do about it. Keeping the two apart is the point: people who agree about the danger disagree about the speed, and the map shows it.'), { nD, nS, nP })}</p>
+      <h3>${T('Why this exists')}</h3><p>${T('In this debate, as in many, people rarely know where they actually disagree. Each side presumes the other\u2019s motives, and the exchange is about those presumptions rather than about claims. This site is built on one bet: if everyone answers the same precise propositions, the points of real disagreement become visible, and they turn out to be fewer and more specific than the noise suggests. Each proposition has a page where you can see who stands where and argue about that claim only.')}</p>
       <h3>${T('Scoring')}</h3><p>${T('Each answer is a number from 0 to 100. For a forecast, it\u2019s how likely you find the statement; for an opinion, how much you agree. Some propositions are phrased so that agreeing means more danger or more speed; others the reverse, in equal numbers and equal weight, so the wording can\u2019t push you. Your axis score is the weighted average of your answers after flipping the reversed ones. Skipped questions are left out; you need at least three answers on each axis to get a result. The speed-limit sign shows your speed score; the diamond shows your road score in five bands.')}</p>
       <h3>${T('Fairness')}</h3><p>${T('Every proposition was written to a rule: one idea, plain words, no adjective that takes a side, and two steelmen, the strongest honest case for agreeing and for disagreeing, each written to satisfy the side it represents. The set was then reviewed adversarially by an editor arguing for the halt-and-pause side and an editor arguing for the build-fast side, and a third for plain English. Items either side called loaded were rewritten or dropped: two that were unfair to the halt side, two that were unfair to the build side. The archetype names were chosen so that people in each quadrant would use them about themselves.')} ${T('A second review then tested every proposition against the sixteen public figures: an item that pushed people the wrong way for a reason unrelated to its axis was reworded. Three were: sceptics of today\u2019s AI were being scored as alarmed, which they are not.')} ${T('Version 4 (19 September 2026) shortened the test from 24 to 16 propositions. Every item that was cut asked, in effect, the same thing as one that stayed (the sixteen figures answered the two within a few points of each other), and five sentences that carried two claims were trimmed to one, so a single slider never has to answer two questions. Each axis is now a set of mirrored pairs: for every statement leaning one way, one leaning the other, at the same weight.')}</p>
       <h3>${T('The public figures')}</h3><p>${T('Their dots are predictions, not statements. For each figure we read their essays, interviews, testimony and posts, then estimated how they\u2019d answer each proposition, with a confidence (high when they\u2019ve said it almost verbatim, medium when it follows clearly from their stated views, low when we inferred it from their general stance) and the sources it rests on. Each figure\u2019s page shows all of it. Anyone listed can replace the predictions with their own answers.')} ${T('An independent audit then checked 180 of the 384 predictions against sources it opened itself: 156 held, 15 numbers or confidence levels were corrected, 9 justifications were replaced, and 11 source notes were annotated. Every correction is visible on the figure\u2019s page.')}</p>
@@ -347,6 +360,95 @@
     S.db.doc('runs/' + uid()).set({ x: Math.round(sc.x * 10) / 10, y: Math.round(sc.y * 10) / 10, r: enc(S.answers), at: new Date().toISOString(), v: C.version || null }).catch((e) => { console.warn('db', e); S.saved = false; });
   }
 
+
+  // ---------- the debate: one page per proposition (figures on a line, discussion), an index, and the privacy page ----------
+  const apiTry = (p, body, method) => fetch(API + p, { credentials: 'include', method: method || 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) }).then((r) => r.json().then((j) => ({ ok: r.ok, j })).catch(() => ({ ok: false, j: {} }))).catch(() => ({ ok: false, j: {} }));
+  function renderKeep() { S.keepScroll = window.scrollY; render(); }
+  const figVals = (it) => FIGS.map((f) => ({ f, v: (f.predictions[it.id] || {}).value })).filter((x) => typeof x.v === 'number').sort((a, b) => a.v - b.v);
+  function spread(it) { const v = figVals(it).map((x) => x.v); if (v.length < 3) return 0; const m = v.reduce((a, b) => a + b, 0) / v.length; return Math.sqrt(v.reduce((a, x) => a + (x - m) * (x - m), 0) / v.length); }
+  function miniStrip(it, mine) { const W = 300, X = (v) => 4 + (v / 100) * (W - 8); return `<svg class="mini" viewBox="0 0 ${W} 18" role="img" aria-label="${T('Where the figures stand')}"><line x1="4" y1="9" x2="${W - 4}" y2="9"/>${figVals(it).map((x) => `<circle cx="${X(x.v)}" cy="9" r="3.2"/>`).join('')}${typeof mine === 'number' ? `<rect class="me" x="${X(mine) - 1.5}" y="1" width="3" height="16" rx="1.5"/>` : ''}</svg>`; }
+  function strip(it, mine) {
+    const W = window.innerWidth < 600 ? 350 : 640, L = 16, X = (v) => L + (v / 100) * (W - 2 * L); const pts = figVals(it); const last = [];
+    pts.forEach((pt) => { let r = 0; while (last[r] !== undefined && X(pt.v) - last[r] < 24) r++; last[r] = X(pt.v); pt.row = r; });
+    const rows = Math.max(1, last.length), base = 36 + rows * 24, H = base + 30; const fait = it.type === 'prob';
+    let g = `<line class="ax" x1="${L}" y1="${base}" x2="${W - L}" y2="${base}"/>`;
+    [0, 25, 50, 75, 100].forEach((t) => { g += `<line class="tk" x1="${X(t)}" y1="${base - 4}" x2="${X(t)}" y2="${base + 4}"/><text class="tl" x="${X(t)}" y="${base + 17}" text-anchor="middle">${t}</text>`; });
+    g += `<text class="tl" x="${L}" y="${H - 1}">${T(fait ? 'Very unlikely' : 'Strongly disagree')}</text><text class="tl" x="${W - L}" y="${H - 1}" text-anchor="end">${T(fait ? 'Very likely' : 'Strongly agree')}</text>`;
+    pts.forEach((pt) => { const y = base - 14 - pt.row * 24; const lb = figLabel(pt.f); g += `<a href="#/figure/${esc(pt.f.id)}"><title>${esc(pt.f.name)} · ${pt.v}${pt.f.claimed ? '' : ' (' + T('predicted') + ')'}</title><circle class="${pt.f.claimed ? 'self' : ''}" cx="${X(pt.v)}" cy="${y}" r="10.5"/><text class="${lb.length > 2 ? 'l3' : ''}" x="${X(pt.v)}" y="${y + 3.2}" text-anchor="middle">${esc(lb)}</text></a>`; });
+    if (typeof mine === 'number') g += `<line class="me" x1="${X(mine)}" y1="16" x2="${X(mine)}" y2="${base}"/><text class="met" x="${Math.min(W - 30, Math.max(30, X(mine)))}" y="11" text-anchor="middle">${T('You')} · ${mine}</text>`;
+    return `<div class="stripwrap"><svg class="strip" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Where the figures stand')}">${g}</svg></div>`;
+  }
+  function viewDebate() {
+    const rows = ITEMS.map((it, i) => ({ it, i, sd: spread(it) })).sort((a, b) => b.sd - a.sd);
+    return shell(`<section><h2 class="sec">${T('Where the debate actually splits')}<small>${T('The propositions, ordered by how far apart the public figures are on each. The widest gaps are where the real argument is. Figures’ answers are predictions unless marked as their own.')}</small></h2>
+      <ul class="debate">${rows.map((o) => { const mine = S.answers[o.it.id]; const seen = mine !== undefined; const n = S.counts && S.counts[o.it.id]; return `<li><a href="#/p/${esc(o.it.id)}"><span class="dt">${esc(o.it.text)}</span>${seen ? miniStrip(o.it, mine) : `<span class="dlock">${T('Answer it to see where the figures stand')}</span>`}<span class="dm">${fmt(T('Gap between figures: {sd}'), { sd: Math.round(o.sd) })}${n ? ' · ' + fmt(T('{n} comments'), { n }) : ''}</span></a></li>`; }).join('')}</ul></section>`);
+  }
+  function loadComments(id, force) {
+    if (!API) return; const st = S.comments[id] = S.comments[id] || {}; if (st.loading || (st.list && !force)) return; st.loading = true;
+    apiJson('/comments?item=' + encodeURIComponent(id)).then((j) => { st.loading = false; st.list = j && j.comments ? j.comments : []; st.failed = !j; const rt = parseRoute(); if (rt.page === 'prop' && rt.id === id) renderKeep(); });
+  }
+  function commentHtml(c, it, isReply) {
+    const when = String(c.at).slice(0, 10); const fig = c.figure ? FIGS.find((f) => f.id === c.figure) : null;
+    if (c.deleted) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Deleted by its author.')}</div></div>`;
+    if (c.hidden) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Hidden: several people flagged this as spam.')}</div></div>`;
+    return `<div class="cm${isReply ? ' reply' : ''}"><div class="cmh"><a href="https://x.com/${esc(c.handle)}" target="_blank" rel="noopener nofollow">@${esc(c.handle)}</a>${fig ? `<span class="badge">${esc(fig.name)} · ${T('verified')}</span>` : ''}${typeof c.value === 'number' ? `<span class="ans">${fmt(T('answered {v}'), { v: c.value })}</span>` : ''}<span class="when">${esc(when)}</span></div>
+      <div class="cmb">${esc(c.body).replace(/\n/g, '<br>')}</div>
+      <div class="cma"><button class="${c.voted ? 'on' : ''}" data-vote="${esc(c.id)}" aria-pressed="${c.voted ? 'true' : 'false'}" title="${T('Upvote')}">▲ ${c.up || 0}</button><button data-reply="${esc(c.id)}">${T('Reply')}</button>${c.own ? `<button data-delc="${esc(c.id)}">${T('Delete')}</button>` : `<button class="${c.flagged ? 'on' : ''}" data-flag="${esc(c.id)}">${c.flagged ? T('Flagged as spam') : T('Spam?')}</button>`}</div>
+      ${S.replyTo === c.id && S.me ? `<div class="compose"><textarea data-draft="r:${esc(c.id)}" maxlength="1000" rows="3" placeholder="${T('Reply to the claim, not the person.')}"></textarea><div class="row"><button class="btn sm primary" data-postreply="${esc(c.id)}">${T('Post reply')}</button></div></div>` : ''}</div>`;
+  }
+  function commentsHtml(it, mine) {
+    if (!API) return `<h2 class="sec">${T('Discussion')}</h2><p class="note">${T('The discussion lives on the main site:')} <a href="https://setthelimit.com/#/p/${esc(it.id)}" target="_blank" rel="noopener">setthelimit.com</a></p>`;
+    const st = S.comments[it.id] || {}; const list = st.list || []; const live = list.filter((c) => !c.deleted && !c.hidden).length;
+    const roots = list.filter((c) => !c.parent).sort((a, b) => (b.up - a.up) || (a.at < b.at ? -1 : 1));
+    const next = encodeURIComponent('#/p/' + it.id);
+    const compose = S.me ? `<div class="compose"><textarea data-draft="c:${esc(it.id)}" maxlength="1000" rows="4" placeholder="${T('What would change your answer? Argue the claim, not the person.')}"></textarea><div class="row">${typeof mine === 'number' ? `<label class="chk"><input type="checkbox" id="showval" checked> ${fmt(T('Show my answer ({v}) next to my comment'), { v: mine })}</label>` : ''}<span class="spacer"></span><span class="hint">@${esc(S.me.handle)}</span><button class="btn sm primary" data-post="${esc(it.id)}">${T('Post')}</button></div></div>`
+      : `<p><a class="btn" href="${esc(API)}/auth/x/start?intent=signin&next=${next}">${T('Sign in with X to comment')}</a></p><p class="note">${T('X sign-in keeps the bots out. We never post for you and never read your posts.')}</p>`;
+    return `<h2 class="sec">${T('Discussion')}${live ? ` <small style="display:inline">(${live})</small>` : ''}</h2>${compose}
+      ${st.loading && !st.list ? `<p class="hint">${T('Loading…')}</p>` : ''}${st.list && !roots.length ? `<p class="hint">${T('No comments yet. The first one sets the tone.')}</p>` : ''}
+      <div class="cms">${roots.map((c) => commentHtml(c, it, false) + list.filter((x) => x.parent === c.id).map((x) => commentHtml(x, it, true)).join('')).join('')}</div>`;
+  }
+  function viewProp(r) {
+    const it = ITEMS.find((x) => x.id === r.id); if (!it) return viewDebate();
+    const n = ITEMS.indexOf(it) + 1, mine = S.answers[it.id], fait = it.type === 'prob';
+    const head = `<p class="crumbs"><a href="#/debate">${T('All propositions')}</a> · ${n} / ${ITEMS.length}</p><div class="sign-green"><div class="sub"><b>${T(fait ? 'Forecast' : 'Opinion')}</b></div><p class="text">${esc(it.text)}</p></div><div class="plaque"><b>${T('In plain words')}</b>${esc(it.plain)}</div>`;
+    if (mine === undefined) return shell(`<section>${head}<div class="gate"><p class="prose">${T('The figures’ answers and the discussion stay hidden until you’ve set your own slider, so that nobody anchors you.')}</p><p><a class="btn primary" href="#/q/${n}">${T('Answer this one first')}</a></p></div></section>`);
+    loadComments(it.id);
+    return shell(`<section>${head}
+      <div class="steel"><div class="agree"><b>${T(fait ? 'Why some say likely' : 'Why some agree')}</b>${esc(it.for)}</div><div class="disagree"><b>${T(fait ? 'Why some say unlikely' : 'Why some disagree')}</b>${esc(it.against)}</div></div>
+      <h2 class="sec">${T('Where the figures stand')}<small>${T('Each dot is a public figure’s answer to this proposition: predicted from their public statements unless they answered themselves. Tap one for its basis and sources.')}</small></h2>
+      ${strip(it, mine)}
+      <p class="hint">${mine === null ? T('You skipped this one.') : ''} <a href="#/q/${n}">${T('Change my answer')}</a></p>
+      ${commentsHtml(it, mine)}
+      <p style="margin-top:18px">${n > 1 ? `<a class="btn sm" href="#/p/${esc(ITEMS[n - 2].id)}">${T('Back')}</a> ` : ''}${n < ITEMS.length ? `<a class="btn sm" href="#/p/${esc(ITEMS[n].id)}">${T('Next')}</a>` : ''}</p></section>`);
+  }
+  async function postComment(itemId, parent) {
+    const key = parent ? 'r:' + parent : 'c:' + itemId; const ta = document.querySelector(`textarea[data-draft="${key}"]`); const body = ta ? ta.value.trim() : '';
+    if (body.length < 2) { toast(T('Write something first.')); return; }
+    const sv = document.getElementById('showval'); const mine = S.answers[itemId];
+    const value = typeof mine === 'number' && (parent || !sv || sv.checked) ? mine : null;
+    const res = await apiTry('/comments', { item: itemId, parent: parent || null, body, value, lang: LANG });
+    if (!res.ok) { toast(res.j && res.j.error ? String(res.j.error) : T('That did not go through. Try again.')); return; }
+    S.drafts[key] = ''; if (ta) ta.value = ''; S.replyTo = null; if (S.counts) S.counts[itemId] = (S.counts[itemId] || 0) + 1; loadComments(itemId, true);
+  }
+  async function commentAction(kind, id) {
+    const rt = parseRoute(); if (rt.page !== 'prop') return;
+    if (!S.me) { toast(T('Sign in with X first.')); return; }
+    const res = kind === 'del' ? await apiTry('/comments/' + id, {}, 'DELETE') : await apiTry('/comments/' + id + '/' + kind, {});
+    if (!res.ok) { toast(res.j && res.j.error ? String(res.j.error) : T('That did not go through. Try again.')); return; }
+    loadComments(rt.id, true);
+  }
+  function viewPrivacy() {
+    const P = (h, t) => `<h3>${T(h)}</h3><p>${T(t)}</p>`;
+    return shell(`<section><h2 class="sec">${T('Privacy')}<small>${T('Last updated 20 September 2026. Short, and meant to be read.')}</small></h2><div class="prose">
+      ${P('If you just take the test', 'Your answers are kept in your browser’s storage on your device. When you reach your result, we store an anonymous copy: your two scores, your answers, the language, and the time. No name, no email, no account, no cookie. To limit abuse we keep a one-way hash of your network address that changes every day and cannot be turned back into the address. These anonymous runs feed the crowd on the map.')}
+      ${P('If you share a link', 'A share link carries your answers inside the link itself. Whoever has the link can see those answers; nothing else about you is in it.')}
+      ${P('If you sign in with X', 'Signing in is optional and only proves which X account is yours. X sends us your account’s numeric id, your handle and your display name. We never see your password, we cannot post, like or follow for you, and we do not read your posts, followers or messages. The access token X gives us is used once to read those three fields and is then discarded. We set one cookie to keep you signed in for 30 days; it is not readable by scripts and is not used for tracking.')}
+      ${P('What becomes public, and only if you choose it', 'If you make your result public, your handle and your answers are shown to anyone with your link. If you comment, your handle, your comment, its date and, if you tick the box, your answer to that proposition are public. A listed public figure who claims their dot makes their answers public under their name. You can remove your public result in one click and delete your own comments at any time.')}
+      ${P('What we do not do', 'No advertising, no analytics trackers, no sale or sharing of data, no profiling, no training of AI models on your data.')}
+      ${P('Who processes the data', 'The site and its database run on Cloudflare, which processes network addresses to deliver pages and keep the service secure. Fonts are loaded from Google Fonts, which sees your network address when your browser fetches them. The code that handles all of this is public.')}
+      ${P('Your rights', 'You can ask for a copy of what we hold about your X account, or for its deletion, by opening an issue on the public repository or writing to the address listed there. Anonymous runs cannot be traced back to you, so they cannot be looked up or deleted individually.')}
+      <p><a href="https://github.com/Finaff/setthelimit" target="_blank" rel="noopener">github.com/Finaff/setthelimit</a></p></div></section>`);
+  }
 
   // ---------- PNG card: the sign, the diamond, the archetype and the map, drawn on a canvas for saving or sharing ----------
   function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
@@ -399,13 +501,20 @@
     const val = document.getElementById('val'); if (val) { val.textContent = v; val.classList.remove('unset'); }
     const w = document.getElementById('word'); if (w) w.textContent = words(it, v);
     const b = document.getElementById('nextbtn'); if (b) b.disabled = false;
+    const d = document.getElementById('discuss'); if (d) d.hidden = false;
   });
   document.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
+    const t = e.target.closest('[data-post],[data-postreply],[data-vote],[data-flag],[data-reply],[data-delc],[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
     if (!t) return; const ds = t.dataset; const r = parseRoute();
     if (ds.skip) { const it = ITEMS[r.n - 1]; S.answers[it.id] = null; saveAnswers(); go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
     if (ds.next) { const it = ITEMS[r.n - 1]; if (S.answers[it.id] === undefined) return; go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
     if (ds.fig) { S.sel = S.sel === ds.fig ? null : ds.fig; const y0 = window.scrollY; render(); window.scrollTo(0, y0); const fc = document.getElementById('figcard'); if (fc && S.sel) fc.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); return; }
+    if (ds.post) { postComment(ds.post, null); return; }
+    if (ds.postreply) { const rt = parseRoute(); postComment(rt.id, ds.postreply); return; }
+    if (ds.vote) { commentAction('vote', ds.vote); return; }
+    if (ds.flag) { commentAction('flag', ds.flag); return; }
+    if (ds.delc) { commentAction('del', ds.delc); return; }
+    if (ds.reply) { if (!S.me) { toast(T('Sign in with X first.')); return; } S.replyTo = S.replyTo === ds.reply ? null : ds.reply; renderKeep(); return; }
     if (ds.png) { const sc = scores(S.answers); const ar = archetype(sc.x, sc.y); const nearest = FIGS.map((f) => compare(S.answers, f)).filter((c) => c.dist !== null).sort(byAgreement)[0]; saveCard(sc, ar, nearest); return; }
     if (ds.claim) { claimDot(); return; }
     if (ds.unpublic) { unpublishRun(); return; }
@@ -432,6 +541,7 @@
   // ---------- boot ----------
   async function boot() {
     S.answers = loadAnswers();
+    if (new URLSearchParams(location.search).get('debug') === '1' && new URLSearchParams(location.search).get('a')) S.answers = dec(new URLSearchParams(location.search).get('a')) || S.answers; /* local testing only */
     const q = new URLSearchParams(location.search);
     const r = q.get('r'); if (r) { S.shared = dec(r); if (S.shared && !location.hash) location.hash = '#/shared'; }
     try { const v = sessionStorage.getItem('stl.v1.vs'); if (v) S.vs = dec(v); } catch (e) { /* ignore */ }
@@ -440,6 +550,7 @@
     if (API) {
       S.run = loadRun();
       if (q.get('public') === '1') S.pendingPublic = true;
+      apiJson('/comments/counts').then((j) => { if (j && j.counts) { S.counts = j.counts; rerender(); } });
       apiJson('/crowd').then((j) => { if (j && j.points) { S.liveCrowd = j.points; rerender(); } });
       apiJson('/claims').then((j) => { if (j && j.figures) { applyClaims(j.figures); rerender(); } });
       apiJson('/me').then((j) => { S.me = j && j.handle ? j : null; if (S.me && S.pendingPublic) publishRun(); rerender(); });

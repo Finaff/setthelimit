@@ -12,7 +12,7 @@ const fail = (m) => { fails++; console.error('FAIL ' + m); };
 const NB = '\u00A0';
 
 // Words that are legitimately spelled the same in both languages.
-const SAME_OK = new Set(['Autobahn', 'Sources', 'Incident', 'Opinion']);
+const SAME_OK = new Set(['Autobahn', 'Sources', 'Incident', 'Opinion', 'Discussion']);
 
 // ---- 1. UI strings
 const keys = JSON.parse(fs.readFileSync(path.join(root, 'research/ui-strings.en.json'), 'utf8'));

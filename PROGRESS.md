@@ -150,3 +150,11 @@
   Deploy site: `npx wrangler deploy` at the repo root. Deploy API: same in worker/.
 - Public repository: https://github.com/Finaff/setthelimit (history restarted for publication; personal paths removed; MIT + CC BY 4.0).
 - Still to do: FIGURE_ACCOUNTS (numeric X ids of the 19 figures), a real X sign-in test by the owner, /privacy page, artifacts on claude.ai are now secondary.
+- v1.3 (20 Sept): the WHY is now explicit (home block "We argue about AI without knowing where we disagree" + Method "Why this exists");
+  hero shows the sign; map quadrant names are watermarks; duplicate initials resolved (ALT / ALE); shared view labels the right dot; "Three minutes".
+  New pages: #/debate (propositions ordered by the gap between figures, mini strips, comment counts), #/p/<id> (steelmen, every figure on a 0–100
+  line, discussion; hidden until you have answered that item), #/privacy. Comments: X sign-in only, one level of replies, upvotes, spam flags
+  (hidden at 3 flags if flags > upvotes), delete own, 10/hour, optional "answered N" chip, verified-figure badge. Worker: comments tables and
+  endpoints, 30-day session, safe `next` on sign-in; 44 worker checks pass. Tested locally end to end (post, vote, reply) against tools/dev-api.mjs.
+  API deployed; the site deploy waits for the David Sacks dossier review. ?debug=1&a=<r> preloads answers for screenshots.
+  Screenshots for UI review: headless Chrome, `--window-size=500,H --screenshot` (the Browser pane is too small to judge layout).

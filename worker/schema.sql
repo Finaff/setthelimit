@@ -11,3 +11,11 @@ CREATE TABLE IF NOT EXISTS public_results (
 CREATE TABLE IF NOT EXISTS claims (
   figure_id TEXT PRIMARY KEY, x_user_id TEXT NOT NULL, handle TEXT NOT NULL, name TEXT,
   r TEXT NOT NULL, at TEXT NOT NULL, revoked INTEGER NOT NULL DEFAULT 0);
+-- Comments on a proposition: X sign-in required (keeps bots out). One level of replies. `value` is the author's own answer, if they chose to show it.
+CREATE TABLE IF NOT EXISTS comments (
+  id TEXT PRIMARY KEY, item_id TEXT NOT NULL, parent_id TEXT, x_user_id TEXT NOT NULL, handle TEXT NOT NULL, name TEXT,
+  body TEXT NOT NULL, value INTEGER, lang TEXT, at TEXT NOT NULL, deleted INTEGER NOT NULL DEFAULT 0);
+CREATE INDEX IF NOT EXISTS comments_item ON comments(item_id, at);
+CREATE INDEX IF NOT EXISTS comments_user ON comments(x_user_id, at);
+CREATE TABLE IF NOT EXISTS comment_votes (comment_id TEXT NOT NULL, x_user_id TEXT NOT NULL, at TEXT NOT NULL, PRIMARY KEY (comment_id, x_user_id));
+CREATE TABLE IF NOT EXISTS comment_flags (comment_id TEXT NOT NULL, x_user_id TEXT NOT NULL, at TEXT NOT NULL, PRIMARY KEY (comment_id, x_user_id));
