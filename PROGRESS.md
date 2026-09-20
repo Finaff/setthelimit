@@ -168,3 +168,4 @@
 - Elon Musk (road 77 / limit 62, conf 4/8/4) and Mark Zuckerberg (road 25 / limit 83, conf 5/8/3) added: research/figures-f.json + figures-f.md.
   Rule: heads of the big frontier labs are on the map. Caveat from the agent: quotes were read through a summarising fetcher or mirrors, not compared
   with raw pages; a second audit should start with these two and with David Sacks. 22 figures. Deployed; artifacts updated.
+- DONE: @PainPockets is moderator. MODERATORS is a worker secret (JSON array of numeric X ids): `npx wrangler secret put MODERATORS` in worker/.
