@@ -169,3 +169,15 @@
   Rule: heads of the big frontier labs are on the map. Caveat from the agent: quotes were read through a summarising fetcher or mirrors, not compared
   with raw pages; a second audit should start with these two and with David Sacks. 22 figures. Deployed; artifacts updated.
 - DONE: @PainPockets is moderator. MODERATORS is a worker secret (JSON array of numeric X ids): `npx wrangler secret put MODERATORS` in worker/.
+
+## 2026-09-24 (v5)
+- Owner's review of v4 adopted: content/propositions.v5.json + .fr.json (generator tools/make-v5.py). Forecasts are bare events on the probability
+  slider; d10 = 1-in-10 within 20 years (was d1, "this century"); d15 new middle rung (kills millions, not humanity); d13 = kind of danger (was d6);
+  d12/d14 = d5/d7 as forecasts; d11 new "clear warning signs first" (replaces d3 and d9); s14 = the ten-year worldwide uncheatable button (replaces s1).
+  New ids wherever text or scale changed. Balance: danger 3/3 at 4.0/4.0, speed 4/4 at 5.0/5.0.
+- app.js: share links carry the content's major version as a prefix ("5…"), so v4 links are ignored rather than misread; figure pages show
+  "updated <date> · was N" for predictions revised on new statements (field `update`); Method gets a Version 5 paragraph (EN+FR).
+- Agents running (brief: scratchpad v5-agent-brief.md): A = figures-a (7), B = figures-b (9), C = figures c–f (6) predict the 7 new ids and refresh
+  each figure with statements since ~15 Sept (resumable: a figure with "v5": "2026-09-24" is done); plus the Why-now refresh (site/context.js + FR).
+  DO NOT DEPLOY until all 22 figures have the new ids (check-figures clean): the map would drop figures without enough danger-axis answers.
+  After that: adversarial fairness review of v5 with the new predictions, then deploy site + artifacts.
