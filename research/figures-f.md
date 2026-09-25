@@ -231,3 +231,12 @@ New predictions: d10 15 med · d15 12 low · d13 65 med · d12 30 med · d14 80 
 - s14 is med, not high: the button removes his China argument, but not his case that holding capability back concentrates power ("quite dangerous").
 
 No old value changed. Meta's Connect event (23–24 Sept) launched Muse devices; nothing further on risk was found in that coverage.
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+No new sources.
+
+- **Elon Musk**: d16 50 low (d15 35). About 20% bad outcome, with AI smarter than all humans by 2030–31, now counts. · s15 8 high (copied). The narrowing does not touch his "we probably shouldn't press it".
+- **Mark Zuckerberg**: d16 12 low (copied) · s15 5 med (copied).

@@ -165,3 +165,11 @@ New predictions: d10 80 med · d15 45 low · d13 8 high · d12 85 high · d14 15
 Changed: **s8 75 → 85 (med)**, on the #494 passage above (a few years' delay for lower risk is well inside "you don't do this initial test").
 
 Not found: no reaction from Harris to Amodei's "We Must Pace the Frontier" (12 Sept), to the Coxon resignation or to the Sanders–Casar superintelligence bill (23 Sept). The paywalled second half of #494 was not read.
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+No new sources.
+
+- **Sam Harris**: d16 65 low (d15 45). Extinction now counts. He treats lab leaders' 10–30% as alarming, but gives no number of his own. · s15 85 med (copied). His objection was feasibility, and the narrowing only helps.

@@ -328,6 +328,25 @@
             1,
             6
           ]
+        },
+        "d16": {
+          "value": 10,
+          "conf": "med",
+          "basis": "Copied from d15. Puts the chance AI kills humanity at zero if policy is right, so dropping the clause adds nothing. Bio and cyber are 'risks', but defenders get the same AI.",
+          "src": [
+            2,
+            1,
+            13
+          ]
+        },
+        "s15": {
+          "value": 2,
+          "conf": "high",
+          "basis": "Copied from s14. 'I think these risks can be managed, and I do not want to stop' (CBS, Sept 2026). General-purpose AI is the race he wants America to win.",
+          "src": [
+            1,
+            6
+          ]
         }
       },
       "v5": "2026-09-24"

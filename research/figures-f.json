@@ -317,6 +317,25 @@
             0,
             1
           ]
+        },
+        "d16": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Extinction now counts: about 20% bad outcome, with AI smarter than all humans by 2030-31, well inside 20 years. Add survivable mass-casualty risk (d15 35, inferred). He dodged a number in 2026.",
+          "src": [
+            5,
+            4,
+            2
+          ]
+        },
+        "s15": {
+          "value": 8,
+          "conf": "high",
+          "basis": "Copied from s14; the narrowing does not touch his reason. 'Even if there was a stop button, we probably shouldn't press it because the most likely outcome is incredible abundance.'",
+          "src": [
+            0,
+            1
+          ]
         }
       },
       "v5": "2026-09-24"
@@ -641,6 +660,27 @@
           "value": 5,
           "conf": "med",
           "basis": "'Any policy that slows American model releases -- even by a month -- could add significant risk'; 'I don't think that we need some kind of industrywide coordination'; holding models back is 'quite dangerous'.",
+          "src": [
+            0,
+            12,
+            13
+          ]
+        },
+        "d16": {
+          "value": 12,
+          "conf": "low",
+          "basis": "Copied from d15. Finds the runaway case unlikely, so dropping the clause adds little; his answer to AI hacking and bio risk is diffusion, so everyone has defences.",
+          "src": [
+            14,
+            9,
+            0,
+            6
+          ]
+        },
+        "s15": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Copied from s14. Superintelligence from general models is Meta's stated goal: 'Any policy that slows American model releases -- even by a month -- could add significant risk'.",
           "src": [
             0,
             12,

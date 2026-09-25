@@ -277,3 +277,12 @@ New predictions: d10 2 high · d15 8 low · d13 95 high · d12 8 high · d14 90 
 - s14: with feasibility removed, his objection is that there is nothing to avert and that fear-driven restraint has real costs (nuclear power, GMOs).
 
 No old value changed. Nothing new from him on the Scott Alexander exchange (see above).
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+No new sources.
+
+- **Scott Alexander**: d16 40 low (d15 25). The 10–20% of his p(doom) that falls before 2046 now counts. · s15 90 high (copied). Plan A's pause targets frontier general AI.
+- **Steven Pinker**: d16 8 low (copied) · s15 3 med (copied).

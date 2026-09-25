@@ -190,3 +190,11 @@ New predictions: d10 2 high · d15 10 med · d13 88 med · d12 12 med · d14 90 
 No old value changed.
 
 Verification of mirror-read quotes: source 0 (the 13 Sept "go ahead" post) was re-fetched through X's embed API; only the first ~280 characters come back ("Dario has written that we need to 'pace the frontier,' and Sam has agreed. People may be surprised by my response: go ahead. You guys are the frontier…"). The later lines relied on by the old s6 and s4 ("Stop pretending you need a regulatory approval process that supersedes product liability"; "China is very unlikely to join a global agreement") are still known only through the mirror; no new 'high' prediction rests on them. Source 5 (the "AI Force" post) was not located either.
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+No new sources.
+
+- **David Sacks**: d16 10 med (copied; he puts extinction at zero) · s15 2 high (copied).

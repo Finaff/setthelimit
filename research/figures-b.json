@@ -391,6 +391,26 @@
             11,
             0
           ]
+        },
+        "d16": {
+          "value": 45,
+          "conf": "med",
+          "basis": "Extinction now counts: part of his 25% 'really, really badly' is loss of control, on short timelines, added to d15's bioterror risk. Much of the 25% is not millions dead, so 45, not higher.",
+          "src": [
+            6,
+            2,
+            10
+          ]
+        },
+        "s15": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Same value as s14. The narrowing gives him little: his cures come from general 'powerful AI', which s15 stops. Would prefer a slower world pace, but proposes 1-2 years, not ten.",
+          "src": [
+            11,
+            0,
+            3
+          ]
         }
       },
       "oneLiner": "Sees ~25% catastrophe risk, backs export controls and mandatory testing, and now asks the industry to pace the frontier.",
@@ -810,6 +830,26 @@
             0,
             3
           ]
+        },
+        "d16": {
+          "value": 33,
+          "conf": "low",
+          "basis": "d15's 30 plus a little: his p(doom) is 'non-zero' and 'probably non-negligible' with AGI a few years off, and that share now counts. Cyberterror on infrastructure is live to him. Inferred.",
+          "src": [
+            13,
+            11,
+            0
+          ]
+        },
+        "s15": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Up from 35: AI tools for science like AlphaFold keep improving, which answers part of his objection. But he sees AGI as the ultimate tool for science and asks only for a slightly slower pace.",
+          "src": [
+            9,
+            0,
+            3
+          ]
         }
       },
       "oneLiner": "AGI is a few years off and could end disease; wants independent pre-release testing, and a coordinated slowdown if needed.",
@@ -1170,6 +1210,25 @@
           "value": 92,
           "conf": "high",
           "basis": "Diary of a CEO, Dec 2025: 'if there was a button where I could say... we're going to pause progress for 50 years, yes, I would do it.' Ten years is an easier press.",
+          "src": [
+            1,
+            6
+          ]
+        },
+        "d16": {
+          "value": 65,
+          "conf": "low",
+          "basis": "Extinction now counts, and he treats it as live from systems being built now; add autonomous weapons that could kill a million people (d15 45). He gives no number and timelines are uncertain.",
+          "src": [
+            8,
+            1,
+            0
+          ]
+        },
+        "s15": {
+          "value": 92,
+          "conf": "high",
+          "basis": "Copied from s14. Diary of a CEO: 'if there was a button... pause progress for 50 years, yes, I would do it.' Narrowing to general AI only makes it easier.",
           "src": [
             1,
             6
@@ -1543,6 +1602,26 @@
           "src": [
             4,
             8
+          ]
+        },
+        "d16": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Copied from d15. Calls doom evidence 'even nonexistent', so dropping the clause adds nothing; she would likely call a millions-dead AI forecast hype. Inferred.",
+          "src": [
+            0,
+            8,
+            2
+          ]
+        },
+        "s15": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Up from 40. The button stops only the race to ever larger general models, which she calls a choice, not destiny; scoped tools go on. Yet she rejects the premise that such AI is dangerous.",
+          "src": [
+            4,
+            8,
+            2
           ]
         }
       },
@@ -1943,6 +2022,26 @@
             13,
             6
           ]
+        },
+        "d16": {
+          "value": 40,
+          "conf": "med",
+          "basis": "Copied from d15. His ~3% p(doom) now counts, but the 'AI made the difference' rule trims wars escalated by disinformation. Still fears AI pathogens and infrastructure hacks (Sept 2026).",
+          "src": [
+            11,
+            12,
+            1
+          ]
+        },
+        "s15": {
+          "value": 65,
+          "conf": "low",
+          "basis": "Up from 55. His objection was that other AI research should go on; s15 spares specialised tools. Wants reckless systems stopped and OpenAI shut for a time (Sept 2026); sees LLM scaling as a dead end.",
+          "src": [
+            11,
+            13,
+            6
+          ]
         }
       },
       "oneLiner": "LLMs are unreliable and won't reach AGI, but the harms are real now: license, audit, and hold companies liable.",
@@ -2297,6 +2396,25 @@
           "value": 25,
           "conf": "med",
           "basis": "'If all that you're doing is saying, let's delay AI, let's pause AI... what are you buying time for?' Proposed at most a 1–2 year hardware 'soft pause', tied to defensive work.",
+          "src": [
+            5,
+            2
+          ]
+        },
+        "d16": {
+          "value": 24,
+          "conf": "low",
+          "basis": "d15's 20 plus a little: part of his 8-9% p(doom) falls within 20 years and now counts. Still says cybersecurity is not doomed, and funds biodefence. Inferred.",
+          "src": [
+            7,
+            1,
+            5
+          ]
+        },
+        "s15": {
+          "value": 25,
+          "conf": "med",
+          "basis": "Copied from s14. d/acc favours defensive tools, but his objection is to pausing for its own sake ('what are you buying time for?') and he floated at most 1-2 years.",
           "src": [
             5,
             2
@@ -2694,6 +2812,26 @@
           "conf": "med",
           "basis": "Leads the call for 'a prohibition on the development of superintelligence, not lifted before' a scientific consensus on safety and public buy-in. Would press, even at a cost to better tool AI.",
           "src": [
+            0,
+            1
+          ]
+        },
+        "d16": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Extinction now counts: in an unfettered race, 'way above 50%' that we lose control within decades (CBS, Sept 2026), plus bio misuse. Below his conditional figure, since he sees rising political will.",
+          "src": [
+            11,
+            4,
+            12
+          ]
+        },
+        "s15": {
+          "value": 95,
+          "conf": "high",
+          "basis": "Up from 92. s15 is his own programme: 'Tool AI as long as we don't build AGI, which is unnecessary, undesirable and preventable' (Web Summit, 2024). Tool AI keeps improving.",
+          "src": [
+            7,
             0,
             1
           ]
@@ -3123,6 +3261,27 @@
             9,
             4
           ]
+        },
+        "d16": {
+          "value": 72,
+          "conf": "med",
+          "basis": "Extinction now counts: ~70% on catastrophe with ASI expected around 2029, mostly takeover. Some of it is power concentration without mass death; survivable mass-casualty events add a little.",
+          "src": [
+            12,
+            5,
+            3,
+            0
+          ]
+        },
+        "s15": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Copied from s14. Plan A delays superintelligence a decade behind a verifiable brake; a stop on general AI serves that aim, though Plan A lets AI reach top-human level first.",
+          "src": [
+            1,
+            9,
+            4
+          ]
         }
       },
       "oneLiner": "Superintelligence is likely by ~2029 and ~70% likely to go badly; pace the frontier with a verifiable US–China deal.",
@@ -3483,6 +3642,25 @@
           "value": 12,
           "conf": "low",
           "basis": "Calls arms control unstable: 'breakout is too easy'. The button removes that, but he sees superintelligence as decisive and would spend only months of a lead on safety. Unlikely to press.",
+          "src": [
+            3,
+            2,
+            1
+          ]
+        },
+        "d16": {
+          "value": 50,
+          "conf": "low",
+          "basis": "d15's 45 plus a little: 'not a doomer', but failure 'could easily be catastrophic' and he fears novel WMDs and destructive wars around superintelligence, expected ~2030. Rests on 2024 writing.",
+          "src": [
+            1,
+            3
+          ]
+        },
+        "s15": {
+          "value": 12,
+          "conf": "low",
+          "basis": "Copied from s14. Superintelligence from general systems is the prize he says the free world must win; he would spend only months of a lead on safety.",
           "src": [
             3,
             2,

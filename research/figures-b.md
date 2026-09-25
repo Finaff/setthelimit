@@ -321,3 +321,19 @@ cited (GV Wire/Reuters, 19 Sep 2026) does not say that; the line belongs to Anth
 **Notes**
 - All seven rest on 2024 writing. He has been silent on the Sept 2026 pacing debate in public, and his fund is positioned on continued AI build-out.
 - s14: the button removes his main objection (China "breakout"), but he treats superintelligence as decisive and would trade only months of a US lead for safety. 12/low. A reader could argue for 25.
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+No new sources.
+
+- **Dario Amodei**: d16 45 med (d15 35). The loss-of-control part of his 25% now counts. · s15 40 low (same value). The narrowing gives him little, because in his view the cures come from general "powerful AI".
+- **Demis Hassabis**: d16 33 low (d15 30). His "non-negligible" p(doom) now counts a little. · s15 40 low (s14 35). AlphaFold-style science tools keep improving, but he sees AGI as the ultimate tool for science.
+- **Stuart Russell**: d16 65 low (d15 45). Extinction now counts, on top of autonomous weapons. He gives no number. · s15 92 high (copied).
+- **Emily M. Bender**: d16 8 low (copied) · s15 55 low (s14 40). Only the race to ever larger general models stops, and scoped tools go on. She still rejects the premise that such AI is dangerous.
+- **Gary Marcus**: d16 40 med (copied). His ~3% p(doom) now counts, and the attribution rule trims wars escalated by disinformation. The two roughly cancel. · s15 65 low (s14 55). His objection that other AI research should go on is met.
+- **Vitalik Buterin**: d16 24 low (d15 20). Part of his 8–9% p(doom) falls within 20 years. · s15 25 med (copied).
+- **Max Tegmark**: d16 75 med (d15 50 low). "Way above 50%" that we lose control in an unfettered race now counts. · s15 95 high (s14 92 med). s15 is his tool-AI-not-AGI programme.
+- **Daniel Kokotajlo**: d16 72 med (d15 35 low). His ~70% on catastrophe, mostly takeover, now counts. · s15 85 med (copied).
+- **Leopold Aschenbrenner**: d16 50 low (d15 45). A small extinction-level share is added. · s15 12 low (copied).

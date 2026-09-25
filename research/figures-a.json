@@ -84,6 +84,12 @@
           "url": "https://ai-frontiers.org/articles/summary-of-if-anyone-builds-it-everyone-dies",
           "date": "2025-09-16",
           "note": "Secondary summary by Laura Hiscott: 'we will almost certainly fail to give them internal drives that will remain aligned with human well-being outside the training environment'."
+        },
+        {
+          "title": "'Humanity's remaining timeline? It looks more like five years than 50': meet the neo-luddites warning of an AI apocalypse (The Guardian, Tom Lamont)",
+          "url": "https://www.theguardian.com/technology/2024/feb/17/humanitys-remaining-timeline-it-looks-more-like-five-years-than-50-meet-the-neo-luddites-warning-of-an-ai-apocalypse",
+          "date": "2024-02-17",
+          "note": "'If you put me to a wall and forced me to put probabilities on things, I have a sense that our current remaining timeline looks more like five years than 50 years. Could be two years, could be 10.' Guardian blocks our fetcher; wording via search index and syndications (Futurism)."
         }
       ],
       "oneLiner": "Superhuman AI built with today's methods would kill everyone; the only sane response is a global, enforced halt.",
@@ -411,6 +417,26 @@
           "basis": "TIME, 2023: 'Shut it all down', worldwide, 'no exceptions'. Ten years is less than he asks for (MIRI, Sept 2026: pause until alignment is better understood), but he would press.",
           "src": [
             0,
+            9
+          ]
+        },
+        "d16": {
+          "value": 90,
+          "conf": "med",
+          "basis": "Extinction now counts, and it is his central case: everyone dies soon after a superintelligence is built. In 2024 he put humanity's remaining timeline nearer five years than fifty. Far above d15's 30.",
+          "src": [
+            2,
+            4,
+            12
+          ]
+        },
+        "s15": {
+          "value": 97,
+          "conf": "high",
+          "basis": "Copied from s14. His halt targets large-scale general AI, which is what s15 stops. TIME, 2023: 'Shut it all down', worldwide, 'no exceptions'. Ten years is less than he asks, but he would press.",
+          "src": [
+            0,
+            2,
             9
           ]
         }
@@ -827,6 +853,23 @@
           "src": [
             2
           ]
+        },
+        "d16": {
+          "value": 6,
+          "conf": "med",
+          "basis": "Copied from d15. Treats AI mass-casualty scenarios as moral panic and misuse as a crime problem that AI helps defend against; he sees no extinction risk to add now that it counts.",
+          "src": [
+            0,
+            3
+          ]
+        },
+        "s15": {
+          "value": 1,
+          "conf": "high",
+          "basis": "Copied from s14; the narrowing does not help. Manifesto: 'any deceleration of AI will cost lives'. General systems are the AI he champions.",
+          "src": [
+            2
+          ]
         }
       },
       "v1Only": {
@@ -1233,6 +1276,25 @@
           "value": 1,
           "conf": "high",
           "basis": "'The options are to grow or die'; 'I don't think stagnation or slowing down is actually an option' (Lex #407). Calls the Sept 2026 pacing push 'regulatory capture' (X, indexed only).",
+          "src": [
+            1,
+            2,
+            9
+          ]
+        },
+        "d16": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Copied from d15. 'I don't think AI is going to kill us all' (Sept 2026): no extinction risk to add now that it counts. No statement on bio or cyber misuse found; inferred low.",
+          "src": [
+            7,
+            8
+          ]
+        },
+        "s15": {
+          "value": 1,
+          "conf": "high",
+          "basis": "Copied from s14; narrowing to general AI changes nothing. 'I don't think stagnation or slowing down is actually an option' (Lex #407).",
           "src": [
             1,
             2,
@@ -1660,6 +1722,24 @@
           "src": [
             9
           ]
+        },
+        "d16": {
+          "value": 10,
+          "conf": "low",
+          "basis": "Copied from d15. Calls extinction risk essentially zero, so dropping the clause adds nothing; the 'AI made the difference' rule fits his view that AI adds little uplift to bad actors. Inferred.",
+          "src": [
+            0,
+            1,
+            8
+          ]
+        },
+        "s15": {
+          "value": 1,
+          "conf": "high",
+          "basis": "Copied from s14. General-purpose AI is the path he works on; on slowing down: 'Everyone should make fun of them now' (X, Sept 2026).",
+          "src": [
+            9
+          ]
         }
       },
       "v1Only": {
@@ -1801,6 +1881,12 @@
           "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/geoffrey-hinton-10-chance-ai-kills-humans",
           "date": "2026-09-11",
           "note": "Secondary. A 10% chance within a decade 'not unreasonable'; his horizon has shrunk from 30–50 years to 10–20 to 'maybe 10 years or less'; AI could design biological or computer viruses."
+        },
+        {
+          "title": "'Godfather of AI' warns Congress has 'maybe a year' left to regulate AI (NBC News)",
+          "url": "https://www.nbcnews.com/politics/congress/godfather-ai-warns-congress-maybe-year-left-regulate-ai-rcna598330",
+          "date": "2026-09-17",
+          "note": "Senate briefing: 'AI has now reached the point where AI is designing better AI... It is going to get out of control unless we do something. We need to slow down.' Superintelligence forecasts now 'only a few years'; the Hugging Face breach a 'little Chernobyl'. Nothing on stopping versus slowing or on medicine."
         }
       ],
       "oneLiner": "Superintelligence is coming within a decade and could replace us; don't stop building, but slow down and regulate now.",
@@ -2119,6 +2205,27 @@
           "src": [
             4,
             9
+          ]
+        },
+        "d16": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Extinction now counts: about 10% within a decade 'not unreasonable', horizon shrinking. Add his live fear of AI-made viruses and cyberattacks (d15 60). Above d15, not far above: numbers 'very hard to estimate'.",
+          "src": [
+            8,
+            12,
+            14,
+            15
+          ]
+        },
+        "s15": {
+          "value": 70,
+          "conf": "low",
+          "basis": "Up from 60. His stated reason not to stop 'altogether' was medicine, and s15 lets specialised medical AI keep improving. Told the Senate (Sept 2026) that AI will get out of control unless we slow down.",
+          "src": [
+            4,
+            9,
+            15
           ]
         }
       },
@@ -2548,6 +2655,26 @@
           "value": 88,
           "conf": "high",
           "basis": "Asked about a button that would stop AI advances: 'I would press the button because I care about my children', while sparing AI 'that is clearly not dangerous' (Diary of a CEO, Dec 2025).",
+          "src": [
+            5,
+            4
+          ]
+        },
+        "d16": {
+          "value": 65,
+          "conf": "med",
+          "basis": "Extinction now counts. On top of d15's misuse risk (his 2026 report on bio and cyber uplift) comes his share of loss-of-control catastrophe, on short timelines. Some of his ~20% is power grabs, not deaths.",
+          "src": [
+            12,
+            11,
+            7,
+            5
+          ]
+        },
+        "s15": {
+          "value": 92,
+          "conf": "high",
+          "basis": "Up from 88: s15 matches his own answer. Asked about a stop button: 'I would press the button because I care about my children', while sparing AI 'that is clearly not dangerous' (Diary of a CEO).",
           "src": [
             5,
             4
@@ -3023,6 +3150,26 @@
           "value": 5,
           "conf": "med",
           "basis": "X, 14 Sep 2026: 'When we talk about pacing, we do not mean stopping'; warns against 'the trap of doomerism' (UN). Would not freeze the frontier for ten years.",
+          "src": [
+            10,
+            8,
+            13
+          ]
+        },
+        "d16": {
+          "value": 33,
+          "conf": "low",
+          "basis": "d15's 30 plus a little: he names losing control of the future to AI at the UN (Sept 2026), so a small extinction-level share now counts too. Still expects the industry to get it right. Inferred.",
+          "src": [
+            16,
+            13,
+            11
+          ]
+        },
+        "s15": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Copied from s14. General-purpose frontier AI is exactly what OpenAI builds. 'When we talk about pacing, we do not mean stopping' (X, 14 Sep 2026).",
           "src": [
             10,
             8,

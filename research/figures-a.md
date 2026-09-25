@@ -300,3 +300,19 @@ search and is not used.
 - Say/do gap: he calls "any chance" of catastrophe unacceptable and backs pacing, while OpenAI keeps racing and he remains "very confident" the industry can do this safely. d10 is scored on what he would answer (a low but non-trivial number, never stated), not on the rhetoric.
 - s14: "When we talk about pacing, we do not mean stopping" (14 Sep 2026) plus the UN warning against "doomerism": 5/med.
 - No old id changed; s4 (treaty) and s5 (race) were reconsidered against the UN speech and left as they were — international standards and "not a reason to make rash decisions" do not amount to a treaty with inspections or to rejecting the national race.
+
+## v5 review update (25 Sept 2026)
+
+Third fairness review (review-v3.md): d15 → d16 (no longer "without ending humanity"; it counts if AI made the difference, on its own or as a weapon) and s14 → s15 (the button stops general-purpose AI only; specialised tools keep improving). d15 and s14 stay in the JSON as the record. For d16, anyone who fears extinction should answer at least their probability of an extinction-level event within 20 years plus that of a grave but survivable one.
+
+New sources (appended):
+- Yudkowsky, source 12: The Guardian, 17 Feb 2024 (Tom Lamont), "our current remaining timeline looks more like five years than 50 years. Could be two years, could be 10." The Guardian blocks our fetcher, so the wording comes from the search index and syndications (Futurism). It is used at medium confidence and is not quoted in a basis. https://www.theguardian.com/technology/2024/feb/17/humanitys-remaining-timeline-it-looks-more-like-five-years-than-50-meet-the-neo-luddites-warning-of-an-ai-apocalypse
+- Hinton, source 15: NBC News, 17 Sep 2026, Senate briefing: "It is going to get out of control unless we do something. We need to slow down." Nothing in it on stopping versus slowing, or on medicine. https://www.nbcnews.com/politics/congress/godfather-ai-warns-congress-maybe-year-left-regulate-ai-rcna598330
+
+- **Eliezer Yudkowsky**: d16 90 med (d15 30 low). Extinction now counts, and it is his central case. · s15 97 high (same as s14). His halt targets large-scale general AI.
+- **Marc Andreessen**: d16 6 med (copied) · s15 1 high (copied).
+- **Guillaume Verdon**: d16 8 low (copied) · s15 1 high (copied).
+- **Yann LeCun**: d16 10 low (copied; the attribution rule fits his low-uplift view) · s15 1 high (copied).
+- **Geoffrey Hinton**: d16 75 med (d15 60). His ~10% extinction within a decade now counts on top of misuse. · s15 70 low (s14 60). Medicine was his reason not to stop "altogether", and s15 spares specialised medical AI.
+- **Yoshua Bengio**: d16 65 med (d15 55). His loss-of-control share now counts. · s15 92 high (s14 88). s15 matches his own button answer, which spares AI "that is clearly not dangerous".
+- **Sam Altman**: d16 33 low (d15 30). A small extinction-level share now counts. · s15 5 med (copied).

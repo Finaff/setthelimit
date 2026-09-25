@@ -317,6 +317,26 @@
             7,
             1
           ]
+        },
+        "d16": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Extinction now counts: roughly 10-20% of his 20% p(doom) falls before 2046, added to hacking and bio scares short of it (d15 25). Some of his 'curtailment' is not mass death. Inferred.",
+          "src": [
+            0,
+            4,
+            5
+          ]
+        },
+        "s15": {
+          "value": 90,
+          "conf": "high",
+          "basis": "Copied from s14. On pausing: 'shorter pause lengths (like five years) seem like no-brainers.' Plan A's pause targets frontier general AI, as s15 does.",
+          "src": [
+            0,
+            7,
+            1
+          ]
         }
       },
       "v5": "2026-09-24"
@@ -641,6 +661,26 @@
           "value": 3,
           "conf": "med",
           "basis": "Would not press: doom fears bring 'stigmatization and abandonment of helpful technologies', as with nuclear power. He sees no danger a ten-year freeze would avert. Inferred.",
+          "src": [
+            8,
+            0,
+            4
+          ]
+        },
+        "d16": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Copied from d15. Calls doom scenarios 'preposterous', so dropping the clause adds nothing; treats real hazards as mundane and manageable. No view on millions dead found.",
+          "src": [
+            14,
+            0,
+            4
+          ]
+        },
+        "s15": {
+          "value": 3,
+          "conf": "med",
+          "basis": "Copied from s14. He sees no danger a freeze would avert and warns that doom fears lead to abandoning helpful technology; the narrowing does not change that. Inferred.",
           "src": [
             8,
             0,

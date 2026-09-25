@@ -344,6 +344,26 @@
             0,
             3
           ]
+        },
+        "d16": {
+          "value": 65,
+          "conf": "low",
+          "basis": "Extinction now counts: he treats the 10-30% cited by lab leaders as alarming and expects superhuman AI soon, on top of serious harm on the way (d15 45). Gives no number of his own.",
+          "src": [
+            14,
+            2,
+            1
+          ]
+        },
+        "s15": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Copied from s14. His case against stopping was feasibility, which the button removes; at a 10% risk 'you don't do this initial test' (Sept 2026). The narrowing only helps.",
+          "src": [
+            14,
+            0,
+            3
+          ]
         }
       },
       "v5": "2026-09-24"
