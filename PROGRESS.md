@@ -181,3 +181,4 @@
   each figure with statements since ~15 Sept (resumable: a figure with "v5": "2026-09-24" is done); plus the Why-now refresh (site/context.js + FR).
   DO NOT DEPLOY until all 22 figures have the new ids (check-figures clean): the map would drop figures without enough danger-axis answers.
   After that: adversarial fairness review of v5 with the new predictions, then deploy site + artifacts.
+- Why-now refreshed to 24 Sept 2026 (agent; research/context-2026.md "Update 24 Sept 2026"): 7 facts added (Amodei essay + Altman, UN Security Council incl. US rejection of global control, OpenAI agent vs Australian Medicare portal, CBS/YouGov poll, von der Leyen, Zuckerberg, China), 3 updated, 7 retired to the briefing. tools/check-fr.js now derives the expected French date from the English one and accepts 8–14 facts.

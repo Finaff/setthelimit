@@ -2,7 +2,7 @@
    - site/lang/fr.js: every key of research/ui-strings.en.json present; placeholders kept; HTML tags kept in the
      same order; no value identical to its key except the whitelisted cognates/proper nouns.
    - content/propositions.v2.fr.json: same ids in the same order as v2, scoring fields equal, text <= 30 words.
-   - site/lang/context.fr.js (12 facts, non-text fields equal) and site/lang/figures.fr.js (ids = site/figures.js).
+   - site/lang/context.fr.js (same facts as site/context.js, non-text fields equal, asOf = the English date in French) and site/lang/figures.fr.js (ids = site/figures.js).
    - French typography lint: no straight apostrophes or quotes, no-break space before ; : ? ! % and inside « ». */
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const root = path.join(__dirname, '..');
@@ -57,8 +57,8 @@ console.log(`propositions.v${V}.fr.json: ${fr.items.length} items, ids in v${V} 
 // ---- 3. context
 const CEN = load('site/context.js').STL_CONTEXT, CFR = load('site/lang/context.fr.js').STL_CONTEXT_FR;
 if (!CFR || !Array.isArray(CFR.facts)) fail('STL_CONTEXT_FR'); else {
-  if (CFR.facts.length !== 12 || CFR.facts.length !== CEN.facts.length) fail('context fact count ' + CFR.facts.length);
-  if (CFR.asOf !== '16 septembre 2026') fail('context asOf');
+  if (CFR.facts.length < 8 || CFR.facts.length > 14 || CFR.facts.length !== CEN.facts.length) fail('context fact count ' + CFR.facts.length);
+  { const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']; const d = new Date(CEN.asOf + ' 12:00 UTC'); const want = Number.isNaN(d.getTime()) ? null : `${d.getUTCDate()} ${MOIS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; if (!want || CFR.asOf !== want) fail(`context asOf: "${CFR.asOf}" should be "${want}" (from "${CEN.asOf}")`); }
   CFR.facts.forEach((f, i) => { const e = CEN.facts[i]; ['date', 'kind', 'url', 'src'].forEach((k) => { if (f[k] !== e[k]) fail(`context[${i}].${k} changed`); }); if (!f.text || f.text === e.text) fail(`context[${i}].text`); });
   console.log(`context.fr.js: ${CFR.facts.length} facts, asOf "${CFR.asOf}"`);
 }
