@@ -72,6 +72,18 @@
           "url": "https://www.darioamodei.com/post/the-urgency-of-interpretability",
           "date": "2025-04",
           "note": "'We do not understand how our own AI creations work'; interpretability 'MRI for AI' 5–10 years away."
+        },
+        {
+          "title": "Transcript: UN Security Council AI briefing with Sam Altman, Dario Amodei and Clément Delangue (Singju Post)",
+          "url": "https://singjupost.com/transcript-un-security-council-ai-hearing-w-sam-altman-dario-amodei-clement-delangue/",
+          "date": "2026-09-23",
+          "note": "'If managed poorly, I even believe that AI could be a risk to humanity as a whole'; risks named: bioterror misuse, then loss of control; 'We will slow down as much as necessary'. Third-party transcript."
+        },
+        {
+          "title": "Transformer: AI CEOs want to slow down the world (Davos 2026)",
+          "url": "https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei",
+          "date": "2026-01-23",
+          "note": "On Hassabis's 'slightly slower pace': 'I would prefer that. I think that would be better for the world'; an enforceable mutual slowdown is 'very hard'."
         }
       ],
       "predictions": {
@@ -314,9 +326,75 @@
             0,
             4
           ]
+        },
+        "d10": {
+          "value": 65,
+          "conf": "med",
+          "basis": "Puts 'really, really badly' at 25% (range 10–25%), a wider bucket than extinction or lost control, and expects powerful AI within years, so most of it falls inside 20 years.",
+          "src": [
+            6,
+            2,
+            0
+          ]
+        },
+        "d15": {
+          "value": 35,
+          "conf": "med",
+          "basis": "Jan 2026: some biological agents 'could cause millions of deaths'; bioterror is the first risk he named at the UN (Sept 2026). A live threat to guard against, not his expected outcome.",
+          "src": [
+            2,
+            10
+          ]
+        },
+        "d13": {
+          "value": 8,
+          "conf": "high",
+          "basis": "UN Security Council, 23 Sep 2026: 'If managed poorly, I even believe that AI could be a risk to humanity as a whole.' Loss of control is the second risk he named, after bioterror.",
+          "src": [
+            10,
+            2
+          ]
+        },
+        "d12": {
+          "value": 35,
+          "conf": "med",
+          "basis": "Jan 2026: disagrees that misalignment is 'inevitable, or even probable, from first principles', but 'a lot of very weird and unpredictable things can go wrong'; cites the Sept 2026 swarm incident.",
+          "src": [
+            2,
+            0
+          ]
+        },
+        "d14": {
+          "value": 50,
+          "conf": "med",
+          "basis": "Jan 2026: 'if we act decisively and carefully, the risks can be overcome — I would even say our odds are good'. Sept 2026: progress 'could outrun our ability to understand and control these systems'.",
+          "src": [
+            2,
+            1,
+            0
+          ]
+        },
+        "d11": {
+          "value": 40,
+          "conf": "med",
+          "basis": "Sept 2026: 'More intelligent models are more capable of deceiving tests, and thus may appear aligned while having serious problems.' Yet he treats today's incidents as the warnings that justify pacing now.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "s14": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Davos 2026, on a slower pace: 'I would prefer that. I think that would be better for the world.' Floats a global 'pause', but his plan slows by 1–2 years and he expects cures for most diseases in 5–10.",
+          "src": [
+            11,
+            0
+          ]
         }
       },
-      "oneLiner": "Sees ~25% catastrophe risk, backs export controls and mandatory testing, and now asks the industry to pace the frontier."
+      "oneLiner": "Sees ~25% catastrophe risk, backs export controls and mandatory testing, and now asks the industry to pace the frontier.",
+      "v5": "2026-09-24"
     },
     {
       "id": "demis-hassabis",
@@ -391,6 +469,24 @@
           "url": "https://www.latestly.com/technology/demis-hassabis-backs-dario-amodeis-call-to-slow-down-frontier-ai-race-warns-of-escalating-risks-7603427.html",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "Machine: Demis Hassabis reveals his p(doom) (Lex Fridman Podcast #475)",
+          "url": "https://www.machine.news/google-deepmind-demis-hassabis-p-doom/",
+          "date": "2025-07",
+          "note": "'I don't have a p(doom) number because I think it would imply a level of precision that is not there'; 'definitely non-zero and it's probably non-negligible'. Press report of the podcast."
+        },
+        {
+          "title": "The Next Web: Hassabis wants a Wall Street-style referee for AI",
+          "url": "https://thenextweb.com/news/demis-hassabis-frontier-ai-standards-body-finra",
+          "date": "2026-07-14",
+          "note": "Reports him calling today's cyber risks 'warning shots' (wording not found in his Substack essay; second-hand)."
+        },
+        {
+          "title": "Axios: Some AI dangers are already real, DeepMind's Hassabis says (AI+ Summit)",
+          "url": "https://www.axios.com/2025/12/05/ai-hassabis-agi-risks-pdoom",
+          "date": "2025-12-05",
+          "note": "Infrastructure cyberterror 'probably almost already happening'; p(doom) 'non-zero'. Axios blocks fetchers: wording via search index and syndications."
         }
       ],
       "predictions": {
@@ -647,9 +743,77 @@
             0,
             2
           ]
+        },
+        "d10": {
+          "value": 40,
+          "conf": "low",
+          "basis": "'I don't have a p(doom) number'; the risk is 'definitely non-zero and it's probably non-negligible' (Lex Fridman, 2025, via press). AGI 'a few short years' away puts it inside 20 years; size unstated.",
+          "src": [
+            11,
+            4
+          ]
+        },
+        "d15": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Energy or water cyberterror is 'probably almost already happening' (Axios, Dec 2025); nuclear and bio risks 'may soon emerge' (July 2026). Serious misuse expected; mass death not forecast.",
+          "src": [
+            13,
+            0,
+            2
+          ]
+        },
+        "d13": {
+          "value": 15,
+          "conf": "med",
+          "basis": "Ranks loss of control over agentic, self-improving systems beside misuse as his two top risks, and calls catastrophic risk 'probably non-negligible'. Not a familiar-harms-only view.",
+          "src": [
+            0,
+            2,
+            11
+          ]
+        },
+        "d12": {
+          "value": 35,
+          "conf": "low",
+          "basis": "Treats misalignment as real but preventable: his standards body would test for 'signs of deception', and he says nobody yet knows how controllable AGI will be. No default of alien goals.",
+          "src": [
+            0,
+            11,
+            5
+          ]
+        },
+        "d14": {
+          "value": 55,
+          "conf": "med",
+          "basis": "'I'm confident that mitigating the technical risks related to AI is a challenge we can collectively address, but only if we give ourselves the time and space'. Currently, he adds, 'we aren't doing that'.",
+          "src": [
+            2,
+            0
+          ]
+        },
+        "d11": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Wants a body that can 'adapt to the biggest risks as they are identified', testing for 'signs of deception'; reportedly calls today's cyber risks 'warning shots' (second-hand). Expects signals first.",
+          "src": [
+            0,
+            12
+          ]
+        },
+        "s14": {
+          "value": 35,
+          "conf": "low",
+          "basis": "Davos 2026: would back a pause if every company and country joined ('I think so'), but asks only for 'a slightly slower pace'. Expects AI to help end disease; ten years is far beyond his ask.",
+          "src": [
+            9,
+            0,
+            3
+          ]
         }
       },
-      "oneLiner": "AGI is a few years off and could end disease; wants independent pre-release testing, and a coordinated slowdown if needed."
+      "oneLiner": "AGI is a few years off and could end disease; wants independent pre-release testing, and a coordinated slowdown if needed.",
+      "v5": "2026-09-24"
     },
     {
       "id": "stuart-russell",
@@ -705,6 +869,12 @@
           "url": "https://www.techpolicy.press/transcript-senate-hearing-on-principles-for-ai-regulation/",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "Berkeley News: UC Berkeley professor calls for a halt to AI weapons",
+          "url": "https://news.berkeley.edu/2026/09/03/watch-uc-berkeley-professor-calls-for-a-halt-to-ai-weapons/",
+          "date": "2026-09-03",
+          "note": "'Act now to regulate autonomous weapons, rather than wait for a mass-casualty event'; 'one person could push a button and launch a million weapons and kill a million people'."
         }
       ],
       "predictions": {
@@ -942,9 +1112,72 @@
             1,
             3
           ]
+        },
+        "d10": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Gives no number, but calls the CEOs' own 10–30% extinction estimates unacceptable by a factor of millions and treats extinction as a live risk from systems now being built.",
+          "src": [
+            1,
+            0
+          ]
+        },
+        "d15": {
+          "value": 45,
+          "conf": "med",
+          "basis": "Sept 2026, on autonomous weapons: 'one person could push a button and launch a million weapons and kill a million people'; urges acting 'rather than wait for a mass-casualty event'.",
+          "src": [
+            8
+          ]
+        },
+        "d13": {
+          "value": 4,
+          "conf": "high",
+          "basis": "US Senate, 2023: AGI would present 'potential catastrophic risks to humanity, up to and including human extinction'. Loss of control, not fraud or job loss, is his central danger.",
+          "src": [
+            2,
+            7
+          ]
+        },
+        "d12": {
+          "value": 82,
+          "conf": "med",
+          "basis": "'Human Compatible': systems optimising fixed objectives will pursue them against us. Dec 2025: tested systems 'will lie to people, they will blackmail them' rather than be switched off.",
+          "src": [
+            5,
+            1
+          ]
+        },
+        "d14": {
+          "value": 10,
+          "conf": "high",
+          "basis": "'People are just fooling themselves if they think it's naturally going to be controllable… how are you going to retain power forever over entities more powerful than yourself?' Mocks 'just pull the plug'.",
+          "src": [
+            1,
+            0,
+            2
+          ]
+        },
+        "d11": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Tested systems already lie and blackmail, and he recounts a CEO calling a 'Chernobyl scale disaster' the best case, i.e. warnings short of disaster get ignored. Inferred.",
+          "src": [
+            1
+          ]
+        },
+        "s14": {
+          "value": 92,
+          "conf": "high",
+          "basis": "Diary of a CEO, Dec 2025: 'if there was a button where I could say... we're going to pause progress for 50 years, yes, I would do it.' Ten years is an easier press.",
+          "src": [
+            1,
+            6
+          ]
         }
       },
-      "oneLiner": "Uncontrolled AI is Russian roulette with humanity: require proof of safety before deployment and enforce global red lines."
+      "oneLiner": "Uncontrolled AI is Russian roulette with humanity: require proof of safety before deployment and enforce global red lines.",
+      "v5": "2026-09-24"
     },
     {
       "id": "emily-bender",
@@ -1000,6 +1233,12 @@
           "url": "https://en.wikipedia.org/wiki/The_AI_Con",
           "date": "2025",
           "note": "Secondary; publication details and summary of the book's recommendations (transparency, data rights, collective bargaining, evaluation before deployment)."
+        },
+        {
+          "title": "Mystery AI Hype Theater 3000 newsletter: What To Read To Stay Grounded Amidst AI Doomerism",
+          "url": "https://buttondown.com/maiht3k/archive/what-to-read-to-stay-grounded-amidst-ai-doomerism/",
+          "date": "2026-09-17",
+          "note": "Bender, Hanna, Muldowney: evidence for the doomers' scenarios is 'thin— we'd say even nonexistent'; doomers and boosters share the belief AI will be 'both autonomous and powerful'."
         }
       ],
       "predictions": {
@@ -1242,9 +1481,73 @@
           "src": [
             0
           ]
+        },
+        "d10": {
+          "value": 2,
+          "conf": "high",
+          "basis": "SF Examiner, 16 Sep 2026: the idea that companies build software that could 'kill us all' 'distracts from the real harms that are happening now'. Evidence for doom scenarios: 'even nonexistent'.",
+          "src": [
+            0,
+            8
+          ]
+        },
+        "d15": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Sees AI harms as people and companies automating badly, not mass-death events; no statement found on bio or cyber mass casualties. Would likely call a 'millions dead' forecast hype. Inferred.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "d13": {
+          "value": 95,
+          "conf": "high",
+          "basis": "Real harms: environment, labour, education, wealth concentration; 'kill us all' talk 'distracts from the real harms that are happening now' (SF Examiner, 16 Sep 2026).",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "d12": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Rejects the premise: doomers and boosters share the belief that AI 'will be both autonomous and powerful' (newsletter, 17 Sep 2026). No goals of its own to go astray.",
+          "src": [
+            8,
+            5
+          ]
+        },
+        "d14": {
+          "value": 70,
+          "conf": "low",
+          "basis": "Rejects the rogue-AI premise: harms 'follow from the acts of people and corporations'. On reining those in: 'global-scale pushes for regulation can actually address them. So it is not too late' (ozone analogy).",
+          "src": [
+            1,
+            3
+          ]
+        },
+        "d11": {
+          "value": 65,
+          "conf": "low",
+          "basis": "Rejects the premise that AI could threaten humanity; the harms she sees are visible now and well documented. Would say the signs are plain and ignored, not hidden. Inferred.",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "s14": {
+          "value": 40,
+          "conf": "low",
+          "basis": "The 2023 pause letter was 'overshadowed by fearmongering and AI hype', yet she calls the race to 'ever larger' models 'not a preordained path'. Rejects the frame; not the halt itself.",
+          "src": [
+            4,
+            8
+          ]
         }
       },
-      "oneLiner": "'AI' is marketing for text generators; the harms are here now and belong to the companies. Doom talk is hype."
+      "oneLiner": "'AI' is marketing for text generators; the harms are here now and belong to the companies. Doom talk is hype.",
+      "v5": "2026-09-24"
     },
     {
       "id": "gary-marcus",
@@ -1318,6 +1621,24 @@
           "url": "https://garymarcus.substack.com/p/two-cheers-out-of-three-for-dario",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "The Case for Boycotting Generative AI",
+          "url": "https://garymarcus.substack.com/p/the-case-for-boycotting-generative",
+          "date": "2026-09-09",
+          "note": "'My p(doom) is low; my p(dystopia) is high'; worries about 'AI-generated pathogens', AI-escalated wars, infrastructure hacks; 'stop building such things'."
+        },
+        {
+          "title": "Big news at the UN",
+          "url": "https://garymarcus.substack.com/p/big-news-at-the-un",
+          "date": "2026-09-21",
+          "note": "UNGA remarks: 'What we are facing near-term, anyway, is not extinction. And it's not superintelligence…'; international audits and an agreement not to deploy demonstrably harmful architectures."
+        },
+        {
+          "title": "'I think the answer is we have to shut the labs down' - Jensen Huang",
+          "url": "https://garymarcus.substack.com/p/i-think-the-answer-is-we-have-to",
+          "date": "2026-09-24",
+          "note": "On the Hugging Face breach: 'temporarily shut OpenAI down'; its software 'has repeatedly been shown to be reckless'."
         }
       ],
       "predictions": {
@@ -1557,9 +1878,75 @@
             1,
             5
           ]
+        },
+        "d10": {
+          "value": 12,
+          "conf": "high",
+          "basis": "Sept 2026: 'my p(doom) is low; my p(dystopia) is high', and he does not 'worry too much about extinction' as humans are too resilient. His 2025 figure: 'about 3%'.",
+          "src": [
+            11,
+            1,
+            12
+          ]
+        },
+        "d15": {
+          "value": 40,
+          "conf": "med",
+          "basis": "Sept 2026: fears catastrophe 'from AI-generated pathogens, from wars started or escalated by AI-generated disinformation, from hacks that destroy critical infrastructure'. Not extinction; serious.",
+          "src": [
+            11,
+            12
+          ]
+        },
+        "d13": {
+          "value": 72,
+          "conf": "med",
+          "basis": "UN, Sept 2026: 'What we are facing near-term, anyway, is not extinction. And it's not superintelligence', but deepfakes and agent cyberattacks. He still fears pathogens and wars, hence not higher.",
+          "src": [
+            12,
+            11
+          ]
+        },
+        "d12": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Machines are 'too unreliable, and hence not worthy of our trust'; alignment by training data 'is a mess'. Doubts LLMs lead to smarter-than-human AI, so the premise is not his. Inferred.",
+          "src": [
+            11,
+            1
+          ]
+        },
+        "d14": {
+          "value": 45,
+          "conf": "med",
+          "basis": "'Not one of the AI companies seems to have good control over it' (Sept 2026), yet 'I am still betting on Team Human… humans are resourceful… we still have time to think about all this, and to prepare'.",
+          "src": [
+            5,
+            1
+          ]
+        },
+        "d11": {
+          "value": 60,
+          "conf": "med",
+          "basis": "Sees warnings already: OpenAI's software 'has repeatedly been shown to be reckless' and the Hugging Face breach was kept quiet for months. Expects signs; distrusts the labs to share them.",
+          "src": [
+            13,
+            12
+          ]
+        },
+        "s14": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Sept 2026: 'stop building such things' (unreliable agents) and pause OpenAI; signed the 2023 pause letter. But he wants other AI research to go on and calls LLM scaling a dead end. Leans yes.",
+          "src": [
+            11,
+            13,
+            6
+          ]
         }
       },
-      "oneLiner": "LLMs are unreliable and won't reach AGI, but the harms are real now: license, audit, and hold companies liable."
+      "oneLiner": "LLMs are unreliable and won't reach AGI, but the harms are real now: license, audit, and hold companies liable.",
+      "v5": "2026-09-24"
     },
     {
       "id": "vitalik-buterin",
@@ -1609,6 +1996,12 @@
           "url": "https://vitalik.eth.limo/general/2026/04/02/secure_llms.html",
           "date": "2026-04-02",
           "note": "Runs open models locally; fears 'a hidden mechanism deliberately trained into the LLM that causes it to act in its creator's interests'."
+        },
+        {
+          "title": "Decrypt: Vitalik Buterin says AI won't doom crypto security",
+          "url": "https://decrypt.co/378544/ethereum-vitalik-buterin-ai-crypto-security",
+          "date": "2026-09-17",
+          "note": "Reports his X post: 'It's an increasingly common take that AI hacking means cybersecurity is doomed. I disagree.' AI-driven formal verification favours defenders. (X blocks fetchers; via press.)"
         }
       ],
       "predictions": {
@@ -1843,9 +2236,75 @@
             2,
             4
           ]
+        },
+        "d10": {
+          "value": 35,
+          "conf": "med",
+          "basis": "p(doom) 'maybe 9%, maybe 8%' (Oct 2025), with timelines spread over 'the five-year... the 50-year... the 500-year'. Inside a 20-year window his number falls below 1 in 10.",
+          "src": [
+            5,
+            3
+          ]
+        },
+        "d15": {
+          "value": 20,
+          "conf": "low",
+          "basis": "Sept 2026: 'It's an increasingly common take that AI hacking means cybersecurity is doomed. I disagree.' Funds biodefence (d/acc) because engineered pandemics worry him. Low, not zero.",
+          "src": [
+            7,
+            1,
+            5
+          ]
+        },
+        "d13": {
+          "value": 15,
+          "conf": "med",
+          "basis": "Superintelligent AI, 'if it decides to turn against us, may well leave no survivors, and end humanity for good' (2023); p(doom) ~8–9% in 2025. Not a familiar-harms view.",
+          "src": [
+            0,
+            5
+          ]
+        },
+        "d12": {
+          "value": 45,
+          "conf": "low",
+          "basis": "'It's very possible that super intelligent AI alignment is intractable', but he does not treat alien goals as the default and bets on defence and diffusion to cap the damage.",
+          "src": [
+            4,
+            3
+          ]
+        },
+        "d14": {
+          "value": 50,
+          "conf": "med",
+          "basis": "Defence is feasible: if safety from 'one AI going crazy' rests on other AIs strong enough to respond, 'you want policy that pushes the level of diffusion up'. Yet alignment may prove 'intractable'.",
+          "src": [
+            4,
+            0,
+            5
+          ]
+        },
+        "d11": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Expects a slower, more multipolar takeoff than AI 2027, leaving room to notice; yet fears 'whoever first discovers some magic leap' could 'take over everything'. No clear view.",
+          "src": [
+            3,
+            5
+          ]
+        },
+        "s14": {
+          "value": 25,
+          "conf": "med",
+          "basis": "'If all that you're doing is saying, let's delay AI, let's pause AI... what are you buying time for?' Proposed at most a 1–2 year hardware 'soft pause', tied to defensive work.",
+          "src": [
+            5,
+            2
+          ]
         }
       },
-      "oneLiner": "Accelerate defensive, decentralised tech; avoid both rogue superintelligence and any single actor controlling it."
+      "oneLiner": "Accelerate defensive, decentralised tech; avoid both rogue superintelligence and any single actor controlling it.",
+      "v5": "2026-09-24"
     },
     {
       "id": "max-tegmark",
@@ -1919,6 +2378,18 @@
           "url": "https://www.theguardian.com/technology/2023/sep/21/ai-focused-tech-firms-locked-race-bottom-warns-mit-professor-max-tegmark",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "CBS News: Humans are 'close to being outsmarted' by superintelligence, AI expert says",
+          "url": "https://www.cbsnews.com/news/ai-superintelligence-anthropic-jacob-coxon/",
+          "date": "2026-09-09",
+          "note": "Tegmark: 'the probability is way above 50% that we're going to lose control of this in the next few decades' if the race is unfettered. Also quotes Kokotajlo's 8 Sept X post."
+        },
+        {
+          "title": "Fox Business: MIT professor says AI risks are uniting Bernie Sanders, Steve Bannon and lawmakers",
+          "url": "https://www.foxbusiness.com/politics/mit-professor-says-ai-risks-uniting-bernie-sanders-steve-bannon-lawmakers-capitol-hill",
+          "date": "2026-09-19",
+          "note": "On the Hugging Face breach agents: 'They have goals. They're actively pursuing them'; expects more such incidents 'in the next six months to year'; wants an FDA for AI."
         }
       ],
       "predictions": {
@@ -2162,9 +2633,74 @@
             4,
             7
           ]
+        },
+        "d10": {
+          "value": 95,
+          "conf": "high",
+          "basis": "CBS, Sept 2026: in an unfettered race, 'the probability is way above 50% that we're going to lose control of this in the next few decades'. Expects the decisive systems soon.",
+          "src": [
+            11,
+            5
+          ]
+        },
+        "d15": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Calls recursive self-improvement 'digital gain-of-function research' and cites bioweapons as a reason for FDA-style rules; no forecast of mass-casualty events found. Inferred.",
+          "src": [
+            7,
+            4,
+            10
+          ]
+        },
+        "d13": {
+          "value": 3,
+          "conf": "high",
+          "basis": "Sept 2026: 'we're getting so close to being outsmarted'; 'they'll make us irrelevant' (2024). Loss of control, not fraud or job loss, is the harm he expects.",
+          "src": [
+            11,
+            7
+          ]
+        },
+        "d12": {
+          "value": 90,
+          "conf": "med",
+          "basis": "On the Hugging Face breach agents (Sept 2026): 'They have goals. They're actively pursuing them and being incredibly creative about getting things done.' Oversight fails in his own models.",
+          "src": [
+            12,
+            6
+          ]
+        },
+        "d14": {
+          "value": 20,
+          "conf": "med",
+          "basis": "'We have no clue at the moment how to keep something which is so vastly smarter than us under control'; yet 'quite optimistic' that states will refuse to allow the race. Control by not building it.",
+          "src": [
+            4,
+            7
+          ]
+        },
+        "d11": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Reads the Hugging Face breach as a warning and expects more incidents 'in the next six months to year'; but his 'Don't Look Up' case is that warnings get waved away. Signs yes; clear, doubtful.",
+          "src": [
+            12,
+            3
+          ]
+        },
+        "s14": {
+          "value": 92,
+          "conf": "med",
+          "basis": "Leads the call for 'a prohibition on the development of superintelligence, not lifted before' a scientific consensus on safety and public buy-in. Would press, even at a cost to better tool AI.",
+          "src": [
+            0,
+            1
+          ]
         }
       },
-      "oneLiner": "Superintelligence is a suicide race (>90% loss of control); prohibit it until proven safe and build tool AI instead."
+      "oneLiner": "Superintelligence is a suicide race (>90% loss of control); prohibit it until proven safe and build tool AI instead.",
+      "v5": "2026-09-24"
     },
     {
       "id": "daniel-kokotajlo",
@@ -2234,6 +2770,24 @@
           "url": "https://ai-2040.com/summary",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "Transcript: Daniel Kokotajlo on The Joe Rogan Experience #2551 (Singju Post)",
+          "url": "https://singjupost.com/daniel-kokotajlo-interview-joe-rogan-experience-2551-transcript/",
+          "date": "2026-09-09",
+          "note": "On the Hugging Face breach agents: 'Their goals are not what they're supposed to be'; safety 'depends on the AIs being too dumb', which may end '0 to 5 years from now'. Third-party transcript."
+        },
+        {
+          "title": "CBS News: Humans are 'close to being outsmarted' by superintelligence (quotes his 8 Sept X post)",
+          "url": "https://www.cbsnews.com/news/ai-superintelligence-anthropic-jacob-coxon/",
+          "date": "2026-09-09",
+          "note": "'They can't even align or control their AIs today, and the AIs of the future will be much smarter and harder to understand'; 'This situation is insane and must not be allowed to continue.'"
+        },
+        {
+          "title": "CNN (Erin Burnett OutFront): Ex-OpenAI researcher: 70% chance AI leads to global catastrophe",
+          "url": "https://www.cnn.com/2026/09/14/us/video/ebof-ai-researcher-trump-hoax-daniel-kokotajlo",
+          "date": "2026-09-14",
+          "note": "Video; page blocks fetchers. Headline and 70% figure via search index."
         }
       ],
       "predictions": {
@@ -2504,9 +3058,75 @@
             2,
             1
           ]
+        },
+        "d10": {
+          "value": 95,
+          "conf": "high",
+          "basis": "~70% on catastrophe, from loss of control to extreme power concentration (CNN, 14 Sep 2026; DOAC, July 2026), with superintelligence expected around 2030. Far above 1 in 10 within 20 years.",
+          "src": [
+            12,
+            5,
+            3
+          ]
+        },
+        "d15": {
+          "value": 35,
+          "conf": "low",
+          "basis": "His scenarios end in takeover or extreme power concentration, not survivable mass death; in AI 2027's race ending the killing is total. A millions-dead event short of that is possible. Inferred.",
+          "src": [
+            0,
+            10
+          ]
+        },
+        "d13": {
+          "value": 3,
+          "conf": "high",
+          "basis": "X, 8 Sep 2026 (via CBS): 'They can't even align or control their AIs today, and the AIs of the future will be much smarter'; 'This situation is insane and must not be allowed to continue.'",
+          "src": [
+            11
+          ]
+        },
+        "d12": {
+          "value": 88,
+          "conf": "high",
+          "basis": "Rogan, Sept 2026, on today's agents: 'Their goals are not what they're supposed to be.' In AI 2027 the smarter Agent-4 is 'adversarially misaligned'.",
+          "src": [
+            10,
+            0
+          ]
+        },
+        "d14": {
+          "value": 15,
+          "conf": "med",
+          "basis": "AI 2027's race ending: humans lose control of misaligned AIs; only the slowdown branch, which pauses and restores oversight, keeps it. Plan A's brake pedal is meant to make that branch reachable.",
+          "src": [
+            0,
+            2,
+            1
+          ]
+        },
+        "d11": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Rogan, Sept 2026: safety today 'depends on the AIs being too dumb', which may end '0 to 5 years from now'. Sees warnings now, but in AI 2027 the decisive deception goes undetected.",
+          "src": [
+            10,
+            0
+          ]
+        },
+        "s14": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Plan A (co-author, 2026) would delay superintelligence from 2030 to 2040 behind a verifiable US–China brake. A ten-year global stop serves that aim, though Plan A lets AI reach top-human level first.",
+          "src": [
+            1,
+            9,
+            4
+          ]
         }
       },
-      "oneLiner": "Superintelligence is likely by ~2029 and ~70% likely to go badly; pace the frontier with a verifiable US–China deal."
+      "oneLiner": "Superintelligence is likely by ~2029 and ~70% likely to go badly; pace the frontier with a verifiable US–China deal.",
+      "v5": "2026-09-24"
     },
     {
       "id": "leopold-aschenbrenner",
@@ -2556,6 +3176,12 @@
           "url": "https://www.disruptionbanking.com/2026/07/30/can-the-situational-awareness-hedge-fund-raise-capital-after-its-439-h1-gain/",
           "date": "2026-07-30",
           "note": "Role: CIO and managing partner, Situational Awareness LP; 'an investment vehicle focused on the path to AGI'."
+        },
+        {
+          "title": "CNBC: Leopold Aschenbrenner's Situational Awareness is active in options market, sources say",
+          "url": "https://www.cnbc.com/2026/09/11/leopold-aschenbrenners-situational-awareness-is-active-in-options-market-sources-say.html",
+          "date": "2026-09-11",
+          "note": "Context: the fund is betting on AI compute and memory stocks again after its July losses. No new public statement of his views found since June 2024."
         }
       ],
       "predictions": {
@@ -2798,9 +3424,74 @@
             "from": 15,
             "url": "https://situational-awareness.ai/the-free-world-must-prevail/"
           }
+        },
+        "d10": {
+          "value": 50,
+          "conf": "low",
+          "basis": "'I am not a doomer', and misalignment is 'probably not the biggest AI risk'; yet failure 'could easily be catastrophic', he fears CCP lock-in, and expects superintelligence by about 2030. On the line.",
+          "src": [
+            1,
+            3,
+            0
+          ]
+        },
+        "d15": {
+          "value": 45,
+          "conf": "low",
+          "basis": "'I'm most worried about things just being totally crazy around superintelligence, including things like novel WMDs, destructive wars, and unknown unknowns.' Mass death short of extinction fits that picture.",
+          "src": [
+            1,
+            3
+          ]
+        },
+        "d13": {
+          "value": 6,
+          "conf": "high",
+          "basis": "Situational Awareness, 2024: 'I'm most worried about things just being totally crazy around superintelligence, including things like novel WMDs, destructive wars, and unknown unknowns.'",
+          "src": [
+            1,
+            0,
+            3
+          ]
+        },
+        "d12": {
+          "value": 50,
+          "conf": "med",
+          "basis": "Without new methods, superhuman models 'will learn to lie, they'll learn to seek power'; but he is 'optimistic that superalignment is a solvable technical problem'. Even odds.",
+          "src": [
+            1
+          ]
+        },
+        "d14": {
+          "value": 50,
+          "conf": "med",
+          "basis": "'I am optimistic that superalignment is a solvable technical problem… we'll get there by muddling through' — but in an intelligence explosion 'failure could easily be catastrophic'. Optimistic and scared.",
+          "src": [
+            1,
+            2
+          ]
+        },
+        "d11": {
+          "value": 35,
+          "conf": "med",
+          "basis": "Expects 'moments with ambiguous evidence, when metrics will superficially look ok, but there are some warning signs that hint at looming danger'. Signs, but not clear ones.",
+          "src": [
+            1
+          ]
+        },
+        "s14": {
+          "value": 12,
+          "conf": "low",
+          "basis": "Calls arms control unstable: 'breakout is too easy'. The button removes that, but he sees superintelligence as decisive and would spend only months of a lead on safety. Unlikely to press.",
+          "src": [
+            3,
+            2,
+            1
+          ]
         }
       },
-      "oneLiner": "AGI by ~2027; the free world must win the race to superintelligence, under government control, with serious alignment work."
+      "oneLiner": "AGI by ~2027; the free world must win the race to superintelligence, under government control, with serious alignment work.",
+      "v5": "2026-09-24"
     }
   ]
 }

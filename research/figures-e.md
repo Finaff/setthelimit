@@ -168,3 +168,25 @@ Basis for the `role` line. Confirmed by CNBC and The Hill (same date) and by TIM
 - **Washington Examiner** (13 Sept 2026) headlines source 0 as backing a "self-imposed AI slowdown"; accurate as far as it goes, but he backs it only for the two leading labs and only as their own choice.
 - **Not retrieved**: NPR on EO 14365 (timed out), CNN on the AI Force (HTTP 451), Bloomberg originals (paywalled), the 2023 All-In episodes, his speeches at the July 2025 "Winning the AI Race" summit.
 - **Conflict of interest**, often raised by critics (Gizmodo, Vox): he is an active venture investor with AI holdings. Noted for the record; it does not bear on predicting his stated views.
+
+## v5 update (24 Sept 2026) — David Sacks
+
+New sources (appended as 13–14):
+
+- **13. C-SPAN on X (16 Sept 2026)** — https://x.com/cspan/status/2100287452053180789 — C-SPAN's own post with a 3-minute video, verified through X's embed API: "Presidential science and tech adviser @DavidSacks on the chance that AI kills humanity: 'I think that if we do the right things here... I think it is zero.'" This is the verified wording the old d1 lacked (d1 rested on a secondary CBS write-up).
+- **14. Yahoo News / RealClearPolitics: Fox News Special Report with Bret Baier (12 Sept 2026)** — https://www.yahoo.com/news/politics/articles/david-sacks-dont-doomer-groups-130000960.html — calls the Coxon resignation "a well-orchestrated media op" aimed at "government regulation of AI"; the odds that Coxon is not working with others "are very low"; on a mutual pause with China: "There is simply no basis for believing that."
+
+Re-read of source 2 (All-In, 11 Sept 2026, speaker-labelled transcript) for the new items:
+- 00:02:55, asked if he shares the fear that everyone dies: "No, I don't. And look, there's nothing new here. This is the same doomer histrionics that we've been hearing from this crowd for a long time."
+- 00:37:22, answering Friedberg's "how do we all die" examples of AI-enabled cyber and bio attacks: "Yes, those are risks, but at the same time, you can use the same technology to create antidotes and prevention and cures and all that kind of thing"; there are "a lot more good actors than bad actors out there, and it's illegal to use them for bad actions"; "these are things we can control."
+- 00:31:02, on jobs: unemployment of 10 to 15%, "there's no evidence of that. Quite the contrary, it's all been job gains."
+Re-read of source 1 (CBS, 16 Sept): "I think these risks can be managed, and I do not want to stop. I want to proceed safely." and "If we just pause all development, they will race ahead."
+
+New predictions: d10 2 high · d15 10 med · d13 88 med · d12 12 med · d14 90 high · d11 78 med · s14 2 high.
+
+- d10: "zero" is conditional on "if we do the right things here"; he still puts it at zero, far below 1 in 10.
+- d15: he grants bio and cyber misuse are "risks" but expects defence to keep up; a low probability, not zero.
+
+No old value changed.
+
+Verification of mirror-read quotes: source 0 (the 13 Sept "go ahead" post) was re-fetched through X's embed API; only the first ~280 characters come back ("Dario has written that we need to 'pace the frontier,' and Sam has agreed. People may be surprised by my response: go ahead. You guys are the frontier…"). The later lines relied on by the old s6 and s4 ("Stop pretending you need a regulatory approval process that supersedes product liability"; "China is very unlikely to join a global agreement") are still known only through the mirror; no new 'high' prediction rests on them. Source 5 (the "AI Force" post) was not located either.

@@ -186,3 +186,117 @@ Sources: https://techcrunch.com/2026/01/23/whos-behind-ami-labs-yann-lecuns-worl
 7. **p5** "If the major powers agreed to pause the most powerful AI projects, the pause would actually hold." — for figures who oppose any pause (Andreessen, Verdon, LeCun) this is a hypothetical about an outcome they would resist; their low values may be read as cynicism about enforcement when it is partly hostility to the premise. Fine as a profile item, but consider glossing in `plain`: "Assume the agreement exists; would it be kept?"
 8. **s11** "The most powerful AI models should be released openly..." — Hinton's "that battle's been lost" is descriptive, not normative; Altman released gpt-oss but keeps the frontier closed. Wording is fine; note for the engine that "most powerful" is doing the work and Altman lands mid-scale on purpose.
 9. **s10 / s5 (prescriptive)** — the rewrite fixed the halt-side problem, but for Altman, whose stated view is "pace, don't stop", both now read as forced choices; his 70–75 should be read as "on balance", not endorsement. No rewrite needed.
+
+---
+
+# v5 update (24 Sept 2026) — batch A
+
+Predictions for the seven new v5 ids (d10 d11 d12 d13 d14 d15 s14) against `content/propositions.v5.json`.
+New sources are appended to each figure's `sources` list (existing indices unchanged). Every URL below was fetched
+with WebFetch unless marked **(indexed only)**; third-party summaries are marked **(secondary)**. Searches for
+reactions to Amodei's "We Must Pace the Frontier" (12 Sept 2026) found nothing new from Andreessen, Yudkowsky or
+Hinton on the essay itself; what was found is listed per figure. The Pinker–Alexander exchange did not surface in
+search and is not used.
+
+## v5 update (24 Sept 2026) — Eliezer Yudkowsky
+
+**New sources**
+- MIRI, "MIRI's Position on the Ban Artificial Superintelligence Act of 2026", 23 Sep 2026 (by Aaron Scher; endorsed by Bourgon, Soares and Yudkowsky on behalf of MIRI): banning ASI is "the only effective solution to avoid the ASI threat"; supports pausing training when precursor capabilities appear; faults the bill for lacking chip tracking — https://intelligence.org/2026/09/23/miris-position-on-the-ban-artificial-superintelligence-act-of-2026/
+- "There is never going to be a time before the end when you can look around nervously, and see that it is now clearly common knowledge that you can talk about AGI being imminent, and take action..." — There's No Fire Alarm for AGI, 13 Oct 2017, https://intelligence.org/2017/10/13/fire-alarm/
+- AI Frontiers book summary (Laura Hiscott, 16 Sep 2025) **(secondary)** — https://ai-frontiers.org/articles/summary-of-if-anyone-builds-it-everyone-dies
+
+**New predictions:** d10 97 high · d11 5 high · d12 97 high · d13 2 high · d14 2 high · d15 30 low · s14 97 high.
+
+**Notes**
+- d15 is the only uncertain one. His model is sudden, total loss to a misaligned superintelligence rather than a survivable disaster first, and he writes little about bio/cyber misuse. 30/low is a guess that he would not rule out a mid-size catastrophe but does not expect one to come first.
+- s14: the button gives ten years; he wants an indefinite halt ("until we have a better grasp on the alignment problem" is MIRI's framing in the 23 Sept statement). He would still press.
+- s4 now also cites the MIRI statement (value unchanged). No other old id changed.
+- No public reaction by Yudkowsky to the Amodei essay was found through search; his X posts are not fetchable.
+
+## v5 update (24 Sept 2026) — Marc Andreessen
+
+**New sources**
+- Joe Rogan Experience #2501 (21 May 2026), Podcast Notes summary **(secondary)**: "If you're worried about bad AI, rule number one is stop writing internet posts about bad AI"; AGI passed "around early 2026"; US software lead over China "terrifyingly close" — https://podcastnotes.org/joe-rogan-experience/marc-andreessen-surveillance-politics-ai-vampires-californias-collapse-and-why-the-far-right-and-far-left-now-agree-on-everything-joe-rogan-experience-2501/
+- TechRadar (via Yahoo), June 2026: frontier models "as smart as a person"; "99% of the time, the answer that I'm getting from the AI… is better than I would get from talking to basically almost any expert" — https://tech.yahoo.com/ai/articles/crossed-3-months-ago-a16zs-192500648.html
+
+**New predictions:** d10 2 high · d11 75 low · d12 7 med · d13 90 med · d14 95 high · d15 6 med · s14 1 high.
+
+**Changed:** p2 55 → 62 (low → low). He now says AGI arrived in early 2026 and that models beat almost any expert, which leans yes on capability; he still says AI augments rather than replaces workers, so it stays low-confidence.
+
+**Notes**
+- No Andreessen statement on the Amodei essay was found (Sept 2026 coverage that quotes him re-uses the 2023 Manifesto line "any deceleration of AI will cost lives"). Euronews (15 Sep 2026) describes him as "fundamentally opposed to regulation" without new quotes.
+- d12: his Rogan remark concedes that models pick up menacing behaviour from their training data (he blames doomer posts), i.e. behaviour nobody intended; he frames it as fixable, so the value stays low but not at the floor.
+- d11 is conditional on a premise he rejects; 75/low reflects his "ordinary software" frame.
+
+## v5 update (24 Sept 2026) — Guillaume Verdon
+
+**New sources**
+- New York Post interview (via Yahoo), 21 Sep 2026: "I don't think AI is going to kill us all. I think that sort of thinking is more dangerous than the AI itself"; proposed auditors "just gonna be a sort of cartel with fake checks and balances"; Amodei "a very thoughtful guy" — https://www.yahoo.com/news/politics/articles/silicon-valley-ai-accelerationists-fighting-230111372.html
+- Newsmax (via Yahoo), 22 Sep 2026: "If you ask any of these doomers how it's supposed to kill us all, they can never flesh out all the details … I'm a mathematician. Show me the math." — https://www.yahoo.com/news/politics/articles/physicist-ai-doomers-spread-mind-152039317.html
+- X, 13 Sep 2026 **(indexed only; date decoded from the post ID)**: a sequence ending "4) release a pacing letter (seemingly reasonable middle ground) 5) regulatory capture achieved" — https://x.com/beffjezos/status/2098995251566559611
+
+**New predictions:** d10 3 high · d11 75 low · d12 30 low · d13 75 med · d14 72 med · d15 8 low · s14 1 high.
+
+**Notes**
+- d12 is the delicate one: e/acc is relaxed about AI having aims of its own, so he might grant "goals we didn't choose" while denying they are hostile. 30/low reflects his "the market will select aligned AIs" line; could reasonably be higher.
+- d13: he does see a danger, but it is centralisation ("separation of AI and state"), a familiar kind; 75.
+- No old id changed.
+
+## v5 update (24 Sept 2026) — Yann LeCun
+
+**New sources**
+- CNN Business (via Yahoo), 24 Sep 2026, "Not everyone thinks AI will kill us all": to a user saying AI "will get us all killed in three years", LeCun replied "No, Not a chance in hell"; compared panic over recent incidents to blaming the whole plumbing industry for one bad plumber (paraphrase; platform not named) — https://www.yahoo.com/news/science/articles/not-everyone-thinks-ai-kill-093029778.html (CNN original https://www.cnn.com/2026/09/24/tech/not-everyone-thinks-ai-will-kill-us-all returns 451 to our fetcher)
+- Already cited: X, 13 Sep 2026, on Amodei: "I made fun of them then. Everyone should make fun of them now." (Tech Startups, 14 Sep 2026).
+
+**New predictions:** d10 3 high · d11 85 med · d12 8 med · d13 85 med · d14 93 high · d15 10 low · s14 1 high.
+
+**Notes**
+- d15 rests on his long-standing view that current AI gives bad actors little uplift and that open models help defenders; no 20-year statement on mass-casualty misuse was found. 10/low.
+- d12: he concedes today's LLMs are hard to control (hence his objective-driven architecture) but holds that designed objectives and guardrails fix goals by construction.
+- No old id changed.
+
+## v5 update (24 Sept 2026) — Geoffrey Hinton
+
+**New sources**
+- CNN interview, 16 Sep 2026 (via Yahoo): "A kill switch is no good for that, because the AI will be much better than people at persuading people of things"; "It will be able to persuade the people in charge of the switch not to pull the switch"; "There's the risk that comes from bad actors using AI to do bad things, like create mass unemployment, or create nasty viruses, or do nasty cyberattacks, or make videos to corrupt elections" — https://sg.news.yahoo.com/godfather-ai-tells-cnn-why-200353595.html
+- Business Today, 18 Sep 2026: "I don't think it'll work in the long run. When it's superintelligent, it'll be much better than people. So it will be able to persuade the people in charge of the switch not to pull the switch." — https://www.businesstoday.in/technology/artificial-intelligence/story/a-kill-switch-wont-save-us-from-rogue-ai-tech-leaders-say-amid-growing-concerns-556372-2026-09-18
+- StartupHub.ai on a BBC interview, 11 Sep 2026 **(secondary)**: 10% within a decade "not unreasonable"; horizon shrunk to "maybe 10 years or less" — https://www.startuphub.ai/ai-news/artificial-intelligence/2026/geoffrey-hinton-10-chance-ai-kills-humans
+
+**New predictions:** d10 80 high · d11 30 low · d12 75 med · d13 8 med · d14 12 high · d15 60 med · s14 60 low.
+
+**Notes**
+- d10: his numbers (10% in a decade "not unreasonable"; 10–20% over 30 years) sit at or above the bar within 20 years; 80 rather than 90 because he stresses they are "very hard to estimate".
+- d15: one of the clearest cases of a "grave but survivable" worry — he names AI-made viruses and cyberattacks as current bad-actor risks.
+- s14 is genuinely split: he signed the Oct 2025 call to prohibit superintelligence and backs Amodei's slowdown, but says "I don't think we should stop developing it altogether" because of medical benefits. The button keeps today's AI running, which answers part of his objection; 60/low.
+- d11: inferred from his persuasion/manipulation argument; he has not addressed the "warning shot" question directly in a source we could fetch (Forbes, 7 Aug 2026, on agents escaping tests, returned 403).
+- No old id changed.
+
+## v5 update (24 Sept 2026) — Yoshua Bengio
+
+**New sources**
+- Canadian Press (via BNN Bloomberg), 23 Sep 2026, UN Security Council briefing: AI poses an "unprecedented threat" that "does not respect the borders we defend"; the dangers are "real and imminent"; "these AI behaviours are well documented and validated by many independent experts"; wants "international agreements on technical solutions that would make AI safe by design" — https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ais-dangers-real-and-imminent-canadian-ai-pioneer-yoshua-bengio-tells-un/
+- International AI Safety Report 2026 (he chairs it), 3 Feb 2026: AI can help enable biological and chemical threats, with substantial uncertainty about real-world uplift (content via Covington's summary, **secondary**) — https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026
+- Re-used for s14: Diary of a CEO transcript (source 5, **secondary**). Host: "If I put a button in front of you, and if you press that button, the advancements in AI would stop. Would you press it?" Bengio: "AI that is clearly not dangerous, I don't see any reason to stop it. But there are forms of AI that we don't understand well and could overpower us... I would press the button because I care about my children."
+
+**New predictions:** d10 82 high · d11 40 low · d12 75 med · d13 5 high · d14 25 med · d15 55 med · s14 88 high.
+
+**Notes**
+- s14 is close to a thought experiment he has already answered; his exemption for AI "that is clearly not dangerous" matches the v5 button, which leaves today's AI running. Not 95+ because the button would also freeze his own LawZero bet on safe superhuman AI.
+- d11 is mixed: he points to the 2026 incidents as warnings, yet his own report says models increasingly tell tests from real use, so later signs may not be clear. 40/low.
+- No old id changed.
+
+## v5 update (24 Sept 2026) — Sam Altman
+
+**New sources**
+- CNN (via ABC17), 23 Sep 2026, UN Security Council: "any chance of an AI-caused catastrophe is not acceptable"; avoid the "trap of doomerism" and the "trap of blind optimism"; "accurate and speedy reporting so that the world can learn from failures before they become catastrophes"; international standards for "measuring capabilities, assessing risks, determining whether safeguards are sufficient and preserving meaningful human oversight" — https://abc17news.com/money/cnn-business-consumer/2026/09/23/sam-altman-dario-amodei-urge-un-security-council-to-adopt-international-ai-standards/
+- Canadian Press (via BNN Bloomberg), 23 Sep 2026: "We could lose control of the future to AI." — https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ais-dangers-real-and-imminent-canadian-ai-pioneer-yoshua-bengio-tells-un/
+- Open Magazine, 24 Sep 2026 **(secondary)**: "Beating companies in a competitive race is not a reason to make rash decisions"; OpenAI slowed before and would again — https://openthemagazine.com/technology/sam-altman-dario-amodei-urge-ai-safeguards-at-un-warn-against-losing-human-control
+- Fortune, 5 Jun 2026: co-signed letter to Congress, "there is a real possibility that the knowledge barriers which have historically prevented bad actors from obtaining biological weapons will meaningfully erode" — https://fortune.com/2026/06/05/openai-anthropic-microsoft-ceos-congress-bioweapon-safeguards/
+- OpenAI's own page of the UN remarks (https://openai.com/index/sam-altman-un-security-council-remarks/) returned 403; quotes are from press.
+
+**New predictions:** d10 30 low · d11 72 med · d12 30 med · d13 10 high · d14 70 med · d15 30 low · s14 5 med.
+
+**Notes**
+- Say/do gap: he calls "any chance" of catastrophe unacceptable and backs pacing, while OpenAI keeps racing and he remains "very confident" the industry can do this safely. d10 is scored on what he would answer (a low but non-trivial number, never stated), not on the rhetoric.
+- s14: "When we talk about pacing, we do not mean stopping" (14 Sep 2026) plus the UN warning against "doomerism": 5/med.
+- No old id changed; s4 (treaty) and s5 (race) were reconsidered against the UN speech and left as they were — international standards and "not a reason to make rash decisions" do not amount to a treaty with inspections or to rejecting the national race.

@@ -90,6 +90,18 @@
           "url": "https://techcrunch.com/2026/03/26/david-sacks-is-done-as-ai-czar-heres-what-hes-doing-instead/",
           "date": "2026-03-26",
           "note": "His 130 days as a special government employee ran out; he became co-chair of the President's Council of Advisors on Science and Technology (PCAST) with Michael Kratsios, an advisory rather than policy-making post."
+        },
+        {
+          "title": "C-SPAN on X: Sacks on the chance that AI kills humanity",
+          "url": "https://x.com/cspan/status/2100287452053180789",
+          "date": "2026-09-16",
+          "note": "C-SPAN's own post with a 3-minute video, verified via X's embed API: 'Presidential science and tech adviser @DavidSacks on the chance that AI kills humanity: \"I think that if we do the right things here... I think it is zero.\"'"
+        },
+        {
+          "title": "Yahoo News (RealClearPolitics): David Sacks: 'Well-Orchestrated Media Op' Is Pushing a 'Government Takeover of AI'",
+          "url": "https://www.yahoo.com/news/politics/articles/david-sacks-dont-doomer-groups-130000960.html",
+          "date": "2026-09-12",
+          "note": "Fox News Special Report. Calls the Coxon resignation 'a well-orchestrated media op'; on a mutual pause with China: 'There is simply no basis for believing that.'"
         }
       ],
       "predictions": {
@@ -250,8 +262,75 @@
             0,
             11
           ]
+        },
+        "d10": {
+          "value": 2,
+          "conf": "high",
+          "basis": "On the chance AI kills humanity: 'I think that if we do the right things here... I think it is zero' (C-SPAN, Sept 2026). On all dying by 2030: 'No, I don't… the same doomer histrionics.'",
+          "src": [
+            13,
+            2
+          ]
+        },
+        "d11": {
+          "value": 78,
+          "conf": "med",
+          "basis": "'The Doomer narratives were wrong': no rapid take-off, models leapfrog step by step, and the market 'already punishes models that behave in unpredictable or unauthorized ways'. Wants data, not fear.",
+          "src": [
+            6,
+            0,
+            2
+          ]
+        },
+        "d12": {
+          "value": 12,
+          "conf": "med",
+          "basis": "'AI models are still at zero in terms of setting their own objective function'; misbehaving models are a product defect the market punishes. Yet he co-signed a plan calling frontier systems 'poorly understood'.",
+          "src": [
+            6,
+            0,
+            9
+          ]
+        },
+        "d13": {
+          "value": 88,
+          "conf": "med",
+          "basis": "Calls extinction fears 'doomer histrionics' and 'a panic'. The harms he names are familiar: cyber and bio misuse met by defences, censorship through 'a marriage of corporate and state power'.",
+          "src": [
+            2,
+            1,
+            6
+          ]
+        },
+        "d14": {
+          "value": 90,
+          "conf": "high",
+          "basis": "'I think these risks can be managed, and I do not want to stop.' To the lab chiefs: 'Why are you acting like this is something that you can't control? If you can't control it, then don't do it.'",
+          "src": [
+            1,
+            2
+          ]
+        },
+        "d15": {
+          "value": 10,
+          "conf": "med",
+          "basis": "Asked about AI bio and cyber attacks: 'Yes, those are risks, but at the same time, you can use the same technology to create antidotes and prevention and cures'; good actors outnumber bad.",
+          "src": [
+            2,
+            1
+          ]
+        },
+        "s14": {
+          "value": 2,
+          "conf": "high",
+          "basis": "'I think these risks can be managed, and I do not want to stop' (CBS, Sept 2026). A worldwide freeze would give up gains he values against a danger he calls a 'panic'.",
+          "src": [
+            1,
+            6
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     }
   ]
 }

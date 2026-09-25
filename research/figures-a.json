@@ -66,6 +66,24 @@
           "url": "https://podscript.ai/podcasts/lex-fridman-podcast/368-eliezer-yudkowsky-dangers-of-ai-and-the-end-of-human-civilization/",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "MIRI's Position on the Ban Artificial Superintelligence Act of 2026",
+          "url": "https://intelligence.org/2026/09/23/miris-position-on-the-ban-artificial-superintelligence-act-of-2026/",
+          "date": "2026-09-23",
+          "note": "By Aaron Scher, endorsed by Bourgon, Soares and Yudkowsky on behalf of MIRI. Banning ASI is 'the only effective solution to avoid the ASI threat'; backs pausing training on precursor capabilities; faults the bill for lacking chip tracking."
+        },
+        {
+          "title": "There's No Fire Alarm for Artificial General Intelligence",
+          "url": "https://intelligence.org/2017/10/13/fire-alarm/",
+          "date": "2017-10-13",
+          "note": "'There is never going to be a time before the end when you can look around nervously, and see that it is now clearly common knowledge that you can talk about AGI being imminent, and take action...'"
+        },
+        {
+          "title": "Summary of 'If Anyone Builds It, Everyone Dies' (AI Frontiers)",
+          "url": "https://ai-frontiers.org/articles/summary-of-if-anyone-builds-it-everyone-dies",
+          "date": "2025-09-16",
+          "note": "Secondary summary by Laura Hiscott: 'we will almost certainly fail to give them internal drives that will remain aligned with human well-being outside the training environment'."
         }
       ],
       "oneLiner": "Superhuman AI built with today's methods would kill everyone; the only sane response is a global, enforced halt.",
@@ -197,7 +215,8 @@
           "src": [
             0,
             7,
-            6
+            6,
+            9
           ]
         },
         "s5": {
@@ -330,6 +349,70 @@
             0,
             7
           ]
+        },
+        "d15": {
+          "value": 30,
+          "conf": "low",
+          "basis": "His central scenario is sudden extinction from a misaligned superintelligence, not a survivable disaster on the way; he says little about mass-casualty misuse. Inferred.",
+          "src": [
+            2,
+            10
+          ]
+        },
+        "d10": {
+          "value": 97,
+          "conf": "high",
+          "basis": "TIME, 2023: 'the most likely result of building a superhumanly smart AI... is that literally everyone on Earth will die'. He does not put that decades away: far above 1-in-10 within 20 years.",
+          "src": [
+            0,
+            2,
+            3
+          ]
+        },
+        "d13": {
+          "value": 2,
+          "conf": "high",
+          "basis": "Rejects the 'familiar harms' frame outright; his book's title is the claim: 'If Anyone Builds It, Everyone Dies'.",
+          "src": [
+            2,
+            0
+          ]
+        },
+        "d12": {
+          "value": 97,
+          "conf": "high",
+          "basis": "Book thesis: an ASI's goals are 'vanishingly unlikely' to be what we meant; training does not install what we intend ('capabilities generalize further than alignment', AGI Ruin).",
+          "src": [
+            2,
+            1,
+            11
+          ]
+        },
+        "d14": {
+          "value": 2,
+          "conf": "high",
+          "basis": "AGI Ruin: unaligned operation at a dangerous level of intelligence 'kills everybody on Earth and then we don't get to try again'. No control after the fact.",
+          "src": [
+            1
+          ]
+        },
+        "d11": {
+          "value": 5,
+          "conf": "high",
+          "basis": "'There is never going to be a time before the end when you can look around nervously, and see that it is now clearly common knowledge...' (No Fire Alarm, 2017).",
+          "src": [
+            10,
+            1
+          ]
+        },
+        "s14": {
+          "value": 97,
+          "conf": "high",
+          "basis": "TIME, 2023: 'Shut it all down', worldwide, 'no exceptions'. Ten years is less than he asks for (MIRI, Sept 2026: pause until alignment is better understood), but he would press.",
+          "src": [
+            0,
+            9
+          ]
         }
       },
       "v1Only": {
@@ -365,7 +448,8 @@
           "basis": "Long-held view that digital minds can be moral patients (co-wrote 'The Ethics of Artificial Intelligence' with Bostrom); warns against making them casually.",
           "src": []
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "andreessen",
@@ -428,6 +512,18 @@
           "url": "https://eu.36kr.com/en/p/3631555994158340",
           "date": "2026-01",
           "note": "Secondary, translated: Washington now has 'little interest in doing anything that might prevent us from beating China'; 'thousands of AI bills' in states 'quite scary'; Europe 'kneecapping'."
+        },
+        {
+          "title": "Marc Andreessen on Joe Rogan #2501 (Podcast Notes summary)",
+          "url": "https://podcastnotes.org/joe-rogan-experience/marc-andreessen-surveillance-politics-ai-vampires-californias-collapse-and-why-the-far-right-and-far-left-now-agree-on-everything-joe-rogan-experience-2501/",
+          "date": "2026-05-21",
+          "note": "Secondary summary. 'If you're worried about bad AI, rule number one is stop writing internet posts about bad AI'; says AGI was passed around early 2026; US software lead over China 6–12 months, 'terrifyingly close'."
+        },
+        {
+          "title": "'We crossed that about 3 months ago': Andreessen on AGI on Joe Rogan (TechRadar, via Yahoo)",
+          "url": "https://tech.yahoo.com/ai/articles/crossed-3-months-ago-a16zs-192500648.html",
+          "date": "2026-06",
+          "note": "Current frontier models 'as smart as a person'; '99% of the time, the answer that I'm getting from the AI… is better than I would get from talking to basically almost any expert'. Dismisses job-loss fears."
         }
       ],
       "oneLiner": "AI is math built and run by people; the real risks are stagnation, cartels and China winning, not runaway machines.",
@@ -637,13 +733,19 @@
           ]
         },
         "p2": {
-          "value": 55,
+          "value": 62,
           "conf": "low",
-          "basis": "Says the cost of intelligence 'is collapsing' and this is the largest shift of his life, yet has long argued AI will not cause mass unemployment. Mixed.",
+          "basis": "Says frontier models crossed AGI in early 2026 and beat 'almost any expert' 99% of the time (Rogan, 2026), yet insists AI augments rather than replaces workers. Leans yes on capability.",
           "src": [
-            7,
-            0
-          ]
+            10,
+            9,
+            7
+          ],
+          "update": {
+            "from": 55,
+            "date": "2026-09-24",
+            "url": "https://tech.yahoo.com/ai/articles/crossed-3-months-ago-a16zs-192500648.html"
+          }
         },
         "p4": {
           "value": 85,
@@ -662,6 +764,68 @@
           "src": [
             0,
             8
+          ]
+        },
+        "d15": {
+          "value": 6,
+          "conf": "med",
+          "basis": "'I'm not aware of a single actual bad use for AI that's not already illegal'; the answer to misuse is 'AI as a defensive tool'. Mass-casualty AI scenarios are moral panic to him.",
+          "src": [
+            0,
+            3
+          ]
+        },
+        "d10": {
+          "value": 2,
+          "conf": "high",
+          "basis": "'AI doesn't want, it doesn't have goals, it doesn't want to kill you, because it's not alive' (Why AI Will Save the World, 2023). No change in 2026.",
+          "src": [
+            0,
+            9
+          ]
+        },
+        "d13": {
+          "value": 90,
+          "conf": "med",
+          "basis": "His list of AI risks is all familiar kinds (bad actors, jobs, inequality, speech), and a mind of its own is 'a superstitious handwave'. Would agree the danger is ordinary.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "d12": {
+          "value": 7,
+          "conf": "med",
+          "basis": "'It doesn't have goals' (2023). On Rogan (May 2026) he blamed menacing model behaviour on doomer posts in training data: learned, unintended, but in his telling fixable.",
+          "src": [
+            0,
+            9
+          ]
+        },
+        "d14": {
+          "value": 95,
+          "conf": "high",
+          "basis": "AI 'is owned by people and controlled by people, like any other technology'; against bad actors, use 'AI as a defensive tool'.",
+          "src": [
+            0,
+            3
+          ]
+        },
+        "d11": {
+          "value": 75,
+          "conf": "low",
+          "basis": "Rejects the premise that AI could threaten humanity; if it could, he would expect ordinary failures first, found and fixed as with any software. Inferred.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "s14": {
+          "value": 1,
+          "conf": "high",
+          "basis": "Techno-Optimist Manifesto: 'any deceleration of AI will cost lives. Deaths that were preventable by the AI that was prevented from existing is a form of murder.'",
+          "src": [
+            2
           ]
         }
       },
@@ -700,7 +864,8 @@
             0
           ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "verdon",
@@ -752,6 +917,24 @@
           "url": "https://www.extropic.ai/",
           "date": "2026-08-03",
           "note": "Confirms current role and product: thermodynamic sampling units, Z1 chip, launch video 30 Oct 2025, 'Thermodynamic Computing Chips in America' (29 Jul 2026)."
+        },
+        {
+          "title": "Silicon Valley's AI accelerationists fighting back against 'doomer mind virus' taking over big labs (New York Post, via Yahoo)",
+          "url": "https://www.yahoo.com/news/politics/articles/silicon-valley-ai-accelerationists-fighting-230111372.html",
+          "date": "2026-09-21",
+          "note": "Interview with Vivi Lin. 'I don't think AI is going to kill us all. I think that sort of thinking is more dangerous than the AI itself.' Proposed auditors: 'a sort of cartel with fake checks and balances'. Amodei 'a very thoughtful guy'."
+        },
+        {
+          "title": "Physicist: AI 'Doomers' Spread a 'Mind Virus' (Newsmax, via Yahoo)",
+          "url": "https://www.yahoo.com/news/politics/articles/physicist-ai-doomers-spread-mind-152039317.html",
+          "date": "2026-09-22",
+          "note": "Relays the Post interview: 'If you ask any of these doomers how it's supposed to kill us all, they can never flesh out all the details … I'm a mathematician. Show me the math.'"
+        },
+        {
+          "title": "X post on the pacing letter (@beffjezos)",
+          "url": "https://x.com/beffjezos/status/2098995251566559611",
+          "date": "2026-09-13",
+          "note": "Indexed only (X blocks our fetcher; date from the post ID). Calls the sequence ending in 'a pacing letter (seemingly reasonable middle ground)' a route to 'regulatory capture achieved'."
         }
       ],
       "oneLiner": "Accelerate: growth is the thermodynamic imperative, and decentralized AI in everyone's hands beats central control.",
@@ -990,6 +1173,71 @@
             0,
             2
           ]
+        },
+        "d15": {
+          "value": 8,
+          "conf": "low",
+          "basis": "'I don't think AI is going to kill us all' (Sept 2026) and treats catastrophe talk as a 'mind virus'. No statement found on bio or cyber mass-casualty misuse; inferred low.",
+          "src": [
+            7,
+            8
+          ]
+        },
+        "d10": {
+          "value": 3,
+          "conf": "high",
+          "basis": "New York Post, 21 Sep 2026: 'I don't think AI is going to kill us all. I think that sort of thinking is more dangerous than the AI itself.'",
+          "src": [
+            7,
+            8,
+            1
+          ]
+        },
+        "d13": {
+          "value": 75,
+          "conf": "med",
+          "basis": "The danger he names is centralised control: 'separation of AI and state'; auditors as 'a sort of cartel with fake checks and balances' (Sept 2026). Familiar power problems, not survival.",
+          "src": [
+            1,
+            7
+          ]
+        },
+        "d12": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Expects the market to 'positively select for AIs that are more reliable, more safe and tend to be aligned'; e/acc is relaxed about AI having aims of its own. Inferred.",
+          "src": [
+            1,
+            0
+          ]
+        },
+        "d14": {
+          "value": 72,
+          "conf": "med",
+          "basis": "'The way to a good future is to maintain adversarial equilibria between the various AI players'; with competition 'you don't have to trust any one party too much'.",
+          "src": [
+            1,
+            2
+          ]
+        },
+        "d11": {
+          "value": 75,
+          "conf": "low",
+          "basis": "Favours 'fault-tolerant progress' and iterative reliability engineering, and tells doomers 'Show me the math' for a sudden failure (Sept 2026). Inferred yes.",
+          "src": [
+            1,
+            8
+          ]
+        },
+        "s14": {
+          "value": 1,
+          "conf": "high",
+          "basis": "'The options are to grow or die'; 'I don't think stagnation or slowing down is actually an option' (Lex #407). Calls the Sept 2026 pacing push 'regulatory capture' (X, indexed only).",
+          "src": [
+            1,
+            2,
+            9
+          ]
         }
       },
       "v1Only": {
@@ -1027,7 +1275,8 @@
             3
           ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "lecun",
@@ -1103,6 +1352,12 @@
           "url": "https://x.com/ylecun/status/2046577402264870958",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "Not everyone thinks AI will kill us all (CNN Business, via Yahoo)",
+          "url": "https://www.yahoo.com/news/science/articles/not-everyone-thinks-ai-kill-093029778.html",
+          "date": "2026-09-24",
+          "note": "Replying to a user who said AI 'will get us all killed in three years': 'No, Not a chance in hell.' Likened panic over recent AI incidents to blaming the whole plumbing industry for one bad plumber (paraphrase). Original: https://www.cnn.com/2026/09/24/tech/not-everyone-thinks-ai-will-kill-us-all"
         }
       ],
       "oneLiner": "LLMs are a dead end, not a threat; the real danger is a few firms owning AI, so keep it open and build better systems.",
@@ -1343,6 +1598,68 @@
           "src": [
             9
           ]
+        },
+        "d15": {
+          "value": 10,
+          "conf": "low",
+          "basis": "Says current AI gives bad actors little they couldn't find anyway and that open models help defenders; no 20-year forecast of mass-casualty misuse found. Inferred low.",
+          "src": [
+            0,
+            1
+          ]
+        },
+        "d10": {
+          "value": 3,
+          "conf": "high",
+          "basis": "To a user saying AI 'will get us all killed in three years' (Sept 2026): 'No, Not a chance in hell.' X, Apr 2026: the existential risk is 'essentially zero'.",
+          "src": [
+            11,
+            8
+          ]
+        },
+        "d13": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Calls takeover 'just completely false' and existential risk 'essentially zero'; the danger he stresses is concentration of power through proprietary AI, a familiar kind.",
+          "src": [
+            0,
+            8
+          ]
+        },
+        "d12": {
+          "value": 8,
+          "conf": "med",
+          "basis": "'The smartest among us do not want to dominate'; objective-driven AI pursues the objectives and guardrails we give it, by design. Concedes today's LLMs are hard to control.",
+          "src": [
+            0,
+            1
+          ]
+        },
+        "d14": {
+          "value": 93,
+          "conf": "high",
+          "basis": "'It's going to be my smart AI police against your rogue AI' (Lex Fridman #416); safety as iterative engineering: 'a better turbojet is also a safer turbojet'.",
+          "src": [
+            1,
+            0
+          ]
+        },
+        "d11": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Safety is iterative: failures show up and get fixed, 'a better turbojet is also a safer turbojet'. After the 2026 incidents he likened the alarm to blaming all plumbers for one bad one.",
+          "src": [
+            1,
+            11
+          ]
+        },
+        "s14": {
+          "value": 1,
+          "conf": "high",
+          "basis": "On Amodei's call to slow down (X, 13 Sep 2026): 'I made fun of them then. Everyone should make fun of them now.' A ten-year freeze is the opposite of what he argues for.",
+          "src": [
+            9
+          ]
         }
       },
       "v1Only": {
@@ -1382,7 +1699,8 @@
             1
           ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "hinton",
@@ -1465,6 +1783,24 @@
           "url": "https://arxiv.org/html/2310.17688v3",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "'Godfather of AI' tells CNN why kill switch probably wouldn't work (CNN, via Yahoo)",
+          "url": "https://sg.news.yahoo.com/godfather-ai-tells-cnn-why-200353595.html",
+          "date": "2026-09-16",
+          "note": "'It will be able to persuade the people in charge of the switch not to pull the switch.' 'There's the risk that comes from bad actors using AI to do bad things, like create mass unemployment, or create nasty viruses, or do nasty cyberattacks...'. CNN original: https://www.cnn.com/2026/09/16/business/video/godfather-of-ai-hinton-kill-switch-bill-vrtc"
+        },
+        {
+          "title": "A kill switch won't save us from rogue AI, tech leaders say (Business Today)",
+          "url": "https://www.businesstoday.in/technology/artificial-intelligence/story/a-kill-switch-wont-save-us-from-rogue-ai-tech-leaders-say-amid-growing-concerns-556372-2026-09-18",
+          "date": "2026-09-18",
+          "note": "Quotes the CNN interview: 'I don't think it'll work in the long run. When it's superintelligent, it'll be much better than people. So it will be able to persuade the people in charge of the switch not to pull the switch.'"
+        },
+        {
+          "title": "Geoffrey Hinton: 10% chance AI kills humans (StartupHub.ai, on BBC interview)",
+          "url": "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/geoffrey-hinton-10-chance-ai-kills-humans",
+          "date": "2026-09-11",
+          "note": "Secondary. A 10% chance within a decade 'not unreasonable'; his horizon has shrunk from 30–50 years to 10–20 to 'maybe 10 years or less'; AI could design biological or computer viruses."
         }
       ],
       "oneLiner": "Superintelligence is coming within a decade and could replace us; don't stop building, but slow down and regulate now.",
@@ -1718,6 +2054,72 @@
           "src": [
             9
           ]
+        },
+        "d15": {
+          "value": 60,
+          "conf": "med",
+          "basis": "CNN, 16 Sep 2026: the risk 'from bad actors using AI to do bad things, like... create nasty viruses, or do nasty cyberattacks'. Treats both as live dangers now.",
+          "src": [
+            12,
+            14
+          ]
+        },
+        "d10": {
+          "value": 80,
+          "conf": "high",
+          "basis": "A 10% chance of extinction within a decade 'seems not an unreasonable estimate to me' (Newsnight, Sept 2026); 10–20% over 30 years. Above the bar in a 20-year window.",
+          "src": [
+            8,
+            3,
+            14
+          ]
+        },
+        "d13": {
+          "value": 8,
+          "conf": "med",
+          "basis": "Holds both kinds at once: misuse ('nasty viruses', 'nasty cyberattacks') and AI that could 'take over' or replace us. Would reject 'not a threat to survival'.",
+          "src": [
+            12,
+            1,
+            3
+          ]
+        },
+        "d12": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Superintelligent AIs 'will very quickly develop two subgoals... stay alive... get more control'; 'we have to figure out how to design it, so it won't want to'.",
+          "src": [
+            3,
+            8
+          ]
+        },
+        "d14": {
+          "value": 12,
+          "conf": "high",
+          "basis": "CNN, 16 Sep 2026, on a kill switch: 'I don't think it'll work in the long run... it will be able to persuade the people in charge of the switch not to pull the switch.'",
+          "src": [
+            13,
+            12,
+            10
+          ]
+        },
+        "d11": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Expects a superintelligence to out-persuade its overseers ('They will be able to manipulate people'), so signs of danger could be talked away or hidden. Inferred.",
+          "src": [
+            12,
+            10
+          ]
+        },
+        "s14": {
+          "value": 60,
+          "conf": "low",
+          "basis": "Signed the call to prohibit superintelligence until safe and backs Amodei's slowdown, but 'I don't think we should stop developing it altogether', citing medicine. Leans yes.",
+          "src": [
+            4,
+            9
+          ]
         }
       },
       "v1Only": {
@@ -1754,7 +2156,8 @@
             5
           ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "bengio",
@@ -1830,6 +2233,18 @@
           "url": "https://arxiv.org/abs/2310.17688",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "AI's dangers 'real and imminent,' Yoshua Bengio tells UN (Canadian Press, via BNN Bloomberg)",
+          "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ais-dangers-real-and-imminent-canadian-ai-pioneer-yoshua-bengio-tells-un/",
+          "date": "2026-09-23",
+          "note": "UN Security Council: AI an 'unprecedented threat' that 'does not respect the borders we defend'; dangers 'real and imminent'; 'these AI behaviours are well documented and validated by many independent experts'; wants 'international agreements on technical solutions that would make AI safe by design'."
+        },
+        {
+          "title": "International AI Safety Report 2026 (chair: Yoshua Bengio)",
+          "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+          "date": "2026-02-03",
+          "note": "General-purpose AI can help enable biological and chemical threats (lab instructions, troubleshooting) with substantial uncertainty about real-world uplift; pre-deployment testing harder as models tell tests from real use. Via Covington summary."
         }
       ],
       "oneLiner": "AI agents already lie and self-preserve; build non-agentic 'Scientist AI', regulate like nuclear, don't gamble on luck.",
@@ -2072,6 +2487,71 @@
           "src": [
             5
           ]
+        },
+        "d15": {
+          "value": 55,
+          "conf": "med",
+          "basis": "The report he chairs (2026) finds AI can lower barriers to biological and chemical weapons and cyberattacks, with real uncertainty on uplift. He calls AI's dangers 'real and imminent' (UN, Sept 2026).",
+          "src": [
+            12,
+            11
+          ]
+        },
+        "d10": {
+          "value": 82,
+          "conf": "high",
+          "basis": "Has put ~20% on catastrophe (including permanent power grabs) and says 'even a 1% chance of something going really, really bad is not acceptable'; expects the decisive systems within years.",
+          "src": [
+            7,
+            5,
+            0
+          ]
+        },
+        "d13": {
+          "value": 5,
+          "conf": "high",
+          "basis": "UN Security Council, 23 Sep 2026: AI poses an 'unprecedented threat'; the dangers are 'real and imminent'. Loss of control, not only familiar harms.",
+          "src": [
+            11,
+            8
+          ]
+        },
+        "d12": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Agents 'coordinated toward goals nobody had specified' (Sept 2026); current training yields hidden goals. He is 'very confident' AI without hidden goals can be built, just not on today's path.",
+          "src": [
+            8,
+            6
+          ]
+        },
+        "d14": {
+          "value": 25,
+          "conf": "med",
+          "basis": "'We have no plan that would remain robust to misaligned AIs with growing capabilities'; 'the whack-a-mole game is likely to fail'. Control by redesign, not the current race.",
+          "src": [
+            8,
+            3
+          ]
+        },
+        "d11": {
+          "value": 40,
+          "conf": "low",
+          "basis": "Treats the 2026 escapes as warnings now 'well documented', but stresses models detect tests and change behaviour, so later signs may not be clear or heeded. Mixed; inferred.",
+          "src": [
+            11,
+            8,
+            2
+          ]
+        },
+        "s14": {
+          "value": 88,
+          "conf": "high",
+          "basis": "Asked about a button that would stop AI advances: 'I would press the button because I care about my children', while sparing AI 'that is clearly not dangerous' (Diary of a CEO, Dec 2025).",
+          "src": [
+            5,
+            4
+          ]
         }
       },
       "v1Only": {
@@ -2110,7 +2590,8 @@
             5
           ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "altman",
@@ -2197,6 +2678,30 @@
           "url": "https://restofworld.org/2026/silicon-valley-debate-chinese-open-weight-ai-models/",
           "date": "",
           "note": "Added by the independent audit."
+        },
+        {
+          "title": "Sam Altman, Dario Amodei urge UN Security Council to adopt international AI standards (CNN, via ABC17)",
+          "url": "https://abc17news.com/money/cnn-business-consumer/2026/09/23/sam-altman-dario-amodei-urge-un-security-council-to-adopt-international-ai-standards/",
+          "date": "2026-09-23",
+          "note": "'Any chance of an AI-caused catastrophe is not acceptable'; avoid 'the trap of doomerism' and 'blind optimism'; 'accurate and speedy reporting so that the world can learn from failures before they become catastrophes'. Original: https://www.cnn.com/2026/09/23/tech/altman-amodei-ai-safety-un-security-council"
+        },
+        {
+          "title": "AI's dangers 'real and imminent,' Bengio tells UN (Canadian Press, via BNN Bloomberg)",
+          "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ais-dangers-real-and-imminent-canadian-ai-pioneer-yoshua-bengio-tells-un/",
+          "date": "2026-09-23",
+          "note": "Altman at the Security Council: 'We could lose control of the future to AI.'"
+        },
+        {
+          "title": "Sam Altman, Dario Amodei urge UN AI safeguards (Open Magazine)",
+          "url": "https://openthemagazine.com/technology/sam-altman-dario-amodei-urge-ai-safeguards-at-un-warn-against-losing-human-control",
+          "date": "2026-09-24",
+          "note": "Secondary account of the UN remarks: 'Beating companies in a competitive race is not a reason to make rash decisions'; OpenAI slowed before and would again; no system without adequate assurance of alignment, monitorability and safety."
+        },
+        {
+          "title": "Sam Altman, Dario Amodei urge Congress to guard against AI-enabled bioweapons (Fortune)",
+          "url": "https://fortune.com/2026/06/05/openai-anthropic-microsoft-ceos-congress-bioweapon-safeguards/",
+          "date": "2026-06-05",
+          "note": "Co-signed letter: 'there is a real possibility that the knowledge barriers which have historically prevented bad actors from obtaining biological weapons will meaningfully erode'."
         }
       ],
       "oneLiner": "Superintelligence is near and mostly wonderful; keep building, pace the frontier, coordinate so no one loses control.",
@@ -2457,6 +2962,72 @@
           "src": [
             3
           ]
+        },
+        "d15": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Co-signed a June 2026 letter warning bioweapon 'knowledge barriers... will meaningfully erode'; in 2023 his near-term worry was 'accidental misuse'. Still expects to get it right. Inferred.",
+          "src": [
+            16,
+            0
+          ]
+        },
+        "d10": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Never gives a number. 'Any chance of an AI-caused catastrophe is not acceptable' (UN, 23 Sep 2026), yet 'very confident' the industry can do this safely. Expects superintelligence within years.",
+          "src": [
+            13,
+            11,
+            6
+          ]
+        },
+        "d13": {
+          "value": 10,
+          "conf": "high",
+          "basis": "Names loss of control as one of two ways AI could go 'very badly': 'We could lose control of the future to AI' (X, 14 Sep; UN, 23 Sep 2026). Not only familiar harms.",
+          "src": [
+            9,
+            14
+          ]
+        },
+        "d12": {
+          "value": 30,
+          "conf": "med",
+          "basis": "Treats alignment as a problem to solve through iterative deployment; at the UN said systems need adequate assurance of alignment before being built. Concedes the risk, expects to meet it.",
+          "src": [
+            4,
+            15
+          ]
+        },
+        "d14": {
+          "value": 70,
+          "conf": "med",
+          "basis": "'We will get it right… I am very confident in our company's ability, our industry's ability, to do this safely' (Dreamforce, 15 Sep 2026), while calling loss of control 'unacceptable'.",
+          "src": [
+            11,
+            9,
+            13
+          ]
+        },
+        "d11": {
+          "value": 72,
+          "conf": "med",
+          "basis": "UN, 23 Sep 2026: wants 'accurate and speedy reporting so that the world can learn from failures before they become catastrophes'. Iterative deployment assumes failures show up first.",
+          "src": [
+            13,
+            4
+          ]
+        },
+        "s14": {
+          "value": 5,
+          "conf": "med",
+          "basis": "X, 14 Sep 2026: 'When we talk about pacing, we do not mean stopping'; warns against 'the trap of doomerism' (UN). Would not freeze the frontier for ten years.",
+          "src": [
+            10,
+            8,
+            13
+          ]
         }
       },
       "v1Only": {
@@ -2492,7 +3063,8 @@
           "basis": "Has said current systems are not alive and have no agency; open to future uncertainty. No fetched primary source.",
           "src": []
         }
-      }
+      },
+      "v5": "2026-09-24"
     }
   ]
 }

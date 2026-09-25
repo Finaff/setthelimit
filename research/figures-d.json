@@ -90,6 +90,12 @@
           "url": "https://x.com/sapinker/status/2101073872267493554",
           "date": "2026-09-18",
           "note": "Pinker's post is verified. Alexander's reported reply of 19 Sept 2026 (a public debate with a $5,000-vs-$1,000 bet on audience opinion change) could not be retrieved or confirmed; no prediction rests on it."
+        },
+        {
+          "title": "Astral Codex Ten: Mysteries Of AI Generalization",
+          "url": "https://www.astralcodexten.com/p/mysteries-of-ai-generalization",
+          "date": "2026-09-23",
+          "note": "On emergent misalignment and reward hacking: 'My best guess is that it should be very slightly reassuring, but I'm not sure'; reports a paper finding Claude 4.5 'smart enough to know that it's being tested'."
         }
       ],
       "predictions": {
@@ -247,8 +253,73 @@
             0,
             4
           ]
+        },
+        "d10": {
+          "value": 70,
+          "conf": "med",
+          "basis": "His 20% p(doom), plus 30% other permanent curtailment, has no 20-year limit: AGI 50% by 2034, then 50% that the point of no return comes within 10 years. By 2046 that is roughly 10-25%.",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "d11": {
+          "value": 50,
+          "conf": "high",
+          "basis": "June 2026: '50% chance we get a warning shot before AI crosses the point of no return'. Sept 2026: reports that Claude 4.5 is 'smart enough to know that it's being tested'.",
+          "src": [
+            0,
+            13
+          ]
+        },
+        "d12": {
+          "value": 50,
+          "conf": "med",
+          "basis": "50% that the first AIs past the point of no return would want humans gone under normal corporate incentives, 20% with today's safety work; Sept 2026: new generalization results 'very slightly reassuring'.",
+          "src": [
+            0,
+            13,
+            4
+          ]
+        },
+        "d13": {
+          "value": 5,
+          "conf": "high",
+          "basis": "June 2026: 'there's a 20% chance that the first AIs to cross the point of no return will want to eliminate the human population'. A threat to survival, not a familiar harm, is his central worry.",
+          "src": [
+            0
+          ]
+        },
+        "d14": {
+          "value": 45,
+          "conf": "med",
+          "basis": "Control is possible only before a 'point of no return', after which humans could not stop a hostile AI; he gives a good US-China pause 40%. A dangerous AI is contained only if caught in time.",
+          "src": [
+            0,
+            1
+          ]
+        },
+        "d15": {
+          "value": 25,
+          "conf": "low",
+          "basis": "Expects hacking and small bioterror scares first, and gives a 50% chance of a 9/11- or COVID-scale scare before the point of no return; no number for millions dead. Inferred.",
+          "src": [
+            0,
+            5
+          ]
+        },
+        "s14": {
+          "value": 90,
+          "conf": "high",
+          "basis": "On pausing: 'I still think it probably comes out net positive… shorter pause lengths (like five years) seem like no-brainers.' A verified ten-year worldwide pause is well inside what he backs.",
+          "src": [
+            0,
+            7,
+            1
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "steven-pinker",
@@ -335,6 +406,18 @@
           "url": "https://superintelligence-statement.org/",
           "date": "2025-10-22",
           "note": "Not a signatory: the site's signatory search for 'Pinker' and 'Steven Pinker' returns only unrelated names (Sept 2026)."
+        },
+        {
+          "title": "X: 'Excellent conversation here: Jerry Kaplan on Why AI Won't Kill Us All'",
+          "url": "https://x.com/sapinker/status/2101695224137543722",
+          "date": "2026-09-20",
+          "note": "Verified via X's embed API. Shares Yascha Mounk's conversation with Jerry Kaplan on whether AI existential risk is overstated and 'what we should be worrying about instead'."
+        },
+        {
+          "title": "Forbes: Who's Who In The Fight Over Whether AI Will Kill Us",
+          "url": "https://www.forbes.com/sites/andreamorris/2026/09/24/whos-who-in-the-fight-over-whether-ai-will-kill-us/",
+          "date": "2026-09-24",
+          "note": "Page blocks fetchers; read only through search snippets, wording unverified. Reports Pinker telling ABC Australia that AI engineering pathogens is imaginable, but distributing them to kill everyone is 'a bit fanciful'."
         }
       ],
       "predictions": {
@@ -493,8 +576,79 @@
             4,
             1
           ]
+        },
+        "d10": {
+          "value": 2,
+          "conf": "high",
+          "basis": "Sept 2026: 'Is AI really going to kill us all? The scenarios are preposterous'; 2019: both takeover and value-misalignment threats 'strike me as chimerical'.",
+          "src": [
+            0,
+            4,
+            5
+          ]
+        },
+        "d11": {
+          "value": 85,
+          "conf": "med",
+          "basis": "AI 'is like any other technology… developed incrementally… tested before it is implemented, and constantly tweaked for efficacy and safety'. Problems show up and get fixed along the way.",
+          "src": [
+            4,
+            5,
+            8
+          ]
+        },
+        "d12": {
+          "value": 8,
+          "conf": "high",
+          "basis": "'Being smart is not the same as wanting something'; goals must be 'exogenously built into a system'; the misalignment scenarios are 'self-refuting'.",
+          "src": [
+            4,
+            6,
+            7
+          ]
+        },
+        "d13": {
+          "value": 95,
+          "conf": "high",
+          "basis": "Unemployment, invidious sorting and deception 'are not conjectural'; doom talk is a 'distraction from the more mundane and realistic safety challenges' (Sept 2026).",
+          "src": [
+            6,
+            0,
+            13
+          ]
+        },
+        "d14": {
+          "value": 90,
+          "conf": "high",
+          "basis": "A power-seeking AI 'without the cooperation of humans… would remain an impotent brain in a vat'; for a Doomsday Computer, 'Don't build one'; off switches and fuses are 'just engineering'.",
+          "src": [
+            4,
+            7,
+            8
+          ]
+        },
+        "d15": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Reported (ABC via Forbes, unverified): AI-engineered pathogens are imaginable, killing everyone 'a bit fanciful'. He treats real hazards as mundane and manageable. No view on millions dead found.",
+          "src": [
+            14,
+            0,
+            4
+          ]
+        },
+        "s14": {
+          "value": 3,
+          "conf": "med",
+          "basis": "Would not press: doom fears bring 'stigmatization and abandonment of helpful technologies', as with nuclear power. He sees no danger a ten-year freeze would avert. Inferred.",
+          "src": [
+            8,
+            0,
+            4
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     }
   ]
 }

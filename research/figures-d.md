@@ -241,3 +241,39 @@ His view of the danger axis is said almost verbatim and has not moved from 2018 
 - **Not verified: the rest of Pinker's 5 Sept 2026 post** (the list of real threats) and the text of Claire Lehmann's article (paywalled).
 - The Conversations with Tyler episode (Sept 2025) and the Good Fight Club panel (Aug 2025, "the Rise of AI") were checked; no usable on-the-record AI-risk quotes were retrievable, so they are not cited. CNBC's 2018 "Y2K bug" piece returned HTTP 403 and is not cited.
 - Coordinates from `tools/check-figures.js`: Scott Alexander road 57, limit 30 (h/m/l 5/10/1); Steven Pinker road 8, limit 74 (h/m/l 5/5/6).
+
+## v5 update (24 Sept 2026) — Scott Alexander
+
+New source (appended as 13):
+
+- **13. Astral Codex Ten — Mysteries Of AI Generalization (23 Sept 2026)** — https://www.astralcodexten.com/p/mysteries-of-ai-generalization
+  - Recalls the old fear that training would leave AIs "broadly misaligned plus tiny islands of alignment that didn't matter", and that emergent-misalignment results suggest a small handful of good examples might "generalize into robustly loving the Good itself".
+  - "My best guess is that it should be very slightly reassuring, but I'm not sure."
+  - Reports a paper finding that "at least some of this is because Claude 4.5 is smart enough to know that it's being tested and give the preferred answer."
+
+Re-read of source 0 (My AI Opinions, June 2026) for the new items: "50% chance we get a warning shot before AI crosses the point of no return" (a warning shot = a disaster or near-disaster that scares people as much as 9/11 or COVID in March 2020); the gap from AGI to the point of no return: "25% … less than 3 years, a 50% chance … less than 10 years, and a 75% chance … less than 50 years".
+
+New predictions: d10 70 med · d15 25 low · d13 5 high · d12 50 med · d14 45 med · d11 50 high · s14 90 high.
+
+- d10 is lower than the old d1 (95) because of the 20-year window: with AGI 50% by 2034 and a median gap of about ten years to the point of no return, only about half of his 20% (plus the 30% "other permanent curtailment") falls before 2046. That leaves roughly 10–25%: above the bar, not far above it.
+- s14: five-year pauses are "no-brainers" and a 30-year pause "probably comes out net positive" (source 0); a verified ten-year worldwide pause sits between the two.
+
+No old value changed.
+
+**The Pinker exchange (18–19 Sept 2026): no follow-up found.** Checked on 24 Sept: the Astral Codex Ten archive (posts of 14, 16, 18, 21 and 23 Sept, including Open Thread 452 of 21 Sept: none mentions Pinker, a debate or a bet); Pinker's feed on stevenpinker.com (reposts of the "preposterous" post on 23 Sept, nothing addressed to Alexander); Zvi Mowshowitz's weekly roundups of 17 and 24 Sept (neither mentions the exchange); web search for the debate, the $5,000/$1,000 terms, Reddit and Manifold. X blocks fetchers and the profile-timeline embed returned nothing. So Alexander's reported challenge is still unverified, and there is no sign that a debate was agreed. No prediction rests on it.
+
+## v5 update (24 Sept 2026) — Steven Pinker
+
+New sources (appended as 13–14):
+
+- **13. X, 20 Sept 2026** — https://x.com/sapinker/status/2101695224137543722 — verified through X's embed API: "Excellent conversation here: Jerry Kaplan on Why AI Won't Kill Us All (with @Yascha_Mounk)."
+- **14. Forbes, "Who's Who In The Fight Over Whether AI Will Kill Us" (24 Sept 2026)** — https://www.forbes.com/sites/andreamorris/2026/09/24/whos-who-in-the-fight-over-whether-ai-will-kill-us/ — the page returns 403 to fetchers; known only from search snippets. It reportedly quotes Pinker on ABC Australia: you can imagine AI engineering new biopathogens, but "the idea that they could somehow distribute them around the world and kill absolutely everyone, I think, is a bit fanciful." The ABC pages found (10 Sept news piece, ABC News Top Stories, ABC News Daily, and his 1 Feb 2026 "If You're Listening" interview) carry no Pinker transcript, so **the wording and date are unverified**; used only for a low-confidence d15.
+
+Also noted: search snippets quote him in Claire Lehmann's article in The Australian (the one his 18 Sept post shares): "'Superintelligence,' with its comic-book prefix, is more a fantasy than a coherent concept." Paywalled, not read; not relied on.
+
+New predictions: d10 2 high · d15 8 low · d13 95 high · d12 8 high · d14 90 high · d11 85 med · s14 3 med.
+
+- d15 is low confidence: he concedes AI could help engineer pathogens (if the Forbes report is right), but rejects extinction and treats real hazards as mundane and manageable; he has said nothing about deaths in the millions.
+- s14: with feasibility removed, his objection is that there is nothing to avert and that fear-driven restraint has real costs (nuclear power, GMOs).
+
+No old value changed. Nothing new from him on the Scott Alexander exchange (see above).

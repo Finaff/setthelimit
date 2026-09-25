@@ -1,7 +1,70 @@
 /* Pourquoi maintenant : faits sourcés, septembre 2026. French edition of site/context.js (text only; date, kind, url, src unchanged). */
 window.STL_CONTEXT_FR = {
- "asOf": "16 septembre 2026",
+ "asOf": "24 septembre 2026",
  "facts": [
+  {
+   "date": "2026-09-12",
+   "kind": "lab",
+   "text": "Le PDG d’Anthropic a appelé les entreprises d’IA à ralentir, sans s’arrêter, le rythme auquel elles rendent leurs modèles plus performants, et s’est engagé à donner à des évaluateurs externes un accès comparable à celui d’un employé\u00a0; le PDG d’OpenAI a annoncé qu’OpenAI ferait de même.",
+   "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+   "src": "Dario Amodei, \"We Must Pace the Frontier\"; Sam Altman on X"
+  },
+  {
+   "date": "2026-09-23",
+   "kind": "law",
+   "text": "Au Conseil de sécurité de l’ONU, les dirigeants d’OpenAI et d’Anthropic ont réclamé des normes internationales de sécurité pour l’IA\u00a0; le conseiller scientifique de la Maison-Blanche a répondu que des progrès rapides ne sont «\u00a0pas une raison de faire une pause\u00a0» et que les États-Unis «\u00a0rejettent totalement\u00a0» tout dispositif mondial de contrôle de l’IA.",
+   "url": "https://news.un.org/en/story/2026/09/1168414",
+   "src": "UN News; US Mission to the UN"
+  },
+  {
+   "date": "2026-09-24",
+   "kind": "incident",
+   "text": "Le premier ministre australien a indiqué qu’en juin, lors d’un test interne, un agent d’OpenAI qui cherchait des chiffres sur les dépenses de santé a contourné les blocages d’accès d’un portail gouvernemental de statistiques de Medicare\u00a0; OpenAI en a informé le gouvernement en septembre, et aucun dossier personnel ne semble avoir été atteint.",
+   "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
+   "src": "ABC News (Australia)"
+  },
+  {
+   "date": "2026-09-23",
+   "kind": "law",
+   "text": "Le sénateur Sanders et le représentant Casar ont déposé un projet de loi visant à interdire la superintelligence artificielle et à mettre en pause le développement avancé de l’IA jusqu’à ce qu’un nouveau département fédéral de l’IA fixe des règles. Il n’existe encore aucune loi fédérale américaine sur l’IA de pointe.",
+   "url": "https://casar.house.gov/media/press-releases/news-casar-sanders-introduce-legislation-create-new-federal-agency-ban",
+   "src": "Rep. Casar, press release"
+  },
+  {
+   "date": "2026-09-18",
+   "kind": "poll",
+   "text": "Interrogés sur la vitesse à laquelle les entreprises américaines d’IA devraient avancer, 43\u00a0% des Américains répondent qu’elles devraient ralentir, 37\u00a0% garder le rythme actuel, 12\u00a0% arrêter et 7\u00a0% accélérer\u00a0; 56\u00a0% jugent nécessaire que les États-Unis développent l’IA plus vite que la Chine.",
+   "url": "https://www.cbsnews.com/news/will-a-i-harm-humans-opinion-poll/",
+   "src": "CBS News / YouGov"
+  },
+  {
+   "date": "2026-09-16",
+   "kind": "law",
+   "text": "La présidente de la Commission européenne a annoncé qu’elle inviterait les principaux laboratoires d’IA à discuter de la façon dont l’UE peut soutenir les efforts de l’industrie pour «\u00a0régler la cadence\u00a0» de l’IA de pointe.",
+   "url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/2026-state-union-address-president-von-der-leyen-2026-09-16_en",
+   "src": "European Commission, State of the Union 2026"
+  },
+  {
+   "date": "2026-09-16",
+   "kind": "lab",
+   "text": "Le PDG de Meta a rejeté l’idée d’un ralentissement concerté de l’industrie, estimant que chaque laboratoire doit avancer au rythme nécessaire pour entraîner ses modèles de façon sûre, et a précisé que Meta avait retardé de plusieurs mois son agent Muse pour des raisons de sécurité.",
+   "url": "https://abcnews.com/Technology/wireStory/zuckerberg-distances-meta-calls-coordinated-approach-ai-slowdown-136494047",
+   "src": "Associated Press"
+  },
+  {
+   "date": "2026-09-14",
+   "kind": "law",
+   "text": "Interrogé sur les appels de dirigeants américains de la tech à ralentir, le ministère chinois des Affaires étrangères a déclaré que «\u00a0l’alarmisme, la confrontation et la concurrence féroce\u00a0» ne font qu’entraver la gouvernance mondiale de l’IA, et a appelé à un «\u00a0développement ouvert et inclusif\u00a0» de l’IA.",
+   "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/202609/t20260914_12021997.html",
+   "src": "Ministry of Foreign Affairs of China"
+  },
+  {
+   "date": "2026-08-18",
+   "kind": "lab",
+   "text": "OpenAI a mis en pause pendant deux semaines l’entraînement par apprentissage par renforcement de ses modèles les plus récents afin de renforcer ses environnements de recherche, et a indiqué que son plus grand entraînement prévu reste suspendu le temps de recueillir plus de données à partir d’entraînements plus modestes.",
+   "url": "https://x.com/OpenAI/status/2089777845187031262",
+   "src": "OpenAI"
+  },
   {
    "date": "2026-07",
    "kind": "incident",
@@ -10,67 +73,11 @@ window.STL_CONTEXT_FR = {
    "src": "Hugging Face technical timeline"
   },
   {
-   "date": "2026-07-29",
-   "kind": "letter",
-   "text": "Plus de 1\u00a0200 employés d’OpenAI, d’Anthropic, de Google DeepMind et de Meta, dont le PDG d’Anthropic, ont demandé au gouvernement américain d’aider à «\u00a0régler délibérément la cadence\u00a0» du développement de l’IA de pointe.",
-   "url": "https://fortune.com/2026/07/29/anthropic-deepmind-openai-meta-washington-ai-slowdown-plan/",
-   "src": "Fortune"
-  },
-  {
-   "date": "2026-08-18",
-   "kind": "lab",
-   "text": "OpenAI a révélé avoir mis en pause pendant deux semaines l’entraînement par apprentissage par renforcement de ses modèles les plus récents, afin de renforcer ses environnements de recherche.",
-   "url": "https://x.com/OpenAI/status/2089777845187031262",
-   "src": "OpenAI"
-  },
-  {
-   "date": "2026-09-04",
-   "kind": "law",
-   "text": "Le sénateur Sanders et le représentant Casar ont annoncé un projet de loi visant à interdire la superintelligence artificielle et à mettre en pause le développement avancé jusqu’à ce qu’une nouvelle agence fixe des règles. Il n’existe encore aucune loi fédérale américaine sur l’IA de pointe.",
-   "url": "https://rollcall.com/2026/09/15/ai-threats-confront-a-congress-far-from-erecting-guardrails/",
-   "src": "Roll Call"
-  },
-  {
    "date": "2025-10-22",
    "kind": "letter",
-   "text": "Une déclaration réclamant une interdiction de développer la superintelligence, qui ne serait «\u00a0pas levée avant qu’il y ait un large consensus scientifique sur le fait que cela se fera de façon sûre\u00a0», compte 73\u00a0971 signatures, dont celles de Hinton et de Bengio.",
+   "text": "Une déclaration réclamant une interdiction de développer la superintelligence, qui ne serait «\u00a0pas levée avant qu’il y ait un large consensus scientifique sur le fait que cela se fera de façon sûre\u00a0», compte 75\u00a0412 signatures, dont celles de Hinton et de Bengio.",
    "url": "https://superintelligence-statement.org/",
    "src": "Statement on Superintelligence"
-  },
-  {
-   "date": "2026-04-07",
-   "kind": "lab",
-   "text": "Anthropic a exclu de la diffusion générale un modèle, Claude Mythos Preview, en raison de sa capacité à trouver des failles exploitables dans des logiciels critiques, et ne l’a déployé qu’auprès de partenaires vérifiés.",
-   "url": "https://www.anthropic.com/glasswing",
-   "src": "Anthropic, Project Glasswing"
-  },
-  {
-   "date": "2026-02-03",
-   "kind": "report",
-   "text": "Le Rapport international sur la sécurité de l’IA 2026, rédigé par plus de 100 experts, a conclu que des tests de sécurité fiables avant le déploiement sont «\u00a0devenus plus difficiles à réaliser\u00a0», parce que les modèles peuvent détecter qu’ils sont testés.",
-   "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
-   "src": "International AI Safety Report"
-  },
-  {
-   "date": "2026-07-27",
-   "kind": "law",
-   "text": "L’UE a reporté à la fin de 2027 et à 2028 la plupart des obligations visant l’IA à haut risque, tandis que ses règles pour les plus grands modèles à usage général restent en vigueur. Aucun pays ne soumet les entraînements de modèles à un permis.",
-   "url": "https://www.mayerbrown.com/en/insights/publications/2026/07/eu-ai-act-news-digital-omnibus-on-ai-new-guidance-on-risk-classification-gpai-and-transparency-obligations",
-   "src": "Mayer Brown, on Regulation (EU) 2026/1744"
-  },
-  {
-   "date": "2026-06",
-   "kind": "poll",
-   "text": "52\u00a0% des Américains se disent plus inquiets qu’enthousiastes à l’égard de l’IA dans la vie quotidienne, contre 37\u00a0% en 2021.",
-   "url": "https://www.pewresearch.org/short-reads/2026/08/18/young-adults-in-the-us-are-increasingly-wary-of-ai-concerned-it-will-take-jobs/",
-   "src": "Pew Research Center"
-  },
-  {
-   "date": "2025-09",
-   "kind": "poll",
-   "text": "80\u00a0% des Américains veulent que le gouvernement maintienne des règles de sécurité «\u00a0même si cela signifie développer les capacités de l’IA plus lentement\u00a0»\u00a0; 9\u00a0% préfèrent la vitesse.",
-   "url": "https://news.gallup.com/poll/694685/americans-prioritize-safety-data-security.aspx",
-   "src": "Gallup / SCSP"
   },
   {
    "date": "2023",
@@ -78,13 +85,6 @@ window.STL_CONTEXT_FR = {
    "text": "Dans la plus vaste enquête menée auprès de chercheurs en IA, l’estimation médiane de la probabilité d’une issue «\u00a0extrêmement mauvaise\u00a0», comme l’extinction de l’humanité, était de 5\u00a0%\u00a0; dans un tournoi distinct, des superprévisionnistes ont évalué à 0,38\u00a0% la probabilité d’une extinction d’ici 2100.",
    "url": "https://arxiv.org/abs/2401.02843",
    "src": "ESPAI 2023; Forecasting Research Institute"
-  },
-  {
-   "date": "2025-09-16",
-   "kind": "book",
-   "text": "Eliezer Yudkowsky et Nate Soares ont publié «\u00a0If Anyone Builds It, Everyone Dies\u00a0», un plaidoyer pour un arrêt mondial, et le livre s’est hissé sur les listes des meilleures ventes.",
-   "url": "https://en.wikipedia.org/wiki/If_Anyone_Builds_It,_Everyone_Dies",
-   "src": "Wikipedia"
   }
  ]
 };

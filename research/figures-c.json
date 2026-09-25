@@ -90,6 +90,24 @@
           "url": "https://www.samharris.org/podcasts/making-sense-episodes/332-can-we-contain-artificial-intelligence",
           "date": "2023-08-28",
           "note": "Asks whether containment is 'even a dream at this point' given models already deployed and open-sourced; 'the digital genie is more or less out of the bottle'; had expected safety testing before release."
+        },
+        {
+          "title": "Making Sense #494 — A Coin Toss for the Future (with Ryan Greenblatt)",
+          "url": "https://www.samharris.org/podcasts/making-sense-episodes/494-a-coin-toss-for-the-future",
+          "date": "2026-09-22",
+          "note": "Episode page: misalignment, the Hugging Face incident, 'why companies are racing ahead despite high odds of catastrophe', alignment faking. The 'coin toss' is the guest's estimate (50-60% takeover on the default path), not Harris's."
+        },
+        {
+          "title": "Podscripts: speaker-labelled transcript of Making Sense #494 (free portion, about 26 minutes)",
+          "url": "https://podscripts.co/podcasts/making-sense-with-sam-harris/494-a-coin-toss-for-the-future",
+          "date": "2026-09-22",
+          "note": "Harris: 'any actual probability we would assign to this is pretty much made up'; a 10% chance to 'ignite the atmosphere' means 'you don't do this initial test. But that doesn't seem to be what's happening here at all.'"
+        },
+        {
+          "title": "YouTube (Sam Harris channel): It's a Coin Toss Whether AI Takes Over",
+          "url": "https://www.youtube.com/watch?v=jKtScyjPXZQ",
+          "date": "2026-09-22",
+          "note": "Clip from #494; title verified via YouTube oEmbed. The title frames the guest's odds; Harris gives no number of his own."
         }
       ],
       "predictions": {
@@ -195,14 +213,20 @@
           ]
         },
         "s8": {
-          "value": 75,
+          "value": 85,
           "conf": "med",
-          "basis": "Wants the race to become 'slow and careful'; 'a Chernobyl-scale event might be the best-case scenario' if it forces coordination (2026); 'no idea how long it will take… to do that safely' (TED). No years trade-off given.",
+          "basis": "Sept 2026: whatever the estimate, unless 'well below 1%', 'you don't do this initial test'; wants the race to become 'slow and careful' (2026). A few years' delay is well within that.",
           "src": [
+            14,
             2,
             1,
             0
-          ]
+          ],
+          "update": {
+            "from": 75,
+            "date": "2026-09-24",
+            "url": "https://podscripts.co/podcasts/making-sense-with-sam-harris/494-a-coin-toss-for-the-future"
+          }
         },
         "s10": {
           "value": 22,
@@ -252,8 +276,77 @@
             2,
             0
           ]
+        },
+        "d10": {
+          "value": 80,
+          "conf": "med",
+          "basis": "No number of his own: 'any actual probability we would assign to this is pretty much made up' (Sept 2026). But he treats the 10-30% lab leaders cite as alarming and expects superhuman AI soon.",
+          "src": [
+            14,
+            2,
+            9
+          ]
+        },
+        "d11": {
+          "value": 30,
+          "conf": "low",
+          "basis": "'Intelligence entails an ability to lie and manipulate' (2023). He hopes a 'Chernobyl-scale event' would force coordination but calls that the best case, not the expected one. Inferred.",
+          "src": [
+            3,
+            2,
+            14
+          ]
+        },
+        "d12": {
+          "value": 85,
+          "conf": "high",
+          "basis": "'There are more ways to build superintelligent AI that are unaligned than aligned… the idea that we're going to do it by chance seems far-fetched'; expects 'instrumental goals that you can't foresee' (2026).",
+          "src": [
+            2,
+            0,
+            3
+          ]
+        },
+        "d13": {
+          "value": 8,
+          "conf": "high",
+          "basis": "'The alignment problem is arguably the scariest problem. It's the worst. This is where we ruin everything' (2026); signed the 2023 extinction statement. He counts jobs and wealth concentration as real harms too.",
+          "src": [
+            2,
+            9
+          ]
+        },
+        "d14": {
+          "value": 15,
+          "conf": "high",
+          "basis": "TED: 'How could we even understand, much less constrain, a mind making this sort of progress?'; 2026: something with 'more power than we have and we can't take the power back'.",
+          "src": [
+            0,
+            2,
+            12
+          ]
+        },
+        "d15": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Not addressed directly. He expects serious harm on the way ('a Chernobyl-scale event might be the best-case scenario', 2026) and sees the race as reckless. Inferred.",
+          "src": [
+            2,
+            1
+          ]
+        },
+        "s14": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Sept 2026: at a 10% risk of igniting the atmosphere, 'you don't do this initial test. But that doesn't seem to be what's happening here at all.' His case against stopping was feasibility ('no brake to pull').",
+          "src": [
+            14,
+            0,
+            3
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     }
   ]
 }

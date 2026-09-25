@@ -143,3 +143,25 @@ Harris argues from first principles about intelligence (speed, unpredictability,
 - #469 quotes were attributed with the Singju Post speaker labels; the podscripts.co version of the same episode has no labels, and an automated summary of it misattributed several of Tristan Harris's lines to Sam. Those lines are not used.
 - No Making Sense episode after June 2026 on AI risk was found (#479 with Vinod Khosla, 4 June 2026, is about economic disruption; no quotes from it were available). Nothing from Harris reacting to Dario Amodei's "We Must Pace the Frontier" (12 Sept 2026) was found.
 - Superintelligence statement: the API returns 100 signatures per page in notability order; the scan covered the first 40,000 (offsets 0–39,900) with no Sam Harris. The site reports about 141,000 signatures in total, so absence from the top 40,000 of the notability ranking is strong but not absolute evidence.
+
+## v5 update (24 Sept 2026) — Sam Harris
+
+New sources (appended as 13–15):
+
+- **13. Making Sense #494 — A Coin Toss for the Future, with Ryan Greenblatt (22 Sept 2026)** — https://www.samharris.org/podcasts/making-sense-episodes/494-a-coin-toss-for-the-future — episode page: "the spectrum of concern about AI risk, why companies are racing ahead despite high odds of catastrophe, reward hacking, the distinction between alignment and control… alignment faking, how an AI takeover might unfold".
+- **14. Podscripts transcript of #494 (speaker-labelled, free portion to about 26:08)** — https://podscripts.co/podcasts/making-sense-with-sam-harris/494-a-coin-toss-for-the-future
+  - SAM HARRIS (about 7:40–8:58): "I'm wondering how people should think about statements of that kind. I think it seems to me that any actual probability we would assign to this is pretty much made up. Maybe you have a more rigorous way of making an estimate here, but whatever the estimate, I mean, […] unless it was infinitesimally small, like, you know, well below 1%, which is really never the number that you're hearing. You hear people, some people will say 10%, 20%, 30%…" Then: if the Manhattan Project scientists had said there was "a 10% chance that when we execute this first test at Alamogordo, we ignite the atmosphere and destroy the future", the only sane response "is you don't do this initial test. But that doesn't seem to be what's happening here at all." (The auto-transcript reads "saying response"; the quote used on the site stops at "you don't do this initial test".)
+  - SAM HARRIS (about 24:15): "Today's AI is the worst AI we're ever going to see again".
+  - RYAN GREENBLATT (about 4:30): "maybe there's about a 50 or 60% chance that misaligned AIs would end up taking over the world"; later, doom from takeover versus something else "seem roughly equally likely to me".
+- **15. YouTube clip, "It's a Coin Toss Whether AI Takes Over"** — https://www.youtube.com/watch?v=jKtScyjPXZQ — title and channel (Sam Harris) verified through YouTube's oEmbed endpoint.
+
+**The lead to check: does Harris now put the odds near 50%? No.** The "coin toss" in the title is Greenblatt's estimate. In the free part of the transcript Harris gives no number of his own; he says any probability "is pretty much made up" and that anything not "well below 1%" is already too high to proceed. So the episode sharpens the speed side (he would not run the test) more than the danger side. d10 stays at the level of the old d1 (80, med), not raised on the strength of the title.
+
+New predictions: d10 80 med · d15 45 low · d13 8 high · d12 85 high · d14 15 high · d11 30 low · s14 85 med.
+
+- s14: the button removes his only stated objection to stopping (feasibility: "no brake to pull", "not everyone's going to stop"); his Manhattan Project answer is what he wants when feasibility is not the issue. Med, not high: it is an analogy, not an answer about AI in so many words.
+- d11 and d15 are inferences: he has not addressed warning signs or mass-casualty misuse directly in the material found.
+
+Changed: **s8 75 → 85 (med)**, on the #494 passage above (a few years' delay for lower risk is well inside "you don't do this initial test").
+
+Not found: no reaction from Harris to Amodei's "We Must Pace the Frontier" (12 Sept), to the Coxon resignation or to the Sanders–Casar superintelligence bill (23 Sept). The paywalled second half of #494 was not read.

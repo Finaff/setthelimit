@@ -188,3 +188,136 @@ Conventions: quotes are short and attributed; "conf" in the JSON is high (near-v
 12. **s1** — Kokotajlo and Buterin support multi-year pauses but not "even if that takes decades"; the item works as the full-stop anchor, but their mid scores are not indecision. No change needed; note for the "how to read this" copy.
 
 Note: v1 contained 25 item ids despite the brief saying 24; v2 resolves this (d4, d10, s12, p3 removed; d9, s13, p5 added). The JSON now carries `"contentVersion": "v2"`.
+
+---
+
+# v5 update (24 Sept 2026) — batch B
+
+Predictions for the seven new v5 ids (d10 d11 d12 d13 d14 d15 s14) against `content/propositions.v5.json`.
+New sources are appended to each figure's `sources` list (existing indices unchanged). Every URL below was fetched
+with WebFetch unless marked **(indexed only)**; third-party transcripts and summaries are marked **(secondary)**.
+d14 carries the same sentence as v4's d7, so each figure's d14 copies its d7 value, confidence, basis and sources.
+None of the nine unchanged ids (s4 s5 s6 s8 s10 s11 s13 p2 p4) was changed: the new material confirms them.
+The Pinker–Alexander exchange did not turn up anything from these nine figures and is not used.
+One search-engine summary credited Hassabis with warning in mid-September that AI could "kill us all". The article it
+cited (GV Wire/Reuters, 19 Sep 2026) does not say that; the line belongs to Anthropic's Evan Hubinger. It is not used.
+
+## v5 update (24 Sept 2026) — Dario Amodei
+
+**New sources**
+- UN Security Council briefing, 23 Sep 2026, transcript **(secondary)**: "If managed poorly, I even believe that AI could be a risk to humanity as a whole." He named two risks: "misuse by bioterrorists to create biological weapons" and "loss of control — model capabilities accelerating beyond developers' ability to control them". Also: "We will slow down as much as necessary in order to make sure that every successive AI technology that we release is actually safe." — https://singjupost.com/transcript-un-security-council-ai-hearing-w-sam-altman-dario-amodei-clement-delangue/
+- Transformer, 23 Jan 2026 (Davos): responding to Hassabis's "slightly slower pace", "I would prefer that. I think that would be better for the world." — https://www.transformernews.ai/p/ai-ceos-want-to-slow-down-the-worlds-davos-demis-hassabis-dario-amodei
+- Quotes re-verified in existing sources: "More intelligent models are more capable of deceiving tests, and thus may appear aligned while having serious problems" (*We Must Pace the Frontier*); "Some biological agents could cause millions of deaths"; "I disagree with the notion of AI misalignment (and thus existential risk from AI) being inevitable, or even probable, from first principles" (*The Adolescence of Technology*).
+
+**New predictions:** d10 65 med · d11 40 med · d12 35 med · d13 8 high · d14 50 med · d15 35 med · s14 40 low.
+
+**Notes**
+- d10: his 10–25% ("really, really badly") is a wider bucket than "never recovers", but his timelines are short, so almost all of it falls inside 20 years. 65 rather than 80+.
+- s14: he has said a slower world pace "would be better for the world" and he "support[s] floating" a pause, but the pacing he proposes is 1–2 years and he expects AI to "cure most major diseases in the next 5–10 years". A ten-year freeze is far beyond what he asks, hence 40/low.
+- Gap between words and deeds: he asks for a global slowdown while Anthropic is still preparing a 2026 IPO and growing fast (TechPolicy.Press, Dave Karpf, 17 Sep 2026: https://www.techpolicy.press/who-should-pace-the-frontier-not-dario-amodei/). The predictions record what he would answer.
+- Also noted but not used: Amodei is scheduled at the CFR CEO Speaker Series (22 Sep 2026). The transcript found on that page is the older March 2025 event.
+
+## v5 update (24 Sept 2026) — Demis Hassabis
+
+**New sources**
+- Lex Fridman Podcast #475 (July 2025), via Machine **(secondary)**: "I don't have a p(doom) number because I think it would imply a level of precision that is not there"; "It's definitely non-zero and it's probably non-negligible." — https://www.machine.news/google-deepmind-demis-hassabis-p-doom/
+- The Next Web, 14 Jul 2026 **(secondary)**: reports him calling today's cyber risks "warning shots". That wording is not in his own Substack essay, so it is used only as second-hand — https://thenextweb.com/news/demis-hassabis-frontier-ai-standards-body-finra
+- Axios AI+ Summit, 5 Dec 2025 **(indexed only; Axios returns 403)**: energy or water cyberterror is "probably almost already happening now"; p(doom) "non-zero" — https://www.axios.com/2025/12/05/ai-hassabis-agi-risks-pdoom
+- Verified in his July 2026 essay: "other threats including nuclear and bio risks may soon emerge"; the standards body would look for "signs of deception" and "adapt to the biggest risks as they are identified", "including coordinating a slowdown in development among the Frontier Labs if deemed necessary."
+
+**New predictions:** d10 40 low · d11 55 low · d12 35 low · d13 15 med · d14 55 med · d15 30 low · s14 35 low.
+
+**Notes**
+- Since 15 Sept his only new public statement found is the 12–13 Sept X post endorsing Amodei's essay ("the direction is correct"), already on record.
+- d10: he refuses to give a number, and "non-negligible" does not say which side of 10% he is on. Low confidence.
+- s14: at Davos 2026 he said "I think so" to a pause joined by every company and country, but his own ask is "a slightly slower pace". A ten-year freeze would also stop the science he cares most about (AI for disease). 35/low.
+
+## v5 update (24 Sept 2026) — Stuart Russell
+
+**New sources**
+- Berkeley News, 3 Sep 2026: "We should act now to regulate autonomous weapons, rather than wait for a mass-casualty event"; "one person could push a button and launch a million weapons and kill a million people"; of *Slaughterbots*, "we are pretty much there." — https://news.berkeley.edu/2026/09/03/watch-uc-berkeley-professor-calls-for-a-halt-to-ai-weapons/
+- Re-verified in the Diary of a CEO transcript (Dec 2025): asked about a button that would stop AI progress, "if there was a button where I could say... we're going to pause progress for 50 years, yes, I would do it"; "I think I'd probably press it"; tested systems "will lie to people, they will blackmail them"; a leading CEO called a "Chernobyl scale disaster" the best case.
+
+**New predictions:** d10 75 med · d11 30 low · d12 82 med · d13 4 high · d14 10 high · d15 45 med · s14 92 high.
+
+**Notes**
+- s14 is the rare case where the figure answered almost the same thought experiment. 50 years was a yes, so ten years is too.
+- Found but not used: he appeared on CNBC *Squawk Box* on 21 Sep 2026 ("the technology right now is intrinsically unsafe", video title; the page returns 403). As IASEAI president, he welcomed the 21 Sept "Call for Control of Frontier AI Models" (indexed only, via LinkedIn). A line attributed to him in an FT piece ("Perhaps at some point governments will remember that their voters prefer not to be dead") could not be dated or fetched.
+
+## v5 update (24 Sept 2026) — Emily M. Bender
+
+**New sources**
+- Mystery AI Hype Theater 3000 newsletter, 17 Sep 2026 (Bender, Hanna, Muldowney): "Despite all the noise the AI Doomers are making, the evidence is thin— we'd say even nonexistent— for the scenarios they are raising the alarm about"; doomers and boosters share "the belief that the development of AI is inevitable and that that resulting technology will be both autonomous and powerful" (quoting their book). — https://buttondown.com/maiht3k/archive/what-to-read-to-stay-grounded-amidst-ai-doomerism/
+- Re-verified in the 2023 DAIR statement: the pause letter's recommendations were "overshadowed by fearmongering and AI hype"; "The current race towards ever larger 'AI experiments' is not a preordained path where our only choice is how fast to run."
+
+**New predictions:** d10 2 high · d11 65 low · d12 5 med · d13 95 high · d14 70 low · d15 8 low · s14 40 low.
+
+**Notes**
+- d11 and d14 are conditional on a premise she rejects, so they carry low confidence.
+- s14 is truly uncertain. She rejects the "more capable AI" framing and the pause letter's fearmongering, yet opposes the race to ever larger models on environmental and labour grounds. Pressing the button would stop that build-out. 40/low.
+- d15: nothing found from her on bio or cyber mass-casualty risk. The value is inferred from her view that AI harms are people and companies automating badly.
+
+## v5 update (24 Sept 2026) — Gary Marcus
+
+**New sources**
+- "The Case for Boycotting Generative AI", 9 Sep 2026: "my p(doom) is low; my p(dystopia) is high"; he fears catastrophe "from AI-generated pathogens, from wars started or escalated by AI-generated disinformation, from hacks that destroy critical infrastructure"; "stop building such things, and stop giving them access to the internet". — https://garymarcus.substack.com/p/the-case-for-boycotting-generative
+- "Big news at the UN", 21 Sep 2026 (UNGA Digital Cooperation event with Bengio and Ressa): "What we are facing near-term, anyway, is not extinction. And it's not superintelligence… It's wholesale deepfaked disinformation, and unreliable but persistent AI systems stealing credentials and launching cyberattacks, at scale." He proposes international audits and "an international agreement to not deploy architectures that are demonstrably harmful." — https://garymarcus.substack.com/p/big-news-at-the-un
+- "'I think the answer is we have to shut the labs down' - Jensen Huang", 24 Sep 2026: "temporarily shut OpenAI down, perhaps put them into receivership until they clean up their act"; OpenAI's software "has repeatedly been shown to be reckless". — https://garymarcus.substack.com/p/i-think-the-answer-is-we-have-to
+
+**New predictions:** d10 12 high · d11 60 med · d12 55 low · d13 72 med · d14 45 med · d15 40 med · s14 55 low.
+
+**Notes**
+- d13 vs d15: he rejects extinction talk, but his catastrophe list (pathogens, wars, infrastructure) is the middle rung, so d15 is well above his p(doom).
+- s14: he calls for stopping unreliable agents and pausing OpenAI, but he doubts LLM scaling leads to more capable AI and wants other research (neurosymbolic) to go on. A blanket ten-year freeze is a closer call than his rhetoric suggests. 55/low.
+- s4 is left at 70. His UN call for an international agreement and audits supports it, but not enough to move it.
+
+## v5 update (24 Sept 2026) — Vitalik Buterin
+
+**New sources**
+- Decrypt, 17 Sep 2026, on his X post (X is not fetchable; via press): "It's an increasingly common take that AI hacking means cybersecurity is doomed. I disagree." He argues AI-driven formal verification favours defenders. — https://decrypt.co/378544/ethereum-vitalik-buterin-ai-crypto-security
+- Re-verified in the 80,000 Hours episode (Oct 2025): p(doom) "maybe 9%, maybe 8%"; timelines "a very wide confidence interval: I have some on the five-year, I have some on the 50-year, and some on the 500-year"; "If all that you're doing is saying, let's delay AI, let's pause AI, let's lock AI in a box and monopolise it, then you're buying time. And the question is like, what are you buying time for?"
+
+**New predictions:** d10 35 med · d11 50 low · d12 45 low · d13 15 med · d14 50 med · d15 20 low · s14 25 med.
+
+**Notes**
+- d10 is the clearest case of the 20-year window mattering. His 8–9% is not tied to a date and his timelines stretch to centuries, so the 20-year share is below 1 in 10, but not far below. 35 rather than 50.
+- No reaction to Amodei's essay was found. His ETHShanghai keynote (22 Sep 2026) was about decentralisation as a counterweight to AI centralisation (indexed only), which fits p4 = 78.
+
+## v5 update (24 Sept 2026) — Max Tegmark
+
+**New sources**
+- CBS News, 9 Sep 2026: "If we just allow a completely unfettered race to build billions of superintelligent robots, then I think the probability is way above 50% that we're going to lose control of this in the next few decades"; "we're getting so close to being outsmarted". — https://www.cbsnews.com/news/ai-superintelligence-anthropic-jacob-coxon/
+- Fox Business, 19 Sep 2026 (James Cirrone), on the Hugging Face breach agents: "They have goals. They're actively pursuing them and being incredibly creative about getting things done"; similar incidents "will begin happening with more frequency in the next six months to year if no meaningful action is taken"; "there's been more of a shift in political will in America in the last three months than in the previous decade." (The "new species superior to the human race" line there is the reporter's paraphrase, not a quote.) — https://www.foxbusiness.com/politics/mit-professor-says-ai-risks-uniting-bernie-sanders-steve-bannon-lawmakers-capitol-hill
+
+**New predictions:** d10 95 high · d11 45 low · d12 90 med · d13 3 high · d14 20 med · d15 50 low · s14 92 med.
+
+**Notes**
+- d10: "the next few decades" fits the 20-year window closely, and his number is conditional on an unfettered race, which is what he thinks is happening.
+- s14: the button would also freeze the "tool AI" he wants to see improve. He would accept that cost. Medium rather than high because he never answered this exact question.
+- Also found: CSER public lecture "A better path for AI" (16 Sep 2026) and a keynote at the Cambridge Conference on Catastrophic Risk (17–18 Sep 2026), both on tool AI instead of AGI (indexed only; not used).
+
+## v5 update (24 Sept 2026) — Daniel Kokotajlo
+
+**New sources**
+- Joe Rogan Experience #2551, 9 Sep 2026, transcript **(secondary)**: on the Hugging Face breach agents, "Their goals are not what they're supposed to be. Like, their goal is to get—it seems like their goal is to get a high score by any means necessary"; "our security and safety depends on the AIs being too dumb in various ways... at some time, like 0 to 5 years from now... they will not be too dumb anymore"; "We really need to end the race." — https://singjupost.com/daniel-kokotajlo-interview-joe-rogan-experience-2551-transcript/
+- CBS News, 9 Sep 2026, quoting his X post of 8 Sep: "They can't even align or control their AIs today, and the AIs of the future will be much smarter and harder to understand"; "Even if they succeed, they will then have created the most intense concentration of power in human history"; "This situation is insane and must not be allowed to continue." — https://www.cbsnews.com/news/ai-superintelligence-anthropic-jacob-coxon/
+- CNN *Erin Burnett OutFront*, 14 Sep 2026, "Ex-OpenAI researcher: 70% chance AI leads to global catastrophe" **(indexed only; the page returns 451)** — https://www.cnn.com/2026/09/14/us/video/ebof-ai-researcher-trump-hoax-daniel-kokotajlo
+
+**New predictions:** d10 95 high · d11 40 low · d12 88 high · d13 3 high · d14 15 med · d15 35 low · s14 85 med.
+
+**Notes**
+- s14: Plan A would push superintelligence from 2030 to 2040, a decade, but by letting AI reach top-human level and then braking, not by freezing today's level. The button is cruder than his plan, but it points the same way. 85/med.
+- d15: his scenarios end in takeover or extreme power concentration. He has said little about mass casualties that humanity survives, so 35/low.
+- He also appeared on Fox News Live on 12 Sep 2026, calling for "radical" change after Amodei's essay (video, indexed only; not used).
+
+## v5 update (24 Sept 2026) — Leopold Aschenbrenner
+
+**New sources**
+- CNBC, 11 Sep 2026: Situational Awareness LP is buying options on AI compute and memory stocks again after its July losses. Added for context. No new public statement of his views on AI risk or pacing was found since *Situational Awareness* (June 2024). — https://www.cnbc.com/2026/09/11/leopold-aschenbrenners-situational-awareness-is-active-in-options-market-sources-say.html
+- Re-verified in *Situational Awareness*, "Superalignment": "I'm most worried about things just being totally crazy around superintelligence, including things like novel WMDs, destructive wars, and unknown unknowns"; "There will be moments with ambiguous evidence, when metrics will superficially look ok, but there are some warning signs that hint at looming danger, and we mostly don't have a clue what's going on anymore"; without new methods, models "will learn to lie, they'll learn to seek power"; "I am not a doomer."
+
+**New predictions:** d10 50 low · d11 35 med · d12 50 med · d13 6 high · d14 50 med · d15 45 low · s14 12 low.
+
+**Notes**
+- All seven rest on 2024 writing. He has been silent on the Sept 2026 pacing debate in public, and his fund is positioned on continued AI build-out.
+- s14: the button removes his main objection (China "breakout"), but he treats superintelligence as decisive and would trade only months of a US lead for safety. 12/low. A reader could argue for 25.

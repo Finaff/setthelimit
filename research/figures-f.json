@@ -90,6 +90,12 @@
           "url": "https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/",
           "date": "2026-02-02",
           "note": "Corporate status. All-stock deal valuing SpaceX at $1tn and xAI (which had merged with X in March 2025) at $250bn; Musk signs the memo as SpaceX CEO. Per Wikipedia, xAI ceased to be a separate company in May 2026 and was renamed SpaceXAI in July 2026."
+        },
+        {
+          "title": "TeslaNorth: Musk urges AI labs to test each other's models at All-In Summit",
+          "url": "https://teslanorth.com/2026/09/15/musk-ai-peer-review-all-in-summit-shotwell/",
+          "date": "2026-09-15",
+          "note": "Press report, All-In Summit (Los Angeles, 15 Sept 2026): 'have the major AI competitors test each other's models', Chinese labs included; any deal 'has to be something that China is willing to accept, otherwise we're just handicapping ourselves'."
         }
       ],
       "predictions": {
@@ -97,99 +103,223 @@
           "value": 85,
           "conf": "high",
           "basis": "'AGI is significantly higher risk than nuclear weapons, in my opinion' (2023, re-posted Sept 2026). Puts a bad outcome at 10-20%: 'The probability of a good outcome is like 80%' (2025). Dodged the number in July 2026.",
-          "src": [2, 5, 0]
+          "src": [
+            2,
+            5,
+            0
+          ]
         },
         "d3": {
           "value": 72,
           "conf": "med",
           "basis": "Smarter than any human 'by end of this year', than 'all of humanity collectively' by 2030-31; 'inexorable'. Backed Amodei's warning on self-improving AI. He predicts speed and lost control rather than one overnight jump.",
-          "src": [4, 0, 1]
+          "src": [
+            4,
+            0,
+            1
+          ]
         },
         "d5": {
           "value": 60,
           "conf": "low",
           "basis": "Expects AI, not people, to be in charge ('hard to imagine that the chimpanzees would be in charge') yet calls abundance the likely outcome if AI is 'maximally truth-seeking'. No direct statement on goal drift.",
-          "src": [0, 4]
+          "src": [
+            0,
+            4
+          ]
         },
         "d6": {
           "value": 18,
           "conf": "med",
           "basis": "His worry has always been the large one: 'an existential risk. And that's turning out to be true'; 'We don't want to find ourselves in a James Cameron movie.' He also fights state laws on familiar harms like deepfakes.",
-          "src": [5, 4, 3]
+          "src": [
+            5,
+            4,
+            3
+          ]
         },
         "d7": {
           "value": 10,
           "conf": "high",
           "basis": "Asked if humans will still be in control in ten years: 'I think it is unlikely… it's hard to imagine that the chimpanzees would be in charge.' And: 'I can't see any way to really stop this incredible momentum.'",
-          "src": [0]
+          "src": [
+            0
+          ]
         },
         "d9": {
           "value": 28,
           "conf": "med",
           "basis": "'Dario is right', on an essay saying self-improving AI could outrun our ability to understand and control it. Still gives 80% odds of a good outcome, resting on truth-seeking AI rather than on control methods.",
-          "src": [1, 5, 0]
+          "src": [
+            1,
+            5,
+            0
+          ]
         },
         "s1": {
           "value": 8,
           "conf": "high",
           "basis": "'Even if there was a stop button, we probably shouldn't press it because the most likely outcome is incredible abundance.' He signed the 2023 six-month pause, but for the record, not expecting it to happen.",
-          "src": [0, 8, 9]
+          "src": [
+            0,
+            8,
+            9
+          ]
         },
         "s4": {
           "value": 40,
           "conf": "low",
           "basis": "In 2023 wanted a government 'referee' and China at the table: 'if they're not participants it's pointless'. By 2026 prefers rival labs reviewing each other's models. No statement on an inspected treaty found.",
-          "src": [7, 0, 3]
+          "src": [
+            7,
+            0,
+            3
+          ]
         },
         "s5": {
           "value": 82,
           "conf": "med",
           "basis": "Says Chinese labs with more compute would have 'a good chance' of leading and that nobody can 'stop this incredible momentum', and builds accordingly. In 2023 he wanted China in safety talks. Deeds speak louder here.",
-          "src": [0, 7, 12]
+          "src": [
+            0,
+            7,
+            12
+          ]
         },
         "s6": {
           "value": 30,
           "conf": "med",
           "basis": "2024: 'an advocate for AI regulation' for 20 years, backing SB 1047. July 2026: it's 'quite difficult' for government 'to know whether something should be released'; oversight is 'a one-way ratchet'. Peer review instead.",
-          "src": [0, 3, 6]
+          "src": [
+            0,
+            3,
+            6
+          ]
         },
         "s8": {
           "value": 55,
           "conf": "med",
           "basis": "'Dario is right', on an essay saying the industry 'should slow down'; 2023: 'I think we should pause.' Against that, July 2026: 'Let's enjoy the ride', and he would not press a stop button. His labs never slowed.",
-          "src": [1, 9, 0]
+          "src": [
+            1,
+            9,
+            0
+          ]
         },
         "s10": {
           "value": 60,
           "conf": "med",
           "basis": "His stated reason not to stop is the upside: 'we probably shouldn't press it because the most likely outcome is incredible abundance.' He frames it as abundance for all, not lives saved, and still endorses pacing.",
-          "src": [0, 4, 1]
+          "src": [
+            0,
+            4,
+            1
+          ]
         },
         "s11": {
           "value": 55,
           "conf": "low",
           "basis": "Released Grok-1 and Grok 2.5 weights ('our best model last year… now open source') and sued OpenAI for going closed, but only ever a generation late, and he backed SB 1047. No stated view on a capability ceiling.",
-          "src": [10, 6]
+          "src": [
+            10,
+            6
+          ]
         },
         "s13": {
           "value": 35,
           "conf": "med",
           "basis": "He endorses deliberate pacing in words ('Dario is right'; 'I think we should pause') while saying slowing is impossible ('even if I wanted to stop it, I couldn't') and building at full speed. Scored on his words.",
-          "src": [1, 9, 0]
+          "src": [
+            1,
+            9,
+            0
+          ]
         },
         "p2": {
           "value": 95,
           "conf": "high",
           "basis": "'AI will be able to do any job better than any person can do that job. And that will be true very quickly.' Expects AI smarter than all of humanity combined by 2030-31; 2023: 'no job is needed'.",
-          "src": [0, 4, 7]
+          "src": [
+            0,
+            4,
+            7
+          ]
         },
         "p4": {
           "value": 45,
           "conf": "low",
           "basis": "He co-founded OpenAI to counter one company's dominance and sued it for going closed, but the danger he describes in 2026 is AI itself being in charge, not its owners. No ranking of the two found.",
-          "src": [0, 2]
+          "src": [
+            0,
+            2
+          ]
+        },
+        "d10": {
+          "value": 72,
+          "conf": "med",
+          "basis": "'The probability of a good outcome is like 80%' (2025): 10-20% bad, and he expects AI smarter than all humans by 2030-31, well inside 20 years. 'AGI is significantly higher risk than nuclear weapons' (re-posted 2026).",
+          "src": [
+            5,
+            4,
+            2
+          ]
+        },
+        "d11": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Wants rival labs testing each other's models and raising the alarm before release (Sept 2026), which assumes danger shows first; yet expects humans to lose control within ten years. Inferred.",
+          "src": [
+            13,
+            3,
+            0
+          ]
+        },
+        "d12": {
+          "value": 60,
+          "conf": "low",
+          "basis": "Expects AI, not people, to be in charge ('hard to imagine that the chimpanzees would be in charge') yet calls abundance the likely outcome if AI is 'maximally truth-seeking'. No direct statement on goal drift.",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "d13": {
+          "value": 12,
+          "conf": "high",
+          "basis": "'I've seen quite a few technologies develop, but none with this level of risk. AGI is significantly higher risk than nuclear weapons' (2023), re-posted Sept 2026: 'I've been sounding the alarm'.",
+          "src": [
+            2,
+            5
+          ]
+        },
+        "d14": {
+          "value": 12,
+          "conf": "high",
+          "basis": "Asked if humans will still be in control in ten years: 'I think it is unlikely… it's hard to imagine that the chimpanzees would be in charge.' And: 'I can't see any way to really stop this incredible momentum.'",
+          "src": [
+            0
+          ]
+        },
+        "d15": {
+          "value": 35,
+          "conf": "low",
+          "basis": "No statement on mass-casualty misuse found. His warnings are about AI itself ('a James Cameron movie'), and he wants rival labs to flag dangerous models before release. Inferred.",
+          "src": [
+            4,
+            13
+          ]
+        },
+        "s14": {
+          "value": 8,
+          "conf": "high",
+          "basis": "July 2026: 'Even if there was a stop button, we probably shouldn't press it because the most likely outcome is incredible abundance.' In Sept 2026 he still said 'Dario is right' about slowing down.",
+          "src": [
+            0,
+            1
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     },
     {
       "id": "mark-zuckerberg",
@@ -270,6 +400,30 @@
           "url": "https://cybernews.com/ai-news/ai-godfathers-wozniak-sign-letter-to-ban-ai-superintelligence-musk-altman-and-zuck-are-mia/",
           "date": "2025-10-22",
           "note": "Signature check: he did not sign the FLI Statement on Superintelligence (Oct 2025). He is also absent from the 2023 FLI pause letter and the 2023 CAIS statement (lists checked; no Meta signatory on the CAIS list)."
+        },
+        {
+          "title": "NBC News: Mark Zuckerberg rejects calls for industrywide AI slowdown (interview by Joanna Stern)",
+          "url": "https://www.nbcnews.com/tech/tech-news/mark-zuckerberg-interview-ai-slowdown-meta-muse-openai-chatgpt-rcna599279",
+          "date": "2026-09-24",
+          "note": "'I don't think that we need some kind of industrywide coordination'; each lab, 'when it sees that there are issues', takes 'the time that you need internally'; 'There's a lot of rhetoric that is filled with doom. I'm quite optimistic…'"
+        },
+        {
+          "title": "The Next Web: Zuckerberg's Muse pitch comes with a jab at labs hoarding AI (Sources podcast)",
+          "url": "https://thenextweb.com/news/zuckerberg-muse-sources-interview-labs-holding-back-ai-models",
+          "date": "2026-09-10",
+          "note": "Quotes his Sources interview with Alex Heath (8 Sept 2026): 'I personally am much more worried about a small number of labs or people having control of something that is so capable'; labs not releasing advanced models is 'quite dangerous'."
+        },
+        {
+          "title": "The Singju Post: transcript of Mark Zuckerberg on the Sources podcast",
+          "url": "https://singjupost.com/transcript-mark-zuckerberg-interview-on-metas-muse-ai-agent-sources-podcast/",
+          "date": "2026-09-09",
+          "note": "Third-party transcript, not checked against audio: 'The best antidote to someone having an AI that could potentially hack into systems is having everyone have access'; open source 'key to maintaining competition'."
+        },
+        {
+          "title": "Fortune: Zuckerberg says AI doesn't need an industry-wide slowdown",
+          "url": "https://fortune.com/2026/09/16/mark-zuckerberg-meta-ai-safety-jensen-huang-dario-amodei/",
+          "date": "2026-09-16",
+          "note": "Quotes his 15 Sept X post: 'People won't want to use agents that are misaligned with them and that don't do what they ask, so labs have a strong natural incentive to make their models more aligned.'"
         }
       ],
       "predictions": {
@@ -277,99 +431,224 @@
           "value": 20,
           "conf": "med",
           "basis": "'I don't think the runaway case is a particularly likely one' (2024); AI discourse is 'so filled with doom' (2026). Yet he now writes that AI holding the power 'at best puts humanity in peril'. Never gave a number.",
-          "src": [6, 0, 10]
+          "src": [
+            6,
+            0,
+            10
+          ]
         },
         "d3": {
           "value": 28,
           "conf": "med",
           "basis": "'There's all these physical constraints that make that unlikely'; 'a gigawatt cluster… just takes time'. By 2026 he grants a self-improving system 'could conceivably command more effective compute'.",
-          "src": [6, 5, 0]
+          "src": [
+            6,
+            5,
+            0
+          ]
         },
         "d5": {
           "value": 30,
           "conf": "med",
           "basis": "Grants that 'any AI engaging in recursive self-improvement is by definition directing and advancing its own goals', but holds that people 'won't want to use agents that are misaligned', so labs will align them.",
-          "src": [0, 1]
+          "src": [
+            0,
+            1
+          ]
         },
         "d6": {
           "value": 65,
           "conf": "med",
           "basis": "2024: the 'real harms' needing energy are 'where someone takes a model and does something to hurt a person'. By 2026 he also names cyber, biological and loss-of-control risks, as things to harden against.",
-          "src": [6, 0, 9]
+          "src": [
+            6,
+            0,
+            9
+          ]
         },
         "d7": {
           "value": 78,
           "conf": "med",
           "basis": "'I believe the key to building a positive future for everyone is maintaining the right balance of power. This is within our power to do.' Control is possible, on his condition that people direct most compute.",
-          "src": [1, 0]
+          "src": [
+            1,
+            0
+          ]
         },
         "d9": {
           "value": 80,
           "conf": "high",
           "basis": "'Trust and alignment are quickly becoming the most important capabilities that will differentiate agents and models. Any lab that doesn't focus on alignment will fall behind.' The market pulls safety along.",
-          "src": [1]
+          "src": [
+            1
+          ]
         },
         "s1": {
           "value": 3,
           "conf": "high",
           "basis": "'Any policy that slows American model releases -- even by a month -- could add significant risk.' He is building superintelligence, which he says people will use 'in the next few years'.",
-          "src": [0, 4]
+          "src": [
+            0,
+            4
+          ]
         },
         "s4": {
           "value": 12,
           "conf": "low",
           "basis": "No statement on a treaty found. He rejects even a coordinated slowdown among US labs, backs chip export controls against China and wants 'multiple labs' checking each other rather than a central authority.",
-          "src": [0, 1]
+          "src": [
+            0,
+            1
+          ]
         },
         "s5": {
           "value": 92,
           "conf": "high",
           "basis": "'Delaying releases by even a month may cede America's lead'; China adds nuclear capacity 'every other week, so we will need to accelerate building both energy and data centers to remain competitive.'",
-          "src": [0, 7]
+          "src": [
+            0,
+            7
+          ]
         },
         "s6": {
           "value": 8,
           "conf": "high",
           "basis": "'Any policy that slows American model releases -- even by a month -- could add significant risk.' His offer: checkpoints 'for government use and review', no gate. 2024: no 'pre-emptive regulation of theoretical harms'.",
-          "src": [0, 8, 1]
+          "src": [
+            0,
+            8,
+            1
+          ]
         },
         "s8": {
           "value": 15,
           "conf": "med",
           "basis": "Accepts delay a lab chooses for itself ('Meta delayed shipping Muse for several months to focus on safety and security') but says a month of imposed delay adds risk. Months by choice, not years by rule.",
-          "src": [1, 0]
+          "src": [
+            1,
+            0
+          ]
         },
         "s10": {
           "value": 70,
           "conf": "low",
           "basis": "'I am extremely optimistic that superintelligence will help humanity accelerate our pace of progress', including science and health. His case against slowing rests on competition and empowerment, not a lives-saved count.",
-          "src": [4, 0]
+          "src": [
+            4,
+            0
+          ]
         },
         "s11": {
           "value": 75,
           "conf": "med",
           "basis": "Open source is 'a positive and important force… preventing centralization', and he opposes legal limits on it. But Meta must be 'careful about what we choose to open source'; its top Muse models stay closed.",
-          "src": [0, 4, 6, 7]
+          "src": [
+            0,
+            4,
+            6,
+            7
+          ]
         },
         "s13": {
           "value": 72,
           "conf": "med",
           "basis": "No slowing by policy or pact. But each lab should 'move at the pace required to train its models safely', and he pledges most compute to serving people 'rather than racing towards recursive self-improvement'.",
-          "src": [1, 0]
+          "src": [
+            1,
+            0
+          ]
         },
         "p2": {
           "value": 60,
           "conf": "low",
           "basis": "Superintelligence within 'the next few years' and most of Meta's AI code written by AI, yet he forecasts an 'abundance of jobs' with people directing the work. No 20-year forecast; inferred.",
-          "src": [0, 3, 5]
+          "src": [
+            0,
+            3,
+            5
+          ]
         },
         "p4": {
           "value": 85,
           "conf": "high",
           "basis": "'The notion that AI is so dangerous that the only safe path is an extreme concentration of power seems inherently problematic.' 2024: an untrustworthy actor with the strongest AI is 'potentially a much bigger risk'.",
-          "src": [3, 6, 0]
+          "src": [
+            3,
+            6,
+            0
+          ]
+        },
+        "d10": {
+          "value": 15,
+          "conf": "med",
+          "basis": "'There's a lot of rhetoric that is filled with doom. I'm quite optimistic' (2026); 'I don't think the runaway case is a particularly likely one' (2024). Yet he writes AI holding power 'at best puts humanity in peril'.",
+          "src": [
+            12,
+            6,
+            0
+          ]
+        },
+        "d11": {
+          "value": 72,
+          "conf": "med",
+          "basis": "Assumes problems show up in time: a lab 'sees that there are issues' and slows itself, and misaligned agents fail in the market because people won't use them. No view on hidden misbehaviour.",
+          "src": [
+            12,
+            15
+          ]
+        },
+        "d12": {
+          "value": 30,
+          "conf": "med",
+          "basis": "Grants that 'any AI engaging in recursive self-improvement is by definition directing and advancing its own goals', but holds that people 'won't want to use agents that are misaligned', so labs will align them.",
+          "src": [
+            0,
+            1,
+            15
+          ]
+        },
+        "d13": {
+          "value": 65,
+          "conf": "med",
+          "basis": "'I personally am much more worried about a small number of labs or people having control of something that is so capable' (Sept 2026). His 2026 essay still counts loss of control as a real risk.",
+          "src": [
+            13,
+            0,
+            6
+          ]
+        },
+        "d14": {
+          "value": 80,
+          "conf": "med",
+          "basis": "Each lab, 'when it sees that there are issues', takes 'the time that you need internally' (Sept 2026); a balance of power 'is within our power to do'. Control is possible on his terms.",
+          "src": [
+            12,
+            1,
+            15
+          ]
+        },
+        "d15": {
+          "value": 12,
+          "conf": "low",
+          "basis": "Names cyber and bio as risks to harden against; his answer is diffusion: 'The best antidote to someone having an AI that could potentially hack into systems is having everyone have access' (third-party transcript).",
+          "src": [
+            14,
+            9,
+            0
+          ]
+        },
+        "s14": {
+          "value": 5,
+          "conf": "med",
+          "basis": "'Any policy that slows American model releases -- even by a month -- could add significant risk'; 'I don't think that we need some kind of industrywide coordination'; holding models back is 'quite dangerous'.",
+          "src": [
+            0,
+            12,
+            13
+          ]
         }
-      }
+      },
+      "v5": "2026-09-24"
     }
   ]
 }

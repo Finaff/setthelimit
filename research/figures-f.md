@@ -193,3 +193,41 @@ His danger views have moved more than his tone suggests. In 2017 doomsday talk w
 - All `high` bases quote wording seen in a primary page (meta.com essay, Meta letter), a full X post read through the mirror API, or a transcript (Economist interview via The Singju Post, cross-checked with three press write-ups; Dwarkesh transcripts). Quotes were returned by a summarising fetcher asked for verbatim text; they were not compared character by character against the raw HTML.
 - Not verified: the WSJ op-ed text (paywall); the November 2023 "knowing it was futile" post; the SpaceX IPO date/ticker; whether Grok 3 weights were released; the full "Pacing the Frontier" signatory list (press reports only); any statement by either man on the July 2026 OpenAI/Hugging Face incident (none found).
 - The Economist interview's date differs by source (recorded 20 July; carried 23–24 July). The 2017 Zuckerberg quote is often misdated to 2016.
+
+## v5 update (24 Sept 2026) — Elon Musk
+
+Primary checks of quotes read earlier through a mirror: sources 1 and 2 were re-fetched through X's embed API and match. Source 1: "Dario is right" (12 Sept 2026, 15:01 UTC), quoting Amodei's "We Must Pace the Frontier: I've written a new essay on why the AI industry should slow down…". Source 2: "I've been sounding the alarm on AI for a long time" (13 Sept), quoting his 25 April 2023 post: "I've seen quite a few technologies develop, but none with this level of risk. AGI is significantly higher risk than nuclear weapons, in my opinion." The new d13 (high) rests on this verified text.
+
+New source (appended as 13):
+
+- **13. TeslaNorth: Musk urges AI labs to test each other's models at All-In Summit (15 Sept 2026)** — https://teslanorth.com/2026/09/15/musk-ai-peer-review-all-in-summit-shotwell/ — press report: "What I think would be wise to do as soon as possible, if not immediately, would be to have the major AI competitors test each other's models"; any arrangement "has to be something that China is willing to accept, otherwise we're just handicapping ourselves". Other reports of the same session (CNBC, 15 Sept, blocked to fetchers; Coinpaper; Shattered.io) quote: "instead of grading your own homework, you would at least have competitors grading your homework and raising the alarm if they see concerns", with xAI, OpenAI, Anthropic, Google, Meta and "three or four of the leading Chinese companies" taking part. No signed agreement followed; a WSJ-sourced report (22 Sept) says OpenAI and Anthropic had neared a mutual-testing deal.
+
+New predictions: d10 72 med · d15 35 low · d13 12 high · d12 60 low · d14 12 high · d11 45 low · s14 8 high.
+
+- s14 is the item he has answered almost word for word (Economist, July 2026): "Even if there was a stop button, we probably shouldn't press it because the most likely outcome is incredible abundance." The gap: two months later he said "Dario is right" about slowing down, while his companies sue to block state AI laws (source 3).
+- d10: his last number is 10–20% bad (2025, press report of Rogan), on a timeline well inside 20 years (AI smarter than all humans by 2030–31). Around or a little above the bar, so 72, med (he dodged the number in July 2026).
+- d11 and d15 are inferences; no statement on warning signs or mass-casualty misuse was found.
+
+No old value changed. Also noted, not used: Semafor (via AI News, 22 May 2026) reported that Musk, Zuckerberg and Sacks talked Trump out of an executive order for voluntary 90-day federal security reviews of frontier models; second-hand, and about a deed rather than an answer.
+
+## v5 update (24 Sept 2026) — Mark Zuckerberg
+
+Primary check: source 1 (his 15 Sept post) re-fetched through X's embed API; the first ~280 characters match ("Every lab has the responsibility and incentive to move at the pace required to train its models safely, and the ability to take its own actions to ensure that happens."). The rest (alignment as a capability, Muse delayed, liability) is confirmed by Fortune (new source 15) and by Zvi Mowshowitz's roundup of 17 Sept quoting "trust and alignment are quickly becoming the most important capabilities".
+
+New sources (appended as 12–15):
+
+- **12. NBC News, interview by Joanna Stern (24 Sept 2026)** — https://www.nbcnews.com/tech/tech-news/mark-zuckerberg-interview-ai-slowdown-meta-muse-openai-chatgpt-rcna599279
+  - "I don't think that we need some kind of industrywide coordination."
+  - "I think that each lab needs to take the time, and when it sees that there are issues, you just take the time that you need internally to basically make sure that you're proceeding safely."
+  - "I happen to think that there's plenty of commercial incentive to get this right."
+  - "There's a lot of rhetoric that is filled with doom." / "I'm quite optimistic about the fact that this is going to be a very positive future for everyone."
+- **13. The Next Web on his Sources interview with Alex Heath (10 Sept 2026)** — https://thenextweb.com/news/zuckerberg-muse-sources-interview-labs-holding-back-ai-models — "I personally am much more worried about a small number of labs or people having control of something that is so capable"; labs "training more advanced models, and then not even releasing them" is "quite dangerous"; "It's not that everything we do is open source either."
+- **14. The Singju Post transcript of the same Sources interview** — https://singjupost.com/transcript-mark-zuckerberg-interview-on-metas-muse-ai-agent-sources-podcast/ — third-party, not checked against audio: "The best antidote to someone having an AI that could potentially hack into systems is having everyone have access"; "Supporting a robust open source ecosystem is going to be key to maintaining competition." Used only for the low-confidence d15.
+- **15. Fortune (16 Sept 2026)** — https://fortune.com/2026/09/16/mark-zuckerberg-meta-ai-safety-jensen-huang-dario-amodei/ — quotes the 15 Sept post: "People won't want to use agents that are misaligned with them and that don't do what they ask, so labs have a strong natural incentive to make their models more aligned."
+
+New predictions: d10 15 med · d15 12 low · d13 65 med · d12 30 med · d14 80 med · d11 72 med · s14 5 med.
+
+- d13 stays in the middle: he fears concentration more than rogue AI, but his August essay still names loss of control and self-improving AI with "its own goals" as real risks, so he does not call the danger merely familiar.
+- s14 is med, not high: the button removes his China argument, but not his case that holding capability back concentrates power ("quite dangerous").
+
+No old value changed. Meta's Connect event (23–24 Sept) launched Muse devices; nothing further on risk was found in that coverage.
