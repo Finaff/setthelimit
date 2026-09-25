@@ -1,3 +1,5 @@
+"""SUPERSEDED: this built the first v5 draft (24 Sept 2026). content/propositions.v5.json now holds v5 after the third review
+(from content/propositions.v5.1.proposed.json); do not re-run, it would undo the review."""
 """Builds content/propositions.v5.json and .fr.json from v4 (the v5 changes are listed in the changelog below)."""
 import json, re, copy
 ROOT = __import__('os').path.join(__import__('os').path.dirname(__file__), '..', 'content') + '/'

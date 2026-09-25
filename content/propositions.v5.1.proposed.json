@@ -1,5 +1,5 @@
 {
-  "version": "v5-2026-09-25",
+  "version": "v5.1-proposed-2026-09-24",
   "notes": "Axis 'danger' = X (road conditions: clear 0 ↔ black ice 100). Axis 'speed' = Y (full stop 0 ↔ no limit 100). 'dir' = +1 when agreement or probability moves the score toward the high end of its axis, -1 toward the low end. 'type' = 'prob' (slider reads Very unlikely ↔ Very likely) or 'agree' (Strongly disagree ↔ Strongly agree). 'profile' items feed sub-scores only. v5 = 16 items: danger d16↔d11, d10↔d13, d12↔d14 (3/3 at 4.0/4.0); speed s15↔s13, s4↔s5, s6↔s11, s8↔s10 (4/4 at 5.0/5.0); profile p2 (horizon), p4 (concentration). See changelog.",
   "items": [
     {
@@ -217,10 +217,6 @@
     {
       "id": "s14",
       "change": "Replaces s1 (stop until safe, even for decades). Some people think stopping is no longer possible, others that it would be wrong; s1 mixed the two. The button removes feasibility by construction ('everywhere, no way to cheat'), so only the wish is measured; ten years separates a long pause from a permanent halt."
-    },
-    {
-      "id": "v5 review",
-      "change": "Third fairness review (research/review-v3.md), adopted by the owner on 25 Sept 2026 before v5 went live: d15 → d16 (no longer 'without ending humanity', which scored the most worried toward a clear road), s14 → s15 (general-purpose AI only; 'I would press it'), d11 steelmen about whether signs will be clear, not whether anyone acts; d10 plain says misuse counts; d12 'for' cites observed test-gaming; d14 'for' factual fix. Details in the 'review' list."
     }
   ],
   "review": [
