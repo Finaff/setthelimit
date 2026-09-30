@@ -273,5 +273,12 @@
  "Not spam ({n} flags)",
  "updated {date} · was {n}",
  "basis updated {date}",
- "Version 5 (24 September 2026) followed a close reading by the site’s owner. Forecasts are now bare events on a probability slider, with no ‘probably’ hidden inside the sentence. The danger axis gained a middle rung (a catastrophe that kills millions) below the unrecoverable one, whose horizon is now twenty years. And the full-stop question became a thought experiment, a button that pauses work on more capable general-purpose AI everywhere for ten years with no way to cheat, so that ‘it can’t be done’ and ‘it shouldn’t be done’ no longer look alike. Every public figure was re-predicted on the new items with that week’s statements."
+ "Version 5 (24 September 2026) followed a close reading by the site’s owner. Forecasts are now bare events on a probability slider, with no ‘probably’ hidden inside the sentence. The danger axis gained a middle rung (a catastrophe that kills millions) below the unrecoverable one, whose horizon is now twenty years. And the full-stop question became a thought experiment, a button that pauses work on more capable general-purpose AI everywhere for ten years with no way to cheat, so that ‘it can’t be done’ and ‘it shouldn’t be done’ no longer look alike. Every public figure was re-predicted on the new items with that week’s statements.",
+ "{g} pts",
+ "{a}/{b} within {n}",
+ "Ranked by the average gap between your answers and their predicted ones, proposition by proposition (0 = identical, 100 = opposite). The second number counts propositions where you are within {n} points.",
+ "The map sums up your answers as two averages, so opposite differences can cancel out. The list below compares you question by question: you can be neighbours on the map and still split on the details. Tap a figure to see where.",
+ "Predicted limit {y} · road {x} · {g} points apart on average · {a}/{b} within {n}",
+ "Question by question, biggest gaps first",
+ "gap {d}"
 ]

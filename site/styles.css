@@ -345,3 +345,11 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 .tip { position: absolute; z-index: 90; pointer-events: none; background: #1B1E21; color: #FFFFFF; border: 1px solid #F5C518; border-radius: 5px; padding: 4px 8px; font: 700 12.5px var(--font-sign); letter-spacing: .02em; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
 .av { width: auto; min-width: 24px; padding: 0 5px; box-sizing: border-box; border-radius: 999px; border: 1px solid var(--line-2, var(--line)); flex: none; }
 .figchips button .av { width: auto; min-width: 20px; padding: 0 4px; }
+
+/* ---- v1.6: map vs list explained; per-figure gaps ---- */
+.mapnote { margin: 10px 2px 0; }
+.gaps { margin: 8px 0 4px; } .gaps summary { cursor: pointer; font-weight: 800; font-size: 13px; }
+.gaps ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.gaps li { display: grid; gap: 2px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.gaps .gq { font-family: var(--font-read); color: var(--ink-2); line-height: 1.35; } .gaps .gv { font-family: var(--font-mono); font-size: 12px; }
+.gaps em { font-style: normal; font-weight: 800; } .gaps em.far { color: var(--red); } .gaps em.near { color: var(--green); }
