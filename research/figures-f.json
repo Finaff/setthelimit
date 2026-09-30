@@ -96,6 +96,12 @@
           "url": "https://teslanorth.com/2026/09/15/musk-ai-peer-review-all-in-summit-shotwell/",
           "date": "2026-09-15",
           "note": "Press report, All-In Summit (Los Angeles, 15 Sept 2026): 'have the major AI competitors test each other's models', Chinese labs included; any deal 'has to be something that China is willing to accept, otherwise we're just handicapping ourselves'."
+        },
+        {
+          "title": "Reason: Elon Musk's mistaken call for a 'universal high income'",
+          "url": "https://reason.com/2026/04/17/elon-musks-mistaken-call-for-a-universal-high-income/",
+          "date": "2026-04-17",
+          "note": "Quotes his X post: 'Universal HIGH INCOME via checks issued by the Federal government is the best way to deal with unemployment caused by AI.'"
         }
       ],
       "predictions": {
@@ -336,9 +342,49 @@
             0,
             1
           ]
+        },
+        "d18": {
+          "value": 55,
+          "conf": "low",
+          "basis": "His d16 50 assumed no brake ('I can't see any way to really stop this incredible momentum'). Slightly up: he backs pacing and rival labs testing each other's models, both gone at full speed. Inferred.",
+          "src": [
+            0,
+            4,
+            13
+          ]
+        },
+        "d17": {
+          "value": 78,
+          "conf": "med",
+          "basis": "About 20% bad outcome (2025) and AI smarter than all humans by 2030-31; he already expects the momentum to be unstoppable, so full speed moves him little. Slight rise from d10 72: his peer review is gone.",
+          "src": [
+            5,
+            4,
+            0,
+            2
+          ]
+        },
+        "d19": {
+          "value": 8,
+          "conf": "high",
+          "basis": "Asked if humans will still control AI in ten years: 'I think it is unlikely… it's hard to imagine that the chimpanzees would be in charge' (July 2026). AI 'significantly higher risk than nuclear weapons'.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "p6": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Expects AI to do 'any job better than any person' soon and calls for checks to deal with 'unemployment caused by AI' (2026), but frames it as abundance, not harm. Silent on fraud and surveillance.",
+          "src": [
+            0,
+            14
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "mark-zuckerberg",
@@ -686,9 +732,50 @@
             12,
             13
           ]
+        },
+        "d18": {
+          "value": 15,
+          "conf": "low",
+          "basis": "Mostly carried over (d16 12): diffusion is his defence against AI hacking and bio risk. Slightly up because his other safeguard, each lab taking 'the time that you need', is gone at full speed. Inferred.",
+          "src": [
+            14,
+            12,
+            1
+          ]
+        },
+        "d17": {
+          "value": 18,
+          "conf": "low",
+          "basis": "Finds the runaway case unlikely and calls doom 'rhetoric', so well below 1 in 10; small rise from d10 15 because labs pausing themselves when they see issues is part of his answer.",
+          "src": [
+            12,
+            6,
+            1
+          ]
+        },
+        "d19": {
+          "value": 40,
+          "conf": "med",
+          "basis": "Holds that market pressure keeps agents doing what users ask, yet his 2026 essay says a self-improving AI is 'by definition' pursuing its own goals and pledges compute away from it. Pulls both ways.",
+          "src": [
+            15,
+            0,
+            1
+          ]
+        },
+        "p6": {
+          "value": 25,
+          "conf": "low",
+          "basis": "Forecasts an 'abundance of jobs' and people directing AI; his worry is concentration of power, not fraud or bias. Meta cut about 10% of staff in 2026. Inferred.",
+          "src": [
+            3,
+            0,
+            13
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     }
   ]
 }

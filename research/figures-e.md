@@ -198,3 +198,18 @@ Third fairness review (review-v3.md): d15 → d16 (no longer "without ending hum
 No new sources.
 
 - **David Sacks**: d16 10 med (copied; he puts extinction at zero) · s15 2 high (copied).
+
+## v6 (30 Sept 2026)
+
+Owner's second review: d16 → d18 and d10 → d17 are now conditional on full speed with no new laws, treaties or pauses; d19 (will AI remain a tool?) is new on the danger axis; p5 (familiar harms within ten years) is a new profile item. Old predictions stay as the record.
+
+New source (appended as 15):
+
+- **15. Fortune (11 Aug 2025)** — https://fortune.com/2025/08/11/artificial-intelligence-job-loss-overhyped-david-sacks-doomer-narrative-goldilocks/ — quotes the Goldilocks post (source 6), confirming wording known before only through a mirror: models "are still at zero" in setting their own objective functions; "Models need context, they must be heavily prompted, the output must be verified, and this process must be repeated iteratively to achieve meaningful business value."; "apocalyptic predictions of job loss are as overhyped as AGI itself."
+
+- **David Sacks**: d18 10 med and d17 3 med are carry-overs: full speed is the path he argues is safe, so the condition moves nothing. d17 is med rather than high because his "zero" is conditional ("if we do the right things here", source 13), and his right things include federal preemption rather than no rules at all.
+- d19 85 high: "AI models are still at zero in terms of setting their own objective function" (source 6, confirmed by 15). Not higher: the same post says "The AI race is highly dynamic so this could change", and in Sept 2026 he grants that "prosaic recursion is happening" (source 2).
+- p5 25 med: job-loss fears "as overhyped as AGI itself" (sources 6, 15); on 10–15% unemployment, "there's no evidence of that. Quite the contrary, it's all been job gains" (source 2). The one familiar harm he stresses is state–corporate censorship ("Orwellian outcomes", source 6), which keeps the value off the floor.
+- No statement of his calling AI "just a tool" in so many words was found; d19 rests on the objective-function line.
+
+> Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.

@@ -192,3 +192,4 @@
   within ten years (profile only, off the map); s15 same id, outcome wording "the world would be better off if it were pressed" (owner's choice).
   check-fr allows 32 words (the button). App: third profile gauge 'familiar'; Method "Version 6" paragraph (EN+FR). Share links now start with "6".
 - Agents running (brief: scratchpad v6-agent-brief.md): figures a+b, figures c–f; resumable via "v6": "2026-09-30". Deploy only when check-figures is clean.
+- p5/p6 collision caught by the a+b agent: the familiar-harms item is p6 (p5 = the v2–v3 'pause would hold' item, predictions restored under p5). DEPLOYED v6 (17 items) with all 22 figures re-predicted on d17/d18/d19/p6. Positions: Yudkowsky 97/3, Hinton 85/20, Amodei 62/33, Alexander 66/22, Altman 41/54, Hassabis 48/39, Musk 73/62, Pinker 10/74, Sacks 12/89.

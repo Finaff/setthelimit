@@ -337,9 +337,45 @@
             7,
             1
           ]
+        },
+        "d18": {
+          "value": 55,
+          "conf": "low",
+          "basis": "d16 40 was held down by his 40% chance of a US-China pause and bans after a first warning shot; without them his p(doom|no pause) is above 20%, and he expects bio and hacking scares first. Inferred.",
+          "src": [
+            0,
+            2,
+            5
+          ]
+        },
+        "d17": {
+          "value": 85,
+          "conf": "med",
+          "basis": "p(doom|no pause) 'a few points above 20%'; 50% that the first AIs past the point of no return want humans gone under normal corporate incentives alone. Timing puts much of it before 2046.",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "d19": {
+          "value": 10,
+          "conf": "high",
+          "basis": "His own odds: 'a 20% chance that the first AIs to cross the point of no return will want to eliminate the human population', plus 30% that they curtail human potential 'for their own reasons'.",
+          "src": [
+            0
+          ]
+        },
+        "p6": {
+          "value": 60,
+          "conf": "low",
+          "basis": "Modal scenario: AGI about 2031, more than half of jobs automated by the late 2030s; early-hit industries may have 'a very bad time'. He rarely writes about fraud or surveillance. Inferred.",
+          "src": [
+            0
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "steven-pinker",
@@ -438,6 +474,12 @@
           "url": "https://www.forbes.com/sites/andreamorris/2026/09/24/whos-who-in-the-fight-over-whether-ai-will-kill-us/",
           "date": "2026-09-24",
           "note": "Page blocks fetchers; read only through search snippets, wording unverified. Reports Pinker telling ABC Australia that AI engineering pathogens is imaginable, but distributing them to kill everyone is 'a bit fanciful'."
+        },
+        {
+          "title": "Quillette: An Open Letter to Scott Alexander (by Steven Pinker)",
+          "url": "https://quillette.com/2026/09/26/an-open-letter-to-scott-alexander-steven-pinker-ai-alignment-safety/",
+          "date": "2026-09-26",
+          "note": "Declines Alexander's debate challenge; 'The dangers of AI are real, including bioterrorism, cyber-sabotage, and unconstrained agents'; wants oversight, liability, kill switches; 'sceptical of the prophecy that AI will murder every last human'."
         }
       ],
       "predictions": {
@@ -686,9 +728,50 @@
             0,
             4
           ]
+        },
+        "d18": {
+          "value": 12,
+          "conf": "low",
+          "basis": "Full speed is not what he fears, but he calls bioterrorism and cyber-sabotage real dangers and wants oversight, liability and kill switches (Sept 2026); without new limits, slightly up from 8. No number.",
+          "src": [
+            15,
+            14,
+            0
+          ]
+        },
+        "d17": {
+          "value": 3,
+          "conf": "high",
+          "basis": "'I'm just sceptical of the prophecy that AI will murder every last human' (Sept 2026); the scenarios are 'preposterous'. His doubt is about the premise, not about brakes, so full speed changes nothing.",
+          "src": [
+            15,
+            0,
+            4
+          ]
+        },
+        "d19": {
+          "value": 85,
+          "conf": "high",
+          "basis": "'Being smart is not the same as wanting something'; goals must be 'exogenously built into a system'. Not 100: he lists 'unconstrained agents' among real dangers, though as an engineering problem (2026).",
+          "src": [
+            4,
+            6,
+            15
+          ]
+        },
+        "p6": {
+          "value": 60,
+          "conf": "med",
+          "basis": "Job loss, invidious sorting and deception 'are not conjectural' (2022); these are 'the more mundane and realistic safety challenges' (2026). But he expects patches and adaptation, and doubts jobs go fast.",
+          "src": [
+            6,
+            0,
+            5
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     }
   ]
 }

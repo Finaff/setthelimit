@@ -240,3 +240,16 @@ No new sources.
 
 - **Elon Musk**: d16 50 low (d15 35). About 20% bad outcome, with AI smarter than all humans by 2030–31, now counts. · s15 8 high (copied). The narrowing does not touch his "we probably shouldn't press it".
 - **Mark Zuckerberg**: d16 12 low (copied) · s15 5 med (copied).
+
+## v6 (30 Sept 2026)
+
+Owner's second review: d16 → d18 and d10 → d17 are now conditional on full speed with no new laws, treaties or pauses; d19 (will AI remain a tool?) is new on the danger axis; p5 (familiar harms within ten years) is a new profile item. Old predictions stay as the record.
+
+- **Elon Musk**: d18 55 low (d16 50) · d17 78 med (d10 72). Small rise: he already expected no brake ("I can't see any way to really stop this incredible momentum of AI and robots", source 0), but the scenario also removes what he now backs (rival labs reviewing each other's models, source 13; "Dario is right", source 1).
+- d19 8 high: asked whether humans will still be in control in ten years, "I think it is unlikely… it's hard to imagine that the chimpanzees would be in charge" (source 0). No "not a tool" in so many words was found.
+- p5 50 low. New source 14 — **Reason (17 April 2026)**, https://reason.com/2026/04/17/elon-musks-mistaken-call-for-a-universal-high-income/ — quotes his X post: "Universal HIGH INCOME via checks issued by the Federal government is the best way to deal with unemployment caused by AI." He expects mass job loss but frames it as abundance ("the most likely outcome is incredible abundance", source 0), not harm; nothing found from him on AI fraud or surveillance.
+- **Mark Zuckerberg**: d18 15 low (d16 12) · d17 18 low (d10 15). Mostly carry-over (diffusion and a balance of power are his safe path), with a small rise because part of his answer is each lab pausing itself: "when it sees that there are issues, you just take the time that you need internally" (source 12), which the full-speed condition removes.
+- d19 40 med: pulls both ways. "People won't want to use agents that are misaligned with them and that don't do what they ask" (source 15) against "any AI engaging in recursive self-improvement is by definition directing and advancing its own goals" and "To ensure people remain in control, the significant majority of intelligence must be directed by people" (source 0).
+- p5 25 low: forecasts an "abundance of jobs" (source 3); his named worry is concentration ("a small number of labs or people having control", source 13). Nothing found from him on AI fraud, surveillance or bias as a coming harm. No new sources.
+
+> Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.

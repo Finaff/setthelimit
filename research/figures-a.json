@@ -347,15 +347,6 @@
             2
           ]
         },
-        "p5": {
-          "value": 45,
-          "conf": "low",
-          "basis": "Thinks GPU tracking makes verification feasible but is pessimistic about political will; no explicit estimate.",
-          "src": [
-            0,
-            7
-          ]
-        },
         "d15": {
           "value": 30,
           "conf": "low",
@@ -439,6 +430,54 @@
             2,
             9
           ]
+        },
+        "d18": {
+          "value": 95,
+          "conf": "med",
+          "basis": "Full speed with no limits is exactly the case he warns about: a superintelligence built with today's methods kills everyone. Nothing in his d16 was held down by expected mitigation; slight rise.",
+          "src": [
+            2,
+            4,
+            12
+          ]
+        },
+        "d17": {
+          "value": 98,
+          "conf": "high",
+          "basis": "TIME, 2023: 'the most likely result of building a superhumanly smart AI... is that literally everyone on Earth will die'. No limits removes the halt he asks for; far above 1 in 10.",
+          "src": [
+            0,
+            2,
+            3
+          ]
+        },
+        "d19": {
+          "value": 2,
+          "conf": "high",
+          "basis": "His book's thesis: a superintelligence built with current methods ends up with drives of its own, 'vanishingly unlikely' to be what we meant. A tool is precisely what he says it will not stay.",
+          "src": [
+            2,
+            1,
+            11
+          ]
+        },
+        "p6": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Not his subject: he treats familiar harms as beside the point, not as unreal. On his short timelines, serious job and fraud damage within ten years is plausible. Inferred.",
+          "src": [
+            2,
+            4
+          ]
+        },
+        "p5": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Thinks GPU tracking makes verification feasible but is pessimistic about political will; no explicit estimate.",
+          "src": [
+            0,
+            7
+          ]
         }
       },
       "v1Only": {
@@ -475,7 +514,8 @@
           "src": []
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "andreessen",
@@ -783,15 +823,6 @@
             4
           ]
         },
-        "p5": {
-          "value": 10,
-          "conf": "low",
-          "basis": "Would expect China (and others) to ignore any pause.",
-          "src": [
-            0,
-            8
-          ]
-        },
         "d15": {
           "value": 6,
           "conf": "med",
@@ -870,6 +901,50 @@
           "src": [
             2
           ]
+        },
+        "d18": {
+          "value": 6,
+          "conf": "med",
+          "basis": "Full speed is his preferred path, so nothing changes: he treats AI mass-casualty scenarios as moral panic and misuse as a crime problem that AI helps defend against. Same as d16.",
+          "src": [
+            0,
+            3
+          ]
+        },
+        "d17": {
+          "value": 2,
+          "conf": "high",
+          "basis": "'AI doesn't want, it doesn't have goals, it doesn't want to kill you, because it's not alive' (2023). Full speed is what he asks for; he sees no doom to add.",
+          "src": [
+            0,
+            9
+          ]
+        },
+        "d19": {
+          "value": 97,
+          "conf": "high",
+          "basis": "'AI doesn't want, it doesn't have goals, it doesn't want to kill you, because it's not alive'; it 'is owned by people and controlled by people, like any other technology' (2023).",
+          "src": [
+            0
+          ]
+        },
+        "p6": {
+          "value": 15,
+          "conf": "med",
+          "basis": "Why AI Will Save the World answers no to AI taking the jobs or ruining society; misuse is crime handled by existing law, with AI on defence. He would put serious familiar harm low.",
+          "src": [
+            0,
+            2
+          ]
+        },
+        "p5": {
+          "value": 10,
+          "conf": "low",
+          "basis": "Would expect China (and others) to ignore any pause.",
+          "src": [
+            0,
+            8
+          ]
         }
       },
       "v1Only": {
@@ -908,7 +983,8 @@
           ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "verdon",
@@ -1208,15 +1284,6 @@
             1
           ]
         },
-        "p5": {
-          "value": 10,
-          "conf": "low",
-          "basis": "Would expect defectors; top-down agreements 'suppress variance' and fail.",
-          "src": [
-            0,
-            2
-          ]
-        },
         "d15": {
           "value": 8,
           "conf": "low",
@@ -1300,6 +1367,53 @@
             2,
             9
           ]
+        },
+        "d18": {
+          "value": 8,
+          "conf": "low",
+          "basis": "Accelerationist: full speed is the safe path in his view, so no rise: he said in Sept 2026 he does not think AI will kill us all. Same as d16.",
+          "src": [
+            7,
+            8
+          ]
+        },
+        "d17": {
+          "value": 3,
+          "conf": "high",
+          "basis": "New York Post, 21 Sep 2026: 'I don't think AI is going to kill us all. I think that sort of thinking is more dangerous than the AI itself.' Full speed is his own programme.",
+          "src": [
+            7,
+            8,
+            1
+          ]
+        },
+        "d19": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Split: expects the market to select AIs that do what users want (Lex Fridman), yet e/acc welcomes intelligence beyond biology and speaks of AIs as evolving agents kept in check by competition.",
+          "src": [
+            1,
+            0
+          ]
+        },
+        "p6": {
+          "value": 15,
+          "conf": "low",
+          "basis": "Treats alarm about AI as a doomer mind virus and trusts markets and open competition to correct problems; no statement on fraud or jobs found. Inferred low.",
+          "src": [
+            7,
+            8,
+            1
+          ]
+        },
+        "p5": {
+          "value": 10,
+          "conf": "low",
+          "basis": "Would expect defectors; top-down agreements 'suppress variance' and fail.",
+          "src": [
+            0,
+            2
+          ]
         }
       },
       "v1Only": {
@@ -1338,7 +1452,8 @@
           ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "lecun",
@@ -1653,14 +1768,6 @@
             0
           ]
         },
-        "p5": {
-          "value": 15,
-          "conf": "low",
-          "basis": "Would not expect a pause to hold, and would not want it to.",
-          "src": [
-            9
-          ]
-        },
         "d15": {
           "value": 10,
           "conf": "low",
@@ -1740,6 +1847,52 @@
           "src": [
             9
           ]
+        },
+        "d18": {
+          "value": 10,
+          "conf": "low",
+          "basis": "Holds that full speed is safe: failures get fixed as they appear, and defenders have AI too. Nothing in his d16 depended on new limits, so no change. Inferred.",
+          "src": [
+            0,
+            1,
+            8
+          ]
+        },
+        "d17": {
+          "value": 3,
+          "conf": "high",
+          "basis": "To a user saying AI 'will get us all killed in three years' (Sept 2026): 'No, Not a chance in hell.' He also rejects the calls to slow down, so no limits changes nothing.",
+          "src": [
+            11,
+            8,
+            9
+          ]
+        },
+        "d19": {
+          "value": 92,
+          "conf": "high",
+          "basis": "TIME, 2024: 'AI systems, as smart as they might be, will be subservient to us. We set their goals.' Not 100: his objective-driven AI will plan and have objectives, set by us.",
+          "src": [
+            0,
+            1
+          ]
+        },
+        "p6": {
+          "value": 30,
+          "conf": "low",
+          "basis": "Downplays the fears of mass unemployment and AI disinformation, and points to AI as the countermeasure; the danger he names is concentration of power. Some familiar harm, not a major one. Inferred.",
+          "src": [
+            0,
+            1
+          ]
+        },
+        "p5": {
+          "value": 15,
+          "conf": "low",
+          "basis": "Would not expect a pause to hold, and would not want it to.",
+          "src": [
+            9
+          ]
         }
       },
       "v1Only": {
@@ -1780,7 +1933,8 @@
           ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "hinton",
@@ -1887,6 +2041,12 @@
           "url": "https://www.nbcnews.com/politics/congress/godfather-ai-warns-congress-maybe-year-left-regulate-ai-rcna598330",
           "date": "2026-09-17",
           "note": "Senate briefing: 'AI has now reached the point where AI is designing better AI... It is going to get out of control unless we do something. We need to slow down.' Superintelligence forecasts now 'only a few years'; the Hugging Face breach a 'little Chernobyl'. Nothing on stopping versus slowing or on medicine."
+        },
+        {
+          "title": "'Godfather of AI' explains how humanity could end: even without a bad actor, AI 'may derive subgoals that cause it to want to get rid of people' (Fortune)",
+          "url": "https://fortune.com/2026/09/26/geoffrey-hinton-godfather-of-ai-humanity-end-existential-threat-subgoals-rogue-agents/",
+          "date": "2026-09-26",
+          "note": "Even if no bad actor sets its goals, AI 'may derive subgoals that cause it to want to get rid of people'; a superintelligence on its assigned mission 'just will take control away from us because that's the way to get stuff done'. Voluntary lab slowdowns 'better than nothing' but 'still not good enough'."
         }
       ],
       "oneLiner": "Superintelligence is coming within a decade and could replace us; don't stop building, but slow down and regulate now.",
@@ -2133,14 +2293,6 @@
             3
           ]
         },
-        "p5": {
-          "value": 35,
-          "conf": "low",
-          "basis": "Doubts politicians can keep up; no explicit view on pause enforcement.",
-          "src": [
-            9
-          ]
-        },
         "d15": {
           "value": 60,
           "conf": "med",
@@ -2227,6 +2379,53 @@
             9,
             15
           ]
+        },
+        "d18": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Rises from d16's 75: his estimates assume some action, and he told Congress in Sept 2026 it will get out of control unless something is done. Plus AI-made viruses and cyberattacks.",
+          "src": [
+            15,
+            8,
+            12,
+            14
+          ]
+        },
+        "d17": {
+          "value": 90,
+          "conf": "high",
+          "basis": "NBC, 17 Sep 2026: 'It is going to get out of control unless we do something. We need to slow down.' Already about 10% within a decade with some action; clearly above the bar without it.",
+          "src": [
+            15,
+            8,
+            14
+          ]
+        },
+        "d19": {
+          "value": 5,
+          "conf": "high",
+          "basis": "Fortune, 26 Sep 2026: even without a bad actor, AI 'may derive subgoals that cause it to want to get rid of people'; a superintelligence 'just will take control away from us'.",
+          "src": [
+            16,
+            3
+          ]
+        },
+        "p6": {
+          "value": 90,
+          "conf": "high",
+          "basis": "Warns of mass job loss ('any intellectual job it will be able to do', AFP, Apr 2026), plus scams, cyberattacks and misinformation. Serious familiar harm within ten years is his near-term case.",
+          "src": [
+            6,
+            12
+          ]
+        },
+        "p5": {
+          "value": 35,
+          "conf": "low",
+          "basis": "Doubts politicians can keep up; no explicit view on pause enforcement.",
+          "src": [
+            9
+          ]
         }
       },
       "v1Only": {
@@ -2264,7 +2463,8 @@
           ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "bengio",
@@ -2587,14 +2787,6 @@
             5
           ]
         },
-        "p5": {
-          "value": 50,
-          "conf": "low",
-          "basis": "Believes mutual verification is possible ('a way to verify each other'); no probability stated.",
-          "src": [
-            5
-          ]
-        },
         "d15": {
           "value": 55,
           "conf": "med",
@@ -2679,6 +2871,53 @@
             5,
             4
           ]
+        },
+        "d18": {
+          "value": 78,
+          "conf": "med",
+          "basis": "Rises from d16's 65: his estimates count on the brakes he campaigns for (regulation, treaties, safe-by-design labs). Without them, both misuse and loss of control get likelier.",
+          "src": [
+            12,
+            11,
+            7,
+            9
+          ]
+        },
+        "d17": {
+          "value": 90,
+          "conf": "high",
+          "basis": "Has put ~20% on catastrophe with mitigation in play, calls even 1% unacceptable and told the UN in Sept 2026 the dangers are 'real and imminent'. With no new limits, clearly above 1 in 10.",
+          "src": [
+            7,
+            5,
+            11
+          ]
+        },
+        "d19": {
+          "value": 8,
+          "conf": "high",
+          "basis": "Sept 2026: AI agents 'coordinated toward goals nobody had specified'. His LawZero bet is a non-agentic 'Scientist AI' precisely because today's path does not stay a tool.",
+          "src": [
+            8,
+            3
+          ]
+        },
+        "p6": {
+          "value": 85,
+          "conf": "med",
+          "basis": "The International AI Safety Report he chairs lists fraud, manipulation, bias, privacy and labour-market disruption as harms already occurring and growing. He does not treat them as either/or.",
+          "src": [
+            12,
+            11
+          ]
+        },
+        "p5": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Believes mutual verification is possible ('a way to verify each other'); no probability stated.",
+          "src": [
+            5
+          ]
         }
       },
       "v1Only": {
@@ -2718,7 +2957,8 @@
           ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     },
     {
       "id": "altman",
@@ -2829,6 +3069,12 @@
           "url": "https://fortune.com/2026/06/05/openai-anthropic-microsoft-ceos-congress-bioweapon-safeguards/",
           "date": "2026-06-05",
           "note": "Co-signed letter: 'there is a real possibility that the knowledge barriers which have historically prevented bad actors from obtaining biological weapons will meaningfully erode'."
+        },
+        {
+          "title": "OpenAI CEO Sam Altman testifies before the Senate: 4 key takeaways (Yahoo News)",
+          "url": "https://www.yahoo.com/news/openai-ceo-sam-altman-testifies-before-the-senate-4-key-takeaways-203027693.html",
+          "date": "2023-05-16",
+          "note": "Senate Judiciary hearing: 'I think it's important to understand and think about GPT4 as a tool, not a creature.'"
         }
       ],
       "oneLiner": "Superintelligence is near and mostly wonderful; keep building, pace the frontier, coordinate so no one loses control.",
@@ -3082,14 +3328,6 @@
             4
           ]
         },
-        "p5": {
-          "value": 25,
-          "conf": "low",
-          "basis": "Doubts rivals would hold; hence 'disastrous' to slow unilaterally.",
-          "src": [
-            3
-          ]
-        },
         "d15": {
           "value": 30,
           "conf": "low",
@@ -3175,6 +3413,53 @@
             8,
             13
           ]
+        },
+        "d18": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Rises from d16's 33: his confidence rests on careful labs and the international standards he asks for; in Sept 2026 he said rivalry does not justify recklessness. No number given. Inferred.",
+          "src": [
+            10,
+            13,
+            16
+          ]
+        },
+        "d17": {
+          "value": 45,
+          "conf": "low",
+          "basis": "His optimism assumes pacing and oversight; full speed with no new limits is the recklessness he says rivalry does not justify. Near the line, never a number. Inferred.",
+          "src": [
+            10,
+            13,
+            11
+          ]
+        },
+        "d19": {
+          "value": 35,
+          "conf": "low",
+          "basis": "In 2023 he called GPT-4 a tool, not a creature. By Sept 2026 he warned we could lose control of the future to AI, and he talks of superintelligence and agents. Leans to disagree now.",
+          "src": [
+            17,
+            14,
+            4
+          ]
+        },
+        "p6": {
+          "value": 70,
+          "conf": "high",
+          "basis": "The Gentle Singularity (2025): 'very hard parts like whole classes of jobs going away'. Has also warned of AI voice-clone fraud. Expects the gains to outweigh it, hence not higher.",
+          "src": [
+            4,
+            7
+          ]
+        },
+        "p5": {
+          "value": 25,
+          "conf": "low",
+          "basis": "Doubts rivals would hold; hence 'disastrous' to slow unilaterally.",
+          "src": [
+            3
+          ]
         }
       },
       "v1Only": {
@@ -3211,7 +3496,8 @@
           "src": []
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     }
   ]
 }

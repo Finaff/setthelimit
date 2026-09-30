@@ -286,3 +286,20 @@ No new sources.
 
 - **Scott Alexander**: d16 40 low (d15 25). The 10–20% of his p(doom) that falls before 2046 now counts. · s15 90 high (copied). Plan A's pause targets frontier general AI.
 - **Steven Pinker**: d16 8 low (copied) · s15 3 med (copied).
+
+## v6 (30 Sept 2026)
+
+Owner's second review: d16 → d18 and d10 → d17 are now conditional on full speed with no new laws, treaties or pauses; d19 (will AI remain a tool?) is new on the danger axis; p5 (familiar harms within ten years) is a new profile item. Old predictions stay as the record.
+
+**The Pinker–Alexander exchange is now confirmed.** Pinker's open letter in Quillette (26 Sept 2026, appended to Pinker's sources as 15) answers Alexander's challenge and declines it: "I choose to delope". Press coverage (the-decoder.com; tech-insider.org on a Manifold market) dates Alexander's challenge to 20 Sept, not 19 Sept, and reports "anywhere, anytime"; his original post was still not read directly. No Alexander prediction rests on it.
+
+- **Scott Alexander**: d18 55 low (d16 40) · d17 85 med (d10 70). Both rise: his old values were held down by expected mitigation (40% chance of a well-designed US–China pause; open weights "banned after the first warning shot"). Without them: "my real p(doom|no pause) is probably a few points above 20%", and "If corporations only pursued safety to the degree encouraged by normal corporate incentives, I think there's a 50% chance that the first AIs to cross the point of no return would want to eliminate the human population" (source 0).
+- d19 10 high: "a 20% chance that the first AIs to cross the point of no return will want to eliminate the human population", plus 30% that they curtail human potential "for their own reasons (they were partially misaligned)" (source 0).
+- p5 60 low: modal scenario "AGI in 2031, which diffuses throughout the economy until more than half of jobs are automated by the late 2030s"; only "a 20% chance of an AI-related underclass that lasts more than a generation" (source 0). He says little about fraud, surveillance or bias.
+- **Steven Pinker**: new source 15 — https://quillette.com/2026/09/26/an-open-letter-to-scott-alexander-steven-pinker-ai-alignment-safety/ — "The dangers of AI are real, including bioterrorism, cyber-sabotage, and unconstrained agents." / "I'm strongly in favour of sober safety evaluations and engineering best practices: independent oversight, mandatory investigations of accidents, liability for damage, humans in the loop, kill switches, and others." / "I'm just sceptical of the prophecy that AI will murder every last human and of the assumption that sowing such dread is the most effective way of getting such safeguards." / "The capabilities of LLMs trained on gargantuan datasets are more general than I (and almost everyone else) would have guessed at the time."
+- d17 3 high (d10 2): full speed does not touch his reason, which is that the premise is wrong ("sceptical of the prophecy…").
+- d18 12 low (d16 8): up a little, because the safeguards he asks for (independent oversight, mandatory accident investigations) are exactly the new limits the scenario removes, and he now names bioterrorism and cyber-sabotage as real dangers.
+- d19 85 high: "Being smart is not the same as wanting something" (source 4); goals "must be exogenously built into a system" (source 6). Not higher, because the letter lists "unconstrained agents" among real dangers (as an engineering problem, not agents with aims of their own).
+- p5 60 med: "These dangers are not conjectural" of mass unemployment, invidious sorting and deception (source 6); "the more mundane and realistic safety challenges" (source 0). Held down by his view that such harms get patched and "the jobs won't be eliminated that quickly" (source 5).
+
+> Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.

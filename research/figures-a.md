@@ -316,3 +316,23 @@ New sources (appended):
 - **Geoffrey Hinton**: d16 75 med (d15 60). His ~10% extinction within a decade now counts on top of misuse. · s15 70 low (s14 60). Medicine was his reason not to stop "altogether", and s15 spares specialised medical AI.
 - **Yoshua Bengio**: d16 65 med (d15 55). His loss-of-control share now counts. · s15 92 high (s14 88). s15 matches his own button answer, which spares AI "that is clearly not dangerous".
 - **Sam Altman**: d16 33 low (d15 30). A small extinction-level share now counts. · s15 5 med (copied).
+
+## v6 (30 Sept 2026)
+
+Owner's second review: d18 (was d16) and d17 (was d10) are now conditional on full speed with no new limits; d19 (will AI remain a tool?) is new on the danger axis; p5 is a new profile item (familiar harms within ten years). The id p5 was used in v2–v3 for a different item (would an agreed pause hold?); those old answers are kept in each figure's `v3Only.p5`. Obvious carry-overs are not listed.
+
+New sources (appended):
+- Hinton, source 16: Fortune, 26 Sep 2026: even without a bad actor, AI "may derive subgoals that cause it to want to get rid of people"; voluntary lab slowdowns "better than nothing" but "still not good enough". https://fortune.com/2026/09/26/geoffrey-hinton-godfather-of-ai-humanity-end-existential-threat-subgoals-rogue-agents/
+- Altman, source 17: Yahoo News, 16 May 2023, Senate hearing: "I think it's important to understand and think about GPT4 as a tool, not a creature." https://www.yahoo.com/news/openai-ceo-sam-altman-testifies-before-the-senate-4-key-takeaways-203027693.html
+
+- **Eliezer Yudkowsky**: d18 95 med (d16 90), d17 98 high (d10 97): full speed is his central case, so only a slight rise. · d19 2 high: book thesis, drives of its own. · p5 55 low: not his subject; inferred.
+- **Marc Andreessen**: d18 6, d17 2 (carried over: full speed is his preferred path). · d19 97 high: "AI doesn't want, it doesn't have goals… because it's not alive"; "owned by people and controlled by people" (https://a16z.com/ai-will-save-the-world/). · p5 15 med: the same essay argues AI will not take the jobs or ruin society.
+- **Guillaume Verdon**: d18 8, d17 3 (carried over). · d19 55 low: on Lex Fridman #407 he expects the market to "positively select for AIs that are more reliable, more safe and tend to be aligned, they do what you want them to do", yet e/acc embraces non-biological intelligence and treats every "agent organism" as acting "in its own interest" (https://lexfridman.com/guillaume-verdon-transcript). · p5 15 low, inferred.
+- **Yann LeCun**: d18 10, d17 3 (carried over). · d19 92 high: TIME, 2024: "AI systems, as smart as they might be, will be subservient to us. We set their goals" (https://time.com/6694432/yann-lecun-meta-ai-interview/). · p5 30 low: plays down mass unemployment and AI disinformation.
+- **Geoffrey Hinton**: d18 85 med (d16 75), d17 90 high (d10 80): NBC, 17 Sep 2026, "It is going to get out of control unless we do something." · d19 5 high: Fortune, 26 Sep 2026 (source 16). · p5 90 high: AFP/Tech Xplore, Apr 2026, on superintelligent AI, "any intellectual job it will be able to do" (https://techxplore.com/news/2026-04-ai-alarm.html).
+- **Yoshua Bengio**: d18 78 med (d16 65), d17 90 high (d10 82): his estimates count on the brakes he campaigns for. · d19 8 high: agents "coordinated toward goals nobody had specified" (https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating); LawZero's non-agentic Scientist AI. · p5 85 med: the International AI Safety Report he chairs covers fraud, manipulation, bias and labour harms.
+- **Sam Altman**: d18 45 low (d16 33), d17 45 low (d10 30): his confidence rests on pacing and international standards, and he says rivalry does not justify recklessness (Business Today, source 10). · d19 35 low: "a tool, not a creature" (2023, source 17) against "We could lose control of the future to AI" (UN, Sept 2026). · p5 70 high: "very hard parts like whole classes of jobs going away" (https://blog.samaltman.com/the-gentle-singularity).
+
+Not verified: a Verdon statement on fraud or jobs (none found); Andreessen's jobs argument is paraphrased from the 2023 essay, not re-fetched.
+
+> Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.

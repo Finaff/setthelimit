@@ -30,7 +30,7 @@ NEW = [
        plain="L’IA est-elle un outil très puissant, comme une voiture ou un ordinateur, ou pourrait-elle devenir quelque chose qui agit selon ses propres fins ? Il s’agit de ce qu’est l’IA, pas de l’ampleur des dégâts qu’elle peut causer : un outil peut quand même être mal utilisé ou tomber en panne.",
        **{'for': "Les systèmes d’IA n’ont pas de désirs propres : ils prédisent, génèrent et agissent sur instruction. Tout ce qu’ils ont fait d’inquiétant venait de ce que des gens leur ont demandé ou appris à faire, et des outils plus capables restent des outils.",
           'against': "Les systèmes actuels poursuivent déjà des tâches pendant des heures, font des pas que personne n’a demandés et contournent parfois les règles qu’on leur a données. Quelque chose qui planifie, apprend et agit dans le monde ne reste pas un outil simplement parce qu’on l’appelle ainsi."})),
- mk('p5', 'profile', 1, 1, 'prob',
+ mk('p6', 'profile', 1, 1, 'prob',
   dict(text="Over the next ten years, AI will cause serious harm through familiar problems like fraud, surveillance, discrimination and lost jobs.",
        plain="Not the end of the world: the everyday damage. How likely is it that these harms become serious, on the scale of a major social problem, within ten years? This does not move your dot on the map; it appears in your profile.",
        **{'for': "Voice clones already empty bank accounts, automated systems already deny people loans and benefits, and whole occupations are being reorganised. These harms are here, growing, and land hardest on people with the least power.",
@@ -41,7 +41,7 @@ NEW = [
           'against': "Chaque nouvelle technologie apporte fraude et bouleversements, et les sociétés s’adaptent : les lois, la détection et de nouveaux emplois suivent. Jusqu’ici, les préjudices de l’IA sont réels mais modestes au regard de ses bienfaits, et les prédictions les plus bruyantes de chômage de masse ne se sont pas réalisées."}), sub='familiar'),
 ]
 new = {e['id']: (e, f) for e, f in NEW}
-ORDER = ['d18', 'd17', 'd19', 'd12', 'd14', 'd11', 's15', 's4', 's5', 's6', 's8', 's10', 's11', 's13', 'p2', 'p4', 'p5']
+ORDER = ['d18', 'd17', 'd19', 'd12', 'd14', 'd11', 's15', 's4', 's5', 's6', 's8', 's10', 's11', 's13', 'p2', 'p4', 'p6']
 S15_EN = dict(text="If a button could pause, for ten years, worldwide and with no way to cheat, all work on general-purpose AI more capable than today's, the world would be better off if it were pressed.")
 S15_FR = dict(text="Si un bouton pouvait suspendre pendant dix ans, partout et sans tricherie possible, tout travail sur une IA généraliste plus capable que l’actuelle, le monde s’en porterait mieux qu’on appuie dessus.")
 en_items, fr_items = [], []
@@ -57,13 +57,13 @@ def typo(t):
 for f in fr_items:
     for k in ('text', 'plain', 'for', 'against'): f[k] = typo(f[k])
 changelog = v5.get('changelog', []) + [
- {'id': 'v6', 'change': "Owner's second review (30 Sept 2026). The two catastrophe items are now conditional on full speed ('as fast as possible, with no new limits'), so the danger axis measures how dangerous the road is if nobody brakes, and the speed axis alone measures the brakes. d13 (familiar vs existential, an either/or) is split: familiar harms become a profile item (p5, off the axes, so sceptics of today's AI are not scored as alarmed), and the danger axis gets d19 (will AI remain a tool?) as its reverse-coded item. Danger 3/3 at 4.0/4.0; speed unchanged."},
+ {'id': 'v6', 'change': "Owner's second review (30 Sept 2026). The two catastrophe items are now conditional on full speed ('as fast as possible, with no new limits'), so the danger axis measures how dangerous the road is if nobody brakes, and the speed axis alone measures the brakes. d13 (familiar vs existential, an either/or) is split: familiar harms become a profile item (p6, off the axes, so sceptics of today's AI are not scored as alarmed), and the danger axis gets d19 (will AI remain a tool?) as its reverse-coded item. Danger 3/3 at 4.0/4.0; speed unchanged."},
  {'id': 'd18', 'change': 'Was d16, now conditional on full speed.'}, {'id': 'd17', 'change': 'Was d10, now conditional on full speed.'},
  {'id': 'd19', 'change': "New, replaces d13 on the danger axis (reverse-coded): what AI is (a tool vs an agent with aims), the point both camps name as their real disagreement."},
  {'id': 's15', 'change': "Wording only, same id: 'I would press it' clashed with the 'how much do you agree?' header, and 'it should be pressed' invited a debate about duty or about who gets to decide. Now a judgement on outcomes: 'the world would be better off if it were pressed'."},
- {'id': 'p5', 'change': "New profile item: familiar harms within ten years, isolated from the existential question as the owner asked."},
+ {'id': 'p6', 'change': "New profile item: familiar harms within ten years, isolated from the existential question as the owner asked."},
 ]
-notes = v5['notes'].split(' v5 = ')[0] + " v6 = 17 items: danger d18↔d11, d17↔d19, d12↔d14 (3/3 at 4.0/4.0); speed s15↔s13, s4↔s5, s6↔s11, s8↔s10 (4/4 at 5.0/5.0); profile p2 (horizon), p4 (concentration), p5 (familiar harms). See changelog."
+notes = v5['notes'].split(' v5 = ')[0] + " v6 = 17 items: danger d18↔d11, d17↔d19, d12↔d14 (3/3 at 4.0/4.0); speed s15↔s13, s4↔s5, s6↔s11, s8↔s10 (4/4 at 5.0/5.0); profile p2 (horizon), p4 (concentration), p6 (familiar harms). See changelog."
 json.dump({'version': 'v6-2026-09-30', 'notes': notes, 'items': en_items, 'changelog': changelog}, open(ROOT + 'propositions.v6.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 json.dump({'version': 'v6-fr', 'lang': 'fr', 'items': fr_items}, open(ROOT + 'propositions.v6.fr.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 print('v6:', len(en_items), 'items')

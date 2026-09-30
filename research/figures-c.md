@@ -173,3 +173,13 @@ Third fairness review (review-v3.md): d15 → d16 (no longer "without ending hum
 No new sources.
 
 - **Sam Harris**: d16 65 low (d15 45). Extinction now counts. He treats lab leaders' 10–30% as alarming, but gives no number of his own. · s15 85 med (copied). His objection was feasibility, and the narrowing only helps.
+
+## v6 (30 Sept 2026)
+
+Owner's second review: d16 → d18 and d10 → d17 are now conditional on full speed with no new laws, treaties or pauses; d19 (will AI remain a tool?) is new on the danger axis; p5 (familiar harms within ten years) is a new profile item. Old predictions stay as the record. No new sources; nothing new from Harris after #494 (22 Sept) was found.
+
+- **Sam Harris**: d18 70 low (d16 65) · d17 85 med (d10 80). Small rise only: full speed is roughly what he already expects ("no brake to pull"; "There's not a regime of regulation, certainly on our side, that is going to force anyone to do anything", source 2), so his old values were not held down by expected mitigation.
+- d19 8 high: "Given what intelligence is, you should expect things like deception and manipulation and the formation of instrumental goals that you can't foresee" (source 2, SAM HARRIS line); "Intelligence entails an ability to lie and manipulate" (source 3).
+- p5 75 med: "economic dislocation and wealth concentration", "mass unemployment, the political instability of all of that", which "in their totality are still quite bad" (source 2). No time frame of his own, hence med.
+
+> Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.

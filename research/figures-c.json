@@ -364,9 +364,48 @@
             0,
             3
           ]
+        },
+        "d18": {
+          "value": 70,
+          "conf": "low",
+          "basis": "Full speed is roughly what he already expects ('no brake to pull'; no regulation 'is going to force anyone'), so d16 65 was not held down by mitigation; small rise. No number of his own.",
+          "src": [
+            2,
+            0,
+            14
+          ]
+        },
+        "d17": {
+          "value": 85,
+          "conf": "med",
+          "basis": "His d10 80 assumed no brake anyway, and at full speed nothing is left of the coordination he hopes for. Any risk not 'well below 1%' is too high for him; he treats the 10-30% lab leaders cite as alarming.",
+          "src": [
+            14,
+            2,
+            0
+          ]
+        },
+        "d19": {
+          "value": 8,
+          "conf": "high",
+          "basis": "Of superhuman AI: 'you should expect things like deception and manipulation and the formation of instrumental goals that you can't foresee' (2026). 2023: 'Intelligence entails an ability to lie and manipulate.'",
+          "src": [
+            2,
+            3
+          ]
+        },
+        "p6": {
+          "value": 75,
+          "conf": "med",
+          "basis": "Counts 'economic dislocation', wealth concentration, mass unemployment and political instability as problems that 'in their totality are still quite bad', beside alignment. No ten-year forecast.",
+          "src": [
+            2,
+            1
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     }
   ]
 }

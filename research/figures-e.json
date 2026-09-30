@@ -102,6 +102,12 @@
           "url": "https://www.yahoo.com/news/politics/articles/david-sacks-dont-doomer-groups-130000960.html",
           "date": "2026-09-12",
           "note": "Fox News Special Report. Calls the Coxon resignation 'a well-orchestrated media op'; on a mutual pause with China: 'There is simply no basis for believing that.'"
+        },
+        {
+          "title": "Fortune: Trump's AI czar plants flag in 'doomer' debate",
+          "url": "https://fortune.com/2025/08/11/artificial-intelligence-job-loss-overhyped-david-sacks-doomer-narrative-goldilocks/",
+          "date": "2025-08-11",
+          "note": "Quotes the Goldilocks post: models 'are still at zero' in setting their own objective functions; 'must be heavily prompted'; job-loss predictions 'as overhyped as AGI itself'."
         }
       ],
       "predictions": {
@@ -347,9 +353,50 @@
             1,
             6
           ]
+        },
+        "d18": {
+          "value": 10,
+          "conf": "med",
+          "basis": "Carried over from d16: full speed is his safe path. He grants bio and cyber misuse are risks but expects the same AI to give 'antidotes and prevention', and good actors to outnumber bad.",
+          "src": [
+            2,
+            1,
+            13
+          ]
+        },
+        "d17": {
+          "value": 3,
+          "conf": "med",
+          "basis": "'If we do the right things here... I think it is zero' (Sept 2026), and his right things are no pause and no new regulator. Full speed is the scenario he argues is safe, so no rise. 'Zero' is conditional, hence med.",
+          "src": [
+            13,
+            1,
+            2
+          ]
+        },
+        "d19": {
+          "value": 85,
+          "conf": "high",
+          "basis": "'AI models are still at zero in terms of setting their own objective function'; they 'must be heavily prompted' (2025). Not higher: he calls the picture a snapshot that 'could change'.",
+          "src": [
+            6,
+            15,
+            2
+          ]
+        },
+        "p6": {
+          "value": 25,
+          "conf": "med",
+          "basis": "Job-loss fears are 'as overhyped as AGI itself'; on 10-15% unemployment, 'there's no evidence of that' (2026). The harm he does fear is state-corporate censorship, one part of this item.",
+          "src": [
+            6,
+            2,
+            15
+          ]
         }
       },
-      "v5": "2026-09-24"
+      "v5": "2026-09-24",
+      "v6": "2026-09-30"
     }
   ]
 }
