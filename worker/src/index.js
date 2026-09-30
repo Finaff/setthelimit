@@ -82,12 +82,15 @@ async function xStart(url, env) {
 }
 async function xCallback(req, url, env) {
   const o = await verify(env, cookies(req).stl_o); const code = url.searchParams.get('code');
-  if (!o || !code || url.searchParams.get('state') !== o.state) return new Response('Sign-in expired or tampered with. Go back and try again.', { status: 400 });
+  /* failures go back to the site with a reason code, logged for `wrangler tail`, instead of a bare error page */
+  const fail = (why, detail) => { console.log(JSON.stringify({ event: 'x_signin_failed', why, detail: detail || null })); return new Response(null, { status: 302, headers: { location: `${env.SITE_ORIGIN}/?xerr=${why}${(o && o.next) || '#/'}`, 'set-cookie': cookie('stl_o', '', 0) } }); };
+  if (url.searchParams.get('error')) return fail('denied', url.searchParams.get('error'));
+  if (!o || !code || url.searchParams.get('state') !== o.state) return fail('expired');
   const tok = await fetch('https://api.x.com/2/oauth2/token', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', authorization: 'Basic ' + btoa(env.X_CLIENT_ID + ':' + env.X_CLIENT_SECRET) },
     body: new URLSearchParams({ grant_type: 'authorization_code', code, redirect_uri: env.API_ORIGIN + '/auth/x/callback', code_verifier: o.verifier, client_id: env.X_CLIENT_ID }) }).then((r) => r.json()).catch(() => null);
-  if (!tok || !tok.access_token) return new Response('X did not accept the sign-in.', { status: 502 });
-  const me = await fetch('https://api.x.com/2/users/me?user.fields=name,username', { headers: { authorization: 'Bearer ' + tok.access_token } }).then((r) => r.json()).catch(() => null);
-  const u = me && me.data; if (!u || !u.id) return new Response('Could not read the X account.', { status: 502 });
+  if (!tok || !tok.access_token) return fail('token', tok && (tok.error || tok.title));
+  let meStatus = 0; const me = await fetch('https://api.x.com/2/users/me?user.fields=name,username', { headers: { authorization: 'Bearer ' + tok.access_token } }).then((r) => { meStatus = r.status; return r.json(); }).catch(() => null);
+  const u = me && me.data; if (!u || !u.id) return fail(meStatus === 402 || meStatus === 429 ? 'unavailable' : 'profile', meStatus + ' ' + ((me && (me.title || me.detail)) || ''));
   const s = await sign(env, { uid: String(u.id), handle: u.username, name: u.name, exp: Date.now() + SESSION_DAYS * 86400e3 });
   await remember(env, { uid: u.id, handle: u.username, name: u.name });
   const headers = new Headers({ location: `${env.SITE_ORIGIN}/?${o.intent}=1${o.next || '#/result'}` });

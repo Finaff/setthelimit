@@ -41,7 +41,8 @@ res = await call('GET', '/claims'); j = await res.json(); t('GET /claims', j.fig
 res = await call('DELETE', '/claim', null, gary); t('DELETE /claim', (await res.json()).ok);
 res = await call('GET', '/claims'); j = await res.json(); t('GET /claims after revoke is empty', Object.keys(j.figures).length === 0);
 res = await call('GET', '/auth/x/start?intent=claim'); t('GET /auth/x/start redirects to X with PKCE', res.status === 302 && /x\.com\/i\/oauth2\/authorize.*code_challenge_method=S256/.test(res.headers.get('location')) && /stl_o=/.test(res.headers.get('set-cookie')));
-res = await call('GET', '/auth/x/callback?code=abc&state=nope'); t('callback without a valid state → 400', res.status === 400);
+res = await call('GET', '/auth/x/callback?code=abc&state=nope'); t('callback without a valid state → back to the site with xerr=expired', res.status === 302 && /\?xerr=expired/.test(res.headers.get('location')));
+res = await call('GET', '/auth/x/callback?error=access_denied'); t('user cancels on X → xerr=denied', res.status === 302 && /\?xerr=denied/.test(res.headers.get('location')));
 // comments
 res = await call('POST', '/comments', { item: 'd1', body: 'hello' }); t('POST /comments anonymous → 401', res.status === 401);
 res = await call('POST', '/comments', { item: 'd1', body: 'x' }, alice); t('POST /comments too short → 400', res.status === 400);

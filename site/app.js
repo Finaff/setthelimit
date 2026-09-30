@@ -561,6 +561,8 @@
     try { const v = sessionStorage.getItem('stl.v1.vs'); if (v) S.vs = dec(v); } catch (e) { /* ignore */ }
     if (S.shared && !S.vs) S.vs = null;
     render();
+    const xerr = q.get('xerr');
+    if (xerr) { setTimeout(() => toast(T(xerr === 'denied' ? 'X sign-in was cancelled. Nothing was shared.' : xerr === 'unavailable' ? 'X sign-in is temporarily unavailable. Please try again later.' : 'X sign-in did not go through. Please try again.')), 300); try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* ignore */ } }
     if (API) {
       S.run = loadRun();
       if (q.get('public') === '1') S.pendingPublic = true;
