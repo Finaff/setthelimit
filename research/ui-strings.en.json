@@ -280,5 +280,8 @@
  "The map sums up your answers as two averages, so opposite differences can cancel out. The list below compares you question by question: you can be neighbours on the map and still split on the details. Tap a figure to see where.",
  "Predicted limit {y} · road {x} · {g} points apart on average · {a}/{b} within {n}",
  "Question by question, biggest gaps first",
- "gap {d}"
+ "gap {d}",
+ "Serious familiar harms within ten years",
+ "fraud, surveillance, discrimination, lost jobs",
+ "Version 6 (30 September 2026) made the two catastrophe questions conditional on full speed, with no new laws, treaties or pauses, so that the road axis measures how dangerous the road is if nobody brakes and the speed axis alone measures the brakes. Familiar harms (fraud, surveillance, lost jobs) got a question of their own in your profile, off the map, and the road axis gained a question on whether AI will remain a tool."
 ]

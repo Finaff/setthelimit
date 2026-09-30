@@ -185,3 +185,10 @@
 - 25 Sept: owner adopted review-v3 → content/propositions.v5.json now = the reviewed v5 (d16 replaces d15, s15 replaces s14, d11/d10/d12/d14 steelmen). tools/make-v5.py marked SUPERSEDED. Agent predicting d16 and s15 for the 22 figures; then deploy site + API + artifacts.
 - DEPLOYED v5 (content v5-2026-09-25) to setthelimit.com with d16/s15 predictions for all 22 figures (Yudkowsky road 89→96, Kokotajlo 80→85 once d15's clause was gone) and the 24 Sept Why-now strip. Verified live: content version, versioned share link ("5…") renders in FR. Artifacts updated (db v16, public v10).
 - v1.6 (30 Sept): figures ranked by average gap over all propositions (not the 20-point count, which tied and hid sizes); list shows 'N pts' + 'a/b within 20'; note under the map explains averages vs question-by-question; the figure card lists every gap, biggest first. Deployed.
+
+## 2026-09-30 (v6)
+- Owner's second review → content/propositions.v6.json (+fr; generator tools/make-v6.py), 17 items: d18/d17 = the two catastrophes conditional on
+  "at full speed and with no new limits" (was d16/d10); d19 "AI will remain a tool" (reverse-coded, replaces d13 on the danger axis); p5 familiar harms
+  within ten years (profile only, off the map); s15 same id, outcome wording "the world would be better off if it were pressed" (owner's choice).
+  check-fr allows 32 words (the button). App: third profile gauge 'familiar'; Method "Version 6" paragraph (EN+FR). Share links now start with "6".
+- Agents running (brief: scratchpad v6-agent-brief.md): figures a+b, figures c–f; resumable via "v6": "2026-09-30". Deploy only when check-figures is clean.

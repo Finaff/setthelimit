@@ -50,7 +50,7 @@ fr.items.forEach((it, i) => {
   const e = en.items[i];
   ['id', 'axis', 'dir', 'weight', 'type', 'sub'].forEach((f) => { if (it[f] !== e[f]) fail(`${it.id}.${f} changed`); });
   ['text', 'plain', 'for', 'against'].forEach((f) => { if (typeof it[f] !== 'string' || !it[f].trim()) fail(`${it.id}.${f} empty`); if (it[f] === e[f]) fail(`${it.id}.${f} untranslated`); });
-  const w = words(it.text); maxW = Math.max(maxW, w); if (w > 25) over25.push(`${it.id}:${w}`); if (w > 30) fail(`${it.id}.text has ${w} words`);
+  const w = words(it.text); maxW = Math.max(maxW, w); if (w > 25) over25.push(`${it.id}:${w}`); if (w > 32) fail(`${it.id}.text has ${w} words`); /* 32: the ten-year button is a whole thought experiment in one sentence */
 });
 console.log(`propositions.v${V}.fr.json: ${fr.items.length} items, ids in v${V} order; longest text ${maxW} words; over 25: ${over25.join(', ') || 'none'}`);
 
