@@ -52,6 +52,9 @@ for id in ORDER:
         e['plain'] = e['plain'].replace('would you want one?', 'would the world be better off with one?')
         f['plain'] = f['plain'].replace('en voudriez-vous une\u00a0?', 'le monde s’en porterait-il mieux\u00a0?').replace('en voudriez-vous une ?', 'le monde s’en porterait-il mieux ?')
     en_items.append(e); fr_items.append(f)
+PLAIN = json.load(open(ROOT + 'plain-v6.json', encoding='utf-8'))
+for e, f in zip(en_items, fr_items):
+    if e['id'] in PLAIN: e['plain'], f['plain'] = PLAIN[e['id']]
 def typo(t):
     t = t.replace(' ', ' ').replace('« ', '« ').replace(' »', ' »'); return re.sub(r' ([?!;:%])', ' \\1', t)
 for f in fr_items:
