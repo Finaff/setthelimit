@@ -213,3 +213,15 @@ New source (appended as 15):
 - No statement of his calling AI "just a tool" in so many words was found; d19 rests on the objective-function line.
 
 > Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.
+
+
+## White House accord (1 Oct 2026)
+
+On 29 Sept 2026, President Trump and six companies signed a one-page *White House Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities*. Signatures: Sundar Pichai (Google), Dario Amodei (Anthropic), Mark Zuckerberg (Meta), Greg Brockman (OpenAI), Elon Musk (xAI, now part of SpaceX), Jensen Huang (Nvidia). Microsoft and Amazon attended but did not sign. Text: Trump's Truth Social post (https://www.trumpstruth.org/statuses/42025); the four commitments are quoted in full by The Week (https://www.theweek.in/news/sci-tech/2026/09/30/ai-safety-white-house-accord-analysis.html). The four voluntary layers are internal controls on capabilities and alignment around cyber, bio and chemical threats; an internal team; an independent external auditor or evaluator; and an independent board committee. The companies will "meet regularly" on standards, and it "may make sense" to codify the steps into law "over time". The accord sets no penalties and requires no disclosure of audit results. It contains no pause or pacing, no compute threshold and no government review before release.
+
+Rule applied: signing is not evidence of a changed view. On s6 in particular, an auditor the company picks itself, reporting to the company's own board, is not "showing a regulator that it is safe". Signing therefore neither raises nor lowers s6. A value changes only where a figure said or did something that bears on an item. Unless stated otherwise, "none found" means web searches on 1 Oct 2026 turned up no reaction.
+
+**Changed:** none.
+
+**Checked, unchanged**
+- **David Sacks**: attended. On X on 29 Sept he wrote "Only President Trump could convene all the leaders of the top companies developing chips, data centers and frontier models for Super Intelligence" (https://x.com/DavidSacks/status/2105060520327786914; wording from the search index, because x.com does not open for our fetcher; also quoted by the SF Standard). On 1 Oct, as reported by a secondary site (https://gokhshtein.com/news/2026-10-01-david-sacks-clarifies-white-house-ai-accords-regulatory), he wrote "although the agreement was entered into voluntarily, the governance that follows from it is not". His reasons were the directors' fiduciary duty once an auditor reports a problem, plus existing FTC and securities law (post: https://x.com/DavidSacks/status/2105722354114723844, not opened). This is enforcement through liability and corporate law, not through approval by a regulator, so it fits s6 4. Voluntary restraint fits s13 82.

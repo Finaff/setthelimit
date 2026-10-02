@@ -3202,6 +3202,12 @@
           "url": "https://www.cnn.com/2026/09/14/us/video/ebof-ai-researcher-trump-hoax-daniel-kokotajlo",
           "date": "2026-09-14",
           "note": "Video; page blocks fetchers. Headline and 70% figure via search index."
+        },
+        {
+          "title": "Tech Policy Press: transcript of the Senate hearing 'Rogue AI: Securing the Homeland Against AI Agent Attacks' (HSGAC subcommittee, witness testimony)",
+          "url": "https://www.techpolicy.press/senate-hearing-on-rogue-ai-securing-the-homeland-against-ai-agent-attacks/",
+          "date": "2026-09-30",
+          "note": "Hearing 30 Sep 2026, transcript published 1 Oct. On a repeat of the Hugging Face incident 'with far more capable AI systems, we may not notice until it is too late'; quoting Selsam with approval, 'models will increasingly seem aligned even when they are not'; ~50% on superintelligence by end of 2028; 'I believe we should make it illegal' (recursive self-improvement, asked by Sen. Gallego); companies cannot be trusted to slow down on their own."
         }
       ],
       "predictions": {
@@ -3511,13 +3517,19 @@
           ]
         },
         "d11": {
-          "value": 40,
-          "conf": "low",
-          "basis": "Rogan, Sept 2026: safety today 'depends on the AIs being too dumb', which may end '0 to 5 years from now'. Sees warnings now, but in AI 2027 the decisive deception goes undetected.",
+          "value": 25,
+          "conf": "med",
+          "basis": "Senate, 30 Sep 2026: if an incident like Hugging Face recurs with far more capable AI, 'we may not notice until it is too late'; endorses the line 'models will increasingly seem aligned even when they are not'.",
           "src": [
+            13,
             10,
             0
-          ]
+          ],
+          "update": {
+            "from": 40,
+            "date": "2026-10-01",
+            "url": "https://www.techpolicy.press/senate-hearing-on-rogue-ai-securing-the-homeland-against-ai-agent-attacks/"
+          }
         },
         "s14": {
           "value": 85,

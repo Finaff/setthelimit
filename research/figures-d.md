@@ -303,3 +303,16 @@ Owner's second review: d16 → d18 and d10 → d17 are now conditional on full s
 - p5 60 med: "These dangers are not conjectural" of mass unemployment, invidious sorting and deception (source 6); "the more mundane and realistic safety challenges" (source 0). Held down by his view that such harms get patched and "the jobs won't be eliminated that quickly" (source 5).
 
 > Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.
+
+
+## White House accord (1 Oct 2026)
+
+On 29 Sept 2026, President Trump and six companies signed a one-page *White House Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities*. Signatures: Sundar Pichai (Google), Dario Amodei (Anthropic), Mark Zuckerberg (Meta), Greg Brockman (OpenAI), Elon Musk (xAI, now part of SpaceX), Jensen Huang (Nvidia). Microsoft and Amazon attended but did not sign. Text: Trump's Truth Social post (https://www.trumpstruth.org/statuses/42025); the four commitments are quoted in full by The Week (https://www.theweek.in/news/sci-tech/2026/09/30/ai-safety-white-house-accord-analysis.html). The four voluntary layers are internal controls on capabilities and alignment around cyber, bio and chemical threats; an internal team; an independent external auditor or evaluator; and an independent board committee. The companies will "meet regularly" on standards, and it "may make sense" to codify the steps into law "over time". The accord sets no penalties and requires no disclosure of audit results. It contains no pause or pacing, no compute threshold and no government review before release.
+
+Rule applied: signing is not evidence of a changed view. On s6 in particular, an auditor the company picks itself, reporting to the company's own board, is not "showing a regulator that it is safe". Signing therefore neither raises nor lowers s6. A value changes only where a figure said or did something that bears on an item. Unless stated otherwise, "none found" means web searches on 1 Oct 2026 turned up no reaction.
+
+**Changed:** none.
+
+**Checked, unchanged**
+- **Scott Alexander**: no post on the accord found on Astral Codex Ten.
+- **Steven Pinker**: no reaction found.

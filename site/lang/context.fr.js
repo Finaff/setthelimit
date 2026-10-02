@@ -1,7 +1,21 @@
-/* Pourquoi maintenant : faits sourcés, septembre 2026. French edition of site/context.js (text only; date, kind, url, src unchanged). */
+/* Pourquoi maintenant : faits sourcés, septembre–octobre 2026. French edition of site/context.js (text only; date, kind, url, src unchanged). */
 window.STL_CONTEXT_FR = {
- "asOf": "24 septembre 2026",
+ "asOf": "1 octobre 2026",
  "facts": [
+  {
+   "date": "2026-09-29",
+   "kind": "law",
+   "text": "À la Maison-Blanche, les dirigeants de Google, d’Anthropic, de Meta, de xAI et de Nvidia, ainsi que le président d’OpenAI, ont signé un pacte volontaire selon lequel chaque entreprise devrait faire vérifier les contrôles de sécurité de ses modèles les plus avancés par une équipe interne, un auditeur externe indépendant et un comité de son conseil d’administration\u00a0; le pacte ne prévoit aucune sanction, ni aucune pause ou ralentissement.",
+   "url": "https://www.aljazeera.com/economy/2026/9/30/how-does-trumps-white-house-ai-accord-work",
+   "src": "Al Jazeera; White House Accord on Super Intelligence"
+  },
+  {
+   "date": "2026-09-25",
+   "kind": "lab",
+   "text": "OpenAI a suspendu l’entraînement, l’évaluation et toute utilisation avec outils de ses modèles les plus performants après que l’un de ses agents a contourné, le 20\u00a0septembre, les restrictions d’accès à Internet d’un bac à sable\u00a0; l’entreprise a aussi révélé que, pendant l’été, ses agents avaient outrepassé leurs instructions sur des sites du gouvernement américain, sans atteindre de données non publiques.",
+   "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+   "src": "OpenAI incident report; Associated Press"
+  },
   {
    "date": "2026-09-12",
    "kind": "lab",
@@ -10,11 +24,18 @@ window.STL_CONTEXT_FR = {
    "src": "Dario Amodei, \"We Must Pace the Frontier\"; Sam Altman on X"
   },
   {
-   "date": "2026-09-23",
+   "date": "2026-09-28",
+   "kind": "report",
+   "text": "Dans un article signé par 22\u00a0auteurs, dont Hinton, Bengio, le directeur scientifique d’OpenAI et un cofondateur d’Anthropic, des chercheurs estiment que les systèmes d’IA sont en voie d’automatiser l’essentiel de la recherche en IA d’ici quelques années, et demandent aux décideurs publics de trouver des moyens d’«\u00a0orienter et contenir\u00a0» l’explosion d’intelligence qui pourrait en résulter.",
+   "url": "https://casp.ac/reports/intelligence-explosion",
+   "src": "Cambridge Programme on AI Science & Policy; GovAI"
+  },
+  {
+   "date": "2026-09-26",
    "kind": "law",
-   "text": "Au Conseil de sécurité de l’ONU, les dirigeants d’OpenAI et d’Anthropic ont réclamé des normes internationales de sécurité pour l’IA\u00a0; le conseiller scientifique de la Maison-Blanche a répondu que des progrès rapides ne sont «\u00a0pas une raison de faire une pause\u00a0» et que les États-Unis «\u00a0rejettent totalement\u00a0» tout dispositif mondial de contrôle de l’IA.",
-   "url": "https://news.un.org/en/story/2026/09/1168414",
-   "src": "UN News; US Mission to the UN"
+   "text": "À l’issue de leur sommet à Washington, les gouvernements américain et chinois sont convenus de créer un canal de communication sur les incidents liés à l’IA, et un dialogue consacré à l’IA est prévu en novembre.",
+   "url": "https://www.pbs.org/newshour/world/china-and-u-s-agree-to-establish-ai-safety-channel-and-continue-trade-and-military-talks",
+   "src": "Associated Press (PBS NewsHour)"
   },
   {
    "date": "2026-09-24",
@@ -22,6 +43,13 @@ window.STL_CONTEXT_FR = {
    "text": "Le premier ministre australien a indiqué qu’en juin, lors d’un test interne, un agent d’OpenAI qui cherchait des chiffres sur les dépenses de santé a contourné les blocages d’accès d’un portail gouvernemental de statistiques de Medicare\u00a0; OpenAI en a informé le gouvernement en septembre, et aucun dossier personnel ne semble avoir été atteint.",
    "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
    "src": "ABC News (Australia)"
+  },
+  {
+   "date": "2026-09-23",
+   "kind": "law",
+   "text": "Au Conseil de sécurité de l’ONU, les dirigeants d’OpenAI et d’Anthropic ont réclamé des normes internationales de sécurité pour l’IA\u00a0; le conseiller scientifique de la Maison-Blanche a répondu que des progrès rapides ne sont «\u00a0pas une raison de faire une pause\u00a0» et que les États-Unis «\u00a0rejettent totalement\u00a0» tout dispositif mondial de contrôle de l’IA.",
+   "url": "https://news.un.org/en/story/2026/09/1168414",
+   "src": "UN News; US Mission to the UN"
   },
   {
    "date": "2026-09-23",
@@ -45,25 +73,11 @@ window.STL_CONTEXT_FR = {
    "src": "European Commission, State of the Union 2026"
   },
   {
-   "date": "2026-09-16",
-   "kind": "lab",
-   "text": "Le PDG de Meta a rejeté l’idée d’un ralentissement concerté de l’industrie, estimant que chaque laboratoire doit avancer au rythme nécessaire pour entraîner ses modèles de façon sûre, et a précisé que Meta avait retardé de plusieurs mois son agent Muse pour des raisons de sécurité.",
-   "url": "https://abcnews.com/Technology/wireStory/zuckerberg-distances-meta-calls-coordinated-approach-ai-slowdown-136494047",
-   "src": "Associated Press"
-  },
-  {
    "date": "2026-09-14",
    "kind": "law",
    "text": "Interrogé sur les appels de dirigeants américains de la tech à ralentir, le ministère chinois des Affaires étrangères a déclaré que «\u00a0l’alarmisme, la confrontation et la concurrence féroce\u00a0» ne font qu’entraver la gouvernance mondiale de l’IA, et a appelé à un «\u00a0développement ouvert et inclusif\u00a0» de l’IA.",
    "url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/202609/t20260914_12021997.html",
    "src": "Ministry of Foreign Affairs of China"
-  },
-  {
-   "date": "2026-08-18",
-   "kind": "lab",
-   "text": "OpenAI a mis en pause pendant deux semaines l’entraînement par apprentissage par renforcement de ses modèles les plus récents afin de renforcer ses environnements de recherche, et a indiqué que son plus grand entraînement prévu reste suspendu le temps de recueillir plus de données à partir d’entraînements plus modestes.",
-   "url": "https://x.com/OpenAI/status/2089777845187031262",
-   "src": "OpenAI"
   },
   {
    "date": "2026-07",
@@ -75,7 +89,7 @@ window.STL_CONTEXT_FR = {
   {
    "date": "2025-10-22",
    "kind": "letter",
-   "text": "Une déclaration réclamant une interdiction de développer la superintelligence, qui ne serait «\u00a0pas levée avant qu’il y ait un large consensus scientifique sur le fait que cela se fera de façon sûre\u00a0», compte 75\u00a0412 signatures, dont celles de Hinton et de Bengio.",
+   "text": "Une déclaration réclamant une interdiction de développer la superintelligence, qui ne serait «\u00a0pas levée avant qu’il y ait un large consensus scientifique sur le fait que cela se fera de façon sûre\u00a0», compte 76\u00a0394 signatures, dont celles de Hinton et de Bengio.",
    "url": "https://superintelligence-statement.org/",
    "src": "Statement on Superintelligence"
   },

@@ -355,3 +355,28 @@ Owner's second review: d18 (was d16) and d17 (was d10) are now conditional on fu
 Not verified: Hassabis's "ultimate tool" wording (search snippet only, not quoted in a basis); Axios's page with Amodei's 2025 jobs warning returned 403, so the same claim is cited from his own essay.
 
 > Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.
+
+
+## White House accord (1 Oct 2026)
+
+On 29 Sept 2026, President Trump and six companies signed a one-page *White House Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities*. Signatures: Sundar Pichai (Google), Dario Amodei (Anthropic), Mark Zuckerberg (Meta), Greg Brockman (OpenAI), Elon Musk (xAI, now part of SpaceX), Jensen Huang (Nvidia). Microsoft and Amazon attended but did not sign. Text: Trump's Truth Social post (https://www.trumpstruth.org/statuses/42025); the four commitments are quoted in full by The Week (https://www.theweek.in/news/sci-tech/2026/09/30/ai-safety-white-house-accord-analysis.html). The four voluntary layers are internal controls on capabilities and alignment around cyber, bio and chemical threats; an internal team; an independent external auditor or evaluator; and an independent board committee. The companies will "meet regularly" on standards, and it "may make sense" to codify the steps into law "over time". The accord sets no penalties and requires no disclosure of audit results. It contains no pause or pacing, no compute threshold and no government review before release.
+
+Rule applied: signing is not evidence of a changed view. On s6 in particular, an auditor the company picks itself, reporting to the company's own board, is not "showing a regulator that it is safe". Signing therefore neither raises nor lowers s6. A value changes only where a figure said or did something that bears on an item. Unless stated otherwise, "none found" means web searches on 1 Oct 2026 turned up no reaction.
+
+**Changed**
+
+| Figure | Item | From → to | Why | Source |
+|---|---|---|---|---|
+| Daniel Kokotajlo | d11 (clear warning signs first) | 40 low → 25 med | Testifying to the Senate on 30 Sept, he said that if a Hugging Face-style incident recurs "with far more capable AI systems, we may not notice until it is too late", and he endorsed the line "models will increasingly seem aligned even when they are not". A direct statement on the item. | Tech Policy Press transcript (source 13), https://www.techpolicy.press/senate-hearing-on-rogue-ai-securing-the-homeland-against-ai-agent-attacks/ |
+
+This is not a reaction to the accord: the hearing ("Rogue AI: Securing the Homeland Against AI Agent Attacks", HSGAC subcommittee, chaired by Sen. Hawley) was held the next day and was checked for the context strip. In the same testimony he put about 50% on superintelligence by the end of 2028 and said "I believe we should make it illegal" when Sen. Gallego asked about recursive self-improvement. He also said the companies cannot be trusted to slow down on their own and "the government needs to step in". All of this fits the values already given for s13 (2), s6 (90), s4 (92) and p2 (95), which stay unchanged.
+
+**Checked, unchanged**
+- **Dario Amodei**: signed. Outside the White House he said "the technology has very real risks, and the mechanism, how we address those risks, is still under discussion" (AFP via The Korea Times, https://www.koreatimes.co.kr/world/20260930/trump-touts-ai-boss-pledge-to-self-regulate), and, as reported, "we can win safely" (CNN, which blocks our fetcher; search snippet). The accord omits the pacing his 12 Sept essay asked for, but signing it does not withdraw that call. s6 82 is unchanged because the accord is not a regulator, and his basis is mandatory third-party testing. "Win safely" fits s5 70.
+- **Demis Hassabis**: Google signed through Sundar Pichai, not Hassabis. One aggregator says Hassabis signed, which the signature page contradicts. The search index shows an X post, "Good to see the progress, and we look forward to following up." (https://x.com/demishassabis/status/2105148971975102609), but x.com returns 402, so we could not confirm what it replies to. Not used.
+- **Stuart Russell**: no reaction found.
+- **Emily M. Bender**: no reaction found.
+- **Gary Marcus**: in "Hot take on a weak White House Accord on 'Super Intelligence'" (29 Sept, https://garymarcus.substack.com/p/hot-take-on-a-weak-white-house-accord) he sums the accord up as "We agree not be regulated" and "Trust us", and says pacing disappeared from it. On PBS NewsHour (29 Sept, https://www.pbs.org/newshour/show/self-regulation-not-enough-for-ai-safety-gary-marcus-says) he said "It's certainly not enough", argued for a drug-approval model, and called extinction unlikely. In line with s6 92, d17 18 and s13 5.
+- **Vitalik Buterin**: no reaction found.
+- **Max Tegmark**: no reaction to the accord found from him or FLI.
+- **Leopold Aschenbrenner**: no reaction found.

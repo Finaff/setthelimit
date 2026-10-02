@@ -336,3 +336,21 @@ New sources (appended):
 Not verified: a Verdon statement on fraud or jobs (none found); Andreessen's jobs argument is paraphrased from the 2023 essay, not re-fetched.
 
 > Note (30 Sept 2026): the familiar-harms item called "p5" in the v6 section above was renamed **p6** before release, because p5 was already the id of a v2–v3 item ("an agreed pause would actually hold"), whose predictions are kept under p5.
+
+
+## White House accord (1 Oct 2026)
+
+On 29 Sept 2026, President Trump and six companies signed a one-page *White House Accord on Super Intelligence: Joint Commitment on Frontier Responsibilities*. Signatures: Sundar Pichai (Google), Dario Amodei (Anthropic), Mark Zuckerberg (Meta), Greg Brockman (OpenAI), Elon Musk (xAI, now part of SpaceX), Jensen Huang (Nvidia). Microsoft and Amazon attended but did not sign. Text: Trump's Truth Social post (https://www.trumpstruth.org/statuses/42025); the four commitments are quoted in full by The Week (https://www.theweek.in/news/sci-tech/2026/09/30/ai-safety-white-house-accord-analysis.html). The four voluntary layers are internal controls on capabilities and alignment around cyber, bio and chemical threats; an internal team; an independent external auditor or evaluator; and an independent board committee. The companies will "meet regularly" on standards, and it "may make sense" to codify the steps into law "over time". The accord sets no penalties and requires no disclosure of audit results. It contains no pause or pacing, no compute threshold and no government review before release.
+
+Rule applied: signing is not evidence of a changed view. On s6 in particular, an auditor the company picks itself, reporting to the company's own board, is not "showing a regulator that it is safe". Signing therefore neither raises nor lowers s6. A value changes only where a figure said or did something that bears on an item. Unless stated otherwise, "none found" means web searches on 1 Oct 2026 turned up no reaction.
+
+**Changed:** none.
+
+**Checked, unchanged**
+- **Eliezer Yudkowsky**: no reaction found.
+- **Marc Andreessen**: no reaction found.
+- **Guillaume Verdon**: the SF Standard (1 Oct) says he welcomed the "Super Intelligence" renaming, but gives no quote (https://sfstandard.com/2026/10/01/trump-rebrand-ai-superintelligence/). Nothing on the accord.
+- **Yann LeCun**: no reaction found.
+- **Geoffrey Hinton**: no reaction to the accord found. He co-authored, with 21 others including Bengio, OpenAI's chief scientist and Anthropic's Jack Clark, the CASP/GovAI working paper *What if automating AI R&D triggers an intelligence explosion?* (28 Sept, https://casp.ac/reports/intelligence-explosion). It asks policymakers to "develop ways to steer and constrain an intelligence explosion". A 22-author consensus text, not his own words, and in line with s8 90 and s13 3.
+- **Yoshua Bengio**: no reaction to the accord found. Co-author of the same paper. In line with s8 92 and s13 2.
+- **Sam Altman**: did not attend (OpenAI DevDay the same day); Greg Brockman signed for OpenAI. Altman told CNBC that people "are taking it seriously this time" and that he is optimistic about international coordination (CNBC DevDay live blog, https://cnbc.com/2026/09/29/openai-devday-2026-live-updates.html; we only saw the search snippet, because the page returned 403). That is too vague to move s4 (a treaty with inspections). He declined Sen. Hawley's invitation to testify on 30 Sept (https://www.cnbc.com/2026/09/30/hawley-openai-sam-altman-rogue-ai.html). OpenAI paused "all training, evaluation, and inference with tool-use" of its most capable models after a 20 Sept sandbox escape (incident report updated 25 Sept, https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/). That is a company decision lasting weeks, not years: s8 65 and s13 10 are unchanged.
