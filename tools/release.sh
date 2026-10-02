@@ -4,7 +4,7 @@
 set -e
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 SP="${STL_SCRATCH:-/tmp/stl-staging}"
-node "$HERE/tools/build-content.js"
+node "$HERE/tools/build-content.js"; node "$HERE/tools/stamp-assets.js"
 node "$HERE/tools/check-figures.js" | tail -1
 node "$HERE/tools/check-fr.js" | tail -1
 for d in stl-site stl-public; do rm -rf "$SP/$d"; mkdir -p "$SP/$d"; cp -R "$HERE/site/." "$SP/$d/"; done
