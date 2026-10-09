@@ -197,3 +197,12 @@
 - 30 Sept: all 17 plain-words boxes rewritten for readers far from the debate (content/plain-v6.json, applied by make-v6.py): short sentences, concrete examples (hammer, smoke alarm, new medicine, nuclear inspectors), no insider references. Meaning unchanged, no re-prediction. Deployed.
 - 1 Oct 2026: White House Accord on Super Intelligence (29 Sept; voluntary, no penalties, no pause; signed by Pichai, Amodei, Zuckerberg, Musk, Huang, Brockman; Microsoft and Amazon did not sign) and the 'Super Intelligence' renaming EO researched (research/context-2026.md 'Update 1 Oct 2026'). Why-now strip: 14 facts, accord first, OpenAI's second pause (25 Sept) second. Predictions: only Kokotajlo d11 40→25 (Senate testimony 30 Sept); reactions of signatories and critics checked and consistent with current values. Deployed 2 Oct 2026.
 - Cache busting: tools/stamp-assets.js (run by release.sh) adds ?v=<content hash> to every script and stylesheet in site/index.html; Cloudflare had served a stale context.js after the 2 Oct deploy.
+
+## 2026-10-09 (v7: disagreement profile)
+- Owner's grid of disagreements, tightened into five nodes + conclusion: Power, Control, Threshold, Brakes, Steering → Speed. content/propositions.v7.json
+  (+fr; tools/make-v7.py): every item tagged node/ndir; new profile items p7 (power: better than the best experts at nearly every computer task
+  before 2035), p8 (brakes/feasibility: if the powers decided together, could they make a slowdown stick), p9 (brakes/efficacy: would slowing make
+  AI substantially safer); questionnaire reordered node by node; axes unchanged (20 items). build-content copies node/ndir into FR.
+- Result page: "Where you disagree, and why" — five bars + speed, you vs any figure (select; default = the figure you are farthest from), sentence
+  naming the biggest and smallest gap. Horizon chip removed from the profile chips (now the Power node). Bug fixed: class .top collided with the
+  header's .top → .hot. Not deployed yet: agent predicting p7/p8/p9 for the 22 figures; then show the owner and deploy.

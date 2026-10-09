@@ -80,6 +80,42 @@
     ITEMS.filter((it) => it.axis === axis).forEach((it) => { const v = answers[it.id]; if (typeof v !== 'number') return; const c = it.dir === 1 ? v : 100 - v; const w = it.weight || 1; num += c * w; den += w; n++; });
     return { value: den ? num / den : null, n };
   }
+  /* the disagreement profile: five questions under every position (owner's grid, Oct 2026), plus the conclusion (speed) */
+  const NODES = [
+    { k: 'power', name: 'Power', q: 'How far and how fast will AI go?', lo: 'stays limited', hi: 'very powerful, soon' },
+    { k: 'control', name: 'Control', q: 'If it gets that far, will we keep it from causing a catastrophe?', lo: 'we keep it safe', hi: 'it gets away from us' },
+    { k: 'threshold', name: 'Threshold', q: 'How much risk is acceptable in exchange for the benefits?', lo: 'very little', hi: 'more, for the benefits' },
+    { k: 'brake', name: 'Brakes', q: 'Would slowing down work, and at what cost?', lo: 'it would work', hi: 'it can\u2019t work, or costs too much' },
+    { k: 'wheel', name: 'Steering', q: 'Who should set the pace?', lo: 'governments and treaties', hi: 'the labs and the market' },
+  ];
+  function nodeScore(answers, k) {
+    let num = 0, den = 0, n = 0;
+    ITEMS.forEach((it) => { if (it.node !== k) return; const v = answers[it.id]; if (typeof v !== 'number') return; const w = it.weight || 1; num += (it.ndir === 1 ? v : 100 - v) * w; den += w; n++; });
+    return den ? { v: num / den, n } : { v: null, n: 0 };
+  }
+  function nodesHtml(mine, comps) {
+    if (!ITEMS.some((it) => it.node)) return '';
+    const pick = (S.nodeFig && comps.find((c) => c.f.id === S.nodeFig)) || (S.sel && comps.find((c) => c.f.id === S.sel)) || comps[comps.length - 1];
+    if (!pick) return '';
+    const fa = figAnswers(pick.f), who = esc(surname(pick.f.name));
+    const rows = NODES.map((nd) => ({ nd, a: nodeScore(mine, nd.k), b: nodeScore(fa, nd.k) })).map((r) => Object.assign(r, { gap: r.a.v !== null && r.b.v !== null ? Math.round(Math.abs(r.a.v - r.b.v)) : null }));
+    const sc = scores(mine), fs = figScore(pick.f);
+    const known = rows.filter((r) => r.gap !== null).sort((p, q) => q.gap - p.gap);
+    let line = '';
+    if (known.length >= 2) {
+      const hi = known[0], lo = known[known.length - 1];
+      line = hi.gap < 15 ? fmt(T('You and {name} are close on all five questions; your difference is a matter of degree.'), { name: who })
+        : fmt(T('You and {name} split most on {a} ({ga} points apart). You are closest on {b} ({gb}).'), { name: who, a: T(hi.nd.name), ga: hi.gap, b: T(lo.nd.name), gb: lo.gap });
+    }
+    const bar = (a, b, lo, hi) => `<div class="nbar"><i class="ln"></i>${b !== null ? `<span class="mk them" style="left:${Math.round(b)}%" data-tip="${esc(pick.f.name)} · ${Math.round(b)}">${esc(figLabel(pick.f))}</span>` : ''}${a !== null ? `<span class="mk you" style="left:${Math.round(a)}%" data-tip="${T('You')} · ${Math.round(a)}"></span>` : ''}</div><div class="nends"><span>${T(lo)}</span><span>${T(hi)}</span></div>`;
+    const opts = comps.slice().sort((p, q) => surname(p.f.name).localeCompare(surname(q.f.name))).map((c) => `<option value="${esc(c.f.id)}" ${c.f.id === pick.f.id ? 'selected' : ''}>${esc(c.f.name)}</option>`).join('');
+    return `<h2 class="sec">${T('Where you disagree, and why')}<small>${T('Every position in this debate rests on five questions. Your answers sum up to a point on each; compare them with anyone on the map.')}</small></h2>
+      <div class="nodes"><label class="nfig">${T('Compare with')} <select id="nodefig">${opts}</select></label>
+      ${line ? `<p class="nline">${line}</p>` : ''}
+      ${rows.map((r) => `<div class="nrow${known[0] && r === known[0] && r.gap >= 15 ? ' hot' : ''}"><div class="nk"><b>${T(r.nd.name)}</b><span>${T(r.nd.q)}</span>${r.gap !== null ? `<em>${fmt(T('gap {d}'), { d: r.gap })}</em>` : ''}</div>${bar(r.a.v, r.b.v, r.nd.lo, r.nd.hi)}</div>`).join('')}
+      <div class="nrow concl"><div class="nk"><b>${T('Speed')}</b><span>${T('The conclusion: the limit each of you would set.')}</span>${sc.ok && fs.ok ? `<em>${fmt(T('gap {d}'), { d: Math.round(Math.abs(sc.y - fs.y)) })}</em>` : ''}</div>${bar(sc.ok ? sc.y : null, fs.ok ? fs.y : null, 'full stop', 'no limit')}</div>
+      <p class="note">${fmt(T('Your green marker against {name}\u2019s predicted answers. Each line averages the propositions that bear on that question.'), { name: who })}</p></div>`;
+  }
   function subScore(answers, sub) {
     const its = ITEMS.filter((it) => it.axis === 'profile' && it.sub === sub); let num = 0, den = 0;
     its.forEach((it) => { const v = answers[it.id]; if (typeof v !== 'number') return; num += it.dir === 1 ? v : 100 - v; den++; });
@@ -233,9 +269,10 @@
       if (farthest && farthest !== nearest) html += `<h2 class="sec">${T('You agree least with')}</h2><ul class="near"><li><button data-fig="${esc(farthest.f.id)}"><span class="av">${esc(initials(farthest.f.name))}</span></button><button data-fig="${esc(farthest.f.id)}"><span class="nm">${esc(farthest.f.name)}</span><br><span class="cm">${esc(farthest.f.camp || '')}</span></button><span class="pct">${fmt(T('{g} pts'), { g: farthest.gap })}<small>${fmt(T('{a}/{b} within {n}'), { a: farthest.agree, b: farthest.both, n: AGREE_BAND })}</small></span></li></ul>`;
       if (nearest) html += `<h2 class="sec">${fmt(T('Where you and {name} split'), { name: esc(surname(nearest.f.name)) })}<small>${T('The three propositions where your closest figure\u2019s predicted answer is furthest from yours.')}</small></h2><ul class="split">${nearest.rows.slice(0, 3).map((r) => `<li><div class="q">${esc(r.it.text)}</div><div class="vals"><span>${T('You')} <b>${r.a}</b></span><span>${esc(surname(nearest.f.name))} <b>${r.b}</b></span><span>${T('gap')} ${r.d}</span></div></li>`).join('')}</ul>`;
     }
+    if (comps.length) html += nodesHtml(S.answers, comps);
     const open = ITEMS.map((it, i) => ({ it, i, v: S.answers[it.id] })).filter((o) => o.v === null || (typeof o.v === 'number' && o.v >= 40 && o.v <= 60));
     if (open.length) html += `<h2 class="sec">${T('Your open questions')}<small>${T('Where you answered near the middle, or skipped. The strongest case on each side is one tap away.')}</small></h2><ul class="openq">${open.slice(0, 6).map((o) => `<li><a href="#/q/${o.i + 1}" data-steel="1"><span class="q">${esc(o.it.text)}</span><span class="v mono">${o.v === null ? T('skipped') : o.v}</span></a></li>`).join('')}</ul>`;
-    html += `<h2 class="sec">${T('Your profile')}<small>${T('Beyond the two axes.')}</small></h2><div class="subs">${[['horizon', 'AI does most paid thinking work within 20 years', 'how likely you find it'], ['concentration', 'Who owns it beats what it does', 'concentration as the bigger danger'], ['familiar', 'Serious familiar harms within ten years', 'fraud, surveillance, discrimination, lost jobs']].map(([k, t, s]) => sc.subs[k] === null ? '' : `<div><div class="v">${Math.round(sc.subs[k])}<small> / 100</small></div><div class="k"><b>${T(t)}</b><br>${T(s)}</div><div class="bar"><i style="width:${Math.round(sc.subs[k])}%"></i></div></div>`).join('')}</div>`;
+    html += `<h2 class="sec">${T('Your profile')}<small>${T('Beyond the two axes.')}</small></h2><div class="subs">${[['concentration', 'Who owns it beats what it does', 'concentration as the bigger danger'], ['familiar', 'Serious familiar harms within ten years', 'fraud, surveillance, discrimination, lost jobs']].map(([k, t, s]) => sc.subs[k] === null ? '' : `<div><div class="v">${Math.round(sc.subs[k])}<small> / 100</small></div><div class="k"><b>${T(t)}</b><br>${T(s)}</div><div class="bar"><i style="width:${Math.round(sc.subs[k])}%"></i></div></div>`).join('')}</div>`;
     html += `<h2 class="sec">${T('Share your sign')}</h2><div class="share"><textarea id="sharetext" readonly>${esc(shareText(sc, ar, nearest))}</textarea><div class="row"><button class="btn primary" data-copylink="1">${T('Copy link')}</button><button class="btn" data-copytext="1">${T('Copy text')}</button>${navigator.share ? `<button class="btn" data-native="1">${T('Share…')}</button>` : ''}<button class="btn" data-card="1">${T('Image card')}</button></div><p class="link">${esc(link)}</p><p class="note">${fmt(T('The link carries your {n} answers and nothing else. Whoever opens it sees your dot and can take the test to compare.'), { n: ITEMS.length })}</p></div>
       <div class="share" style="border-color:var(--line);margin-top:10px"><div class="row" style="margin:0"><a class="btn" href="#/q/1" data-retake="1">${T('Retake')}</a><a class="btn quiet" href="#/figures">${T('All figures and sources')}</a><a class="btn quiet" href="#/method">${T('How the score works')}</a></div></div></section>`;
     html += `<h2 class="sec">${T('Where the debate actually splits')}</h2><p class="prose">${T('Each proposition has its own page: where every public figure stands on it, and a discussion among people who answered it.')}</p><p><a class="btn" href="#/debate">${T('Open the debate')}</a></p>`;
@@ -507,6 +544,7 @@
   window.addEventListener('scroll', () => { tipEl.hidden = true; }, { passive: true }); window.addEventListener('hashchange', () => { tipEl.hidden = true; });
 
   // ---------- events ----------
+  document.addEventListener('change', (e) => { if (e.target && e.target.id === 'nodefig') { S.nodeFig = e.target.value; renderKeep(); } });
   document.addEventListener('input', (e) => {
     const t = e.target; if (t.id !== 'slider') return;
     const r = parseRoute(); if (r.page !== 'q') return; const it = ITEMS[r.n - 1]; const v = Number(t.value);

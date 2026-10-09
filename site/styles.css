@@ -353,3 +353,23 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 .gaps li { display: grid; gap: 2px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 13px; }
 .gaps .gq { font-family: var(--font-read); color: var(--ink-2); line-height: 1.35; } .gaps .gv { font-family: var(--font-mono); font-size: 12px; }
 .gaps em { font-style: normal; font-weight: 800; } .gaps em.far { color: var(--red); } .gaps em.near { color: var(--green); }
+
+/* ---- v1.9: disagreement profile (five nodes + speed) ---- */
+.nodes { background: var(--ground-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 10px; }
+.nodes .nfig { display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.nodes select { font: 700 14px var(--font-sign); background: var(--ground); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; max-width: 100%; }
+.nodes .nline { font-family: var(--font-read); font-size: 16px; line-height: 1.45; margin: 12px 0 6px; }
+.nrow { padding: 12px 0 6px; border-top: 1px solid var(--line); }
+.nrow:first-of-type { border-top: 0; }
+.nrow.hot .nk b { color: var(--red); }
+.nrow.concl { border-top: 2px dashed var(--line-2, var(--line)); margin-top: 6px; }
+.nk { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; margin-bottom: 8px; }
+.nk b { font-weight: 900; font-size: 15px; letter-spacing: .02em; text-transform: uppercase; }
+.nk span { font-size: 13px; color: var(--ink-2); flex: 1 1 200px; }
+.nk em { font-style: normal; font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); margin-left: auto; }
+.nbar { position: relative; height: 26px; margin: 0 12px; }
+.nbar .ln { position: absolute; left: 0; right: 0; top: 12px; height: 3px; border-radius: 2px; background: var(--line-2, var(--line)); }
+.nbar .mk { position: absolute; top: 13px; transform: translate(-50%, -50%); }
+.nbar .mk.you { width: 18px; height: 18px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--ground-2); z-index: 2; }
+.nbar .mk.them { min-width: 24px; height: 24px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; background: var(--blue); color: #fff; font: 800 9.5px/24px var(--font-sign); text-align: center; z-index: 1; }
+.nends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); letter-spacing: .03em; margin: 2px 0 0; }

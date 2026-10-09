@@ -23,7 +23,7 @@ if (fs.existsSync(frFile)) {
   const fr = JSON.parse(fs.readFileSync(frFile, 'utf8'));
   const ids = content.items.map((i) => i.id).join(','), fids = fr.items.map((i) => i.id).join(',');
   if (ids !== fids) { console.error('FR translation item ids differ from EN:', fids); process.exit(1); }
-  fr.items.forEach((it, i) => { const en = content.items[i]; it.axis = en.axis; it.dir = en.dir; it.weight = en.weight; it.type = en.type; it.sub = en.sub; });
+  fr.items.forEach((it, i) => { const en = content.items[i]; it.axis = en.axis; it.dir = en.dir; it.weight = en.weight; it.type = en.type; it.sub = en.sub; it.node = en.node; it.ndir = en.ndir; });
   fs.writeFileSync(path.join(root, 'site', 'content.fr.js'), `/* generated from ${path.basename(frFile)} by tools/build-content.js */\nwindow.STL_CONTENT_FR = ${JSON.stringify(fr)};\n`);
   console.log('fr content:', fr.items.length, 'items');
 } else {
