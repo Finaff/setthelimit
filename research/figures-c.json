@@ -402,10 +402,41 @@
             2,
             1
           ]
+        },
+        "p7": {
+          "value": 70,
+          "conf": "low",
+          "basis": "Holds that superhuman AI is coming at any rate of progress, finds AI 2027 a very compelling read and treats human labour becoming irrelevant as foreseeable. Gives no date of his own. Converted.",
+          "src": [
+            0,
+            8,
+            2
+          ]
+        },
+        "p8": {
+          "value": 30,
+          "conf": "med",
+          "basis": "2023: even if we decided to stop, not everyone would stop; with models deployed and open-sourced, the genie is more or less out of the bottle. Wants global agreement but sees no brake that would hold. Inferred.",
+          "src": [
+            3,
+            12,
+            0
+          ]
+        },
+        "p9": {
+          "value": 75,
+          "conf": "low",
+          "basis": "Wants the race to become slow and careful and says an arms race means safety is nobody's top priority; time is what alignment lacks. Never says how much a slowdown would buy. Inferred.",
+          "src": [
+            2,
+            8,
+            14
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

@@ -10,9 +10,9 @@
       "type": "prob",
       "sub": "power",
       "text": "Before 2035, AI will be better than the best human experts at nearly every task that can be done on a computer.",
-      "plain": "Think of writing, analysing, designing, programming, advising: anything done on a screen. Within about ten years, will AI do nearly all of it better than the best people in each field? This is about how powerful AI gets, not whether that is good or dangerous.",
-      "for": "In five years AI went from finishing sentences to passing professional exams and carrying out long tasks on its own, and the companies building it are spending hundreds of billions on the next steps. Year after year it has done better than the experts predicted.",
-      "against": "Passing a test is not doing the job. Today's systems still make basic mistakes and struggle with long, unfamiliar work, and the easy gains from more data and computing power are running out. The best expert in a field is a very high bar.",
+      "plain": "Think of writing, analysing, designing, programming, advising: anything done on a screen. Before 2035, will AI do nearly all of it better than the best people in each field? It counts if such AI exists and people can use it, even if it is expensive. This is about how powerful AI gets, not whether that is good or dangerous.",
+      "for": "In five years AI went from finishing sentences to passing professional exams and carrying out long tasks on its own, and the companies building it are spending hundreds of billions on the next steps. Some milestones, such as a gold-medal score at the International Mathematical Olympiad in 2025, came years before most experts expected.",
+      "against": "Passing a test is not doing the job. Today's systems still make basic mistakes and struggle with long, unfamiliar work, and the easy gains from more data and computing power are running out. Self-driving cars were 'a few years away' for fifteen years, and the best expert in a field is a very high bar.",
       "node": "power",
       "ndir": 1
     },
@@ -141,9 +141,9 @@
       "weight": 1,
       "type": "prob",
       "sub": "feasibility",
-      "text": "If the US, China and the other AI powers decided together to slow down the most powerful AI projects, they could make it stick.",
-      "plain": "Set aside whether they would want to. If they did, could it actually work? Could they check what the others are doing, stop companies and rogue groups from carrying on in secret, and keep the deal from falling apart?",
-      "for": "The most powerful AI needs huge data centres full of specialised chips made by a handful of companies. Those are hard to hide and easy to count, much like uranium enrichment, and arms-control treaties have held for decades with less to go on.",
+      "text": "If the US, China and the other AI powers decided together to slow down the most powerful AI projects for ten years, they could enforce it.",
+      "plain": "Set aside whether they would want to: suppose they do. Could they actually check that nobody, no country, company or secret group, keeps building the most powerful AI behind their backs?",
+      "for": "The most powerful AI needs huge data centres full of specialised chips made by a handful of companies. Those are hard to hide and possible to count, and inspectors have tracked nuclear material on the same principle for decades.",
       "against": "Computing power gets cheaper every year, better methods let smaller systems do more, and some powerful models are already public. A country could train in secret or quit the deal the moment it fell behind, so a slowdown would bind only the honest.",
       "node": "brake",
       "ndir": -1
@@ -155,8 +155,8 @@
       "weight": 1,
       "type": "prob",
       "sub": "efficacy",
-      "text": "Slowing down the development of more powerful AI would make it substantially safer when it arrives.",
-      "plain": "Does time help? Some say safety work needs time to catch up with what AI can do. Others say we only learn to make AI safe by building it, so waiting changes little. This is about whether slowing down works, not whether it is worth what it costs.",
+      "text": "If all the main AI developers slowed down together, the AI they go on to build would be substantially safer.",
+      "plain": "Does time help? Some say safety work needs time to catch up with what AI can do. Others say we only learn to make AI safe by building it, so waiting changes little, or even makes the eventual jump bigger. 'Safer' means less likely to cause the harms you worry about most, whatever they are. Slowing down means going more slowly, not stopping. This is about whether it works, not whether it is worth what it costs.",
       "for": "Today nobody can reliably check what an advanced AI will do, and safety research, laws and institutions all move more slowly than the technology. Time lets them catch up, and lets warning signs be noticed and acted on.",
       "against": "Safety is learned by working with real systems, the way air travel became safe by flying. A slowdown freezes that learning while computing power and know-how keep piling up, so when building resumes the jump can be bigger and more dangerous.",
       "node": "brake",
@@ -340,11 +340,11 @@
     },
     {
       "id": "p8",
-      "change": "New, profile (node brakes, feasibility). Conditional on the powers wanting it, so it measures whether a slowdown can be enforced, not whether it will be chosen. Not the v2–v3 p5, which asked whether an agreed pause 'would actually hold'."
+      "change": "New, profile (node brakes, feasibility). Conditional on the powers wanting it, and sized (ten years), so it measures whether a slowdown can be enforced, not whether it will be chosen. Not the v2–v3 p5, which asked whether an agreed pause 'would actually hold'."
     },
     {
       "id": "p9",
-      "change": "New, profile (node brakes, efficacy). Separates \"does delay make AI safer\" from s8, which values the delay."
+      "change": "New, profile (node brakes, efficacy). Separates \"does delay make AI safer\" from s8, which values the delay. Worded after the prediction agent flagged a presupposition: all developers together (no unilateral-pause leak), no assumption that powerful AI arrives or is dangerous, \"safer\" = less likely to cause the harms you worry about most."
     }
   ]
 }

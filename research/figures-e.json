@@ -393,10 +393,41 @@
             2,
             15
           ]
+        },
+        "p7": {
+          "value": 20,
+          "conf": "med",
+          "basis": "Aug 2025: the doomer narratives were wrong, there is no rapid take-off to godlike superintelligence, and models still need heavy prompting and checking; AGI is overhyped. No 2035 forecast. Inferred.",
+          "src": [
+            6,
+            15,
+            2
+          ]
+        },
+        "p8": {
+          "value": 5,
+          "conf": "high",
+          "basis": "Fox News, Sept 2026, on a deal that if we pause, China pauses: 'There is simply no basis for believing that.' Such a deal 'would not be enforceable', with 'no way of verifying it'.",
+          "src": [
+            14,
+            0
+          ]
+        },
+        "p9": {
+          "value": 20,
+          "conf": "low",
+          "basis": "'Together' removes his China objection. He backs labs pacing themselves, but reads coordinated safety pushes by leading labs as regulatory capture and sees no catastrophe that waiting would avert. Inferred.",
+          "src": [
+            0,
+            1,
+            7,
+            11
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

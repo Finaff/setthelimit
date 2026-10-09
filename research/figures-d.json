@@ -96,6 +96,12 @@
           "url": "https://www.astralcodexten.com/p/mysteries-of-ai-generalization",
           "date": "2026-09-23",
           "note": "On emergent misalignment and reward hacking: 'My best guess is that it should be very slightly reassuring, but I'm not sure'; reports a paper finding Claude 4.5 'smart enough to know that it's being tested'."
+        },
+        {
+          "title": "Astral Codex Ten: Every Debate On Pausing AI",
+          "url": "https://www.astralcodexten.com/p/every-debate-on-pausing-ai",
+          "date": "2026-03-25",
+          "note": "Satirical dialogue between a pause Supporter and an Opponent; lines are not labelled as his own. The Supporter says a deal must be transparent and mutually enforceable and that on monitoring 'the math mostly works out', less intrusive than nuclear monitoring; secret Chinese defection is named as the real worry."
         }
       ],
       "predictions": {
@@ -372,10 +378,38 @@
           "src": [
             0
           ]
+        },
+        "p7": {
+          "value": 45,
+          "conf": "high",
+          "basis": "June 2026: AGI, defined as AI that can 'do 90% of knowledge work jobs', at 'a 50% chance by 2034'. This item's bar (beat the best experts at nearly every computer task, before 2035) is a little higher.",
+          "src": [
+            0,
+            4
+          ]
+        },
+        "p8": {
+          "value": 65,
+          "conf": "med",
+          "basis": "Thinks a well-designed pause with each side monitoring the other's data centres could buy decades, within which ten years fits, though he concedes compliance schemes could have undetected flaws.",
+          "src": [
+            0,
+            1,
+            14
+          ]
+        },
+        "p9": {
+          "value": 60,
+          "conf": "med",
+          "basis": "A full pause would help alignment only a little and mostly delay the reckoning, he says, but his preferred design is this one: a slow agreed training rate that lets researchers test models thoroughly.",
+          "src": [
+            0
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "steven-pinker",
@@ -768,10 +802,39 @@
             0,
             5
           ]
+        },
+        "p7": {
+          "value": 15,
+          "conf": "med",
+          "basis": "Sept 2026: LLMs proved more general than he expected, but any intelligent system is good at some problems and not others; AGI is incoherent, like a general machine. Best at nearly everything by 2035 runs against that.",
+          "src": [
+            15,
+            9,
+            2
+          ]
+        },
+        "p8": {
+          "value": 40,
+          "conf": "low",
+          "basis": "No statement on enforcing an AI slowdown. He credits arms control with real successes but notes nuclear doom talk fed an arms race rather than disarmament. Near the middle. Inferred.",
+          "src": [
+            15,
+            4
+          ]
+        },
+        "p9": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Safety comes from engineering: testing, oversight, accident investigations, kill switches, not from waiting. But he faults the breakneck, sometimes irresponsible release of LLMs, so a slower pace helps some. Inferred.",
+          "src": [
+            15,
+            4
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

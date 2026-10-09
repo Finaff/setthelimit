@@ -448,11 +448,41 @@
             0,
             4
           ]
+        },
+        "p7": {
+          "value": 93,
+          "conf": "high",
+          "basis": "Jan 2026: 'powerful AI', 'smarter than a Nobel Prize winner across most relevant fields', 'could be as little as 1–2 years away', with a very strong chance within a few years. That is this bar, well before 2035.",
+          "src": [
+            2,
+            3,
+            8
+          ]
+        },
+        "p8": {
+          "value": 35,
+          "conf": "med",
+          "basis": "Sept 2026: a deal with China needs ironclad verification or limits narrow enough that cheating is not decisive; secret models and defection are the hard part. At Davos he called an enforceable mutual slowdown very hard.",
+          "src": [
+            0,
+            11,
+            4
+          ]
+        },
+        "p9": {
+          "value": 82,
+          "conf": "high",
+          "basis": "Sept 2026: 'if slowing down bought us even an extra year or two before models reach critical levels of capability', spent on alignment, risk could fall a lot. Pacing, not halting: models teach safety.",
+          "src": [
+            0,
+            9
+          ]
         }
       },
       "oneLiner": "Sees ~25% catastrophe risk, backs export controls and mandatory testing, and now asks the industry to pace the frontier.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "demis-hassabis",
@@ -928,11 +958,42 @@
             0,
             2
           ]
+        },
+        "p7": {
+          "value": 74,
+          "conf": "med",
+          "basis": "Expects AGI, which he defines as matching all human cognitive abilities, by 2029-30 (May 2026) and a few short years away (July 2026). Beating the best experts at nearly everything comes a bit later. Converted.",
+          "src": [
+            4,
+            0,
+            3
+          ]
+        },
+        "p8": {
+          "value": 48,
+          "conf": "low",
+          "basis": "Davos 2026: would back a pause if every company and country joined; it needs international collaboration. Proposes IAEA- and CERN-style bodies and calls global cooperation very hard, not unworkable. Inferred.",
+          "src": [
+            9,
+            5,
+            0
+          ]
+        },
+        "p9": {
+          "value": 72,
+          "conf": "med",
+          "basis": "July 2026: the technical risks can be met only if we give ourselves the time and space; at Davos, a slightly slower pace would help get AI right. Yet he keeps building at the frontier and asks only for a bit less speed.",
+          "src": [
+            0,
+            2,
+            9
+          ]
         }
       },
       "oneLiner": "AGI is a few years off and could end disease; wants independent pre-release testing, and a coordinated slowdown if needed.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "stuart-russell",
@@ -1350,11 +1411,41 @@
             1,
             3
           ]
+        },
+        "p7": {
+          "value": 40,
+          "conf": "med",
+          "basis": "Dec 2025: AGI is virtually certain unless something intervenes, but he expects it to take longer than the CEOs' 2030 forecasts, since we do not yet understand how to build it. No year given. Converted.",
+          "src": [
+            1,
+            5
+          ]
+        },
+        "p8": {
+          "value": 62,
+          "conf": "med",
+          "basis": "Wants red lines with robust enforcement agreed by end-2026; says China's AI rules are quite strict; credits the 2023 pause letter with six months of no model beyond GPT-4. No word on catching secret training. Inferred.",
+          "src": [
+            3,
+            1,
+            0
+          ]
+        },
+        "p9": {
+          "value": 88,
+          "conf": "high",
+          "basis": "On a 50-year pause button: 'during those 50 years, we can work on how do we do AI in a way that's guaranteed to be safe and beneficial'. Wants nothing like AGI until the control questions have solid answers.",
+          "src": [
+            1,
+            5,
+            4
+          ]
         }
       },
       "oneLiner": "Uncontrolled AI is Russian roulette with humanity: require proof of safety before deployment and enforce global red lines.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "emily-bender",
@@ -1780,11 +1871,44 @@
           "src": [
             0
           ]
+        },
+        "p7": {
+          "value": 3,
+          "conf": "high",
+          "basis": "Language models mimic expertise without understanding; 'AI' is a marketing label and work sold as automated is still done by people. She calls the shared belief of doomers and boosters in powerful AI unfounded.",
+          "src": [
+            5,
+            1,
+            8,
+            2
+          ]
+        },
+        "p8": {
+          "value": 55,
+          "conf": "low",
+          "basis": "Not her question. She holds that the race is a choice, not destiny, and that global regulation can work, citing the ozone layer. If governments agreed to rein the companies in, it could bite. Inferred.",
+          "src": [
+            4,
+            1,
+            3
+          ]
+        },
+        "p9": {
+          "value": 60,
+          "conf": "low",
+          "basis": "Her harms are present ones: rushed deployment, unvetted data, bias, labour and environmental costs. She wants evaluation before deployment and an end to the race to ever bigger models; a slower industry helps.",
+          "src": [
+            5,
+            7,
+            4,
+            2
+          ]
         }
       },
       "oneLiner": "'AI' is marketing for text generators; the harms are here now and belong to the companies. Doom talk is hype.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "gary-marcus",
@@ -1876,6 +2000,12 @@
           "url": "https://garymarcus.substack.com/p/i-think-the-answer-is-we-have-to",
           "date": "2026-09-24",
           "note": "On the Hugging Face breach: 'temporarily shut OpenAI down'; its software 'has repeatedly been shown to be reckless'."
+        },
+        {
+          "title": "Clarification from Ray Kurzweil (Marcus on AI)",
+          "url": "https://garymarcus.substack.com/p/clarification-from-ray-kurzweil",
+          "date": "2024-06-22",
+          "note": "'Gary Marcus stands by his own prediction that we will not see AGI by 2029', against Kurzweil's 2029 date."
         }
       ],
       "predictions": {
@@ -2238,11 +2368,43 @@
             1,
             5
           ]
+        },
+        "p7": {
+          "value": 12,
+          "conf": "med",
+          "basis": "Predicts no AGI in 2026 or 2027 and stands by no AGI by 2029; scaling LLMs has hit diminishing returns and new approaches are needed. Best-expert level at nearly every task by 2035 would surprise him. Converted.",
+          "src": [
+            3,
+            14,
+            2
+          ]
+        },
+        "p8": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Backs international treaties, an IAEA-style agency and red lines with robust enforcement, so he treats enforcement as workable; he has not argued the verification case or addressed secret training. Inferred.",
+          "src": [
+            5,
+            0,
+            1
+          ]
+        },
+        "p9": {
+          "value": 68,
+          "conf": "med",
+          "basis": "Signed the 2023 pause letter; says we let too much slide and still have time to prepare. Today's systems are unreliable and alignment by training data is a mess, so time for regulation and better methods helps.",
+          "src": [
+            6,
+            5,
+            1,
+            11
+          ]
         }
       },
       "oneLiner": "LLMs are unreliable and won't reach AGI, but the harms are real now: license, audit, and hold companies liable.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "vitalik-buterin",
@@ -2655,11 +2817,42 @@
             2,
             4
           ]
+        },
+        "p7": {
+          "value": 45,
+          "conf": "med",
+          "basis": "Says his timelines are longer than AI 2027's and puts superintelligence probably in the 2030s (Doom Debates, 2025). That makes 2035 close to a coin flip for this bar. Converted, not stated.",
+          "src": [
+            4,
+            3
+          ]
+        },
+        "p8": {
+          "value": 50,
+          "conf": "med",
+          "basis": "Designed a way to make a pause hold: industrial-scale chips that need weekly signatures from several international bodies. But it must bind militaries too, and he fears enforcement could breed a Big Brother.",
+          "src": [
+            2,
+            1,
+            4,
+            5
+          ]
+        },
+        "p9": {
+          "value": 60,
+          "conf": "med",
+          "basis": "Backs a soft pause to buy humanity time to prepare, but asks what the time is for: delay makes AI safer only if it is spent on defences and better tools, not just waiting. Leans yes.",
+          "src": [
+            2,
+            5,
+            0
+          ]
         }
       },
       "oneLiner": "Accelerate defensive, decentralised tech; avoid both rogue superintelligence and any single actor controlling it.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "max-tegmark",
@@ -3110,11 +3303,43 @@
             4,
             7
           ]
+        },
+        "p7": {
+          "value": 72,
+          "conf": "med",
+          "basis": "Sept 2026: humans are close to being outsmarted, and loss of control is likely within decades if the race goes on. He expects AGI soon enough that rules may come too late, but gives no year. Converted.",
+          "src": [
+            11,
+            4,
+            7
+          ]
+        },
+        "p8": {
+          "value": 78,
+          "conf": "med",
+          "basis": "Cites the bans on human cloning and bioweapons as precedents, says chips are countable and that China's leaders would never permit uncontrollable technology. Treats a prohibition as enforceable once agreed.",
+          "src": [
+            4,
+            7,
+            0
+          ]
+        },
+        "p9": {
+          "value": 85,
+          "conf": "med",
+          "basis": "His 2023 letter asked for a pause so shared safety standards could be put in place; wants FDA-style proof before release and tool AI meanwhile. His oversight research finds control fails as the gap grows.",
+          "src": [
+            2,
+            3,
+            6,
+            12
+          ]
         }
       },
       "oneLiner": "Superintelligence is a suicide race (>90% loss of control); prohibit it until proven safe and build tool AI instead.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "daniel-kokotajlo",
@@ -3609,11 +3834,42 @@
             2,
             1
           ]
+        },
+        "p7": {
+          "value": 88,
+          "conf": "high",
+          "basis": "Aug 2026 medians: top-expert-dominating AI (TED-AI, as good as top experts at virtually all cognitive tasks) Nov 2028, superintelligence Mar 2029, if things go as fast as feasible. Even with slowdowns, 2035 is far out.",
+          "src": [
+            3,
+            13,
+            0
+          ]
+        },
+        "p8": {
+          "value": 70,
+          "conf": "med",
+          "basis": "Plan A rests on a verifiable brake pedal between the US and China: compute tracking to catch covert projects, research transparency. He thinks it can be made to hold once agreed; his worry is will, not feasibility.",
+          "src": [
+            2,
+            1,
+            9
+          ]
+        },
+        "p9": {
+          "value": 90,
+          "conf": "high",
+          "basis": "AI 2027's slowdown ending keeps control because the pause buys time to restore oversight; Plan A delays superintelligence to 2040 to solve alignment first. Time spent this way is his whole case for pacing.",
+          "src": [
+            0,
+            1,
+            4
+          ]
         }
       },
       "oneLiner": "Superintelligence is likely by ~2029 and ~70% likely to go badly; pace the frontier with a verifiable US–China deal.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "leopold-aschenbrenner",
@@ -4032,11 +4288,40 @@
             "from": 15,
             "url": "https://situational-awareness.ai/the-free-world-must-prevail/"
           }
+        },
+        "p7": {
+          "value": 92,
+          "conf": "high",
+          "basis": "Situational Awareness, 2024: 'AGI by 2027 is strikingly plausible'; 'By the end of the decade, they will be smarter than you or I; we will have superintelligence'. His fund still bets on that path.",
+          "src": [
+            0,
+            4,
+            5
+          ]
+        },
+        "p8": {
+          "value": 10,
+          "conf": "high",
+          "basis": "'In short, \"breakout\" is too easy'; any arms control equilibrium around superintelligence 'seems extremely unstable', since a treaty-breaker could secretly start a crash program. A treaty on safety 'seems fanciful'.",
+          "src": [
+            3,
+            2
+          ]
+        },
+        "p9": {
+          "value": 60,
+          "conf": "med",
+          "basis": "Wants as much margin for error as possible and labs taking extra time before risky runs. His objection to a pause was handing the lead to authoritarian rivals, which a slowdown by all main developers removes.",
+          "src": [
+            1,
+            3
+          ]
         }
       },
       "oneLiner": "AGI by ~2027; the free world must win the race to superintelligence, under government control, with serious alignment work.",
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

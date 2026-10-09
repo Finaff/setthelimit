@@ -195,3 +195,17 @@ Rule applied: signing is not evidence of a changed view. On s6 in particular, an
 
 **Checked, unchanged**
 - **Sam Harris**: no reaction found. One search summary read Marcus's "Dario, Sam, and Elon all chickened out" as naming Harris; the "Sam" there is Sam Altman.
+
+## v7 (9 Oct 2026)
+
+Propositions v7 adds three profile items for the disagreement profile: p7 (node power: before 2035, AI better than the best human experts at nearly every computer task), p8 (node brakes: if the US, China and the other AI powers decided together to slow the most powerful projects, they could make it stick) and p9 (node brakes: slowing down would make more powerful AI substantially safer when it arrives). Timelines were converted to the item's bar (best experts, nearly every computer task, before 2035), which is higher than most definitions of AGI. p8 grants the will to agree, so 'they won't agree' does not lower it; p9 asks whether delay works, not whether it is worth its cost (s8). No existing prediction changed. New sources are appended to each figure's list; indices below are into that list.
+
+- **Sam Harris** p7 70 low: TED, 2016 (source 0): superhuman AI is coming at any rate of progress (https://www.ted.com/talks/sam_harris_can_we_build_ai_without_losing_control_over_it/transcript); Making Sense #420 (source 8): AI 2027 "a very compelling read". No date of his own found (searched 9 Oct 2026).
+- **Sam Harris** p8 30 med: Making Sense #324, 2023 (source 3): "even if we decided to stop, not everyone's going to stop" (https://www.samharris.org/podcasts/making-sense-episodes/324-debating-the-future-of-ai); #332 (source 12): "the digital genie is more or less out of the bottle".
+- **Sam Harris** p9 75 low: #469 transcript (source 2): "How do we become slow and careful under those conditions?" (https://singjupost.com/making-sense-469-w-tristan-harris-on-escaping-an-anti-human-future-transcript/); #420 (source 8): in an arms race "all the players are not holding safety as their top priority". Inferred.
+
+### v7 wording revision
+
+Items reworded after the predictions above: p7's plain now says "Before 2035" and counts AI that exists and can be used even if expensive; p8 is now a ten-year slowdown and asks only whether it could be enforced (checking that no country, company or secret group builds behind their backs), defection dropped; p9 is now "If all the main AI developers slowed down together, the AI they go on to build would be substantially safer", with 'safer' meaning less likely to cause the harms you worry about most and slowing meaning going more slowly, not stopping. Every figure was re-checked; p7 needed no change. Changed values below overwrite the lines above (unpublished items, no update record).
+
+- **Sam Harris**: no change (p8 30: "not everyone's going to stop" and open models bear on enforcement; p9 75).

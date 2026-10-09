@@ -373,3 +373,4 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 .nbar .mk.you { width: 18px; height: 18px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--ground-2); z-index: 2; }
 .nbar .mk.them { min-width: 24px; height: 24px; padding: 0 4px; box-sizing: border-box; border-radius: 999px; background: var(--blue); color: #fff; font: 800 9.5px/24px var(--font-sign); text-align: center; z-index: 1; }
 .nends { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); letter-spacing: .03em; margin: 2px 0 0; }
+.nbar.close { height: 38px; } .nbar.close .ln { top: 18px; } .nbar.close .mk.them { top: 8px; } .nbar.close .mk.you { top: 30px; }

@@ -90,6 +90,12 @@
           "url": "https://www.theguardian.com/technology/2024/feb/17/humanitys-remaining-timeline-it-looks-more-like-five-years-than-50-meet-the-neo-luddites-warning-of-an-ai-apocalypse",
           "date": "2024-02-17",
           "note": "'If you put me to a wall and forced me to put probabilities on things, I have a sense that our current remaining timeline looks more like five years than 50 years. Could be two years, could be 10.' Guardian blocks our fetcher; wording via search index and syndications (Futurism)."
+        },
+        {
+          "title": "An International Agreement to Prevent the Premature Creation of Artificial Superintelligence (MIRI Technical Governance Team, arXiv)",
+          "url": "https://arxiv.org/abs/2511.10783",
+          "date": "2025-11-13",
+          "note": "MIRI institutional draft treaty (Scher, Abecassis, Barnett, Abeyta), not Yudkowsky's own text: US-China-led coalition, chip consolidation and verified use; 'would be technically sufficient to forestall the development of ASI if implemented today', but 'there does not yet exist the political will'."
         }
       ],
       "oneLiner": "Superhuman AI built with today's methods would kill everyone; the only sane response is a global, enforced halt.",
@@ -478,6 +484,35 @@
             0,
             7
           ]
+        },
+        "p7": {
+          "value": 70,
+          "conf": "med",
+          "basis": "In 2024 put humanity's remaining timeline nearer five years than fifty (could be two, could be ten), while refusing to name years. The superintelligence he fears clears this bar. Converted, not stated.",
+          "src": [
+            12,
+            2
+          ]
+        },
+        "p8": {
+          "value": 75,
+          "conf": "med",
+          "basis": "TIME 2023: track all GPUs sold, cap and shut down large clusters, enforce even against rogue datacenters. MIRI's draft treaty, which he backs, is judged technically sufficient if adopted now; only the will is lacking.",
+          "src": [
+            0,
+            13,
+            9
+          ]
+        },
+        "p9": {
+          "value": 50,
+          "conf": "med",
+          "basis": "Item now means going more slowly, not stopping. He holds that a short pause is not enough and only a halt long enough for alignment or smarter humans changes the outcome; a slower road to the same ASI does little.",
+          "src": [
+            0,
+            6,
+            2
+          ]
         }
       },
       "v1Only": {
@@ -515,7 +550,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "andreessen",
@@ -945,6 +981,35 @@
             0,
             8
           ]
+        },
+        "p7": {
+          "value": 80,
+          "conf": "med",
+          "basis": "Rogan, May 2026 (secondary): says AGI was crossed months earlier and that frontier AI already beats nearly any expert he consults most of the time. A capability bull who disputes only that it will replace workers.",
+          "src": [
+            10,
+            9,
+            7
+          ]
+        },
+        "p8": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Holds that restricting AI means restricting math, software and chips; open code is out and China would race on. A joint slowdown would be the cartel made global and could not be enforced. Inferred from 2023-24 posts.",
+          "src": [
+            5,
+            3,
+            0
+          ]
+        },
+        "p9": {
+          "value": 5,
+          "conf": "med",
+          "basis": "Manifesto: deceleration costs lives; AI is owned and controlled by people, so there is no danger that waiting would reduce, and progress is how problems get fixed. Delay buys nothing safer. Inferred.",
+          "src": [
+            2,
+            0
+          ]
         }
       },
       "v1Only": {
@@ -984,7 +1049,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "verdon",
@@ -1414,6 +1480,36 @@
             0,
             2
           ]
+        },
+        "p7": {
+          "value": 72,
+          "conf": "low",
+          "basis": "Treats ever more capable AI as inevitable and near and builds chips for it, but no dated forecast was found, and his bet is on new hardware rather than today's models. Inferred.",
+          "src": [
+            0,
+            4,
+            6
+          ]
+        },
+        "p8": {
+          "value": 8,
+          "conf": "med",
+          "basis": "e/acc's founding claim is that acceleration cannot be stopped, only embraced; he expects any top-down deal to be routed around by markets and open, decentralised AI. Inferred for a joint slowdown.",
+          "src": [
+            0,
+            1,
+            4
+          ]
+        },
+        "p9": {
+          "value": 8,
+          "conf": "med",
+          "basis": "Safety comes from building: reliability engineering, market selection for aligned AI and a balance among many players. On Lex Fridman he said slowing down is not an option; a pause would concentrate power. Inferred.",
+          "src": [
+            1,
+            2,
+            7
+          ]
         }
       },
       "v1Only": {
@@ -1453,7 +1549,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "lecun",
@@ -1535,6 +1632,18 @@
           "url": "https://www.yahoo.com/news/science/articles/not-everyone-thinks-ai-kill-093029778.html",
           "date": "2026-09-24",
           "note": "Replying to a user who said AI 'will get us all killed in three years': 'No, Not a chance in hell.' Likened panic over recent AI incidents to blaming the whole plumbing industry for one bad plumber (paraphrase). Original: https://www.cnn.com/2026/09/24/tech/not-everyone-thinks-ai-will-kill-us-all"
+        },
+        {
+          "title": "Yann LeCun's new venture is a contrarian bet against large language models (MIT Technology Review, Caiwei Chen)",
+          "url": "https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/",
+          "date": "2026-01-22",
+          "note": "'We are going to have AI systems that have humanlike and human-level intelligence, but they're not going to be built on LLMs, and it's not going to happen next year or two years from now'; 'major conceptual breakthroughs' needed first."
+        },
+        {
+          "title": "Ng and LeCun on the 6-Month Pause (transcript, LessWrong)",
+          "url": "https://www.greaterwrong.com/posts/fKfNTkdqsckdMusTb/ng-and-lecun-on-the-6-month-pause-transcript",
+          "date": "2023-04-09",
+          "note": "Transcript of the April 2023 conversation with Andrew Ng. LeCun: 'Why slow down the progress of knowledge and science?'; a pause would serve no purpose 'other than reducing the knowledge that we could use'; 'I don't see the point of regulating research and development.'"
         }
       ],
       "oneLiner": "LLMs are a dead end, not a threat; the real danger is a few firms owning AI, so keep it open and build better systems.",
@@ -1893,6 +2002,35 @@
           "src": [
             9
           ]
+        },
+        "p7": {
+          "value": 22,
+          "conf": "med",
+          "basis": "Jan 2026: human-level AI will come, but not from LLMs and not in a year or two; major conceptual breakthroughs come first. Earlier: several years if not a decade, long tail. Best-expert level by 2035 is a stretch.",
+          "src": [
+            12,
+            4,
+            6
+          ]
+        },
+        "p8": {
+          "value": 15,
+          "conf": "low",
+          "basis": "No statement on enforcing a joint slowdown. He holds that ideas spread through open research across labs and countries and that regulating R&D is pointless; he would not expect a slowdown to hold. Inferred.",
+          "src": [
+            13,
+            7,
+            9
+          ]
+        },
+        "p9": {
+          "value": 8,
+          "conf": "high",
+          "basis": "Lex Fridman #416: safety comes from building better systems, 'a better turbojet is also a safer turbojet'. On the 2023 pause: slowing serves no purpose other than reducing the knowledge we could use.",
+          "src": [
+            1,
+            13
+          ]
         }
       },
       "v1Only": {
@@ -1934,7 +2072,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "hinton",
@@ -2047,6 +2186,18 @@
           "url": "https://fortune.com/2026/09/26/geoffrey-hinton-godfather-of-ai-humanity-end-existential-threat-subgoals-rogue-agents/",
           "date": "2026-09-26",
           "note": "Even if no bad actor sets its goals, AI 'may derive subgoals that cause it to want to get rid of people'; a superintelligence on its assigned mission 'just will take control away from us because that's the way to get stuff done'. Voluntary lab slowdowns 'better than nothing' but 'still not good enough'."
+        },
+        {
+          "title": "'Godfather of AI' says he's 'glad' to be 77 because the tech probably won't take over the world in his lifetime (Business Insider, via Yahoo)",
+          "url": "https://www.yahoo.com/news/godfather-ai-says-hes-glad-110151161.html",
+          "date": "2025-04-28",
+          "note": "On superintelligence, after a CBS interview: 'there's a good chance it'll be here in 10 years or less'; his earlier window was 5 to 20 years."
+        },
+        {
+          "title": "AI experts urge US-China collaboration at Shanghai conference (South China Morning Post)",
+          "url": "https://www.scmp.com/tech/tech-trends/article/3319700/ai-experts-urge-us-china-collaboration-shanghai-conference",
+          "date": "2025-07-26",
+          "note": "World AI Conference, Shanghai. Page blocks fetchers; wording via search index: 'No country wants AI to take over'; cites US-Soviet cooperation against nuclear war; proposes an international network of AI safety institutes. Pessimistic that weapons makers will slow down or collaborate."
         }
       ],
       "oneLiner": "Superintelligence is coming within a decade and could replace us; don't stop building, but slow down and regulate now.",
@@ -2426,6 +2577,36 @@
           "src": [
             9
           ]
+        },
+        "p7": {
+          "value": 72,
+          "conf": "med",
+          "basis": "Apr 2025: superintelligence has a good chance of arriving in 10 years or less (earlier 5 to 20). Told the Senate in Sept 2026 that forecasts are now a few years; says AI can already do jobs as well as people.",
+          "src": [
+            17,
+            15,
+            6
+          ]
+        },
+        "p8": {
+          "value": 45,
+          "conf": "low",
+          "basis": "Expects the powers to cooperate against AI takeover, as the US and USSR did on nuclear war; signed the call for a superintelligence ban. But open weights are already out, he says, and ten years is long. Inferred.",
+          "src": [
+            18,
+            4,
+            7
+          ]
+        },
+        "p9": {
+          "value": 82,
+          "conf": "med",
+          "basis": "Sept 2026, to senators: AI will get out of control unless we act, so we need to slow down; only about 1% of AI work goes into safety. His case for pacing is that time lets control research and laws catch up.",
+          "src": [
+            15,
+            6,
+            9
+          ]
         }
       },
       "v1Only": {
@@ -2464,7 +2645,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "bengio",
@@ -2552,6 +2734,12 @@
           "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
           "date": "2026-02-03",
           "note": "General-purpose AI can help enable biological and chemical threats (lab instructions, troubleshooting) with substantial uncertainty about real-world uplift; pre-deployment testing harder as models tell tests from real use. Via Covington summary."
+        },
+        {
+          "title": "AI godfather warns humanity risks extinction by hyperintelligent machines with their own preservation goals within 10 years (Fortune, after the Wall Street Journal)",
+          "url": "https://fortune.com/2025/10/01/ai-godfather-yoshua-bengio-ai-extinction-risks-openai-google-xai-anthropic",
+          "date": "2025-10-01",
+          "note": "Reporter's paraphrase of his WSJ interview: the major risks could arrive within 'five to 10 years'; he warns they may come earlier than expected. Direct quote: 'even if there was only a 1% chance it could happen, it's not acceptable'."
         }
       ],
       "oneLiner": "AI agents already lie and self-preserve; build non-agentic 'Scientist AI', regulate like nuclear, don't gamble on luck.",
@@ -2918,6 +3106,36 @@
           "src": [
             5
           ]
+        },
+        "p7": {
+          "value": 60,
+          "conf": "med",
+          "basis": "2023 Senate: human-level AI within two decades, possibly a few years. Oct 2025 (paraphrased): hyperintelligent machines could arrive within five to ten years. Best-expert level by 2035 is near his middle case.",
+          "src": [
+            0,
+            13,
+            5
+          ]
+        },
+        "p8": {
+          "value": 65,
+          "conf": "med",
+          "basis": "Wants AI governed like nuclear weapons through treaties, cites the Baruch plan, and says verification both sides accept is possible. Voices no doubt that a joint deal could hold once agreed.",
+          "src": [
+            5,
+            2,
+            9
+          ]
+        },
+        "p9": {
+          "value": 85,
+          "conf": "med",
+          "basis": "Sept 2026: pace advances, no training or deployment without a safety case convincing independent experts; LawZero's safe-by-design work needs time. Time lets safety catch up, though he says whack-a-mole fixes fail.",
+          "src": [
+            8,
+            3,
+            2
+          ]
         }
       },
       "v1Only": {
@@ -2958,7 +3176,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "altman",
@@ -3075,6 +3294,18 @@
           "url": "https://www.yahoo.com/news/openai-ceo-sam-altman-testifies-before-the-senate-4-key-takeaways-203027693.html",
           "date": "2023-05-16",
           "note": "Senate Judiciary hearing: 'I think it's important to understand and think about GPT4 as a tool, not a creature.'"
+        },
+        {
+          "title": "Governance of superintelligence (OpenAI blog, Sam Altman, Greg Brockman, Ilya Sutskever)",
+          "url": "https://openai.com/index/governance-of-superintelligence/",
+          "date": "2023-05-22",
+          "note": "openai.com blocks our fetcher; wording via search index and press (The Decoder, Fox News). Within ten years AI could exceed expert skill level in most domains; an IAEA-like authority above a compute threshold; stopping superintelligence would be 'unintuitively risky and difficult' and need something like a global surveillance regime, which might still fail."
+        },
+        {
+          "title": "Sam Altman is ready to decelerate (TechCrunch, Tim Fernholz)",
+          "url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/",
+          "date": "2026-07-28",
+          "note": "On a podcast with Patrick O'Shaughnessy: 'We may have to pace the rate of AI development', without 'regulatory capture for anyone' and without it feeling 'like collusion among the frontier labs'; prompted by the Hugging Face security incident."
         }
       ],
       "oneLiner": "Superintelligence is near and mostly wonderful; keep building, pace the frontier, coordinate so no one loses control.",
@@ -3460,6 +3691,36 @@
           "src": [
             3
           ]
+        },
+        "p7": {
+          "value": 90,
+          "conf": "high",
+          "basis": "Feb 2026: 'we could be only a couple of years away from early versions of true super intelligence'; by end-2028 more intellect inside data centres than outside. 2023: expert level in most fields within ten years.",
+          "src": [
+            6,
+            2,
+            18
+          ]
+        },
+        "p8": {
+          "value": 35,
+          "conf": "med",
+          "basis": "2023, with Brockman and Sutskever: halting superintelligence would need something like global surveillance and might still fail; they proposed an IAEA above a compute threshold. Ten years is close to a halt.",
+          "src": [
+            18,
+            6,
+            3
+          ]
+        },
+        "p9": {
+          "value": 62,
+          "conf": "med",
+          "basis": "Sept 2026: safety techniques must stay ahead of capabilities, so progress should be slower than it could be, and pacing is worth the cost. Yet OpenAI's creed is that safety is learned by deploying gradually.",
+          "src": [
+            10,
+            19,
+            0
+          ]
         }
       },
       "v1Only": {
@@ -3497,7 +3758,8 @@
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

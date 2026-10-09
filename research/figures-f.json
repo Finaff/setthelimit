@@ -381,10 +381,41 @@
             0,
             14
           ]
+        },
+        "p7": {
+          "value": 97,
+          "conf": "high",
+          "basis": "Davos, Jan 2026: AI 'smarter than any human by end of this year', smarter than all humanity by 2030-31. Economist, July 2026: AI 'will be able to do any job better than any person can do that job'.",
+          "src": [
+            4,
+            0
+          ]
+        },
+        "p8": {
+          "value": 35,
+          "conf": "low",
+          "basis": "His doubts were about will: nothing can stop the momentum, the 2023 pause letter was futile, a deal must suit China. On enforcement alone he has said nothing; he backs rival labs testing each other's models. Inferred.",
+          "src": [
+            0,
+            9,
+            13
+          ]
+        },
+        "p9": {
+          "value": 50,
+          "conf": "low",
+          "basis": "Agreed with Amodei's slow-down essay and in 2023 asked for a pause. But his own safety bet is a maximally truth-seeking AI and labs testing each other, not waiting, and he would not press a stop button. Even.",
+          "src": [
+            1,
+            9,
+            0,
+            13
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     },
     {
       "id": "mark-zuckerberg",
@@ -772,10 +803,41 @@
             0,
             13
           ]
+        },
+        "p7": {
+          "value": 80,
+          "conf": "med",
+          "basis": "July 2025: developing superintelligence is now in sight and the rest of this decade looks like the decisive period; set up a superintelligence lab to build it. Expects people to keep directing the work. Converted.",
+          "src": [
+            4,
+            0,
+            5
+          ]
+        },
+        "p8": {
+          "value": 15,
+          "conf": "med",
+          "basis": "Argues that closing models to keep them from China will not work and only hobbles the US and its allies; capabilities spread. Rejects even industry-wide coordination. Would not expect a joint slowdown to bind. Inferred.",
+          "src": [
+            7,
+            12,
+            0
+          ]
+        },
+        "p9": {
+          "value": 30,
+          "conf": "low",
+          "basis": "His warning against even a month of delay was about America falling behind, which 'together' removes. He grants that a lab should take the time it needs when it sees issues, but rejects industry-wide coordination.",
+          "src": [
+            12,
+            0,
+            1
+          ]
         }
       },
       "v5": "2026-09-24",
-      "v6": "2026-09-30"
+      "v6": "2026-09-30",
+      "v7": "2026-10-09"
     }
   ]
 }

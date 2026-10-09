@@ -206,3 +206,4 @@
 - Result page: "Where you disagree, and why" — five bars + speed, you vs any figure (select; default = the figure you are farthest from), sentence
   naming the biggest and smallest gap. Horizon chip removed from the profile chips (now the Power node). Bug fixed: class .top collided with the
   header's .top → .hot. Not deployed yet: agent predicting p7/p8/p9 for the 22 figures; then show the owner and deploy.
+- v7 items reworded after the prediction agent's review (p7 deadline/what counts/contested claims; p8 ten years + enforcement only; p9 'all developers together', no presupposition, 'safer' defined); agent re-checked: 11 values changed. Markers offset when the two nearly overlap. Screenshot: brand/screens/profil-desaccords-fr.jpg. Waiting for the owner's go to deploy.
