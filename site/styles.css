@@ -378,3 +378,40 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 /* ---- v8: graded probability scale ---- */
 .slider .ends.plog { text-transform: none; letter-spacing: 0; font-family: var(--font-mono); }
 .slider .ends.plog span { flex: 0 0 auto; }
+
+/* ---- v1.11: the map explorer ---- */
+.mxctl { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 4px 0 12px; }
+.mxctl input[type=search] { flex: 1 1 220px; min-width: 0; font: 600 15px var(--font-sign); background: var(--ground-2); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
+.mxctl label { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.mxctl select { font: 700 13px var(--font-sign); background: var(--ground-2); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 5px 6px; }
+.map.mx .xd { cursor: pointer; }
+.map.mx .xd circle { stroke-width: 1.6; }
+.map.mx .xd.pred circle { fill: var(--ground); stroke: var(--ink); }
+.map.mx .xd.decl circle { fill: #F5C518; stroke: #1B1E21; }
+.map.mx .xd.decl text { fill: #1B1E21; }
+.map.mx .xd.pub circle { fill: #F5C518; stroke: #1B1E21; }
+.map.mx .xd.me circle { fill: var(--green); stroke: var(--white); stroke-width: 2.5; }
+.map.mx .xd.on circle { stroke: var(--blue); stroke-width: 3.2; }
+.map.mx .xd.on2 circle { stroke: var(--green); stroke-width: 3.2; }
+.map.mx .xd.dim { opacity: .22; }
+.map.mx .xd text { font-family: var(--font-sign); font-weight: 700; font-size: 9px; fill: var(--ink); text-anchor: middle; pointer-events: none; }
+.map.mx .xd text.l3 { font-size: 6.6px; }
+.lg { display: inline-block; width: 11px; height: 11px; border-radius: 50%; vertical-align: -1px; margin-right: 5px; border: 1.5px solid var(--ink); background: var(--ground); }
+.lg.decl { background: #F5C518; border-color: #1B1E21; } .lg.me { background: var(--green); border-color: var(--white); } .lg.crowd { background: var(--blue); opacity: .35; border: 0; }
+.mxleg { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.mxcard { margin-top: 12px; background: var(--ground-2); border: 1px solid var(--line); border-left: 4px solid var(--blue); border-radius: 8px; padding: 12px 14px; }
+.mxhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; } .mxhead b { font-weight: 900; font-size: 17px; }
+.mxst { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin: 2px 0 8px; } .mxst.pred { color: var(--ink-3); } .mxst.decl { color: #B8860B; }
+.mxvals { display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-2); } .mxvals b { font-family: var(--font-sign); color: var(--ink); margin-right: 2px; }
+.mxlinks { font-size: 13px; margin: 8px 0; }
+.mxcard .nodes { margin-top: 10px; }
+.nbar .mk.a { width: 24px; height: 24px; border-radius: 999px; background: var(--green); color: #fff; font: 800 9.5px/24px var(--font-sign); text-align: center; z-index: 2; box-shadow: 0 0 0 2px var(--ground-2); min-width: 24px; padding: 0 3px; box-sizing: border-box; }
+.mxtable { overflow-x: auto; margin: 14px 0 6px; border: 1px solid var(--line); border-radius: 8px; }
+.mxtable table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.mxtable th, .mxtable td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-family: var(--font-mono); }
+.mxtable th:first-child, .mxtable td:first-child { text-align: left; font-family: var(--font-sign); position: sticky; left: 0; background: var(--ground-2); }
+.mxtable th button, .mxtable td button { background: none; border: 0; color: inherit; font: inherit; font-weight: 700; cursor: pointer; padding: 0; }
+.mxtable th button.on { color: var(--blue); }
+.mxtable tr.on td { background: color-mix(in srgb, var(--blue) 14%, transparent); }
+.mxcard .nfig { display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 700; color: var(--ink-2); margin-top: 8px; }
+.mxcard select { font: 700 14px var(--font-sign); background: var(--ground); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; max-width: 100%; }

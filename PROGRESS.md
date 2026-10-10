@@ -218,3 +218,15 @@
   (split lists, figure card gaps, figure page, proposition strip and tooltips, comment chips) goes through showVal() → percent for plog items.
 - Agent converting d20/d21 for the 22 figures from their own numbers (predictions carry value = position and pct = %).
 - DEPLOYED v8 (9 Oct 2026): d20/d21 on the graded scale for all 22 figures (agent; numbers anchored on stated p(doom) where given). Road shifts: Hinton/Russell/Harris/Bengio −6, Marcus +6, Buterin +5, Zuckerberg +4, others ≤3.
+
+## 2026-10-09 (map explorer)
+- New page #/map ("Carte"), in the nav: database view of the debate. Default = the 22 figures; search box (name or @handle, debounced; searches
+  the figures and, through GET /public?q=, every result made public with X, which otherwise stays hidden); "Show" filter (everyone / predicted
+  only / declared only); toggles for public results and anonymous answers; any two of six dimensions on the axes (Road (control), Speed,
+  Power, Threshold, Brakes, Steering — the road axis IS the Control node, shown once); predicted dots white, declared (claimed figures and
+  public X results) yellow, you green; click a dot or a row → card with all six values, links (figure page, or their result + X profile), and
+  "Compare with" anyone (you, a figure, a public result) → the five-node comparison; sortable table with "Gap to you". State lives in the hash
+  (#/map?x=power&y=brake&q=…&sel=…&cmp=…&pub=1&st=decl&sort=…&dir=desc) so any view is a shareable link. Re-renders keep focus and caret.
+- nodeCompareHtml(A, B) generalises the profile to any two people; the result page's profile links to the map ("Open in the map").
+- Worker: GET /public?q=&limit= (handle prefix or part of the name, newest first, total count); 4 new tests (56). Deployed API + site.
+- Production on 9 Oct: 2 anonymous runs stored (first real visitors), 0 public results.

@@ -31,6 +31,10 @@ res = await call('POST', '/public', { id: run.id, token: 'wrong' }, alice); t('P
 res = await call('POST', '/public', { id: run.id, token: run.token }, alice); j = await res.json(); t('POST /public', j.ok && j.handle === 'alice');
 res = await call('GET', '/public/Alice'); j = await res.json(); t('GET /public/:handle (case-insensitive)', j.r === R && j.x === 60);
 res = await call('GET', '/me', null, alice); j = await res.json(); t('GET /me shows public', j.public && j.public.handle === 'alice');
+res = await call('GET', '/public'); j = await res.json(); t('GET /public lists public results', j.total === 1 && j.results.length === 1 && j.results[0].handle === 'alice' && j.results[0].r === R);
+res = await call('GET', '/public?q=%40AL'); j = await res.json(); t('GET /public?q= matches a handle prefix, case-insensitive', j.results.length === 1);
+res = await call('GET', '/public?q=zz'); j = await res.json(); t('GET /public?q= with no match is empty', j.results.length === 0 && j.total === 1);
+res = await call('GET', "/public?q=a'%25%20OR%201%3D1--"); t('GET /public?q= survives SQL-looking input', res.status === 200);
 res = await call('DELETE', '/public', null, alice); t('DELETE /public', (await res.json()).ok);
 res = await call('GET', '/public/alice'); t('GET /public after delete → 404', res.status === 404);
 res = await call('POST', '/claim', { r: R }, alice); t('POST /claim by a non-figure → 403', res.status === 403);

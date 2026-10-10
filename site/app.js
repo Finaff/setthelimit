@@ -93,28 +93,32 @@
     ITEMS.forEach((it) => { if (it.node !== k) return; const v = answers[it.id]; if (typeof v !== 'number') return; const w = it.weight || 1; num += (it.ndir === 1 ? v : 100 - v) * w; den += w; n++; });
     return den ? { v: num / den, n } : { v: null, n: 0 };
   }
+  /* A and B: { name, short, label, answers, you }. A's marker is green, B's blue. Returns the sentence, the five node rows and the speed row. */
+  function nodeCompareHtml(A, B) {
+    const rows = NODES.map((nd) => ({ nd, a: nodeScore(A.answers, nd.k), b: nodeScore(B.answers, nd.k) })).map((r) => Object.assign(r, { gap: r.a.v !== null && r.b.v !== null ? Math.round(Math.abs(r.a.v - r.b.v)) : null }));
+    const sa = scores(A.answers), sb = scores(B.answers);
+    const known = rows.filter((r) => r.gap !== null).sort((p, q) => q.gap - p.gap);
+    let line = '';
+    if (known.length >= 2) {
+      const hi = known[0], lo = known[known.length - 1], v = { name: esc(B.short), a: T(hi.nd.name), ga: hi.gap, b: T(lo.nd.name), gb: lo.gap, x: esc(A.short) };
+      line = A.you ? (hi.gap < 15 ? fmt(T('You and {name} are close on all five questions; your difference is a matter of degree.'), v) : fmt(T('You and {name} split most on {a} ({ga} points apart). You are closest on {b} ({gb}).'), v))
+        : (hi.gap < 15 ? fmt(T('{x} and {name} are close on all five questions; their difference is a matter of degree.'), v) : fmt(T('{x} and {name} split most on {a} ({ga} points apart). They are closest on {b} ({gb}).'), v));
+    }
+    const bar = (a, b, lo, hi) => `<div class="nbar${a !== null && b !== null && Math.abs(a - b) < 7 ? ' close' : ''}"><i class="ln"></i>${b !== null ? `<span class="mk them" style="left:${Math.round(b)}%" data-tip="${esc(B.name)} · ${Math.round(b)}">${esc(B.label)}</span>` : ''}${a !== null ? `<span class="mk ${A.you ? 'you' : 'a'}" style="left:${Math.round(a)}%" data-tip="${esc(A.name)} · ${Math.round(a)}">${A.you ? '' : esc(A.label)}</span>` : ''}</div><div class="nends"><span>${T(lo)}</span><span>${T(hi)}</span></div>`;
+    return `${line ? `<p class="nline">${line}</p>` : ''}
+      ${rows.map((r) => `<div class="nrow${known[0] && r === known[0] && r.gap >= 15 ? ' hot' : ''}"><div class="nk"><b>${T(r.nd.name)}</b><span>${T(r.nd.q)}</span>${r.gap !== null ? `<em>${fmt(T('gap {d}'), { d: r.gap })}</em>` : ''}</div>${bar(r.a.v, r.b.v, r.nd.lo, r.nd.hi)}</div>`).join('')}
+      <div class="nrow concl"><div class="nk"><b>${T('Speed')}</b><span>${T('The conclusion: the limit each of you would set.')}</span>${sa.ok && sb.ok ? `<em>${fmt(T('gap {d}'), { d: Math.round(Math.abs(sa.y - sb.y)) })}</em>` : ''}</div>${bar(sa.ok ? sa.y : null, sb.ok ? sb.y : null, 'full stop', 'no limit')}</div>`;
+  }
   function nodesHtml(mine, comps) {
     if (!ITEMS.some((it) => it.node)) return '';
     const pick = (S.nodeFig && comps.find((c) => c.f.id === S.nodeFig)) || (S.sel && comps.find((c) => c.f.id === S.sel)) || comps[comps.length - 1];
     if (!pick) return '';
-    const fa = figAnswers(pick.f), who = esc(surname(pick.f.name));
-    const rows = NODES.map((nd) => ({ nd, a: nodeScore(mine, nd.k), b: nodeScore(fa, nd.k) })).map((r) => Object.assign(r, { gap: r.a.v !== null && r.b.v !== null ? Math.round(Math.abs(r.a.v - r.b.v)) : null }));
-    const sc = scores(mine), fs = figScore(pick.f);
-    const known = rows.filter((r) => r.gap !== null).sort((p, q) => q.gap - p.gap);
-    let line = '';
-    if (known.length >= 2) {
-      const hi = known[0], lo = known[known.length - 1];
-      line = hi.gap < 15 ? fmt(T('You and {name} are close on all five questions; your difference is a matter of degree.'), { name: who })
-        : fmt(T('You and {name} split most on {a} ({ga} points apart). You are closest on {b} ({gb}).'), { name: who, a: T(hi.nd.name), ga: hi.gap, b: T(lo.nd.name), gb: lo.gap });
-    }
-    const bar = (a, b, lo, hi) => `<div class="nbar${a !== null && b !== null && Math.abs(a - b) < 7 ? ' close' : ''}"><i class="ln"></i>${b !== null ? `<span class="mk them" style="left:${Math.round(b)}%" data-tip="${esc(pick.f.name)} · ${Math.round(b)}">${esc(figLabel(pick.f))}</span>` : ''}${a !== null ? `<span class="mk you" style="left:${Math.round(a)}%" data-tip="${T('You')} · ${Math.round(a)}"></span>` : ''}</div><div class="nends"><span>${T(lo)}</span><span>${T(hi)}</span></div>`;
+    const who = esc(surname(pick.f.name));
     const opts = comps.slice().sort((p, q) => surname(p.f.name).localeCompare(surname(q.f.name))).map((c) => `<option value="${esc(c.f.id)}" ${c.f.id === pick.f.id ? 'selected' : ''}>${esc(c.f.name)}</option>`).join('');
     return `<h2 class="sec">${T('Where you disagree, and why')}<small>${T('Every position in this debate rests on five questions. Your answers sum up to a point on each; compare them with anyone on the map.')}</small></h2>
       <div class="nodes"><label class="nfig">${T('Compare with')} <select id="nodefig">${opts}</select></label>
-      ${line ? `<p class="nline">${line}</p>` : ''}
-      ${rows.map((r) => `<div class="nrow${known[0] && r === known[0] && r.gap >= 15 ? ' hot' : ''}"><div class="nk"><b>${T(r.nd.name)}</b><span>${T(r.nd.q)}</span>${r.gap !== null ? `<em>${fmt(T('gap {d}'), { d: r.gap })}</em>` : ''}</div>${bar(r.a.v, r.b.v, r.nd.lo, r.nd.hi)}</div>`).join('')}
-      <div class="nrow concl"><div class="nk"><b>${T('Speed')}</b><span>${T('The conclusion: the limit each of you would set.')}</span>${sc.ok && fs.ok ? `<em>${fmt(T('gap {d}'), { d: Math.round(Math.abs(sc.y - fs.y)) })}</em>` : ''}</div>${bar(sc.ok ? sc.y : null, fs.ok ? fs.y : null, 'full stop', 'no limit')}</div>
-      <p class="note">${fmt(T('Your green marker against {name}\u2019s predicted answers. Each line averages the propositions that bear on that question.'), { name: who })}</p></div>`;
+      ${nodeCompareHtml({ name: T('You'), short: T('You'), label: '', answers: mine, you: true }, { name: pick.f.name, short: surname(pick.f.name), label: figLabel(pick.f), answers: figAnswers(pick.f) })}
+      <p class="note">${fmt(T('Your green marker against {name}’s predicted answers. Each line averages the propositions that bear on that question.'), { name: who })} <a href="#/map?sel=${esc(pick.f.id)}&cmp=me">${T('Open in the map')}</a></p></div>`;
   }
   function subScore(answers, sub) {
     const its = ITEMS.filter((it) => it.axis === 'profile' && it.sub === sub); let num = 0, den = 0;
@@ -181,8 +185,9 @@
 
   // ---------- routing ----------
   function parseRoute() {
-    const h = (location.hash || '#/').replace(/^#\/?/, '');
+    const h = (location.hash || '#/').replace(/^#\/?/, '').split('?')[0];
     const parts = h.split('/').filter(Boolean);
+    if (parts[0] === 'map') return { page: 'map' };
     if (!parts.length) return { page: 'home' };
     if (parts[0] === 'q') return { page: 'q', n: clamp(parseInt(parts[1] || '1', 10) || 1, 1, ITEMS.length) };
     if (parts[0] === 'result') return { page: 'result' };
@@ -203,14 +208,16 @@
   const root = document.getElementById('stl');
   function shell(inner, opts) {
     const o = opts || {};
-    return `<div class="wrap"><header class="top"><a class="mark" href="#/"><i></i>${SITE}</a><span class="spacer"></span><span class="stamp">${fmt(T('As of {stamp}'), { stamp: STAMP })}</span><nav><a href="#/context">${T('Why now')}</a><a href="#/debate">${T('Debate')}</a><a href="#/figures">${T('Figures')}</a><a href="#/method">${T('Method')}</a>${window.STL_STRINGS_FR ? `<a class="lang" href="?lang=${LANG === 'fr' ? 'en' : 'fr'}#/" title="${LANG === 'fr' ? 'English' : 'Français'}">${LANG === 'fr' ? 'EN' : 'FR'}</a>` : ''}</nav></header>${inner}${o.foot === false ? '' : `<p class="foot">${fmt(T('{site} is an independent project. The {n} propositions were written to be fair to both sides and reviewed adversarially; the figures\u2019 positions are predictions from their public statements, with sources, and they can correct them.'), { site: SITE, n: ITEMS.length })} <a href="#/method">${T('How it works')}</a> · <a href="#/privacy">${T('Privacy')}</a> · <a href="https://github.com/Finaff/setthelimit" target="_blank" rel="noopener">GitHub</a></p>`}</div><div id="toastbox"></div>`;
+    return `<div class="wrap"><header class="top"><a class="mark" href="#/"><i></i>${SITE}</a><span class="spacer"></span><span class="stamp">${fmt(T('As of {stamp}'), { stamp: STAMP })}</span><nav><a href="#/context">${T('Why now')}</a><a href="#/map">${T('Map')}</a><a href="#/debate">${T('Debate')}</a><a href="#/figures">${T('Figures')}</a><a href="#/method">${T('Method')}</a>${window.STL_STRINGS_FR ? `<a class="lang" href="?lang=${LANG === 'fr' ? 'en' : 'fr'}#/" title="${LANG === 'fr' ? 'English' : 'Français'}">${LANG === 'fr' ? 'EN' : 'FR'}</a>` : ''}</nav></header>${inner}${o.foot === false ? '' : `<p class="foot">${fmt(T('{site} is an independent project. The {n} propositions were written to be fair to both sides and reviewed adversarially; the figures\u2019 positions are predictions from their public statements, with sources, and they can correct them.'), { site: SITE, n: ITEMS.length })} <a href="#/method">${T('How it works')}</a> · <a href="#/privacy">${T('Privacy')}</a> · <a href="https://github.com/Finaff/setthelimit" target="_blank" rel="noopener">GitHub</a></p>`}</div><div id="toastbox"></div>`;
   }
   function render() {
     S.route = parseRoute();
     const r = S.route;
-    const fn = { home: viewHome, q: viewQ, result: viewResult, figures: viewFigures, figure: viewFigure, method: viewMethod, shared: viewShared, context: viewContext, debate: viewDebate, prop: viewProp, privacy: viewPrivacy }[r.page] || viewHome;
+    const fn = { home: viewHome, q: viewQ, result: viewResult, figures: viewFigures, figure: viewFigure, method: viewMethod, shared: viewShared, context: viewContext, debate: viewDebate, map: viewMap, prop: viewProp, privacy: viewPrivacy }[r.page] || viewHome;
     document.querySelectorAll('textarea[data-draft]').forEach((t) => { S.drafts[t.dataset.draft] = t.value; });
+    const act = document.activeElement, keep = act && act.id && /^(INPUT|SELECT|TEXTAREA)$/.test(act.tagName) && act.type !== 'range' ? { id: act.id, s: act.selectionStart, e: act.selectionEnd } : null;
     root.innerHTML = fn(r);
+    if (keep) { const el = document.getElementById(keep.id); if (el) { el.focus(); try { if (keep.s !== null) el.setSelectionRange(keep.s, keep.e); } catch (e) { /* not a text field */ } } }
     document.querySelectorAll('textarea[data-draft]').forEach((t) => { if (S.drafts[t.dataset.draft]) t.value = S.drafts[t.dataset.draft]; });
     if (S.keepScroll !== null && S.keepScroll !== undefined) { window.scrollTo(0, S.keepScroll); S.keepScroll = null; } else window.scrollTo(0, 0);
     if (r.page === 'result') afterResult();
@@ -271,7 +278,7 @@
       <div class="verdict"><div class="arche">${esc(ar.tag)}</div><h1>${esc(ar.name)}</h1><p>${esc(ar.blurb)}${ar.near ? ' ' + esc(ar.near) : ''}</p>
       <p class="note">${fmt(T('Your speed limit is {y} on a scale from 0 (full stop) to 100 (no limit). You rate the road at {x} from 0 (clear) to 100 (black ice).'), { y: `<b class="mono">${Math.round(sc.y)}</b>`, x: `<b class="mono">${Math.round(sc.x)}</b>` })} ${crowd ? crowd.line : ''}</p></div>`;
     if (vs && vs.ok) { const cv = compareAnswers(S.answers, S.vs); html += `<div class="vsbox">${fmt(T('Versus the person who sent you here: you agree on {a} of {b} propositions.'), { a: cv.agree, b: cv.both })} <span class="read">${fmt(T('They set the limit at {y} and rate the road at {x}.'), { y: Math.round(vs.y), x: Math.round(vs.x) })}</span></div>`; }
-    html += `<div class="mapwrap">${mapSvg(sc, vs, comps)}<div class="legend"><span><i style="background:var(--green)"></i>${T('You')}</span>${vs && vs.ok ? `<span><i style="background:var(--yellow);outline:1px solid var(--ink)"></i>${T('Them')}</span>` : ''}${FIGS.length ? `<span><i style="background:var(--asphalt-2)"></i>${T('Public figures (predicted, tap one)')}</span>` : ''}${crowd && crowd.n ? `<span><i style="background:var(--blue);opacity:.35"></i>${fmt(T('{n} other people'), { n: crowd.n })}</span>` : ''}</div>${comps.length ? `<div class="figchips">${comps.slice().sort((p, q) => surname(p.f.name).localeCompare(surname(q.f.name))).map((c) => `<button class="${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}"><span class="av">${esc(initials(c.f.name))}</span>${esc(surname(c.f.name))}</button>`).join('')}</div>` : ''}<div id="figcard">${S.sel ? figCard(comps.find((c) => c.f.id === S.sel)) : ''}</div><p class="note mapnote">${T('The map sums up your answers as two averages, so opposite differences can cancel out. The list below compares you question by question: you can be neighbours on the map and still split on the details. Tap a figure to see where.')}</p></div>`;
+    html += `<div class="mapwrap">${mapSvg(sc, vs, comps)}<div class="legend"><span><i style="background:var(--green)"></i>${T('You')}</span>${vs && vs.ok ? `<span><i style="background:var(--yellow);outline:1px solid var(--ink)"></i>${T('Them')}</span>` : ''}${FIGS.length ? `<span><i style="background:var(--asphalt-2)"></i>${T('Public figures (predicted, tap one)')}</span>` : ''}${crowd && crowd.n ? `<span><i style="background:var(--blue);opacity:.35"></i>${fmt(T('{n} other people'), { n: crowd.n })}</span>` : ''}</div>${comps.length ? `<div class="figchips">${comps.slice().sort((p, q) => surname(p.f.name).localeCompare(surname(q.f.name))).map((c) => `<button class="${S.sel === c.f.id ? 'on' : ''}" data-fig="${esc(c.f.id)}"><span class="av">${esc(initials(c.f.name))}</span>${esc(surname(c.f.name))}</button>`).join('')}</div>` : ''}<div id="figcard">${S.sel ? figCard(comps.find((c) => c.f.id === S.sel)) : ''}</div><p class="note mapnote">${T('The map sums up your answers as two averages, so opposite differences can cancel out. The list below compares you question by question: you can be neighbours on the map and still split on the details. Tap a figure to see where.')} <a href="#/map">${T('Open the full map: search anyone, change the axes')}</a></p></div>`;
     if (comps.length) {
       html += `<h2 class="sec">${T('You agree most with')}<small>${fmt(T('Ranked by the average gap between your answers and their predicted ones, proposition by proposition (0 = identical, 100 = opposite). The second number counts propositions where you are within {n} points.'), { n: AGREE_BAND })}</small></h2><ul class="near">${comps.slice(0, 5).map((c) => `<li><button data-fig="${esc(c.f.id)}"><span class="av">${esc(initials(c.f.name))}</span></button><button data-fig="${esc(c.f.id)}"><span class="nm">${esc(c.f.name)}</span><br><span class="cm">${esc(c.f.camp || '')}</span></button><span class="pct">${fmt(T('{g} pts'), { g: c.gap })}<small>${fmt(T('{a}/{b} within {n}'), { a: c.agree, b: c.both, n: AGREE_BAND })}</small></span></li>`).join('')}</ul>`;
       if (farthest && farthest !== nearest) html += `<h2 class="sec">${T('You agree least with')}</h2><ul class="near"><li><button data-fig="${esc(farthest.f.id)}"><span class="av">${esc(initials(farthest.f.name))}</span></button><button data-fig="${esc(farthest.f.id)}"><span class="nm">${esc(farthest.f.name)}</span><br><span class="cm">${esc(farthest.f.camp || '')}</span></button><span class="pct">${fmt(T('{g} pts'), { g: farthest.gap })}<small>${fmt(T('{a}/{b} within {n}'), { a: farthest.agree, b: farthest.both, n: AGREE_BAND })}</small></span></li></ul>`;
@@ -500,6 +507,103 @@
       <p><a href="https://github.com/Finaff/setthelimit" target="_blank" rel="noopener">github.com/Finaff/setthelimit</a></p></div></section>`);
   }
 
+  // ---------- the map explorer: every public figure (predicted or declared) and anyone who made a result public with X ----------
+  /* the road axis is the Control node (same propositions, same weights), so the explorer shows it once */
+  const MX_AXES = [{ k: 'road', name: 'Road (control)', lo: 'clear road', hi: 'black ice' }, { k: 'speed', name: 'Speed', lo: 'full stop', hi: 'no limit' }].concat(NODES.filter((n) => n.k !== 'control').map((n) => ({ k: n.k, name: n.name, lo: n.lo, hi: n.hi })));
+  function axisVal(e, k) {
+    if (k === 'road' || k === 'speed') { if (e.answers) { const sc = scores(e.answers); if (sc.ok) return k === 'road' ? sc.x : sc.y; } return typeof e[k] === 'number' ? e[k] : null; }
+    return e.answers ? nodeScore(e.answers, k).v : null;
+  }
+  function meanGap(a, b) { let t = 0, n = 0; ITEMS.forEach((it) => { if (typeof a[it.id] === 'number' && typeof b[it.id] === 'number') { t += Math.abs(a[it.id] - b[it.id]); n++; } }); return n >= 6 ? Math.round(t / n) : null; }
+  function mxParams() { const h = location.hash, i = h.indexOf('?'); return new URLSearchParams(i >= 0 ? h.slice(i + 1) : ''); }
+  function mxSet(ch) {
+    const p = mxParams(); Object.entries(ch).forEach(([k, v]) => { if (v === null || v === undefined || v === '' || v === false) p.delete(k); else p.set(k, v === true ? '1' : String(v)); });
+    const h = '#/map' + (p.toString() ? '?' + p.toString() : '');
+    try { history.replaceState(null, '', location.pathname + location.search + h); renderKeep(); } catch (e) { location.hash = h; }
+  }
+  function mxEntries() {
+    const out = FIGS.map((f) => ({ kind: 'fig', id: f.id, name: f.name, short: surname(f.name), label: figLabel(f), answers: figAnswers(f), declared: !!f.claimed, at: f.claimed ? f.claimed.at : null, f }));
+    const seen = new Set();
+    [].concat(S.pubList || [], ...Object.values(S.pubSearch || {})).forEach((p) => {
+      const k = String(p.handle).toLowerCase(); if (seen.has(k)) return; seen.add(k); const ans = dec(p.r);
+      out.push({ kind: 'pub', id: '@' + p.handle, name: p.name ? p.name + ' (@' + p.handle + ')' : '@' + p.handle, short: '@' + p.handle, handle: p.handle, label: '@', answers: ans, road: ans ? null : p.x, speed: ans ? null : p.y, declared: true, at: p.at, old: !ans });
+    });
+    if (scores(S.answers).ok) out.push({ kind: 'me', id: 'me', name: T('You'), short: T('You'), label: '', answers: S.answers, you: true });
+    return out;
+  }
+  const mxMatch = (e, q) => { if (!q) return false; const t = q.toLowerCase().replace(/^@/, ''); return e.kind !== 'me' && ((e.name || '').toLowerCase().includes(t) || (e.handle || '').toLowerCase().startsWith(t)); };
+  function viewMap() {
+    const p = mxParams(), ax = p.get('x') || 'road', ay = p.get('y') || 'speed', q = (p.get('q') || '').trim(), pub = p.get('pub') === '1', crowd = p.get('crowd') !== '0', st = p.get('st') || 'all', sel = p.get('sel') || '', cmp = p.get('cmp') || '', sort = p.get('sort') || 'name', dir = p.get('dir') === 'desc' ? -1 : 1;
+    if (API && !S.pubList && !S.pubListLoading) { S.pubListLoading = true; apiJson('/public?limit=500').then((j) => { S.pubList = (j && j.results) || []; S.pubTotal = j ? j.total : 0; if (parseRoute().page === 'map') renderKeep(); }); }
+    const qk = q.toLowerCase().replace(/^@/, '');
+    S.pubSearch = S.pubSearch || {}; S.pubSearching = S.pubSearching || {};
+    if (API && qk.length >= 2 && !S.pubSearch[qk] && !S.pubSearching[qk]) { S.pubSearching[qk] = true; apiJson('/public?limit=50&q=' + encodeURIComponent(qk)).then((j) => { S.pubSearch[qk] = (j && j.results) || []; if (parseRoute().page === 'map') renderKeep(); }); }
+    const all = mxEntries(), A = (k) => MX_AXES.find((a) => a.k === k) || MX_AXES[0], axX = A(ax), axY = A(ay);
+    const visible = all.filter((e) => {
+      if (e.kind === 'me') return st === 'all';
+      if (st === 'pred' && (e.declared || e.kind === 'pub')) return false;
+      if (st === 'decl' && !e.declared) return false;
+      if (e.kind === 'pub') return pub || st === 'decl' || mxMatch(e, q) || e.id === sel || e.id === cmp;
+      return true;
+    });
+    const placed = [], unplaced = [];
+    visible.forEach((e) => { const vx = axisVal(e, axX.k), vy = axisVal(e, axY.k); if (vx === null || vy === null) unplaced.push(e); else placed.push(Object.assign(e, { vx, vy })); });
+    const W = 380, H = 380, L = 30, B = 30, TP = 14, R = 14, X = (v) => L + (v / 100) * (W - L - R), Y = (v) => H - B - (v / 100) * (H - TP - B);
+    let g = '';
+    [25, 50, 75].forEach((t) => { g += `<line class="grid" x1="${X(t)}" y1="${TP}" x2="${X(t)}" y2="${H - B}"/><line class="grid" x1="${L}" y1="${Y(t)}" x2="${W - R}" y2="${Y(t)}"/>`; });
+    g += `<line class="axis" x1="${L}" y1="${Y(50)}" x2="${W - R}" y2="${Y(50)}"/><line class="axis" x1="${X(50)}" y1="${TP}" x2="${X(50)}" y2="${H - B}"/>`;
+    if (axX.k === 'road' && axY.k === 'speed') g += `<text class="qlab" x="${X(25)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.open.name)}</text><text class="qlab" x="${X(75)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.weather.name)}</text><text class="qlab" x="${X(25)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.slow.name)}</text><text class="qlab" x="${X(75)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.brake.name)}</text>`;
+    g += `<text class="alab" x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">← ${T(axX.lo)} · ${T(axX.name)} · ${T(axX.hi)} →</text><text class="alab" transform="translate(9,${(TP + H - B) / 2}) rotate(-90)" text-anchor="middle">← ${T(axY.lo)} · ${T(axY.name)} · ${T(axY.hi)} →</text>`;
+    const cpts = (S.liveCrowd.length ? S.liveCrowd : CROWD.points) || [];
+    if (crowd && axX.k === 'road' && axY.k === 'speed') { const step = Math.max(1, Math.ceil(cpts.length / 600)); for (let i = 0; i < cpts.length; i += step) g += `<circle class="crowd" cx="${X(cpts[i][0])}" cy="${Y(cpts[i][1])}" r="3"/>`; }
+    const big = (e) => e.kind !== 'pub' || e.id === sel || e.id === cmp || mxMatch(e, q);
+    const pos = placed.map((e) => ({ e, x: X(e.vx), y: Y(e.vy), ox: X(e.vx), oy: Y(e.vy), big: big(e) }));
+    const relax = pos.filter((p2) => p2.big);
+    for (let it = 0; it < 60; it++) {
+      for (let i = 0; i < relax.length; i++) for (let j = i + 1; j < relax.length; j++) { const a = relax[i], b = relax[j]; let dx = b.x - a.x, dy = b.y - a.y; let d = Math.hypot(dx, dy); if (d < 17) { if (d < 0.01) { dx = (i % 2 ? 1 : -1); dy = (j % 2 ? 1 : -1); d = Math.hypot(dx, dy); } const push = (17 - d) / 2; a.x -= (dx / d) * push; a.y -= (dy / d) * push; b.x += (dx / d) * push; b.y += (dy / d) * push; } }
+      relax.forEach((p2) => { p2.x += (p2.ox - p2.x) * 0.06; p2.y += (p2.oy - p2.y) * 0.06; p2.x = clamp(p2.x, L + 8, W - R - 8); p2.y = clamp(p2.y, TP + 8, H - B - 8); });
+    }
+    const order = (p2) => (p2.e.id === sel || p2.e.id === cmp ? 3 : p2.e.kind === 'me' ? 2 : p2.big ? 1 : 0);
+    pos.sort((a, b) => order(a) - order(b)).forEach((p2) => {
+      const e = p2.e, cls = ['xd', e.kind === 'me' ? 'me' : e.declared ? 'decl' : 'pred', e.kind === 'pub' ? 'pub' : '', e.id === sel ? 'on' : '', e.id === cmp ? 'on2' : '', q && e.kind !== 'me' && !mxMatch(e, q) ? 'dim' : ''].filter(Boolean).join(' ');
+      const tip = esc(e.name) + ' · ' + Math.round(e.vx) + ' / ' + Math.round(e.vy) + (e.kind === 'fig' ? ' · ' + (e.declared ? T('declared') : T('predicted')) : '');
+      if (!p2.big) { g += `<g class="${cls}" data-mx="${esc(e.id)}" data-tip="${tip}"><circle cx="${p2.x}" cy="${p2.y}" r="4"/></g>`; return; }
+      const lb = e.kind === 'me' ? '' : e.label;
+      g += `<g class="${cls}" data-mx="${esc(e.id)}" tabindex="0" data-tip="${tip}" aria-label="${esc(e.name)}"><circle cx="${p2.x}" cy="${p2.y}" r="${e.kind === 'me' ? 9 : 8}"/>${lb ? `<text class="init${lb.length > 2 ? ' l3' : ''}" x="${p2.x}" y="${p2.y + 2.6}">${esc(lb)}</text>` : ''}</g>`;
+      if (e.id === sel || e.id === cmp || e.kind === 'me') { const right = p2.x < W * 0.62; g += `<text class="figname" x="${p2.x + (right ? 12 : -12)}" y="${p2.y + 3.5}" text-anchor="${right ? 'start' : 'end'}">${esc(e.kind === 'me' ? T('You') : e.short)}</text>`; }
+    });
+    const opt = (cur) => MX_AXES.map((a) => `<option value="${a.k}" ${a.k === cur ? 'selected' : ''}>${T(a.name)}</option>`).join('');
+    const nPub = S.pubTotal || 0;
+    const selE = all.find((e) => e.id === sel), cmpE = all.find((e) => e.id === cmp);
+    let card = '';
+    if (selE) {
+      const vals = MX_AXES.map((a) => { const v = axisVal(selE, a.k); return `<span><b>${T(a.name)}</b> ${v === null ? '—' : Math.round(v)}</span>`; }).join('');
+      const status = selE.kind === 'me' ? T('Your answers') : selE.declared ? fmt(T('Declared: answered themselves on {date}'), { date: esc(String(selE.at || '').slice(0, 10)) }) : T('Predicted from their public statements');
+      const links = selE.kind === 'fig' ? `<a href="#/figure/${esc(selE.id)}">${T('Predictions and sources')}</a>` : selE.kind === 'pub' ? `<a href="?u=${esc(selE.handle)}#/shared">${T('Their result')}</a> · <a href="https://x.com/${esc(selE.handle)}" target="_blank" rel="noopener nofollow">@${esc(selE.handle)} ${T('on X')}</a>` : '';
+      const copts = all.filter((e) => e.id !== selE.id && e.answers && (e.kind !== 'pub' || e === cmpE || pub || mxMatch(e, q))).sort((a, b) => (a.kind === 'me' ? -1 : b.kind === 'me' ? 1 : a.short.localeCompare(b.short))).map((e) => `<option value="${esc(e.id)}" ${e.id === cmp ? 'selected' : ''}>${esc(e.kind === 'me' ? T('You') : e.name)}</option>`).join('');
+      card = `<div class="mxcard"><div class="mxhead"><b>${esc(selE.name)}</b><button class="btn quiet sm" data-mxclear="1">${T('Close')}</button></div><div class="mxst ${selE.declared || selE.kind === 'me' ? 'decl' : 'pred'}">${status}${selE.old ? ' · ' + T('answered an earlier version of the test') : ''}</div><div class="mxvals">${vals}</div>${links ? `<p class="mxlinks">${links}</p>` : ''}
+        ${selE.answers ? `<label class="nfig">${T('Compare with')} <select id="mxcmp"><option value="">—</option>${copts}</select></label>` : ''}
+        ${selE.answers && cmpE && cmpE.answers ? `<div class="nodes">${cmpE.kind === 'me' ? nodeCompareHtml(cmpE, selE) : nodeCompareHtml(selE, cmpE)}</div>` : ''}</div>`;
+    }
+    const me = all.find((e) => e.kind === 'me');
+    const cols = [{ k: 'name', name: 'Name' }].concat(MX_AXES.map((a) => ({ k: a.k, name: a.name }))).concat(me ? [{ k: 'gap', name: 'Gap to you' }] : []);
+    const cell = (e, k) => (k === 'name' ? e.short : k === 'gap' ? (e.answers && me && e !== me ? meanGap(me.answers, e.answers) : null) : axisVal(e, k));
+    const tableRows = visible.filter((e) => e.kind !== 'me' && (!q || mxMatch(e, q))).sort((a, b) => { const va = cell(a, sort), vb = cell(b, sort); if (va === null || va === undefined) return 1; if (vb === null || vb === undefined) return -1; return (typeof va === 'string' ? va.localeCompare(vb) : va - vb) * dir; });
+    const table = `<div class="mxtable"><table><thead><tr>${cols.map((c) => `<th><button data-mxsort="${c.k}" class="${sort === c.k ? 'on' : ''}">${T(c.name)}${sort === c.k ? (dir === 1 ? ' ▲' : ' ▼') : ''}</button></th>`).join('')}</tr></thead><tbody>${tableRows.map((e) => `<tr class="${e.id === sel ? 'on' : ''}"><td><button data-mx="${esc(e.id)}"><i class="lg ${e.declared ? 'decl' : 'pred'}"></i>${esc(e.short)}</button></td>${cols.slice(1).map((c) => { const v = cell(e, c.k); return `<td>${v === null || v === undefined ? '—' : Math.round(v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>`;
+    return shell(`<section><h2 class="sec">${T('The map')}<small>${T('Every public figure, placed from their own public words or from their own answers, and anyone who chose to make their result public with X. Search anyone, filter, pick any two of the six dimensions.')}</small></h2>
+      <div class="mxctl"><input type="search" id="mxq" value="${esc(q)}" placeholder="${T('Search a name or an @handle')}" autocomplete="off" aria-label="${T('Search a name or an @handle')}">
+        <label>${T('Across')} <select id="mxx">${opt(axX.k)}</select></label><label>${T('Up')} <select id="mxy">${opt(axY.k)}</select></label>
+        <label>${T('Show')} <select id="mxst"><option value="all" ${st === 'all' ? 'selected' : ''}>${T('Everyone')}</option><option value="pred" ${st === 'pred' ? 'selected' : ''}>${T('Predicted only')}</option><option value="decl" ${st === 'decl' ? 'selected' : ''}>${T('Declared only')}</option></select></label>
+        <label class="chk"><input type="checkbox" id="mxpub" ${pub ? 'checked' : ''} ${API ? '' : 'disabled'}> ${fmt(T('Public results ({n})'), { n: nPub })}</label>
+        <label class="chk"><input type="checkbox" id="mxcrowd" ${crowd ? 'checked' : ''}> ${fmt(T('Anonymous answers ({n})'), { n: cpts.length })}</label></div>
+      <div class="mapwrap"><svg class="map mx" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Map of the debate')}">${g}</svg>
+        <div class="legend mxleg"><span><i class="lg pred"></i>${T('Predicted from public statements')}</span><span><i class="lg decl"></i>${T('Declared: answered themselves')}</span>${me ? `<span><i class="lg me"></i>${T('You')}</span>` : ''}${crowd && axX.k === 'road' && axY.k === 'speed' && cpts.length ? `<span><i class="lg crowd"></i>${T('Anonymous answers')}</span>` : ''}</div>
+        <p class="note">${fmt(T('{n} on the map.'), { n: placed.length })}${unplaced.length ? ' ' + fmt(T('{n} not placed on these axes: they answered an earlier version of the test.'), { n: unplaced.length }) : ''}${q && API && qk.length >= 2 && !S.pubSearch[qk] ? ' ' + T('Searching…') : ''}${q && !visible.some((e) => mxMatch(e, q)) && S.pubSearch[qk] ? ' ' + T('No one by that name yet. Public results appear here once their owner makes them public with X.') : ''}</p>
+        ${card}</div>
+      ${table}
+      <p class="note">${T('Predicted dots are our estimates from each person’s public statements, with sources on their page; anyone listed can replace them with their own answers. Public results are opt-in and can be withdrawn at any time; anonymous answers are never shown by name.')}</p></section>`);
+  }
+
   // ---------- PNG card: the sign, the diamond, the archetype and the map, drawn on a canvas for saving or sharing ----------
   function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
   function wrapText(g, text, x, y, maxW, lh, align) { g.textAlign = align || 'left'; const words = String(text).split(/\s+/); let line = '', n = 0; words.forEach((w) => { const t = line ? line + ' ' + w : w; if (g.measureText(t).width > maxW && line) { g.fillText(line, x, y + n * lh); line = w; n++; } else line = t; }); if (line) g.fillText(line, x, y + n * lh); return n + 1; }
@@ -552,7 +656,18 @@
   window.addEventListener('scroll', () => { tipEl.hidden = true; }, { passive: true }); window.addEventListener('hashchange', () => { tipEl.hidden = true; });
 
   // ---------- events ----------
-  document.addEventListener('change', (e) => { if (e.target && e.target.id === 'nodefig') { S.nodeFig = e.target.value; renderKeep(); } });
+  document.addEventListener('change', (e) => {
+    const t = e.target; if (!t) return;
+    if (t.id === 'nodefig') { S.nodeFig = t.value; renderKeep(); }
+    else if (t.id === 'mxx') mxSet({ x: t.value === 'road' ? null : t.value });
+    else if (t.id === 'mxy') mxSet({ y: t.value === 'speed' ? null : t.value });
+    else if (t.id === 'mxst') mxSet({ st: t.value === 'all' ? null : t.value });
+    else if (t.id === 'mxcmp') mxSet({ cmp: t.value || null });
+    else if (t.id === 'mxpub') mxSet({ pub: t.checked });
+    else if (t.id === 'mxcrowd') mxSet({ crowd: t.checked ? null : '0' });
+  });
+  let mxTimer = null;
+  document.addEventListener('input', (e) => { if (e.target && e.target.id === 'mxq') { const v = e.target.value; clearTimeout(mxTimer); mxTimer = setTimeout(() => mxSet({ q: v.trim() || null }), 250); } });
   document.addEventListener('input', (e) => {
     const t = e.target; if (t.id !== 'slider') return;
     const r = parseRoute(); if (r.page !== 'q') return; const it = ITEMS[r.n - 1]; const v = Number(t.value);
@@ -563,7 +678,7 @@
     const d = document.getElementById('discuss'); if (d) d.hidden = false;
   });
   document.addEventListener('click', (e) => {
-    const t = e.target.closest('[data-unflag],[data-post],[data-postreply],[data-vote],[data-flag],[data-reply],[data-delc],[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
+    const t = e.target.closest('[data-mx],[data-mxsort],[data-mxclear],[data-unflag],[data-post],[data-postreply],[data-vote],[data-flag],[data-reply],[data-delc],[data-png],[data-claim],[data-unpublic],[data-skip],[data-next],[data-fig],[data-copylink],[data-copytext],[data-native],[data-retake],[data-vs],[data-card],[data-closecard],[data-stopcard],[data-steel]');
     if (!t) return; const ds = t.dataset; const r = parseRoute();
     if (ds.skip) { const it = ITEMS[r.n - 1]; S.answers[it.id] = null; saveAnswers(); go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
     if (ds.next) { const it = ITEMS[r.n - 1]; if (S.answers[it.id] === undefined) return; go(r.n === ITEMS.length ? '#/result' : `#/q/${r.n + 1}`); return; }
@@ -574,6 +689,9 @@
     if (ds.flag) { commentAction('flag', ds.flag); return; }
     if (ds.delc) { commentAction('del', ds.delc); return; }
     if (ds.unflag) { commentAction('unflag', ds.unflag); return; }
+    if (ds.mx) { const p = mxParams(); mxSet({ sel: p.get('sel') === ds.mx ? null : ds.mx }); return; }
+    if (ds.mxclear) { mxSet({ sel: null, cmp: null }); return; }
+    if (ds.mxsort) { const p = mxParams(); mxSet({ sort: ds.mxsort, dir: p.get('sort') === ds.mxsort && p.get('dir') !== 'desc' ? 'desc' : null }); return; }
     if (ds.reply) { if (!S.me) { toast(T('Sign in with X first.')); return; } S.replyTo = S.replyTo === ds.reply ? null : ds.reply; renderKeep(); return; }
     if (ds.png) { const sc = scores(S.answers); const ar = archetype(sc.x, sc.y); const nearest = FIGS.map((f) => compare(S.answers, f)).filter((c) => c.dist !== null).sort(byAgreement)[0]; saveCard(sc, ar, nearest); return; }
     if (ds.claim) { claimDot(); return; }

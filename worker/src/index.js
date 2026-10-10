@@ -8,6 +8,7 @@
      POST   /auth/logout
      GET    /me                {handle,name,figure,public}
      POST   /public {id,token} attach my run to my handle · DELETE /public · GET /public/:handle
+     GET    /public?q=<handle or name>&limit=<n> list public results (newest first; q matches a handle prefix or part of a name)
      POST   /claim {r}         a listed figure replaces the prediction with their answers · DELETE /claim
      GET    /comments?item=d1  comments on a proposition · GET /comments/counts
      POST   /comments {item,parent,body,value}   (signed in) · DELETE /comments/:id (own)
@@ -122,6 +123,14 @@ async function getPublic(handle, env) {
   const row = await env.DB.prepare('SELECT p.handle, p.name, p.at, r.x, r.y, r.r FROM public_results p JOIN runs r ON r.id = p.run_id WHERE lower(p.handle) = lower(?)').bind(handle.replace(/^@/, '')).first();
   return row ? json(row, 200, { 'cache-control': 'public, max-age=60' }) : json({ error: 'no public result for this handle' }, 404);
 }
+async function listPublic(url, env) {
+  const q = (url.searchParams.get('q') || '').replace(/^@/, '').toLowerCase().replace(/[^a-z0-9_ .'-]/g, '').slice(0, 30);
+  const limit = Math.max(1, Math.min(500, parseInt(url.searchParams.get('limit') || '200', 10) || 200));
+  const rows = (await env.DB.prepare(`SELECT p.handle, p.name, p.at, r.x, r.y, r.r, r.v FROM public_results p JOIN runs r ON r.id = p.run_id
+    WHERE ? = '' OR lower(p.handle) LIKE ? || '%' OR lower(coalesce(p.name, '')) LIKE '%' || ? || '%' ORDER BY p.at DESC LIMIT ?`).bind(q, q, q, limit).all()).results || [];
+  const { c } = await env.DB.prepare('SELECT COUNT(*) AS c FROM public_results').first();
+  return json({ total: c, q, results: rows }, 200, { 'cache-control': 'public, max-age=60' });
+}
 async function postClaim(req, env) {
   const s = await session(req, env); if (!s) return json({ error: 'sign in first' }, 401);
   const figure = figureOf(env, s.uid); if (!figure) return json({ error: 'this X account is not on the list of figures' }, 403);
@@ -215,6 +224,7 @@ export default {
       else if (p === '/me' && m === 'GET') res = await getMe(req, env);
       else if (p === '/public' && m === 'POST') res = await postPublic(req, env);
       else if (p === '/public' && m === 'DELETE') res = await delPublic(req, env);
+      else if (p === '/public' && m === 'GET') res = await listPublic(url, env);
       else if (p.startsWith('/public/') && m === 'GET') res = await getPublic(decodeURIComponent(p.slice(8)), env);
       else if (p === '/claim' && m === 'POST') res = await postClaim(req, env);
       else if (p === '/claim' && m === 'DELETE') res = await delClaim(req, env);
