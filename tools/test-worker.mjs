@@ -23,6 +23,7 @@ const run = j;
 res = await call('POST', '/run', { x: 500, y: 1, r: R }); t('POST /run rejects bad coords', res.status === 400);
 res = await call('POST', '/run', { x: 1, y: 1, r: 'not valid!' }); t('POST /run rejects bad r', res.status === 400);
 res = await call('GET', '/crowd'); j = await res.json(); t('GET /crowd', j.count === 1 && j.points[0][0] === 60 && j.points[0][1] === 36.2, JSON.stringify(j.points));
+t('GET /crowd sends the density grid', Array.isArray(j.grid) && j.grid.length === 1 && j.grid[0][0] === 12 && j.grid[0][1] === 7 && j.grid[0][2] === 1, JSON.stringify(j.grid));
 res = await call('GET', '/me'); j = await res.json(); t('GET /me anonymous', j.handle === null);
 res = await call('POST', '/public', { id: run.id, token: run.token }); t('POST /public without session → 401', res.status === 401);
 const alice = await forgeSession('42', 'alice');

@@ -359,5 +359,9 @@
  "black ice",
  "Name",
  "Gap to you",
- "Road (control)"
+ "Road (control)",
+ "The 50 public results closest to you",
+ "Darker: where half of them are; lighter: 90 %",
+ "{n} public results are shown as a density; search, select or pick “closest to you” to see individuals.",
+ "Showing 200 of {n} rows; search or sort to narrow down."
 ]

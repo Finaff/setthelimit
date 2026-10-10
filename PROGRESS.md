@@ -230,3 +230,9 @@
 - nodeCompareHtml(A, B) generalises the profile to any two people; the result page's profile links to the map ("Open in the map").
 - Worker: GET /public?q=&limit= (handle prefix or part of the name, newest first, total count); 4 new tests (56). Deployed API + site.
 - Production on 9 Oct: 2 anonymous runs stored (first real visitors), 0 public results.
+- Scale (10 Oct 2026): anonymous crowd drawn as a density from 30 people up (20×20 grid of 5-point cells; darkest cells hold half of the
+  people, next shade 90 %); /crowd now returns `grid` computed over ALL runs (points capped at the latest 1,000). Public results: more than 150
+  on screen → density in yellow, individual dots only for search matches, the selection, the comparison, or the new "The 50 public results
+  closest to you" filter. Table capped at 200 rows with a note. Map page now redraws when crowd/public data arrives. Tested locally with 1,500
+  simulated runs (300 public): brand/screens/carte-densite-simulee-fr.png. Zoom and server-side table paging deferred until a few hundred real
+  public results. Deployed.

@@ -62,8 +62,10 @@ async function postRun(req, env) {
 }
 async function getCrowd(env) {
   const { c } = await env.DB.prepare('SELECT COUNT(*) AS c FROM runs').first();
-  const rows = (await env.DB.prepare('SELECT x, y FROM runs ORDER BY at DESC LIMIT 3000').all()).results || [];
-  return json({ count: c, at: now(), points: rows.map((r) => [r.x, r.y]) }, 200, { 'cache-control': 'public, max-age=60' });
+  const rows = (await env.DB.prepare('SELECT x, y FROM runs ORDER BY at DESC LIMIT 1000').all()).results || [];
+  /* every run, counted on a 20×20 grid of 5-point cells: the map draws a density from it, however many people answered */
+  const grid = (await env.DB.prepare('SELECT MIN(CAST(x / 5 AS INTEGER), 19) AS i, MIN(CAST(y / 5 AS INTEGER), 19) AS j, COUNT(*) AS c FROM runs GROUP BY i, j').all()).results || [];
+  return json({ count: c, at: now(), points: rows.map((r) => [r.x, r.y]), grid: grid.map((g) => [g.i, g.j, g.c]) }, 200, { 'cache-control': 'public, max-age=60' });
 }
 async function getClaims(env) {
   const rows = (await env.DB.prepare('SELECT figure_id, handle, name, r, at FROM claims WHERE revoked = 0').all()).results || [];

@@ -363,5 +363,9 @@ window.STL_STRINGS_FR = {
  "clear road": "route dégagée",
  "black ice": "glace noire",
  "Name": "Nom",
- "Gap to you": "Écart avec vous"
+ "Gap to you": "Écart avec vous",
+ "The 50 public results closest to you": "Les 50 résultats publics les plus proches de vous",
+ "Darker: where half of them are; lighter: 90 %": "Plus foncé : là où se trouve la moitié ; plus clair : 90 %",
+ "{n} public results are shown as a density; search, select or pick “closest to you” to see individuals.": "{n} résultats publics sont affichés en densité ; cherchez, sélectionnez ou choisissez « les plus proches de vous » pour voir des personnes.",
+ "Showing 200 of {n} rows; search or sort to narrow down.": "200 lignes affichées sur {n} ; cherchez ou triez pour préciser."
 };
