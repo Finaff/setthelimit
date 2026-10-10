@@ -367,5 +367,11 @@ window.STL_STRINGS_FR = {
  "The 50 public results closest to you": "Les 50 résultats publics les plus proches de vous",
  "Darker: where half of them are; lighter: 90 %": "Plus foncé : là où se trouve la moitié ; plus clair : 90 %",
  "{n} public results are shown as a density; search, select or pick “closest to you” to see individuals.": "{n} résultats publics sont affichés en densité ; cherchez, sélectionnez ou choisissez « les plus proches de vous » pour voir des personnes.",
- "Showing 200 of {n} rows; search or sort to narrow down.": "200 lignes affichées sur {n} ; cherchez ou triez pour préciser."
+ "Showing 200 of {n} rows; search or sort to narrow down.": "200 lignes affichées sur {n} ; cherchez ou triez pour préciser.",
+ "How dangerous AI would be at full speed, if nobody brakes: from harmless to catastrophic.": "À quel point l’IA serait dangereuse à pleine vitesse, si personne ne freine : de sans danger à catastrophique.",
+ "The pace each person would set, from stopping altogether to no limit at all.": "Le rythme que chacun fixerait, de l’arrêt complet à aucune limite.",
+ "How capable AI will become, and how soon.": "À quel point l’IA deviendra capable, et à quelle échéance.",
+ "How much risk of catastrophe is worth accepting in exchange for what AI could bring.": "Le risque de catastrophe qu’il vaut la peine d’accepter en échange de ce que l’IA pourrait apporter.",
+ "Whether slowing down could be enforced, would make AI safer, and what it would cost.": "Si un ralentissement pourrait être imposé, s’il rendrait l’IA plus sûre, et ce qu’il coûterait.",
+ "Who should decide the pace: governments and international treaties, or the AI companies and the market.": "Qui doit décider du rythme : les États et les traités internationaux, ou les entreprises d’IA et le marché."
 };

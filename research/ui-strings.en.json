@@ -363,5 +363,11 @@
  "The 50 public results closest to you",
  "Darker: where half of them are; lighter: 90 %",
  "{n} public results are shown as a density; search, select or pick “closest to you” to see individuals.",
- "Showing 200 of {n} rows; search or sort to narrow down."
+ "Showing 200 of {n} rows; search or sort to narrow down.",
+ "How dangerous AI would be at full speed, if nobody brakes: from harmless to catastrophic.",
+ "The pace each person would set, from stopping altogether to no limit at all.",
+ "How capable AI will become, and how soon.",
+ "How much risk of catastrophe is worth accepting in exchange for what AI could bring.",
+ "Whether slowing down could be enforced, would make AI safer, and what it would cost.",
+ "Who should decide the pace: governments and international treaties, or the AI companies and the market."
 ]

@@ -421,3 +421,12 @@ svg.strip .me { stroke: var(--green); stroke-width: 3; } svg.strip .met { fill: 
 .map rect.dens.crowd.l2 { fill: var(--blue); opacity: .42; } .map rect.dens.crowd.l1 { fill: var(--blue); opacity: .2; } .map rect.dens.crowd.l0 { fill: var(--blue); opacity: .08; }
 .map rect.dens.pub.l2 { fill: #F5C518; opacity: .45; } .map rect.dens.pub.l1 { fill: #F5C518; opacity: .22; } .map rect.dens.pub.l0 { fill: #F5C518; opacity: .09; }
 .lg.dens2 { border-radius: 2px; border: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--blue) 42%, transparent) 50%, color-mix(in srgb, var(--blue) 20%, transparent) 50%); }
+
+/* ---- axis labels: poles at the ends, name on its own line; plain-words axis descriptions ---- */
+.map .pole { font-family: var(--font-sign); font-weight: 600; font-size: 9.5px; fill: var(--ink-3); letter-spacing: .02em; }
+.map .aname { font-family: var(--font-sign); font-weight: 900; font-size: 11px; fill: var(--ink); letter-spacing: .08em; text-transform: uppercase; }
+.mxaxes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin: 0 0 12px; font-size: 13px; }
+.mxaxes div { border-left: 3px solid var(--line-2, var(--line)); padding-left: 9px; }
+.mxaxes dt { font-weight: 900; letter-spacing: .03em; text-transform: uppercase; font-size: 11.5px; color: var(--ink); }
+.mxaxes dd { margin: 2px 0 0; color: var(--ink-2); font-family: var(--font-read); line-height: 1.4; }
+@media (max-width: 560px) { .mxaxes { grid-template-columns: 1fr; } }

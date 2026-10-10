@@ -236,3 +236,4 @@
   closest to you" filter. Table capped at 200 rows with a note. Map page now redraws when crowd/public data arrives. Tested locally with 1,500
   simulated runs (300 public): brand/screens/carte-densite-simulee-fr.png. Zoom and server-side table paging deferred until a few hundred real
   public results. Deployed.
+- Axis labels (10 Oct 2026): pole words at the two ends of each axis, axis name on its own line (axisLabels(), both maps); a plain-words description of the two chosen axes under the map controls (MX_DESC, EN+FR). Deployed.

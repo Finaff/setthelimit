@@ -323,9 +323,18 @@
     const faster = pts.filter((p) => p[1] < sc.y).length, safer = pts.filter((p) => p[0] < sc.x).length;
     return { n: pts.length, line: fmt(T('You\u2019d drive faster than {f}% of the {n} people who took this{asof}, and you see more danger than {s}% of them.'), { f: Math.round((faster / pts.length) * 100), n: pts.length, asof: CROWD.asOf && !S.liveCrowd.length ? fmt(T(' (as of {d})'), { d: CROWD.asOf }) : '', s: Math.round((safer / pts.length) * 100) }) };
   }
+  /* axis labels: the pole words sit at the two ends of each axis, the axis name on its own line, so they cannot be read as one phrase */
+  function axisLabels(W, H, L, B, TP, R, ax, ay) {
+    const mid = (L + W - R) / 2, ymid = (TP + H - B) / 2;
+    return `<text class="pole" x="${L}" y="${H - B + 14}" text-anchor="start">← ${T(ax.lo)}</text><text class="pole" x="${W - R}" y="${H - B + 14}" text-anchor="end">${T(ax.hi)} →</text>`
+      + `<text class="aname" x="${mid}" y="${H - B + 31}" text-anchor="middle">${T(ax.name)}</text>`
+      + `<text class="pole" transform="translate(${L - 7},${H - B}) rotate(-90)" text-anchor="start">← ${T(ay.lo)}</text><text class="pole" transform="translate(${L - 7},${TP}) rotate(-90)" text-anchor="end">${T(ay.hi)} →</text>`
+      + `<text class="aname" transform="translate(${L - 24},${ymid}) rotate(-90)" text-anchor="middle">${T(ay.name)}</text>`;
+  }
+  const MX_ROAD = { k: 'road', name: 'Road (control)', lo: 'clear road', hi: 'black ice' }, MX_SPEED = { k: 'speed', name: 'Speed', lo: 'full stop', hi: 'no limit' };
   function mapSvg(sc, vs, comps, lab) {
     lab = lab || { main: T('You'), vs: T('Them') };
-    const W = 360, H = 360, L = 30, B = 30, TP = 14, R = 14;
+    const W = 360, H = 372, L = 42, B = 42, TP = 14, R = 14;
     const X = (v) => L + (v / 100) * (W - L - R), Y = (v) => H - B - (v / 100) * (H - TP - B);
     const pts = (S.liveCrowd.length ? S.liveCrowd : CROWD.points) || [];
     const step = Math.max(1, Math.ceil(pts.length / 400));
@@ -333,7 +342,7 @@
     [25, 50, 75].forEach((t) => { g += `<line class="grid" x1="${X(t)}" y1="${TP}" x2="${X(t)}" y2="${H - B}"/><line class="grid" x1="${L}" y1="${Y(t)}" x2="${W - R}" y2="${Y(t)}"/>`; });
     g += `<line class="axis" x1="${L}" y1="${Y(50)}" x2="${W - R}" y2="${Y(50)}"/><line class="axis" x1="${X(50)}" y1="${TP}" x2="${X(50)}" y2="${H - B}"/>`;
     g += `<text class="qlab" x="${X(25)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.open.name)}</text><text class="qlab" x="${X(75)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.weather.name)}</text><text class="qlab" x="${X(25)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.slow.name)}</text><text class="qlab" x="${X(75)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.brake.name)}</text>`;
-    g += `<text class="alab" x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">${T('← clear road · how dangerous is the road? · black ice →')}</text><text class="alab" transform="translate(9,${(TP + H - B) / 2}) rotate(-90)" text-anchor="middle">${T('← full stop · speed · no limit →')}</text>`;
+    g += axisLabels(W, H, L, B, TP, R, MX_ROAD, MX_SPEED);
     if (crowdCount() >= DENSE_MIN) g += densityLayer(crowdCells(), X, Y, 'crowd'); else for (let i = 0; i < pts.length; i += step) g += `<circle class="crowd" cx="${X(pts[i][0])}" cy="${Y(pts[i][1])}" r="3"/>`;
     const pos = comps.map((c) => ({ c, x: X(c.sc.x), y: Y(c.sc.y), ox: X(c.sc.x), oy: Y(c.sc.y) }));
     for (let it = 0; it < 60; it++) { // relaxation : deux points ne se recouvrent pas (rayon 8), chacun reste près de sa vraie place
@@ -520,7 +529,8 @@
 
   // ---------- the map explorer: every public figure (predicted or declared) and anyone who made a result public with X ----------
   /* the road axis is the Control node (same propositions, same weights), so the explorer shows it once */
-  const MX_AXES = [{ k: 'road', name: 'Road (control)', lo: 'clear road', hi: 'black ice' }, { k: 'speed', name: 'Speed', lo: 'full stop', hi: 'no limit' }].concat(NODES.filter((n) => n.k !== 'control').map((n) => ({ k: n.k, name: n.name, lo: n.lo, hi: n.hi })));
+  const MX_DESC = { road: 'How dangerous AI would be at full speed, if nobody brakes: from harmless to catastrophic.', speed: 'The pace each person would set, from stopping altogether to no limit at all.', power: 'How capable AI will become, and how soon.', threshold: 'How much risk of catastrophe is worth accepting in exchange for what AI could bring.', brake: 'Whether slowing down could be enforced, would make AI safer, and what it would cost.', wheel: 'Who should decide the pace: governments and international treaties, or the AI companies and the market.' };
+  const MX_AXES = [MX_ROAD, MX_SPEED].concat(NODES.filter((n) => n.k !== 'control').map((n) => ({ k: n.k, name: n.name, lo: n.lo, hi: n.hi })));
   function axisVal(e, k) {
     if (k === 'road' || k === 'speed') { if (e.answers) { const sc = scores(e.answers); if (sc.ok) return k === 'road' ? sc.x : sc.y; } return typeof e[k] === 'number' ? e[k] : null; }
     return e.answers ? nodeScore(e.answers, k).v : null;
@@ -562,12 +572,12 @@
     });
     const placed = [], unplaced = [];
     visible.forEach((e) => { const vx = axisVal(e, axX.k), vy = axisVal(e, axY.k); if (vx === null || vy === null) unplaced.push(e); else placed.push(Object.assign(e, { vx, vy })); });
-    const W = 380, H = 380, L = 30, B = 30, TP = 14, R = 14, X = (v) => L + (v / 100) * (W - L - R), Y = (v) => H - B - (v / 100) * (H - TP - B);
+    const W = 380, H = 392, L = 42, B = 42, TP = 14, R = 14, X = (v) => L + (v / 100) * (W - L - R), Y = (v) => H - B - (v / 100) * (H - TP - B);
     let g = '';
     [25, 50, 75].forEach((t) => { g += `<line class="grid" x1="${X(t)}" y1="${TP}" x2="${X(t)}" y2="${H - B}"/><line class="grid" x1="${L}" y1="${Y(t)}" x2="${W - R}" y2="${Y(t)}"/>`; });
     g += `<line class="axis" x1="${L}" y1="${Y(50)}" x2="${W - R}" y2="${Y(50)}"/><line class="axis" x1="${X(50)}" y1="${TP}" x2="${X(50)}" y2="${H - B}"/>`;
     if (axX.k === 'road' && axY.k === 'speed') g += `<text class="qlab" x="${X(25)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.open.name)}</text><text class="qlab" x="${X(75)}" y="${Y(75) + 4}" text-anchor="middle">${T(ARCHE.weather.name)}</text><text class="qlab" x="${X(25)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.slow.name)}</text><text class="qlab" x="${X(75)}" y="${Y(25) + 4}" text-anchor="middle">${T(ARCHE.brake.name)}</text>`;
-    g += `<text class="alab" x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">← ${T(axX.lo)} · ${T(axX.name)} · ${T(axX.hi)} →</text><text class="alab" transform="translate(9,${(TP + H - B) / 2}) rotate(-90)" text-anchor="middle">← ${T(axY.lo)} · ${T(axY.name)} · ${T(axY.hi)} →</text>`;
+    g += axisLabels(W, H, L, B, TP, R, axX, axY);
     const cpts = (S.liveCrowd.length ? S.liveCrowd : CROWD.points) || [];
     if (crowd && axX.k === 'road' && axY.k === 'speed') { if (crowdCount() >= DENSE_MIN) g += densityLayer(crowdCells(), X, Y, 'crowd'); else cpts.forEach((c) => { g += `<circle class="crowd" cx="${X(c[0])}" cy="${Y(c[1])}" r="3"/>`; }); }
     const pubPlaced = placed.filter((e) => e.kind === 'pub'), CAP = 150, capped = pubPlaced.length > CAP;
@@ -613,6 +623,7 @@
         <label>${T('Show')} <select id="mxst"><option value="all" ${st === 'all' ? 'selected' : ''}>${T('Everyone')}</option><option value="pred" ${st === 'pred' ? 'selected' : ''}>${T('Predicted only')}</option><option value="decl" ${st === 'decl' ? 'selected' : ''}>${T('Declared only')}</option>${scores(S.answers).ok && API ? `<option value="near" ${st === 'near' ? 'selected' : ''}>${T('The 50 public results closest to you')}</option>` : ''}</select></label>
         <label class="chk"><input type="checkbox" id="mxpub" ${pub ? 'checked' : ''} ${API ? '' : 'disabled'}> ${fmt(T('Public results ({n})'), { n: nPub })}</label>
         <label class="chk"><input type="checkbox" id="mxcrowd" ${crowd ? 'checked' : ''}> ${fmt(T('Anonymous answers ({n})'), { n: crowdCount() })}</label></div>
+      <dl class="mxaxes"><div><dt>${T('Across')} — ${T(axX.name)}</dt><dd>${T(MX_DESC[axX.k])}</dd></div><div><dt>${T('Up')} — ${T(axY.name)}</dt><dd>${T(MX_DESC[axY.k])}</dd></div></dl>
       <div class="mapwrap"><svg class="map mx" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Map of the debate')}">${g}</svg>
         <div class="legend mxleg"><span><i class="lg pred"></i>${T('Predicted from public statements')}</span><span><i class="lg decl"></i>${T('Declared: answered themselves')}</span>${me ? `<span><i class="lg me"></i>${T('You')}</span>` : ''}${crowd && axX.k === 'road' && axY.k === 'speed' && crowdCount() ? `<span><i class="lg crowd"></i>${T('Anonymous answers')}</span>` : ''}${(crowd && crowdCount() >= DENSE_MIN && axX.k === 'road' && axY.k === 'speed') || capped ? `<span><i class="lg dens2"></i>${T('Darker: where half of them are; lighter: 90 %')}</span>` : ''}</div>
         <p class="note">${fmt(T('{n} on the map.'), { n: placed.length })}${capped ? ' ' + fmt(T('{n} public results are shown as a density; search, select or pick \u201cclosest to you\u201d to see individuals.'), { n: pubPlaced.length }) : ''}${unplaced.length ? ' ' + fmt(T('{n} not placed on these axes: they answered an earlier version of the test.'), { n: unplaced.length }) : ''}${q && API && qk.length >= 2 && !S.pubSearch[qk] ? ' ' + T('Searching…') : ''}${q && !visible.some((e) => mxMatch(e, q)) && S.pubSearch[qk] ? ' ' + T('No one by that name yet. Public results appear here once their owner makes them public with X.') : ''}</p>
