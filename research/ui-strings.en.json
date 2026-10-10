@@ -295,7 +295,7 @@
  "How far and how fast will AI go?",
  "If it gets that far, will we keep it from causing a catastrophe?",
  "How much risk is acceptable in exchange for the benefits?",
- "Would slowing down work, and at what cost?",
+ "Would slowing down work, or would it hand the lead to rivals?",
  "Who should set the pace?",
  "stays limited",
  "very powerful, soon",
@@ -304,7 +304,7 @@
  "very little",
  "more, for the benefits",
  "it would work",
- "it can’t work, or costs too much",
+ "it can’t work, or rivals take the lead",
  "governments and treaties",
  "the labs and the market",
  "full stop",
@@ -368,6 +368,6 @@
  "The pace each person would set, from stopping altogether to no limit at all.",
  "How capable AI will become, and how soon.",
  "How much risk of catastrophe is worth accepting in exchange for what AI could bring.",
- "Whether slowing down could be enforced, would make AI safer, and what it would cost.",
+ "Whether slowing down could be enforced, whether it would make AI safer, and how much ground it would give up to rival countries.",
  "Who should decide the pace: governments and international treaties, or the AI companies and the market."
 ]

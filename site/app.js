@@ -85,7 +85,7 @@
     { k: 'power', name: 'Power', q: 'How far and how fast will AI go?', lo: 'stays limited', hi: 'very powerful, soon' },
     { k: 'control', name: 'Control', q: 'If it gets that far, will we keep it from causing a catastrophe?', lo: 'we keep it safe', hi: 'it gets away from us' },
     { k: 'threshold', name: 'Threshold', q: 'How much risk is acceptable in exchange for the benefits?', lo: 'very little', hi: 'more, for the benefits' },
-    { k: 'brake', name: 'Brakes', q: 'Would slowing down work, and at what cost?', lo: 'it would work', hi: 'it can\u2019t work, or costs too much' },
+    { k: 'brake', name: 'Brakes', q: 'Would slowing down work, or would it hand the lead to rivals?', lo: 'it would work', hi: 'it can\u2019t work, or rivals take the lead' },
     { k: 'wheel', name: 'Steering', q: 'Who should set the pace?', lo: 'governments and treaties', hi: 'the labs and the market' },
   ];
   function nodeScore(answers, k) {
@@ -529,7 +529,7 @@
 
   // ---------- the map explorer: every public figure (predicted or declared) and anyone who made a result public with X ----------
   /* the road axis is the Control node (same propositions, same weights), so the explorer shows it once */
-  const MX_DESC = { road: 'How dangerous AI would be at full speed, if nobody brakes: from harmless to catastrophic.', speed: 'The pace each person would set, from stopping altogether to no limit at all.', power: 'How capable AI will become, and how soon.', threshold: 'How much risk of catastrophe is worth accepting in exchange for what AI could bring.', brake: 'Whether slowing down could be enforced, would make AI safer, and what it would cost.', wheel: 'Who should decide the pace: governments and international treaties, or the AI companies and the market.' };
+  const MX_DESC = { road: 'How dangerous AI would be at full speed, if nobody brakes: from harmless to catastrophic.', speed: 'The pace each person would set, from stopping altogether to no limit at all.', power: 'How capable AI will become, and how soon.', threshold: 'How much risk of catastrophe is worth accepting in exchange for what AI could bring.', brake: 'Whether slowing down could be enforced, whether it would make AI safer, and how much ground it would give up to rival countries.', wheel: 'Who should decide the pace: governments and international treaties, or the AI companies and the market.' };
   const MX_AXES = [MX_ROAD, MX_SPEED].concat(NODES.filter((n) => n.k !== 'control').map((n) => ({ k: n.k, name: n.name, lo: n.lo, hi: n.hi })));
   function axisVal(e, k) {
     if (k === 'road' || k === 'speed') { if (e.answers) { const sc = scores(e.answers); if (sc.ok) return k === 'road' ? sc.x : sc.y; } return typeof e[k] === 'number' ? e[k] : null; }
