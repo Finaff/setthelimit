@@ -411,11 +411,34 @@
             0,
             13
           ]
+        },
+        "d21": {
+          "value": 64,
+          "pct": 25,
+          "conf": "low",
+          "basis": "≈ 25 %: a little above d20: misuse also counts, and the peer review between labs he now backs is gone at full speed. No separate number. Inferred.",
+          "src": [
+            5,
+            13,
+            0
+          ]
+        },
+        "d20": {
+          "value": 61,
+          "pct": 20,
+          "conf": "med",
+          "basis": "≈ 20 %: put annihilation at about 20 % (Feb 2025) and expects AI smarter than all humans by 2030-31; he already sees the momentum as unstoppable, so full speed moves him little.",
+          "src": [
+            5,
+            4,
+            0
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "mark-zuckerberg",
@@ -833,11 +856,34 @@
             0,
             1
           ]
+        },
+        "d21": {
+          "value": 37,
+          "pct": 3,
+          "conf": "low",
+          "basis": "≈ 3 %: worries more about an untrustworthy actor with very strong AI and sees wide access as the antidote to AI hacking; his firm's framework halts at critical bio and cyber risk. Inferred.",
+          "src": [
+            6,
+            14,
+            9
+          ]
+        },
+        "d20": {
+          "value": 25,
+          "pct": 1,
+          "conf": "low",
+          "basis": "≈ 1 %: finds the runaway case not particularly likely (2024) and calls doom rhetoric (Sept 2026), while granting superintelligence raises novel safety concerns. Inferred.",
+          "src": [
+            6,
+            12,
+            4
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }

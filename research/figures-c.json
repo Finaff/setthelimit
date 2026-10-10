@@ -432,11 +432,34 @@
             8,
             14
           ]
+        },
+        "d21": {
+          "value": 64,
+          "pct": 25,
+          "conf": "low",
+          "basis": "≈ 25 %: thinks a Chernobyl-scale event might be the best case and that no regulation will force anyone to slow; mass-casualty misuse adds a little to d20. Inferred.",
+          "src": [
+            1,
+            2,
+            14
+          ]
+        },
+        "d20": {
+          "value": 61,
+          "pct": 20,
+          "conf": "low",
+          "basis": "≈ 20 %: gives no number (calls such numbers made up), but any risk not far below 1 % is too high for him and he treats the 10–30 % lab leaders cite as alarming. Expects no brake anyway.",
+          "src": [
+            14,
+            2,
+            0
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }

@@ -423,11 +423,34 @@
             7,
             11
           ]
+        },
+        "d21": {
+          "value": 25,
+          "pct": 1,
+          "conf": "low",
+          "basis": "≈ 1 %: grants that bio and cyber misuse are risks but expects the same AI to provide antidotes and prevention, and good actors to outnumber bad. Inferred.",
+          "src": [
+            2,
+            1,
+            13
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "med",
+          "basis": "≤ 0.1 %: on the chance AI kills humanity, zero if we do the right things (Sept 2026), and his right things are no pause and no new regulator, i.e. full speed. Conditional, hence med.",
+          "src": [
+            13,
+            1,
+            2
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }

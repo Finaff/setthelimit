@@ -217,3 +217,4 @@
 - app.js: plog slider shows the percentage and "about 1 chance in N" while sliding, ticks ≤0.1 %/1 %/10 %/50 %/≥99 %; every display of an answer
   (split lists, figure card gaps, figure page, proposition strip and tooltips, comment chips) goes through showVal() → percent for plog items.
 - Agent converting d20/d21 for the 22 figures from their own numbers (predictions carry value = position and pct = %).
+- DEPLOYED v8 (9 Oct 2026): d20/d21 on the graded scale for all 22 figures (agent; numbers anchored on stated p(doom) where given). Road shifts: Hinton/Russell/Harris/Bengio −6, Marcus +6, Buterin +5, Zuckerberg +4, others ≤3.

@@ -284,3 +284,13 @@ Items reworded after the predictions above: p7's plain now says "Before 2035" an
 
 - **Elon Musk** p8 28 → 35 low: his stated doubts were about will (momentum, a futile letter, China's consent), which the item now grants; nothing found on enforcement itself.
 - **Mark Zuckerberg** p9 20 → 30 low: his warning against even a month's delay was about America falling behind, which 'together' removes; he grants a lab should take "the time that you need internally" (NBC, source 12, https://www.nbcnews.com/tech/tech-news/mark-zuckerberg-interview-ai-slowdown-meta-muse-openai-chatgpt-rcna599279) but rejects industry-wide coordination. p8 stays 15.
+
+
+## v8 graded scale (9 Oct 2026)
+
+Propositions v8 moves both catastrophe items to the graded probability scale (type 'plog', tools/plog.js). The stored value is a slider position; the probability it stands for is 0.1 % or less at 0, 1 % at 25, 10 % at 50, 50 % at 75 and 99 % or more at 100, log-interpolated in between. d21 keeps d18's sentence (AI causes, or is used to cause, a catastrophe that kills millions within 20 years, at full speed with no new limits); d20 is the bare event behind d17 (within 20 years, at full speed with no new limits, a catastrophe humanity never recovers from). Each figure's probability comes from their own stated numbers where they exist, adjusted for the 20-year window and for the absence of any new limits, as the d17/d18 bases did. People who reject the premise outright sit at the floor unless they concede some risk. d21 is never below d20, since an extinction kills millions. Each prediction stores the position (`value`) and the probability (`pct`); d17 and d18 are kept as the record. Road = the danger-axis score from tools/check-figures.js, v7 → v8. Source indices are into each figure's list.
+
+- **Elon Musk**: d21 25 % → 64 · d20 20 % → 61 (road 73 → 71). Business Insider via Yahoo, 1 Mar 2025 (source 5): "only a 20% chance of annihilation"; "The probability of a good outcome is like 80%". He dodged the question in July 2026 (source 0). Little adjustment, since he already expects no brake. d21 is a little higher: misuse counts too, and the peer review between labs he backs is gone at full speed (source 13).
+- **Mark Zuckerberg**: d21 3 % → 37 · d20 1 % → 25 (road 29 → 33). "I don't think the runaway case is a particularly likely one"; "I stay up at night worrying more about an untrustworthy actor having the super strong AI" (Dwarkesh, 2024, source 6). "There's a lot of rhetoric that is filled with doom" (NBC, Sept 2026, source 12). Wide access is "the best antidote" to AI hacking (Sources podcast transcript, source 14). No number; inferred.
+
+Not verified: nothing new; Musk's 20 % is from February 2025, and he dodged the same question in July 2026.

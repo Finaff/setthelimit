@@ -209,3 +209,12 @@ Propositions v7 adds three profile items for the disagreement profile: p7 (node 
 Items reworded after the predictions above: p7's plain now says "Before 2035" and counts AI that exists and can be used even if expensive; p8 is now a ten-year slowdown and asks only whether it could be enforced (checking that no country, company or secret group builds behind their backs), defection dropped; p9 is now "If all the main AI developers slowed down together, the AI they go on to build would be substantially safer", with 'safer' meaning less likely to cause the harms you worry about most and slowing meaning going more slowly, not stopping. Every figure was re-checked; p7 needed no change. Changed values below overwrite the lines above (unpublished items, no update record).
 
 - **Sam Harris**: no change (p8 30: "not everyone's going to stop" and open models bear on enforcement; p9 75).
+
+
+## v8 graded scale (9 Oct 2026)
+
+Propositions v8 moves both catastrophe items to the graded probability scale (type 'plog', tools/plog.js). The stored value is a slider position; the probability it stands for is 0.1 % or less at 0, 1 % at 25, 10 % at 50, 50 % at 75 and 99 % or more at 100, log-interpolated in between. d21 keeps d18's sentence (AI causes, or is used to cause, a catastrophe that kills millions within 20 years, at full speed with no new limits); d20 is the bare event behind d17 (within 20 years, at full speed with no new limits, a catastrophe humanity never recovers from). Each figure's probability comes from their own stated numbers where they exist, adjusted for the 20-year window and for the absence of any new limits, as the d17/d18 bases did. People who reject the premise outright sit at the floor unless they concede some risk. d21 is never below d20, since an extinction kills millions. Each prediction stores the position (`value`) and the probability (`pct`); d17 and d18 are kept as the record. Road = the danger-axis score from tools/check-figures.js, v7 → v8. Source indices are into each figure's list.
+
+- **Sam Harris**: d21 25 % → 64 · d20 20 % → 61 (road 83 → 77). No number of his own: "any actual probability we would assign to this is pretty much made up", yet a 10 % chance to "ignite the atmosphere" means "you don't do this initial test" (Making Sense #494, source 14). "A Chernobyl-scale event might be the best-case scenario" (#469, source 1). Inferred.
+
+Not verified: nothing new; Harris has given no number of his own.

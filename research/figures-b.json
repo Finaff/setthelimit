@@ -477,12 +477,36 @@
             0,
             9
           ]
+        },
+        "d21": {
+          "value": 69,
+          "pct": 35,
+          "conf": "low",
+          "basis": "≈ 35 %: names bioterror misuse first, then loss of control (UN, Sept 2026); his 25 % covers more than extinction, and with no pacing for 20 years both rise. Inferred.",
+          "src": [
+            10,
+            6,
+            0,
+            2
+          ]
+        },
+        "d20": {
+          "value": 64,
+          "pct": 25,
+          "conf": "med",
+          "basis": "≈ 25 %: 25 % that things go really, really badly (Sept 2025; earlier 10–25 %), and he argues unpaced progress could outrun control. Not all of 'really badly' is irreversible; no pacing adds it back.",
+          "src": [
+            6,
+            0,
+            10
+          ]
         }
       },
       "oneLiner": "Sees ~25% catastrophe risk, backs export controls and mandatory testing, and now asks the industry to pace the frontier.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "demis-hassabis",
@@ -988,12 +1012,35 @@
             2,
             9
           ]
+        },
+        "d21": {
+          "value": 56,
+          "pct": 15,
+          "conf": "low",
+          "basis": "≈ 15 %: bad actors are the first of his two risks, and he says infrastructure cyberterror is probably almost already happening (2025). Full speed removes his standards body too. Inferred.",
+          "src": [
+            13,
+            3,
+            0
+          ]
+        },
+        "d20": {
+          "value": 50,
+          "pct": 10,
+          "conf": "low",
+          "basis": "≈ 10 %: no number; his p(doom) is non-zero and probably non-negligible with testing and standards assumed, and he says mitigation needs time we are not giving ourselves. Inferred.",
+          "src": [
+            11,
+            2,
+            0
+          ]
         }
       },
       "oneLiner": "AGI is a few years off and could end disease; wants independent pre-release testing, and a coordinated slowdown if needed.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "stuart-russell",
@@ -1440,12 +1487,35 @@
             5,
             4
           ]
+        },
+        "d21": {
+          "value": 69,
+          "pct": 35,
+          "conf": "low",
+          "basis": "≈ 35 %: adds autonomous weapons, where one person could launch a million weapons and kill a million people (Sept 2026), to loss of control. With no new limits for 20 years, both get likelier. Inferred.",
+          "src": [
+            8,
+            0,
+            1
+          ]
+        },
+        "d20": {
+          "value": 64,
+          "pct": 25,
+          "conf": "low",
+          "basis": "≈ 25 %: declines a p(doom), but likens the race to Russian roulette with every human on earth and calls the CEOs' own 10–30 % unacceptable. No red lines here; his timelines are longer than theirs.",
+          "src": [
+            0,
+            1,
+            3
+          ]
         }
       },
       "oneLiner": "Uncontrolled AI is Russian roulette with humanity: require proof of safety before deployment and enforce global red lines.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "emily-bender",
@@ -1903,12 +1973,33 @@
             4,
             2
           ]
+        },
+        "d21": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "low",
+          "basis": "≤ 0.1 %: calls the evidence for the doomers' scenarios thin to nonexistent and AI's power a myth shared by doomers and boosters (Sept 2026); the harms she sees are not mass casualties. Inferred.",
+          "src": [
+            8,
+            0
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "high",
+          "basis": "≤ 0.1 %: the idea that companies are building software that 'could kill us all' 'distracts from the real harms that are happening now' (SF Examiner, Sept 2026). Rejects the premise.",
+          "src": [
+            0,
+            8
+          ]
         }
       },
       "oneLiner": "'AI' is marketing for text generators; the harms are here now and belong to the companies. Doom talk is hype.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "gary-marcus",
@@ -2399,12 +2490,35 @@
             1,
             11
           ]
+        },
+        "d21": {
+          "value": 64,
+          "pct": 25,
+          "conf": "low",
+          "basis": "≈ 25 %: in 2025 he judged catastrophe short of extinction likely, and he warns of AI-made pathogens, AI-escalated wars and infrastructure hacks (Sept 2026); none of his regulation here. No number. Inferred.",
+          "src": [
+            1,
+            11,
+            12
+          ]
+        },
+        "d20": {
+          "value": 42,
+          "pct": 5,
+          "conf": "med",
+          "basis": "≈ 5 %: put his p(doom), meaning literal extinction, at maybe 3 % (July 2025) and still calls it low (Sept 2026); a little higher with none of the regulation he demands. His high p(dystopia) need not be permanent.",
+          "src": [
+            1,
+            11,
+            12
+          ]
         }
       },
       "oneLiner": "LLMs are unreliable and won't reach AGI, but the harms are real now: license, audit, and hold companies liable.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "vitalik-buterin",
@@ -2847,12 +2961,35 @@
             5,
             0
           ]
+        },
+        "d21": {
+          "value": 53,
+          "pct": 12,
+          "conf": "low",
+          "basis": "≈ 12 %: a little above d20: he expects defence to win on bio and cyber (d/acc; AI-driven verification favours defenders, Sept 2026), so misuse adds little to takeover risk. Inferred.",
+          "src": [
+            3,
+            7,
+            4
+          ]
+        },
+        "d20": {
+          "value": 50,
+          "pct": 10,
+          "conf": "med",
+          "basis": "≈ 10 %: p(doom) about 12 % (Aug 2025), then 8–9 % (Oct 2025), with superintelligence probably in the 2030s, so most of it falls within 20 years; losing his backup soft pause adds a little.",
+          "src": [
+            4,
+            5,
+            2
+          ]
         }
       },
       "oneLiner": "Accelerate defensive, decentralised tech; avoid both rogue superintelligence and any single actor controlling it.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "max-tegmark",
@@ -3334,12 +3471,35 @@
             6,
             12
           ]
+        },
+        "d21": {
+          "value": 94,
+          "pct": 85,
+          "conf": "med",
+          "basis": "≈ 85 %: losing control is his main case and would kill far more than millions; he also expects more incidents like the Hugging Face breach soon. A little above d20.",
+          "src": [
+            11,
+            12,
+            4
+          ]
+        },
+        "d20": {
+          "value": 92,
+          "pct": 80,
+          "conf": "med",
+          "basis": "≈ 80 %: in an unfettered race, way above 50 % that we lose control in the next few decades (CBS, Sept 2026); over 90 % without regulation (2025). Twenty years is most of his window.",
+          "src": [
+            11,
+            4,
+            5
+          ]
         }
       },
       "oneLiner": "Superintelligence is a suicide race (>90% loss of control); prohibit it until proven safe and build tool AI instead.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "daniel-kokotajlo",
@@ -3864,12 +4024,36 @@
             1,
             4
           ]
+        },
+        "d21": {
+          "value": 94,
+          "pct": 85,
+          "conf": "med",
+          "basis": "≈ 85 %: AI 2027's race ending, where nobody brakes, ends with AI killing humanity; mass-casualty misuse on the way also counts, so a little above d20.",
+          "src": [
+            0,
+            12,
+            3
+          ]
+        },
+        "d20": {
+          "value": 92,
+          "pct": 80,
+          "conf": "med",
+          "basis": "≈ 80 %: about 70 % on catastrophe (Sept 2026), which still counts some chance of pacing; AI 2027's no-brake ending is takeover, and his superintelligence median is 2029.",
+          "src": [
+            12,
+            5,
+            0,
+            3
+          ]
         }
       },
       "oneLiner": "Superintelligence is likely by ~2029 and ~70% likely to go badly; pace the frontier with a verifiable US–China deal.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "leopold-aschenbrenner",
@@ -4316,12 +4500,35 @@
             1,
             3
           ]
+        },
+        "d21": {
+          "value": 61,
+          "pct": 20,
+          "conf": "low",
+          "basis": "≈ 20 %: sees superintelligence as a decisive military weapon and warns of new WMDs and great-power war; with no state project or lab security, misuse and war get likelier. Rests on 2024.",
+          "src": [
+            3,
+            2,
+            0
+          ]
+        },
+        "d20": {
+          "value": 50,
+          "pct": 10,
+          "conf": "low",
+          "basis": "≈ 10 %: not a doomer and optimistic that superalignment is solvable, yet calls control of much smarter AI unsolved; no new limits removes the state project and security he relies on. Rests on 2024.",
+          "src": [
+            1,
+            2,
+            3
+          ]
         }
       },
       "oneLiner": "AGI by ~2027; the free world must win the race to superintelligence, under government control, with serious alignment work.",
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }

@@ -513,6 +513,28 @@
             6,
             2
           ]
+        },
+        "d21": {
+          "value": 97,
+          "pct": 90,
+          "conf": "med",
+          "basis": "≈ 90 %: his central case is that a superintelligence built with today's methods kills everyone, which counts here; in 2024 he put our remaining timeline nearer five years than fifty. Misuse adds little.",
+          "src": [
+            2,
+            12,
+            4
+          ]
+        },
+        "d20": {
+          "value": 97,
+          "pct": 90,
+          "conf": "med",
+          "basis": "≈ 90 %: says the most likely result of building superhuman AI under present conditions is that everyone on Earth dies, and expects it nearer five years than fifty. Full speed is that case; only timing is uncertain.",
+          "src": [
+            0,
+            2,
+            12
+          ]
         }
       },
       "v1Only": {
@@ -551,7 +573,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "andreessen",
@@ -1010,6 +1033,26 @@
             2,
             0
           ]
+        },
+        "d21": {
+          "value": 17,
+          "pct": 0.5,
+          "conf": "low",
+          "basis": "≈ 0.5 %: concedes AI will make it easier for criminals, terrorists and hostile states to do harm (2023), but treats that as a crime problem that existing law and defensive AI handle. No mass-casualty case. Inferred.",
+          "src": [
+            0,
+            3
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "high",
+          "basis": "≤ 0.1 %: 'AI doesn't want, it doesn't have goals, it doesn't want to kill you, because it's not alive' (2023). Full speed is the path he asks for; the premise is a category error to him.",
+          "src": [
+            0,
+            2
+          ]
         }
       },
       "v1Only": {
@@ -1050,7 +1093,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "verdon",
@@ -1510,6 +1554,27 @@
             2,
             7
           ]
+        },
+        "d21": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "low",
+          "basis": "≤ 0.1 %: says doomers can never flesh out how AI is supposed to kill us and calls doom thinking more dangerous than AI (Sept 2026); no concession on mass-casualty misuse found. Inferred.",
+          "src": [
+            7,
+            8
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "high",
+          "basis": "≤ 0.1 %: 'I don't think AI is going to kill us all. I think that sort of thinking is more dangerous than the AI itself.' (New York Post, Sept 2026). Full speed is his own programme.",
+          "src": [
+            7,
+            8,
+            1
+          ]
         }
       },
       "v1Only": {
@@ -1550,7 +1615,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "lecun",
@@ -2031,6 +2097,28 @@
             1,
             13
           ]
+        },
+        "d21": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "med",
+          "basis": "≤ 0.1 %: calls the bioweapon worry hugely overestimated, since current models add little beyond public data (TIME, 2024), and expects defenders to have better AI. No mass-casualty risk conceded.",
+          "src": [
+            0,
+            1,
+            11
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "high",
+          "basis": "≤ 0.1 %: to a user saying AI 'will get us all killed in three years' (Sept 2026): 'No, Not a chance in hell.' Calls existential risk essentially zero and rejects any slowdown.",
+          "src": [
+            11,
+            8,
+            9
+          ]
         }
       },
       "v1Only": {
@@ -2073,7 +2161,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "hinton",
@@ -2607,6 +2696,29 @@
             6,
             9
           ]
+        },
+        "d21": {
+          "value": 72,
+          "pct": 40,
+          "conf": "low",
+          "basis": "≈ 40 %: on top of a takeover risk he puts at 10–20 % or more, he names bad actors using AI to make nasty viruses or cyberattacks (Sept 2026). Twenty years with no new limits: high but below even. Inferred.",
+          "src": [
+            12,
+            14,
+            3,
+            15
+          ]
+        },
+        "d20": {
+          "value": 67,
+          "pct": 30,
+          "conf": "med",
+          "basis": "≈ 30 %: puts extinction at 10–20 % (2025) and 10 % within a decade (Sept 2026), with some action assumed; told the Senate it will get out of control unless something is done. Twenty years, no brake.",
+          "src": [
+            3,
+            14,
+            15
+          ]
         }
       },
       "v1Only": {
@@ -2646,7 +2758,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "bengio",
@@ -2740,6 +2853,12 @@
           "url": "https://fortune.com/2025/10/01/ai-godfather-yoshua-bengio-ai-extinction-risks-openai-google-xai-anthropic",
           "date": "2025-10-01",
           "note": "Reporter's paraphrase of his WSJ interview: the major risks could arrive within 'five to 10 years'; he warns they may come earlier than expected. Direct quote: 'even if there was only a 1% chance it could happen, it's not acceptable'."
+        },
+        {
+          "title": "'What's your p(doom)?': How AI could be learning a deceptive trick with apocalyptic potential (ABC News, Background Briefing, Ange Lavoipierre)",
+          "url": "https://www.abc.net.au/news/2023-07-15/whats-your-pdoom-ai-researchers-worry-catastrophe/102591340",
+          "date": "2023-07-15",
+          "note": "'I got around, like, 20 per cent probability that it turns out catastrophic.' Inputs per the article: 50% that AI reaches human-level capabilities within a decade, and over 50% that AI or humans turn it against humanity at scale; he thinks the chances of holding off such attacks are good."
         }
       ],
       "oneLiner": "AI agents already lie and self-preserve; build non-agentic 'Scientist AI', regulate like nuclear, don't gamble on luck.",
@@ -3136,6 +3255,28 @@
             3,
             2
           ]
+        },
+        "d21": {
+          "value": 69,
+          "pct": 35,
+          "conf": "low",
+          "basis": "≈ 35 %: his 2023 estimate of 20 % counted misuse at scale and assumed defences hold; the safety report he chairs finds AI can help with bio and chemical threats. Twenty years with no new limits raises it.",
+          "src": [
+            14,
+            12,
+            11
+          ]
+        },
+        "d20": {
+          "value": 64,
+          "pct": 25,
+          "conf": "med",
+          "basis": "≈ 25 %: about 20 % on a catastrophic outcome (2023), with human-level AI even odds within a decade; his estimates count on the brakes he campaigns for, and he now calls the dangers imminent.",
+          "src": [
+            14,
+            11,
+            13
+          ]
         }
       },
       "v1Only": {
@@ -3177,7 +3318,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "altman",
@@ -3721,6 +3863,28 @@
             19,
             0
           ]
+        },
+        "d21": {
+          "value": 56,
+          "pct": 15,
+          "conf": "low",
+          "basis": "≈ 15 %: co-signed a 2026 letter warning that knowledge barriers to bioweapons may erode; with no new limits, misuse adds to his worry about losing control. No number given. Inferred.",
+          "src": [
+            16,
+            9,
+            13
+          ]
+        },
+        "d20": {
+          "value": 48,
+          "pct": 8,
+          "conf": "low",
+          "basis": "≈ 8 %: never gives a number, but says losing control of the future to AI is unacceptable and any chance of catastrophe too much; his optimism assumes the pacing and standards this removes. Inferred.",
+          "src": [
+            9,
+            13,
+            15
+          ]
         }
       },
       "v1Only": {
@@ -3759,7 +3923,8 @@
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }

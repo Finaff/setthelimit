@@ -405,11 +405,32 @@
           "src": [
             0
           ]
+        },
+        "d21": {
+          "value": 72,
+          "pct": 40,
+          "conf": "low",
+          "basis": "≈ 40 %: above d20, since he expects hacking and other misuse scares before any takeover (2025) in the same race; no number of his own for mass casualties. Inferred.",
+          "src": [
+            0,
+            5
+          ]
+        },
+        "d20": {
+          "value": 69,
+          "pct": 35,
+          "conf": "med",
+          "basis": "≈ 35 %: p(doom) without a pause a few points above 20 %; 50 % that the first AIs past the point of no return want humans gone under corporate incentives alone; AGI 75 % by 2045 (June 2026).",
+          "src": [
+            0,
+            4
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     },
     {
       "id": "steven-pinker",
@@ -830,11 +851,32 @@
             15,
             4
           ]
+        },
+        "d21": {
+          "value": 33,
+          "pct": 2,
+          "conf": "low",
+          "basis": "≈ 2 %: calls bioterrorism, cyber-sabotage and unconstrained agents real dangers (Sept 2026), but AI pathogens killing everyone fanciful; the oversight he asks for is what this removes. Inferred.",
+          "src": [
+            15,
+            14
+          ]
+        },
+        "d20": {
+          "value": 0,
+          "pct": 0.1,
+          "conf": "high",
+          "basis": "≤ 0.1 %: 'The scenarios are preposterous' (Sept 2026); he is 'sceptical of the prophecy that AI will murder every last human'. His doubt is about the premise, not the brakes.",
+          "src": [
+            0,
+            15
+          ]
         }
       },
       "v5": "2026-09-24",
       "v6": "2026-09-30",
-      "v7": "2026-10-09"
+      "v7": "2026-10-09",
+      "v8": "2026-10-09"
     }
   ]
 }
