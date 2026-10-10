@@ -208,3 +208,12 @@
   header's .top → .hot. Not deployed yet: agent predicting p7/p8/p9 for the 22 figures; then show the owner and deploy.
 - v7 items reworded after the prediction agent's review (p7 deadline/what counts/contested claims; p8 ten years + enforcement only; p9 'all developers together', no presupposition, 'safer' defined); agent re-checked: 11 values changed. Markers offset when the two nearly overlap. Screenshot: brand/screens/profil-desaccords-fr.jpg. Waiting for the owner's go to deploy.
 - DEPLOYED v7 (9 Oct 2026): disagreement profile live; 20 questions node by node.
+
+## 2026-10-09 (v8: graded probability scale)
+- Owner: the headline item is a p(doom), so a probability, not agreement with a threshold. content/propositions.v8.json (+fr; tools/make-v8.py):
+  d20 = bare event "At full speed and with no new limits, AI will cause, within the next 20 years, a catastrophe humanity never recovers from" (was d17);
+  d21 = d18's sentence (was d18); both type 'plog'. tools/plog.js = the scale: position 0–100 ↔ probability, anchors 0 = ≤0.1 %, 25 = 1 %,
+  50 = 10 %, 75 = 50 %, 100 = ≥99 %, log-interpolated (CLI: node tools/plog.js pos 25 → 64). Same anchors in app.js (PLOG).
+- app.js: plog slider shows the percentage and "about 1 chance in N" while sliding, ticks ≤0.1 %/1 %/10 %/50 %/≥99 %; every display of an answer
+  (split lists, figure card gaps, figure page, proposition strip and tooltips, comment chips) goes through showVal() → percent for plog items.
+- Agent converting d20/d21 for the 22 figures from their own numbers (predictions carry value = position and pct = %).

@@ -315,5 +315,11 @@
  "You and {name} are close on all five questions; your difference is a matter of degree.",
  "You and {name} split most on {a} ({ga} points apart). You are closest on {b} ({gb}).",
  "The conclusion: the limit each of you would set.",
- "Your green marker against {name}’s predicted answers. Each line averages the propositions that bear on that question."
+ "Your green marker against {name}’s predicted answers. Each line averages the propositions that bear on that question.",
+ "{p} or less",
+ "{p} or more",
+ "1 chance in 1,000 or less",
+ "about 1 chance in {n}",
+ "Almost certain",
+ "Probability, graded scale"
 ]

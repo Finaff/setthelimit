@@ -147,8 +147,16 @@
   }
   const speedSign = (y) => (y === null ? null : y >= 95 ? { kind: 'nolimit' } : y <= 5 ? { kind: 'stop' } : { kind: 'limit', n: Math.round(y) });
   const condSign = (x) => (x === null ? null : T(x < 20 ? 'Clear road ahead' : x < 40 ? 'Fog possible' : x < 60 ? 'Slippery when wet' : x < 80 ? 'Ice on road' : 'Bridge out ahead'));
+  /* graded probability scale for rare catastrophes (type 'plog'); same anchors as tools/plog.js */
+  const PLOG = [[0, 0.1], [25, 1], [50, 10], [75, 50], [100, 99]];
+  const isProb = (it) => it.type === 'prob' || it.type === 'plog';
+  function plogPct(s) { s = Math.max(0, Math.min(100, s)); for (let i = 1; i < PLOG.length; i++) { const [s0, p0] = PLOG[i - 1], [s1, p1] = PLOG[i]; if (s <= s1) return Math.pow(10, Math.log10(p0) + ((s - s0) / (s1 - s0)) * (Math.log10(p1) - Math.log10(p0))); } return 99; }
+  const pctStr = (p) => { const t = p < 1 ? p.toFixed(1) : p < 10 ? String(+p.toPrecision(2)) : String(Math.round(p)); return LANG === 'fr' ? t.replace('.', ',') + '\u00a0%' : t + '%'; };
+  const pctText = (s) => (s <= 0 ? fmt(T('{p} or less'), { p: pctStr(0.1) }) : s >= 100 ? fmt(T('{p} or more'), { p: pctStr(99) }) : pctStr(plogPct(s)));
+  const showVal = (it, v) => (it && it.type === 'plog' && typeof v === 'number' ? pctText(v) : v);
   const words = (it, v) => {
     if (v == null) return T('Not sure');
+    if (it.type === 'plog') { const p = plogPct(v); if (v <= 0) return T('1 chance in 1,000 or less'); if (p < 50) { const q = 100 / p, n = q < 10 ? Math.round(q) : Number(q.toPrecision(2)); return fmt(T('about 1 chance in {n}'), { n: n.toLocaleString(LANG === 'fr' ? 'fr-CA' : 'en-US') }); } return T(p < 90 ? 'More likely than not' : p < 99 ? 'Very likely' : 'Almost certain'); }
     if (it.type === 'prob') return T(v <= 10 ? 'Very unlikely' : v <= 35 ? 'Unlikely' : v < 50 ? 'Less likely than not' : v === 50 ? 'Coin flip' : v < 65 ? 'More likely than not' : v < 90 ? 'Likely' : 'Very likely');
     return T(v <= 10 ? 'Strongly disagree' : v <= 35 ? 'Disagree' : v < 50 ? 'Lean disagree' : v === 50 ? 'Torn' : v < 65 ? 'Lean agree' : v < 90 ? 'Agree' : 'Strongly agree');
   };
@@ -233,7 +241,7 @@
     const v = S.answers[it.id];
     const cur = typeof v === 'number' ? v : (v === null ? null : undefined);
     const pct = Math.round((i / ITEMS.length) * 100);
-    const fait = it.type === 'prob';
+    const fait = isProb(it);
     return shell(`<section>
       <div class="qhead"><span class="mile"><b>${r.n}</b> / ${ITEMS.length}</span><a class="btn quiet sm" href="#/">${T('Save and quit')}</a></div>
       <div class="prog"><i style="width:${pct}%"></i></div>
@@ -241,8 +249,8 @@
       <div class="plaque"><b>${T('In plain words')}</b>${esc(it.plain)}</div>
       <details class="toggle" ${S.steelOpen ? 'open' : ''}><summary>${T('Why people disagree: the strongest case on each side')}</summary><div class="steel"><div class="agree"><b>${T(fait ? 'Why some say likely' : 'Why some agree')}</b>${esc(it.for)}</div><div class="disagree"><b>${T(fait ? 'Why some say unlikely' : 'Why some disagree')}</b>${esc(it.against)}</div></div></details>
       <div class="answer">
-        <div class="val"><span class="n ${cur == null ? 'unset' : ''}" id="val">${cur == null ? '—' : cur}</span><span class="w" id="word">${cur == null ? T(cur === null ? 'Skipped' : 'Slide to answer') : words(it, cur)}</span></div>
-        <div class="slider"><input type="range" min="0" max="100" step="1" value="${cur == null ? 50 : cur}" id="slider" aria-label="${T(fait ? 'Probability from 0 to 100' : 'Agreement from 0 to 100')}"><div class="ends"><span>${T(fait ? 'Very unlikely' : 'Strongly disagree')}</span><span>${T(fait ? 'Very likely' : 'Strongly agree')}</span></div></div>
+        <div class="val"><span class="n ${cur == null ? 'unset' : ''}" id="val">${cur == null ? '—' : showVal(it, cur)}</span><span class="w" id="word">${cur == null ? T(cur === null ? 'Skipped' : 'Slide to answer') : words(it, cur)}</span></div>
+        <div class="slider"><input type="range" min="0" max="100" step="1" value="${cur == null ? 50 : cur}" id="slider" aria-label="${T(it.type === 'plog' ? 'Probability, graded scale' : fait ? 'Probability from 0 to 100' : 'Agreement from 0 to 100')}">${it.type === 'plog' ? `<div class="ends plog">${PLOG.map(([p, pc], i) => `<span>${i === 0 ? '≤ ' : i === PLOG.length - 1 ? '≥ ' : ''}${pctStr(pc)}</span>`).join('')}</div>` : `<div class="ends"><span>${T(fait ? 'Very unlikely' : 'Strongly disagree')}</span><span>${T(fait ? 'Very likely' : 'Strongly agree')}</span></div>`}</div>
         <div class="row"><button class="btn quiet sm" data-skip="1">${T('Not sure, skip')}</button><span class="spacer"></span>${r.n > 1 ? `<a class="btn sm" href="#/q/${r.n - 1}">${T('Back')}</a>` : ''}<button class="btn primary" data-next="1" id="nextbtn" ${cur === undefined ? 'disabled' : ''}>${T(r.n === ITEMS.length ? 'See my result' : 'Next')}</button></div>
       </div>
       <p class="hint" style="margin-top:10px">${T('Skipping never counts against you. A skipped question just isn\u2019t used in your score.')}</p>
@@ -267,7 +275,7 @@
     if (comps.length) {
       html += `<h2 class="sec">${T('You agree most with')}<small>${fmt(T('Ranked by the average gap between your answers and their predicted ones, proposition by proposition (0 = identical, 100 = opposite). The second number counts propositions where you are within {n} points.'), { n: AGREE_BAND })}</small></h2><ul class="near">${comps.slice(0, 5).map((c) => `<li><button data-fig="${esc(c.f.id)}"><span class="av">${esc(initials(c.f.name))}</span></button><button data-fig="${esc(c.f.id)}"><span class="nm">${esc(c.f.name)}</span><br><span class="cm">${esc(c.f.camp || '')}</span></button><span class="pct">${fmt(T('{g} pts'), { g: c.gap })}<small>${fmt(T('{a}/{b} within {n}'), { a: c.agree, b: c.both, n: AGREE_BAND })}</small></span></li>`).join('')}</ul>`;
       if (farthest && farthest !== nearest) html += `<h2 class="sec">${T('You agree least with')}</h2><ul class="near"><li><button data-fig="${esc(farthest.f.id)}"><span class="av">${esc(initials(farthest.f.name))}</span></button><button data-fig="${esc(farthest.f.id)}"><span class="nm">${esc(farthest.f.name)}</span><br><span class="cm">${esc(farthest.f.camp || '')}</span></button><span class="pct">${fmt(T('{g} pts'), { g: farthest.gap })}<small>${fmt(T('{a}/{b} within {n}'), { a: farthest.agree, b: farthest.both, n: AGREE_BAND })}</small></span></li></ul>`;
-      if (nearest) html += `<h2 class="sec">${fmt(T('Where you and {name} split'), { name: esc(surname(nearest.f.name)) })}<small>${T('The three propositions where your closest figure\u2019s predicted answer is furthest from yours.')}</small></h2><ul class="split">${nearest.rows.slice(0, 3).map((r) => `<li><div class="q">${esc(r.it.text)}</div><div class="vals"><span>${T('You')} <b>${r.a}</b></span><span>${esc(surname(nearest.f.name))} <b>${r.b}</b></span><span>${T('gap')} ${r.d}</span></div></li>`).join('')}</ul>`;
+      if (nearest) html += `<h2 class="sec">${fmt(T('Where you and {name} split'), { name: esc(surname(nearest.f.name)) })}<small>${T('The three propositions where your closest figure\u2019s predicted answer is furthest from yours.')}</small></h2><ul class="split">${nearest.rows.slice(0, 3).map((r) => `<li><div class="q">${esc(r.it.text)}</div><div class="vals"><span>${T('You')} <b>${showVal(r.it, r.a)}</b></span><span>${esc(surname(nearest.f.name))} <b>${showVal(r.it, r.b)}</b></span><span>${T('gap')} ${r.d}</span></div></li>`).join('')}</ul>`;
     }
     if (comps.length) html += nodesHtml(S.answers, comps);
     const open = ITEMS.map((it, i) => ({ it, i, v: S.answers[it.id] })).filter((o) => o.v === null || (typeof o.v === 'number' && o.v >= 40 && o.v <= 60));
@@ -289,7 +297,7 @@
   function figCard(c) {
     if (!c) return '';
     const f = c.f; const sc = c.sc;
-    return `<div class="figcard"><div class="nm">${esc(f.name)}</div><div class="camp">${esc(f.camp || '')}</div>${f.role ? `<div class="role">${esc(f.role)}</div>` : ''}<p>${esc(f.oneLiner || f.bio || '')}</p><div class="stat">${fmt(T('Predicted limit {y} · road {x} · {g} points apart on average · {a}/{b} within {n}'), { y: Math.round(sc.y), x: Math.round(sc.x), g: c.gap, a: c.agree, b: c.both, n: AGREE_BAND })}</div>${c.rows.length ? `<details class="gaps" ${S.gapsOpen ? 'open' : ''}><summary>${fmt(T('Question by question, biggest gaps first'), {})}</summary><ul>${c.rows.map((r) => `<li><span class="gq">${esc(r.it.text)}</span><span class="gv">${T('You')} <b>${r.a}</b> · ${esc(surname(f.name))} <b>${r.b}</b> · <em class="${r.d > AGREE_BAND ? 'far' : 'near'}">${fmt(T('gap {d}'), { d: r.d })}</em></span></li>`).join('')}</ul></details>` : ''}<p><a href="#/figure/${esc(f.id)}">${T('Predictions and sources')}</a></p></div>`;
+    return `<div class="figcard"><div class="nm">${esc(f.name)}</div><div class="camp">${esc(f.camp || '')}</div>${f.role ? `<div class="role">${esc(f.role)}</div>` : ''}<p>${esc(f.oneLiner || f.bio || '')}</p><div class="stat">${fmt(T('Predicted limit {y} · road {x} · {g} points apart on average · {a}/{b} within {n}'), { y: Math.round(sc.y), x: Math.round(sc.x), g: c.gap, a: c.agree, b: c.both, n: AGREE_BAND })}</div>${c.rows.length ? `<details class="gaps" ${S.gapsOpen ? 'open' : ''}><summary>${fmt(T('Question by question, biggest gaps first'), {})}</summary><ul>${c.rows.map((r) => `<li><span class="gq">${esc(r.it.text)}</span><span class="gv">${T('You')} <b>${showVal(r.it, r.a)}</b> · ${esc(surname(f.name))} <b>${showVal(r.it, r.b)}</b> · <em class="${r.d > AGREE_BAND ? 'far' : 'near'}">${fmt(T('gap {d}'), { d: r.d })}</em></span></li>`).join('')}</ul></details>` : ''}<p><a href="#/figure/${esc(f.id)}">${T('Predictions and sources')}</a></p></div>`;
   }
   function crowdStats(sc) {
     const pts = (S.liveCrowd.length ? S.liveCrowd : CROWD.points) || [];
@@ -353,7 +361,7 @@
       <div class="coords mono" style="font-size:13px;color:var(--ink-2)">${fmt(T('Predicted limit {y} · road {x}'), { y: sc.ok ? Math.round(sc.y) : '—', x: sc.ok ? Math.round(sc.x) : '—' })}</div>
       ${f.claimed ? `<p class="prose" style="font-weight:600">${fmt(T('Answered by {name} on {date} (@{handle}). Our predictions are shown beside the answers.'), { name: esc(f.name), date: esc(String(f.claimed.at).slice(0, 10)), handle: esc(f.claimed.handle) })}</p>` : ''}
       <h2 class="sec">${f.claimed ? T('Their answers') : T('Predicted answers')}<small>${f.claimed ? '' : fmt(T('Value · confidence · what it rests on. These are our estimates, not statements by {name}.'), { name: last })}</small></h2>
-      <table class="preds">${ITEMS.map((it) => { const p = f.predictions[it.id] || {}; return `<tr><td>${esc(it.text)}<br><span class="b">${p.conf === 'self' && typeof p.predicted === 'number' ? esc(fmt(T('We predicted {p}.'), { p: p.predicted })) : esc(p.basis || '')}${(p.src || []).length ? ' · ' + p.src.map((i) => f.sources && f.sources[i] ? `<a href="${esc(f.sources[i].url)}" target="_blank" rel="noopener">[${i + 1}]</a>` : '').join(' ') : ''}</span></td><td class="v">${typeof p.value === 'number' ? p.value : '—'}<br><span class="conf">${esc(confWord[p.conf] || '')}</span>${p.audit ? `<br><span class="aud">${p.audit.from !== p.value ? fmt(T('corrected by audit · was {n}'), { n: p.audit.from }) : T('basis replaced by audit')}</span>` : ''}${p.update ? `<br><span class="aud">${p.update.from !== p.value ? fmt(T('updated {date} · was {n}'), { date: esc(String(p.update.date || '').slice(0, 10)), n: p.update.from }) : fmt(T('basis updated {date}'), { date: esc(String(p.update.date || '').slice(0, 10)) })}</span>` : ''}</td></tr>`; }).join('')}</table>
+      <table class="preds">${ITEMS.map((it) => { const p = f.predictions[it.id] || {}; return `<tr><td>${esc(it.text)}<br><span class="b">${p.conf === 'self' && typeof p.predicted === 'number' ? esc(fmt(T('We predicted {p}.'), { p: showVal(it, p.predicted) })) : esc(p.basis || '')}${(p.src || []).length ? ' · ' + p.src.map((i) => f.sources && f.sources[i] ? `<a href="${esc(f.sources[i].url)}" target="_blank" rel="noopener">[${i + 1}]</a>` : '').join(' ') : ''}</span></td><td class="v">${typeof p.value === 'number' ? showVal(it, p.value) : '—'}<br><span class="conf">${esc(confWord[p.conf] || '')}</span>${p.audit ? `<br><span class="aud">${p.audit.from !== p.value ? fmt(T('corrected by audit · was {n}'), { n: p.audit.from }) : T('basis replaced by audit')}</span>` : ''}${p.update ? `<br><span class="aud">${p.update.from !== p.value ? fmt(T('updated {date} · was {n}'), { date: esc(String(p.update.date || '').slice(0, 10)), n: p.update.from }) : fmt(T('basis updated {date}'), { date: esc(String(p.update.date || '').slice(0, 10)) })}</span>` : ''}</td></tr>`; }).join('')}</table>
       <h2 class="sec">${T('Sources')}</h2><ol class="srcs">${(f.sources || []).map((src) => `<li><a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.title)}</a>${src.date ? ` (${esc(src.date)})` : ''}${src.note ? ` — ${esc(src.note)}` : ''}${src.audit ? `<br><span class="aud">${T('Audit note:')} ${esc(src.audit)}</span>` : ''}</li>`).join('')}</ol>
       ${API ? `<p><a class="btn" href="${esc(API)}/auth/x/start?intent=claim">${T('Sign in with X to claim your dot')}</a></p>` : ''}
       <p class="note">${fmt(T('Claim your dot: if you are {name}, send your own {n} numbers and they replace these predictions, labelled as your answers.'), { name: esc(f.name), n: ITEMS.length })}</p>
@@ -411,12 +419,12 @@
   function strip(it, mine) {
     const W = window.innerWidth < 600 ? 350 : 640, L = 16, X = (v) => L + (v / 100) * (W - 2 * L); const pts = figVals(it); const last = [];
     pts.forEach((pt) => { let r = 0; while (last[r] !== undefined && X(pt.v) - last[r] < 24) r++; last[r] = X(pt.v); pt.row = r; });
-    const rows = Math.max(1, last.length), base = 36 + rows * 24, H = base + 30; const fait = it.type === 'prob';
+    const rows = Math.max(1, last.length), base = 36 + rows * 24, H = base + 30; const fait = isProb(it);
     let g = `<line class="ax" x1="${L}" y1="${base}" x2="${W - L}" y2="${base}"/>`;
-    [0, 25, 50, 75, 100].forEach((t) => { g += `<line class="tk" x1="${X(t)}" y1="${base - 4}" x2="${X(t)}" y2="${base + 4}"/><text class="tl" x="${X(t)}" y="${base + 17}" text-anchor="middle">${t}</text>`; });
+    [0, 25, 50, 75, 100].forEach((t) => { g += `<line class="tk" x1="${X(t)}" y1="${base - 4}" x2="${X(t)}" y2="${base + 4}"/><text class="tl" x="${X(t)}" y="${base + 17}" text-anchor="middle">${it.type === 'plog' ? pctStr(plogPct(t)) : t}</text>`; });
     g += `<text class="tl" x="${L}" y="${H - 1}">${T(fait ? 'Very unlikely' : 'Strongly disagree')}</text><text class="tl" x="${W - L}" y="${H - 1}" text-anchor="end">${T(fait ? 'Very likely' : 'Strongly agree')}</text>`;
-    pts.forEach((pt) => { const y = base - 14 - pt.row * 24; const lb = figLabel(pt.f); g += `<a href="#/figure/${esc(pt.f.id)}" data-tip="${esc(pt.f.name)} · ${pt.v}${pt.f.claimed ? '' : ' (' + T('predicted') + ')'}" aria-label="${esc(pt.f.name)} ${pt.v}"><circle class="${pt.f.claimed ? 'self' : ''}" cx="${X(pt.v)}" cy="${y}" r="10.5"/><text class="${lb.length > 2 ? 'l3' : ''}" x="${X(pt.v)}" y="${y + 3.2}" text-anchor="middle">${esc(lb)}</text></a>`; });
-    if (typeof mine === 'number') g += `<line class="me" x1="${X(mine)}" y1="16" x2="${X(mine)}" y2="${base}"/><text class="met" x="${Math.min(W - 30, Math.max(30, X(mine)))}" y="11" text-anchor="middle">${T('You')} · ${mine}</text>`;
+    pts.forEach((pt) => { const y = base - 14 - pt.row * 24; const lb = figLabel(pt.f); g += `<a href="#/figure/${esc(pt.f.id)}" data-tip="${esc(pt.f.name)} · ${showVal(it, pt.v)}${pt.f.claimed ? '' : ' (' + T('predicted') + ')'}" aria-label="${esc(pt.f.name)} ${showVal(it, pt.v)}"><circle class="${pt.f.claimed ? 'self' : ''}" cx="${X(pt.v)}" cy="${y}" r="10.5"/><text class="${lb.length > 2 ? 'l3' : ''}" x="${X(pt.v)}" y="${y + 3.2}" text-anchor="middle">${esc(lb)}</text></a>`; });
+    if (typeof mine === 'number') g += `<line class="me" x1="${X(mine)}" y1="16" x2="${X(mine)}" y2="${base}"/><text class="met" x="${Math.min(W - 30, Math.max(30, X(mine)))}" y="11" text-anchor="middle">${T('You')} · ${showVal(it, mine)}</text>`;
     return `<div class="stripwrap"><svg class="strip" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T('Where the figures stand')}">${g}</svg></div>`;
   }
   function viewDebate() {
@@ -432,7 +440,7 @@
     const when = String(c.at).slice(0, 10); const fig = c.figure ? FIGS.find((f) => f.id === c.figure) : null;
     if (c.deleted) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T(c.removed ? 'Removed by a moderator.' : 'Deleted by its author.')}</div></div>`;
     if (c.hidden && !isModView()) return `<div class="cm gone${isReply ? ' reply' : ''}"><div class="cmb">${T('Hidden: several people flagged this as spam.')}</div></div>`;
-    return `<div class="cm${isReply ? ' reply' : ''}"><div class="cmh"><a href="https://x.com/${esc(c.handle)}" target="_blank" rel="noopener nofollow">@${esc(c.handle)}</a>${fig ? `<span class="badge">${esc(fig.name)} · ${T('verified')}</span>` : ''}${typeof c.value === 'number' ? `<span class="ans">${fmt(T('answered {v}'), { v: c.value })}</span>` : ''}<span class="when">${esc(when)}</span></div>
+    return `<div class="cm${isReply ? ' reply' : ''}"><div class="cmh"><a href="https://x.com/${esc(c.handle)}" target="_blank" rel="noopener nofollow">@${esc(c.handle)}</a>${fig ? `<span class="badge">${esc(fig.name)} · ${T('verified')}</span>` : ''}${typeof c.value === 'number' ? `<span class="ans">${fmt(T('answered {v}'), { v: showVal(it, c.value) })}</span>` : ''}<span class="when">${esc(when)}</span></div>
       <div class="cmb">${esc(c.body).replace(/\n/g, '<br>')}</div>
       <div class="cma"><button class="${c.voted ? 'on' : ''}" data-vote="${esc(c.id)}" aria-pressed="${c.voted ? 'true' : 'false'}" title="${T('Upvote')}">▲ ${c.up || 0}</button><button data-reply="${esc(c.id)}">${T('Reply')}</button>${isModView() && !c.own ? `<button data-delc="${esc(c.id)}">${T('Remove')}</button>${c.flags ? `<button data-unflag="${esc(c.id)}">${fmt(T('Not spam ({n} flags)'), { n: c.flags })}</button>` : ''}` : ''}${c.own ? `<button data-delc="${esc(c.id)}">${T('Delete')}</button>` : `<button class="${c.flagged ? 'on' : ''}" data-flag="${esc(c.id)}">${c.flagged ? T('Flagged as spam') : T('Spam?')}</button>`}</div>
       ${S.replyTo === c.id && S.me ? `<div class="compose"><textarea data-draft="r:${esc(c.id)}" maxlength="1000" rows="3" placeholder="${T('Reply to the claim, not the person.')}"></textarea><div class="row"><button class="btn sm primary" data-postreply="${esc(c.id)}">${T('Post reply')}</button></div></div>` : ''}</div>`;
@@ -443,7 +451,7 @@
     const st = S.comments[it.id] || {}; const list = st.list || []; const live = list.filter((c) => !c.deleted && !c.hidden).length;
     const roots = list.filter((c) => !c.parent).sort((a, b) => (b.up - a.up) || (a.at < b.at ? -1 : 1));
     const next = encodeURIComponent('#/p/' + it.id);
-    const compose = S.me ? `<div class="compose"><textarea data-draft="c:${esc(it.id)}" maxlength="1000" rows="4" placeholder="${T('What would change your answer? Argue the claim, not the person.')}"></textarea><div class="row">${typeof mine === 'number' ? `<label class="chk"><input type="checkbox" id="showval" checked> ${fmt(T('Show my answer ({v}) next to my comment'), { v: mine })}</label>` : ''}<span class="spacer"></span><span class="hint">@${esc(S.me.handle)}</span><button class="btn sm primary" data-post="${esc(it.id)}">${T('Post')}</button></div></div>`
+    const compose = S.me ? `<div class="compose"><textarea data-draft="c:${esc(it.id)}" maxlength="1000" rows="4" placeholder="${T('What would change your answer? Argue the claim, not the person.')}"></textarea><div class="row">${typeof mine === 'number' ? `<label class="chk"><input type="checkbox" id="showval" checked> ${fmt(T('Show my answer ({v}) next to my comment'), { v: showVal(it, mine) })}</label>` : ''}<span class="spacer"></span><span class="hint">@${esc(S.me.handle)}</span><button class="btn sm primary" data-post="${esc(it.id)}">${T('Post')}</button></div></div>`
       : `<p><a class="btn" href="${esc(API)}/auth/x/start?intent=signin&next=${next}">${T('Sign in with X to comment')}</a></p><p class="note">${T('X sign-in keeps the bots out. We never post for you and never read your posts.')}</p>`;
     return `<h2 class="sec">${T('Discussion')}${live ? ` <small style="display:inline">(${live})</small>` : ''}</h2>${compose}
       ${st.loading && !st.list ? `<p class="hint">${T('Loading…')}</p>` : ''}${st.list && !roots.length ? `<p class="hint">${T('No comments yet. The first one sets the tone.')}</p>` : ''}
@@ -451,7 +459,7 @@
   }
   function viewProp(r) {
     const it = ITEMS.find((x) => x.id === r.id); if (!it) return viewDebate();
-    const n = ITEMS.indexOf(it) + 1, mine = S.answers[it.id], fait = it.type === 'prob';
+    const n = ITEMS.indexOf(it) + 1, mine = S.answers[it.id], fait = isProb(it);
     const head = `<p class="crumbs"><a href="#/debate">${T('All propositions')}</a> · ${n} / ${ITEMS.length}</p><div class="sign-green"><div class="sub"><b>${T(fait ? 'Forecast' : 'Opinion')}</b></div><p class="text">${esc(it.text)}</p></div><div class="plaque"><b>${T('In plain words')}</b>${esc(it.plain)}</div>`;
     if (mine === undefined) return shell(`<section>${head}<div class="gate"><p class="prose">${T('The figures’ answers and the discussion stay hidden until you’ve set your own slider, so that nobody anchors you.')}</p><p><a class="btn primary" href="#/q/${n}">${T('Answer this one first')}</a></p></div></section>`);
     loadComments(it.id);
@@ -549,7 +557,7 @@
     const t = e.target; if (t.id !== 'slider') return;
     const r = parseRoute(); if (r.page !== 'q') return; const it = ITEMS[r.n - 1]; const v = Number(t.value);
     S.answers[it.id] = v; saveAnswers();
-    const val = document.getElementById('val'); if (val) { val.textContent = v; val.classList.remove('unset'); }
+    const val = document.getElementById('val'); if (val) { val.textContent = showVal(it, v); val.classList.remove('unset'); }
     const w = document.getElementById('word'); if (w) w.textContent = words(it, v);
     const b = document.getElementById('nextbtn'); if (b) b.disabled = false;
     const d = document.getElementById('discuss'); if (d) d.hidden = false;

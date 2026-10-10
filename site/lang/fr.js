@@ -319,5 +319,11 @@ window.STL_STRINGS_FR = {
  "You and {name} are close on all five questions; your difference is a matter of degree.": "Vous et {name} êtes proches sur les cinq questions ; votre différence est une affaire de degré.",
  "You and {name} split most on {a} ({ga} points apart). You are closest on {b} ({gb}).": "Vous et {name} divergez surtout sur : {a} ({ga} points d’écart). Vous êtes le plus proches sur : {b} ({gb}).",
  "The conclusion: the limit each of you would set.": "La conclusion : la limite que chacun fixerait.",
- "Your green marker against {name}’s predicted answers. Each line averages the propositions that bear on that question.": "Votre repère vert face aux réponses prédites pour {name}. Chaque ligne fait la moyenne des propositions qui portent sur cette question."
+ "Your green marker against {name}’s predicted answers. Each line averages the propositions that bear on that question.": "Votre repère vert face aux réponses prédites pour {name}. Chaque ligne fait la moyenne des propositions qui portent sur cette question.",
+ "{p} or less": "{p} ou moins",
+ "{p} or more": "{p} ou plus",
+ "1 chance in 1,000 or less": "1 chance sur 1 000 ou moins",
+ "about 1 chance in {n}": "environ 1 chance sur {n}",
+ "Almost certain": "Presque certain",
+ "Probability, graded scale": "Probabilité, échelle graduée"
 };
