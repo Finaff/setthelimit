@@ -299,7 +299,7 @@ window.STL_STRINGS_FR = {
  "How far and how fast will AI go?": "Jusqu’où l’IA ira-t-elle, et à quelle vitesse ?",
  "If it gets that far, will we keep it from causing a catastrophe?": "Si elle va jusque-là, saura-t-on l’empêcher de causer une catastrophe ?",
  "How much risk is acceptable in exchange for the benefits?": "Quel risque est acceptable en échange des bénéfices ?",
- "Would slowing down work, or would it hand the lead to rivals?": "Ralentir fonctionnerait-il, ou laisserait-il le champ libre aux rivaux ?",
+ "Would slowing down actually work?": "Ralentir servirait-il vraiment ?",
  "Who should set the pace?": "Qui doit décider du rythme ?",
  "stays limited": "reste limitée",
  "very powerful, soon": "très puissante, bientôt",
@@ -308,7 +308,7 @@ window.STL_STRINGS_FR = {
  "very little": "très peu",
  "more, for the benefits": "davantage, pour les bénéfices",
  "it would work": "ça fonctionnerait",
- "it can’t work, or rivals take the lead": "impossible, ou les rivaux passent devant",
+ "it wouldn’t work": "ça ne servirait à rien",
  "governments and treaties": "les États et les traités",
  "the labs and the market": "les labos et le marché",
  "full stop": "arrêt complet",
@@ -372,6 +372,6 @@ window.STL_STRINGS_FR = {
  "The pace each person would set, from stopping altogether to no limit at all.": "Le rythme que chacun fixerait, de l’arrêt complet à aucune limite.",
  "How capable AI will become, and how soon.": "À quel point l’IA deviendra capable, et à quelle échéance.",
  "How much risk of catastrophe is worth accepting in exchange for what AI could bring.": "Le risque de catastrophe qu’il vaut la peine d’accepter en échange de ce que l’IA pourrait apporter.",
- "Whether slowing down could be enforced, whether it would make AI safer, and how much ground it would give up to rival countries.": "Si un ralentissement pourrait être imposé, s’il rendrait l’IA plus sûre, et le terrain qu’il ferait perdre face aux pays rivaux.",
+ "Whether a slowdown could be enforced, whether it would make AI safer, or whether rival countries would simply take the lead.": "Si un ralentissement pourrait être imposé, s’il rendrait l’IA plus sûre, ou si les pays rivaux prendraient simplement les devants.",
  "Who should decide the pace: governments and international treaties, or the AI companies and the market.": "Qui doit décider du rythme : les États et les traités internationaux, ou les entreprises d’IA et le marché."
 };
